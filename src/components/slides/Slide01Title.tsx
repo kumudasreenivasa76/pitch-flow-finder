@@ -14,8 +14,8 @@ const Slide01Title = () => (
 
       {/* Headline */}
       <h1 className="text-7xl font-extrabold text-foreground leading-tight mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-        Infrastructure SaaS for<br />
-        <span className="text-primary">Distributed Clean Energy</span>
+        The Future of Digital Infrastructure is Green:<br />
+        <span className="text-primary">The Only SaaS Platform for End-to-End Clean Energy</span>
       </h1>
 
       {/* Tagline */}
