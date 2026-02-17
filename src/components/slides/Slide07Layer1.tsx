@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SlideLayout from "../SlideLayout";
 import { Building2, Zap, Award, Briefcase, Landmark, FileCheck, X } from "lucide-react";
-import ecosystemImg from "@/assets/ecogridia-ecosystem-3d.png";
+import ecosystemImg from "@/assets/slide07-ecosystem-white.png";
 
 const hotspots = [
   {
@@ -103,7 +103,7 @@ const Slide07Layer1 = () => {
 
   return (
     <SlideLayout>
-      <div className="relative w-full h-full overflow-hidden">
+      <div className="relative w-full h-full overflow-hidden bg-white">
         {/* Header overlay */}
         <div className="absolute top-6 left-8 right-8 z-20 flex items-center gap-4 animate-fade-in">
           <span className="text-sm font-bold text-primary-foreground bg-primary px-4 py-1.5 rounded-full shadow-lg">Layer 1</span>
@@ -114,14 +114,12 @@ const Slide07Layer1 = () => {
         </div>
 
         {/* Full-bleed 3D image */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-white">
           <img
             src={ecosystemImg}
             alt="EcoGridia 3D isometric ecosystem"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
-          {/* Subtle dark overlay for readability */}
-          <div className="absolute inset-0 bg-background/30" />
         </div>
 
         {/* Interactive hotspots */}

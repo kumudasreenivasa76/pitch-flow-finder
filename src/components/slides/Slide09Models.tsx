@@ -1,6 +1,7 @@
 import SlideLayout from "../SlideLayout";
 import { useState } from "react";
 import { Building2, Users, ShoppingCart } from "lucide-react";
+import modelsImg from "@/assets/slide09-models-white.png";
 
 const models = [
   {
@@ -31,39 +32,47 @@ const Slide09Models = () => {
 
   return (
     <SlideLayout>
-      <div className="flex flex-col h-full px-20 py-16">
-        <h2 className="text-5xl font-bold text-foreground mb-2 animate-fade-in">
-          Participation <span className="text-primary">Models</span>
-        </h2>
-        <p className="text-2xl text-muted-foreground mb-12">Three ways to participate in the clean energy economy.</p>
+      <div className="flex h-full bg-white">
+        {/* Left: Image */}
+        <div className="w-[720px] shrink-0 flex items-center justify-center p-10">
+          <img src={modelsImg} alt="Participation Models" className="w-full h-auto object-contain max-h-[900px]" />
+        </div>
 
-        <div className="grid grid-cols-3 gap-8 flex-1">
-          {models.map((m, i) => (
-            <button
-              key={i}
-              onClick={() => setExpanded(expanded === i ? null : i)}
-              className={`text-left rounded-2xl border p-10 transition-all duration-300 flex flex-col ${
-                expanded === i ? "bg-primary/5 border-primary shadow-xl" : "bg-card border-border hover:border-primary/40 hover:shadow-lg"
-              }`}
-            >
-              <m.icon className="w-14 h-14 text-primary mb-6" />
-              <h3 className="text-2xl font-bold text-foreground mb-2">{m.title}</h3>
-              <p className="text-lg text-muted-foreground mb-6">{m.subtitle}</p>
+        {/* Right: Content */}
+        <div className="flex-1 flex flex-col justify-center pr-16 py-12">
+          <h2 className="text-5xl font-bold text-gray-900 mb-2 animate-fade-in">
+            Participation <span className="text-primary">Models</span>
+          </h2>
+          <p className="text-xl text-gray-500 mb-10">Three ways to participate in the clean energy economy.</p>
 
-              <div className="mb-4">
-                <span className="text-sm font-semibold text-primary uppercase">Stakeholders</span>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {m.stakeholders.map((s) => (
-                    <span key={s} className="text-base bg-primary/10 text-primary px-3 py-1 rounded-full">{s}</span>
-                  ))}
+          <div className="flex flex-col gap-5">
+            {models.map((m, i) => (
+              <button
+                key={i}
+                onClick={() => setExpanded(expanded === i ? null : i)}
+                className={`text-left rounded-2xl border p-7 transition-all duration-300 flex items-start gap-5 opacity-0 animate-fade-in ${
+                  expanded === i ? "bg-primary/5 border-primary shadow-xl" : "bg-gray-50 border-gray-200 hover:border-primary/40 hover:shadow-lg"
+                }`}
+                style={{ animationDelay: `${0.1 + i * 0.08}s`, animationFillMode: "forwards" }}
+              >
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <m.icon className="w-7 h-7 text-primary" />
                 </div>
-              </div>
-
-              {expanded === i && (
-                <p className="text-lg text-foreground/80 leading-relaxed mt-auto animate-fade-in">{m.details}</p>
-              )}
-            </button>
-          ))}
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-1">{m.title}</h3>
+                  <p className="text-lg text-gray-500 mb-3">{m.subtitle}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {m.stakeholders.map((s) => (
+                      <span key={s} className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full">{s}</span>
+                    ))}
+                  </div>
+                  {expanded === i && (
+                    <p className="text-base text-gray-600 leading-relaxed mt-4 animate-fade-in">{m.details}</p>
+                  )}
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </SlideLayout>
