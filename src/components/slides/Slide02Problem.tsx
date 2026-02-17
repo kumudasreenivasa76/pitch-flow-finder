@@ -1,98 +1,86 @@
 import SlideLayout from "../SlideLayout";
 import { useState } from "react";
-import { Server, Wind, Gauge, Globe2, FileCheck, Landmark, AlertTriangle } from "lucide-react";
+import { DollarSign, FileCheck, Blocks, Server, Coins, Activity, AlertTriangle } from "lucide-react";
 
 const problems = [
   {
     num: "01",
-    icon: Server,
-    title: "Energy-Intensive Infrastructure Is Expanding Rapidly",
-    stat: "150 TWh",
-    statLabel: "EU DC demand by 2030",
+    icon: DollarSign,
+    title: "Rising & Volatile Energy Costs",
+    stat: "15–25%",
+    statLabel: "US price increase (3yr)",
     bullets: [
-      "Datacenters consume 3–5% of global electricity",
-      "EU datacenter demand expected to exceed 150 TWh annually by 2030",
-      "UK datacenters consume ~2–3% of national electricity",
-      "AI compute demand growing 20–30% annually",
-      "Universities are among the largest public-sector energy users (20–200 GWh/campus)",
-      "Commercial buildings account for ~30–35% of EU energy consumption",
+      "US commercial electricity prices increased ~15–25% in the past 3 years",
+      "Industrial facilities spend $500K–$5M annually on electricity",
+      "Data centers consume 4–5% of total US electricity (projected 8–10% by 2030)",
+      "AI workloads increase power demand by 2–3x",
     ],
-    problem: "Energy demand across datacenters, campuses, and enterprises is accelerating faster than grid decarbonization and carbon optimization systems.",
+    problem: "Margin compression, grid strain, and CFO pressure to reduce operating expenses.",
   },
   {
     num: "02",
-    icon: Wind,
-    title: "Renewable Curtailment & Grid Constraints Persist",
-    stat: "£1B+",
-    statLabel: "UK wind curtailment/yr",
+    icon: FileCheck,
+    title: "ESG & SEC Climate Compliance Pressure",
+    stat: "10,000+",
+    statLabel: "US companies impacted",
     bullets: [
-      "Renewable curtailment in Europe ranges 10–30% during peak production",
-      "UK wind curtailment costs exceed £1B annually",
-      "Grid congestion limits renewable dispatch in Germany, Ireland, and the Netherlands",
-      "EU transmission bottlenecks restrict full renewable utilization",
-      "Millions of sq meters of rooftop space on schools & universities remain unused",
+      "10,000+ US companies impacted by climate disclosure expectations",
+      "3,000+ public companies preparing for SEC reporting",
+      "60% of mid-market firms lack automated carbon tracking systems",
     ],
-    problem: "Installed renewable capacity exists, but infrastructure demand is not dynamically aligned with generation patterns.",
+    problem: "Legal exposure, investor scrutiny, and supply chain pressure from larger enterprises.",
   },
   {
     num: "03",
-    icon: Gauge,
-    title: "Operational Inefficiency Remains Structural",
-    stat: "1.4–1.7",
-    statLabel: "avg global PUE",
+    icon: Blocks,
+    title: "Fragmented Renewable & Carbon Ecosystem",
+    stat: "6–9 mo",
+    statLabel: "avg project delay",
     bullets: [
-      "Cooling represents 30–50% of datacenter facility energy",
-      "AI increases rack density 3–5x over traditional workloads",
-      "Even 0.2 PUE improvement = multi-million £ savings at hyperscale",
-      "HVAC represents 30–60% of campus & enterprise building energy",
-      "Legacy BMS systems operate in silos with limited predictive optimization",
+      "Solar EPCs, consultants, carbon brokers operate separately",
+      "70% of commercial solar projects require coordination across 3–5 vendors",
+      "Average project delay: 6–9 months",
     ],
-    problem: "Energy systems are optimized for uptime and compliance — not carbon efficiency or real-time optimization.",
+    problem: "Cost overruns, underperformance, and project abandonment.",
   },
   {
     num: "04",
-    icon: Globe2,
-    title: "Carbon Markets Are Fragmented Across Jurisdictions",
-    stat: "$50B",
-    statLabel: "voluntary market by 2030",
+    icon: Server,
+    title: "Data Center Renewable Procurement Complexity",
+    stat: "2x",
+    statLabel: "DC demand doubling",
     bullets: [
-      "Voluntary carbon market projected to reach $50B globally by 2030",
-      "EU ETS carbon price volatility fluctuates significantly year-to-year",
-      "REC and I-REC markets vary widely by geography",
-      "Credit pricing can vary 3x–10x by region",
-      "Verification fragmentation (Verra, Gold Standard, ACR, etc.)",
+      "Hyperscalers committed to 100% renewable energy (RE100 targets)",
+      "Data center electricity demand expected to double in certain regions",
+      "Renewable PPAs and REC procurement highly complex",
     ],
-    problem: "Carbon procurement is financially fragmented and disconnected from real-time infrastructure emissions.",
+    problem: "Renewable gap vs net-zero commitments, reputation risk, and increasing ESG reporting scrutiny.",
   },
   {
     num: "05",
-    icon: FileCheck,
-    title: "Regulatory Pressure Is Increasing Across Europe & UK",
-    stat: "50,000+",
-    statLabel: "companies under CSRD",
+    icon: Coins,
+    title: "Unmonetized Renewable Assets (REC Leakage)",
+    stat: "$1–2B",
+    statLabel: "US REC market/yr",
     bullets: [
-      "CSRD affects ~50,000 companies across the EU",
-      "Double materiality reporting now mandatory",
-      "UK SECR requires carbon reporting for qualifying companies",
-      "ESOS audits required every 4 years",
-      "Large enterprises spend £50k–£500k annually on ESG consulting",
+      "US REC market size: $1–2B annually",
+      "Thousands of small installations do not actively trade RECs",
+      "10–20% potential renewable revenue often unused",
     ],
-    problem: "Compliance is expanding rapidly while remaining manual, consultant-driven, and operationally disconnected.",
+    problem: "Reduced ROI, poor financial visibility, and missed sustainability funding opportunity.",
   },
   {
     num: "06",
-    icon: Landmark,
-    title: "Capital Gap in Distributed Renewable Infrastructure",
-    stat: "$4T+",
-    statLabel: "investment gap by 2030",
+    icon: Activity,
+    title: "Lack of Real-Time Energy Intelligence",
+    stat: "20–30%",
+    statLabel: "solar underperformance",
     bullets: [
-      "Global clean energy investment gap estimated at $4T+ by 2030",
-      "UK and EU face significant grid upgrade funding requirements",
-      "Universities & schools lack structured financing for rooftop solar",
-      "Datacenters spend millions on energy but rarely invest in distributed renewables",
-      "Small renewable developers face capital access barriers",
+      "20–30% of installed solar underperforms without monitoring",
+      "50% of mid-market firms lack real-time energy analytics",
+      "Data center uptime & optimization critical to SLAs",
     ],
-    problem: "Carbon spending flows into credit markets and intermediaries rather than directly into distributed renewable infrastructure.",
+    problem: "Lost savings, equipment failure unnoticed, and poor sustainability ROI measurement.",
   },
 ];
 
@@ -116,7 +104,7 @@ const Slide02Problem = () => {
             className="text-base text-muted-foreground mb-4 ml-[52px] opacity-0 animate-fade-in"
             style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}
           >
-            Six systemic failures blocking the clean energy transition — UK/EU focus
+            Six systemic failures blocking the clean energy transition — US focus
           </p>
         </div>
 
@@ -196,11 +184,11 @@ const Slide02Problem = () => {
           style={{ animationDelay: "0.7s", animationFillMode: "forwards" }}
         >
           {[
-            { value: "150 TWh", label: "EU DC Demand 2030" },
-            { value: "£1B+", label: "Curtailment Cost/yr" },
-            { value: "$50B", label: "Carbon Market 2030" },
-            { value: "50,000+", label: "CSRD Companies" },
-            { value: "$4T+", label: "Investment Gap" },
+            { value: "15–25%", label: "Energy Cost Surge" },
+            { value: "10K+", label: "Companies Impacted" },
+            { value: "$1–2B", label: "REC Market/yr" },
+            { value: "6–9 mo", label: "Avg Project Delay" },
+            { value: "20–30%", label: "Solar Underperformance" },
           ].map((s) => (
             <div key={s.label} className="text-center">
               <div className="text-xl font-extrabold text-destructive">{s.value}</div>
