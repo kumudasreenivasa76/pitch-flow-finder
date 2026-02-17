@@ -148,43 +148,45 @@ const Slide03Solution = () => {
         </div>
 
         {/* Right detail panel */}
-        <div className="flex-1 flex flex-col px-12 pt-7 pb-16 overflow-hidden" key={selected}>
-          {/* Header */}
-          <div className="shrink-0 animate-fade-in">
-            <div className="flex items-center gap-4">
-              <div className="w-[56px] h-[56px] rounded-2xl bg-primary flex items-center justify-center text-primary-foreground shadow-lg shadow-primary/20">
-                <Icon className="w-7 h-7" />
-              </div>
-              <div className="flex-1">
-                <span className="text-[13px] text-muted-foreground font-mono">Solution {s.num} of 06</span>
-                <h3 className="text-[28px] font-extrabold text-foreground leading-tight">{s.title}</h3>
-              </div>
-            </div>
-          </div>
-
-          {/* Capabilities */}
-          <div className="flex-1 min-h-0 mt-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            <h4 className="text-[13px] font-bold text-muted-foreground uppercase tracking-widest mb-3">Key Capabilities</h4>
-            <div className="space-y-2">
-              {s.bullets.map((b, bi) => (
-                <div
-                  key={bi}
-                  className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border/30 hover:border-primary/20 hover:shadow-md transition-all duration-300 opacity-0 animate-fade-in"
-                  style={{ animationDelay: `${0.15 + bi * 0.06}s`, animationFillMode: "forwards" }}
-                >
-                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary text-[14px] font-bold flex items-center justify-center shrink-0">
-                    {bi + 1}
-                  </span>
-                  <span className="text-[15px] text-foreground leading-snug">{b}</span>
+        <div className="flex-1 flex items-center justify-center px-12 pb-16 overflow-hidden" key={selected}>
+          <div className="w-full max-w-[1100px]">
+            {/* Header */}
+            <div className="animate-fade-in">
+              <div className="flex items-center gap-4">
+                <div className="w-[56px] h-[56px] rounded-2xl bg-primary flex items-center justify-center text-primary-foreground shadow-lg shadow-primary/20">
+                  <Icon className="w-7 h-7" />
                 </div>
-              ))}
+                <div className="flex-1">
+                  <span className="text-[13px] text-muted-foreground font-mono">Solution {s.num} of 06</span>
+                  <h3 className="text-[28px] font-extrabold text-foreground leading-tight">{s.title}</h3>
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Outcome bar */}
-          <div className="shrink-0 mt-6 p-4 rounded-2xl bg-primary/[0.05] border border-primary/20 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <span className="text-[13px] font-bold text-primary uppercase tracking-wider">✓ Outcome</span>
-            <p className="text-[16px] text-foreground mt-2 leading-relaxed font-medium">{s.outcome}</p>
+            {/* Capabilities */}
+            <div className="mt-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <h4 className="text-[13px] font-bold text-muted-foreground uppercase tracking-widest mb-3">Key Capabilities</h4>
+              <div className="space-y-2">
+                {s.bullets.map((b, bi) => (
+                  <div
+                    key={bi}
+                    className="flex items-center gap-3 p-3 rounded-xl bg-card border border-border/30 hover:border-primary/20 hover:shadow-md transition-all duration-300 opacity-0 animate-fade-in"
+                    style={{ animationDelay: `${0.15 + bi * 0.06}s`, animationFillMode: "forwards" }}
+                  >
+                    <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary text-[14px] font-bold flex items-center justify-center shrink-0">
+                      {bi + 1}
+                    </span>
+                    <span className="text-[15px] text-foreground leading-snug">{b}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Outcome bar */}
+            <div className="mt-5 p-4 rounded-2xl bg-primary/[0.05] border border-primary/20 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              <span className="text-[13px] font-bold text-primary uppercase tracking-wider">✓ Outcome</span>
+              <p className="text-[16px] text-foreground mt-2 leading-relaxed font-medium">{s.outcome}</p>
+            </div>
           </div>
         </div>
       </div>
