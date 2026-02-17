@@ -1,14 +1,92 @@
 import SlideLayout from "../SlideLayout";
 import { useState } from "react";
-import { AlertTriangle, TrendingDown, Lock, FileX, Users, Layers } from "lucide-react";
+import { Zap, Server, FileCheck, Landmark, Network, BarChart3, AlertTriangle } from "lucide-react";
 
 const problems = [
-  { icon: AlertTriangle, title: "Unused Capacity", short: "Solar & wind assets sit idle", detail: "Over 40% of installed renewable capacity goes underutilized due to poor grid integration, lack of storage, and no real-time demand matching." },
-  { icon: TrendingDown, title: "Unpredictable Demand", short: "No forecasting infrastructure", detail: "Energy producers have no AI-driven tools to predict demand patterns, leading to massive waste and revenue loss across distributed assets." },
-  { icon: Lock, title: "No Real Access", short: "Communities locked out", detail: "4B+ people globally have no practical access to clean energy markets. Existing platforms serve only large utilities and corporations." },
-  { icon: FileX, title: "Broken Reporting", short: "Manual, fragmented compliance", detail: "ESG and carbon reporting is done manually across spreadsheets, creating audit risks, delays, and unreliable data for stakeholders." },
-  { icon: Users, title: "Locked Out", short: "Small players can't participate", detail: "Landowners, schools, and small businesses lack the tools and capital access to participate in clean energy projects meaningfully." },
-  { icon: Layers, title: "No Unified System", short: "Fragmented tooling everywhere", detail: "The industry runs on disconnected software — one tool for monitoring, another for compliance, another for billing. No single platform exists." },
+  {
+    num: "01",
+    icon: Zap,
+    title: "Renewable Energy Is Underutilized",
+    stat: "40%+",
+    statLabel: "capacity curtailed",
+    bullets: [
+      "40%+ of installed renewable capacity is curtailed",
+      "Solar peaks misaligned with demand",
+      "Wind disconnected from storage",
+      "No real-time demand matching",
+    ],
+    quote: "Clean energy exists. It just isn't orchestrated.",
+  },
+  {
+    num: "02",
+    icon: Server,
+    title: "Datacenters Are Carbon-Blind",
+    stat: "3–5%",
+    statLabel: "of global electricity",
+    bullets: [
+      "Carbon per workload — unknown",
+      "Carbon per AI training job — unknown",
+      "Carbon per Kubernetes cluster — unknown",
+      "They measure kWh per facility, not gCO₂ per compute unit",
+    ],
+    quote: "AI runs 24/7 — even when grids are dirtiest.",
+  },
+  {
+    num: "03",
+    icon: BarChart3,
+    title: "Procurement Is Financial, Not Operational",
+    stat: "0%",
+    statLabel: "hourly matching",
+    bullets: [
+      "Sign VPPAs, buy RECs, purchase offsets",
+      "Don't match renewables hourly (24/7 CFE)",
+      "Don't integrate storage into scheduling",
+      "Don't shift workloads based on carbon forecasts",
+    ],
+    quote: "Offsets compensate emissions. They don't reduce them.",
+  },
+  {
+    num: "04",
+    icon: FileCheck,
+    title: "Compliance Is Reactive & Manual",
+    stat: "90%",
+    statLabel: "still use Excel",
+    bullets: [
+      "CSRD, SEC Climate Disclosure, SECR, CDP",
+      "Executed via Excel & consultants",
+      "Static annual reports, no real-time data",
+      "No compliance intelligence layer",
+    ],
+    quote: "No real-time compliance intelligence.",
+  },
+  {
+    num: "05",
+    icon: Landmark,
+    title: "Capital Doesn't Flow to Infrastructure",
+    stat: "100M+",
+    statLabel: "rooftops untapped",
+    bullets: [
+      "Schools and SMEs excluded from markets",
+      "Renewable developers underfunded",
+      "Datacenters buy generic credits instead of assets",
+      "Carbon money flows to intermediaries, not infra",
+    ],
+    quote: "Capital flows to middlemen, not to rooftops.",
+  },
+  {
+    num: "06",
+    icon: Network,
+    title: "No Unified Carbon Control Plane",
+    stat: "5+",
+    statLabel: "disconnected tools",
+    bullets: [
+      "Carbon accounting tools",
+      "Grid data APIs & offset marketplaces",
+      "Energy optimization firms & compliance consultants",
+      "None connect into one operational loop",
+    ],
+    quote: "The stack is fragmented. No single system exists.",
+  },
 ];
 
 const Slide02Problem = () => {
@@ -16,44 +94,111 @@ const Slide02Problem = () => {
 
   return (
     <SlideLayout>
-      <div className="flex flex-col h-full px-20 py-16">
-        <h2 className="text-5xl font-bold text-foreground mb-2 animate-fade-in">
-          The Clean Energy Transition Is <span className="text-destructive">Broken</span>
-        </h2>
-        <p className="text-2xl text-muted-foreground mb-12 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-          A $3T+ market held back by fragmentation, exclusion, and outdated infrastructure.
+      <div className="flex flex-col h-full px-16 py-12">
+        {/* Header */}
+        <div className="flex items-center gap-4 mb-2 opacity-0 animate-fade-in">
+          <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center">
+            <AlertTriangle className="w-6 h-6 text-destructive" />
+          </div>
+          <h2 className="text-5xl font-extrabold text-foreground">
+            The Structural Market <span className="text-destructive">Failure</span>
+          </h2>
+        </div>
+        <p
+          className="text-xl text-muted-foreground mb-8 ml-16 opacity-0 animate-fade-in"
+          style={{ animationDelay: "0.1s" }}
+        >
+          Six systemic failures blocking the $3T+ clean energy transition
         </p>
 
-        <div className="grid grid-cols-3 gap-6 flex-1 mb-12">
-          {problems.map((p, i) => (
-            <button
-              key={i}
-              onClick={() => setExpanded(expanded === i ? null : i)}
-              className={`text-left rounded-2xl border p-8 transition-all duration-300 hover:shadow-lg ${
-                expanded === i ? "bg-primary/5 border-primary shadow-lg" : "bg-card border-border hover:border-primary/30"
-              }`}
-              style={{ animationDelay: `${i * 0.1}s` }}
-            >
-              <p.icon className={`w-10 h-10 mb-4 ${expanded === i ? "text-primary" : "text-muted-foreground"}`} />
-              <h3 className="text-2xl font-semibold text-foreground mb-2">{p.title}</h3>
-              <p className="text-lg text-muted-foreground">{p.short}</p>
-              {expanded === i && (
-                <p className="mt-4 text-lg text-foreground/80 leading-relaxed animate-fade-in">{p.detail}</p>
-              )}
-            </button>
-          ))}
+        {/* Problem cards grid */}
+        <div className="grid grid-cols-3 gap-4 flex-1 mb-6">
+          {problems.map((p, i) => {
+            const isOpen = expanded === i;
+            return (
+              <button
+                key={i}
+                onClick={() => setExpanded(isOpen ? null : i)}
+                className={`group text-left rounded-2xl border p-5 transition-all duration-300 flex flex-col opacity-0 animate-slide-up ${
+                  isOpen
+                    ? "bg-primary/[0.06] border-primary/40 shadow-xl shadow-primary/10 -translate-y-1"
+                    : "bg-card/80 border-border/50 hover:border-primary/20 hover:shadow-md"
+                }`}
+                style={{ animationDelay: `${0.15 + i * 0.08}s`, animationFillMode: "forwards" }}
+              >
+                {/* Top row: number + stat */}
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex items-center gap-3">
+                    <span className={`text-sm font-bold px-2 py-0.5 rounded-md transition-colors duration-300 ${
+                      isOpen ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground"
+                    }`}>
+                      {p.num}
+                    </span>
+                    <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-colors duration-300 ${
+                      isOpen ? "bg-primary/15 text-primary" : "bg-secondary text-muted-foreground"
+                    }`}>
+                      <p.icon className="w-5 h-5" />
+                    </div>
+                  </div>
+                  {/* Stat badge */}
+                  <div className="text-right">
+                    <div className={`text-2xl font-extrabold leading-none transition-colors duration-300 ${
+                      isOpen ? "text-primary" : "text-foreground"
+                    }`}>
+                      {p.stat}
+                    </div>
+                    <div className="text-[10px] text-muted-foreground uppercase tracking-wider mt-0.5">
+                      {p.statLabel}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-base font-bold text-foreground mb-1.5 leading-snug">{p.title}</h3>
+
+                {/* Collapsed: show quote */}
+                {!isOpen && (
+                  <p className="text-xs text-muted-foreground italic mt-auto leading-relaxed">
+                    "{p.quote}"
+                  </p>
+                )}
+
+                {/* Expanded: bullet points */}
+                {isOpen && (
+                  <div className="mt-1 animate-fade-in">
+                    <ul className="space-y-1.5">
+                      {p.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2 text-xs text-foreground/80 leading-snug">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-[11px] text-primary font-semibold italic mt-3 border-t border-primary/20 pt-2">
+                      "{p.quote}"
+                    </p>
+                  </div>
+                )}
+              </button>
+            );
+          })}
         </div>
 
-        {/* Stats banner */}
-        <div className="flex justify-center gap-16 py-6 bg-primary/5 rounded-2xl animate-fade-in" style={{ animationDelay: "0.5s" }}>
+        {/* Bottom stats banner */}
+        <div
+          className="flex justify-center gap-12 py-4 bg-destructive/5 border border-destructive/10 rounded-2xl opacity-0 animate-fade-in"
+          style={{ animationDelay: "0.7s", animationFillMode: "forwards" }}
+        >
           {[
-            { value: "$3T+", label: "Global Market" },
+            { value: "$3T+", label: "Market at Stake" },
+            { value: "40%+", label: "Capacity Wasted" },
             { value: "100M+", label: "Rooftops Untapped" },
             { value: "4B+", label: "People Excluded" },
+            { value: "90%", label: "Manual Compliance" },
           ].map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-4xl font-bold text-primary">{s.value}</div>
-              <div className="text-lg text-muted-foreground">{s.label}</div>
+              <div className="text-3xl font-extrabold text-destructive">{s.value}</div>
+              <div className="text-sm text-muted-foreground">{s.label}</div>
             </div>
           ))}
         </div>
