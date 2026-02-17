@@ -89,85 +89,90 @@ const Slide02Problem = () => {
 
   return (
     <SlideLayout>
-      <div className="flex flex-col h-full px-16 py-8 justify-between">
+      <div className="flex flex-col h-full px-20 py-12">
         {/* Header */}
-        <div className="shrink-0">
-          <div className="flex items-center gap-3 mb-1 opacity-0 animate-fade-in" style={{ animationFillMode: "forwards" }}>
-            <div className="w-10 h-10 rounded-xl bg-destructive/10 flex items-center justify-center">
-              <AlertTriangle className="w-5 h-5 text-destructive" />
+        <div className="shrink-0 mb-6">
+          <div className="flex items-center gap-4 mb-2 opacity-0 animate-fade-in" style={{ animationFillMode: "forwards" }}>
+            <div className="w-14 h-14 rounded-2xl bg-destructive/10 flex items-center justify-center">
+              <AlertTriangle className="w-7 h-7 text-destructive" />
             </div>
-            <h2 className="text-[40px] font-extrabold text-foreground leading-tight">
+            <h2 className="text-[52px] font-extrabold text-foreground leading-none">
               The Structural Market <span className="text-destructive">Failure</span>
             </h2>
           </div>
           <p
-            className="text-base text-muted-foreground mb-4 ml-[52px] opacity-0 animate-fade-in"
+            className="text-[22px] text-muted-foreground ml-[72px] opacity-0 animate-fade-in"
             style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}
           >
             Six systemic failures blocking the clean energy transition — US focus
           </p>
         </div>
 
-        {/* Problem cards — constrained grid */}
-        <div className="grid grid-cols-3 grid-rows-2 gap-3 flex-1 min-h-0 mb-4">
+        {/* Problem cards — 3×2 grid */}
+        <div className="grid grid-cols-3 grid-rows-2 gap-5 flex-1 min-h-0 mb-6">
           {problems.map((p, i) => {
             const isOpen = expanded === i;
+            const Icon = p.icon;
             return (
               <button
                 key={i}
                 onClick={() => setExpanded(isOpen ? null : i)}
-                className={`group text-left rounded-xl border p-3.5 transition-all duration-300 flex flex-col overflow-hidden opacity-0 animate-slide-up ${
+                className={`group text-left rounded-2xl border-2 p-5 transition-all duration-300 flex flex-col overflow-hidden opacity-0 animate-slide-up ${
                   isOpen
-                    ? "bg-primary/[0.06] border-primary/40 shadow-lg shadow-primary/10"
-                    : "bg-card/80 border-border/50 hover:border-primary/20 hover:shadow-md"
+                    ? "bg-primary/[0.06] border-primary/40 shadow-xl shadow-primary/10"
+                    : "bg-card/80 border-border/40 hover:border-primary/30 hover:shadow-lg"
                 }`}
                 style={{ animationDelay: `${0.15 + i * 0.07}s`, animationFillMode: "forwards" }}
               >
-                <div className="flex items-center justify-between mb-1.5">
-                  <div className="flex items-center gap-2">
-                    <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded transition-colors duration-300 ${
+                {/* Top row: number + icon | stat */}
+                <div className="flex items-center justify-between mb-3 shrink-0">
+                  <div className="flex items-center gap-3">
+                    <span className={`text-[14px] font-bold px-2.5 py-1 rounded-lg transition-colors duration-300 ${
                       isOpen ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground"
                     }`}>
                       {p.num}
                     </span>
-                    <div className={`w-7 h-7 rounded-lg flex items-center justify-center transition-colors duration-300 ${
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-300 ${
                       isOpen ? "bg-primary/15 text-primary" : "bg-secondary text-muted-foreground"
                     }`}>
-                      <p.icon className="w-3.5 h-3.5" />
+                      <Icon className="w-5 h-5" />
                     </div>
                   </div>
                   <div className="text-right shrink-0">
-                    <div className={`text-lg font-extrabold leading-none transition-colors duration-300 ${
+                    <div className={`text-[26px] font-extrabold leading-none transition-colors duration-300 ${
                       isOpen ? "text-primary" : "text-foreground"
                     }`}>
                       {p.stat}
                     </div>
-                    <div className="text-[8px] text-muted-foreground uppercase tracking-wider mt-0.5">
+                    <div className="text-[12px] text-muted-foreground uppercase tracking-wider mt-1">
                       {p.statLabel}
                     </div>
                   </div>
                 </div>
 
-                <h3 className="text-[12px] font-bold text-foreground mb-1 leading-snug">{p.title}</h3>
+                {/* Title */}
+                <h3 className="text-[18px] font-bold text-foreground mb-2 leading-snug shrink-0">{p.title}</h3>
 
+                {/* Collapsed: show problem summary */}
                 {!isOpen && (
-                  <p className="text-[10px] text-destructive/80 italic mt-auto leading-snug line-clamp-2">
+                  <p className="text-[15px] text-destructive/80 italic mt-auto leading-snug line-clamp-2">
                     ⚠ {p.problem}
                   </p>
                 )}
 
+                {/* Expanded: show bullets + problem */}
                 {isOpen && (
-                  <div className="mt-0.5 animate-fade-in flex flex-col flex-1 overflow-y-auto min-h-0">
-                    <ul className="space-y-0.5">
+                  <div className="mt-1 animate-fade-in flex flex-col flex-1 overflow-y-auto min-h-0">
+                    <ul className="space-y-1.5">
                       {p.bullets.map((b, bi) => (
-                        <li key={bi} className="flex items-start gap-1.5 text-[10px] text-foreground/80 leading-snug">
-                          <span className="w-1 h-1 rounded-full bg-primary mt-1 shrink-0" />
+                        <li key={bi} className="flex items-start gap-2 text-[14px] text-foreground/80 leading-snug">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-[7px] shrink-0" />
                           {b}
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-auto pt-1.5 border-t border-destructive/15">
-                      <p className="text-[9px] text-destructive font-semibold leading-snug">
+                    <div className="mt-auto pt-2.5 border-t border-destructive/15">
+                      <p className="text-[13px] text-destructive font-semibold leading-snug">
                         ⚠ {p.problem}
                       </p>
                     </div>
@@ -180,7 +185,7 @@ const Slide02Problem = () => {
 
         {/* Bottom stats banner */}
         <div
-          className="shrink-0 flex justify-center gap-10 py-3 bg-destructive/5 border border-destructive/10 rounded-xl opacity-0 animate-fade-in"
+          className="shrink-0 flex justify-center gap-14 py-4 bg-destructive/5 border border-destructive/10 rounded-2xl opacity-0 animate-fade-in"
           style={{ animationDelay: "0.7s", animationFillMode: "forwards" }}
         >
           {[
@@ -191,8 +196,8 @@ const Slide02Problem = () => {
             { value: "20–30%", label: "Solar Underperformance" },
           ].map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-xl font-extrabold text-destructive">{s.value}</div>
-              <div className="text-[11px] text-muted-foreground">{s.label}</div>
+              <div className="text-[28px] font-extrabold text-destructive">{s.value}</div>
+              <div className="text-[14px] text-muted-foreground">{s.label}</div>
             </div>
           ))}
         </div>
