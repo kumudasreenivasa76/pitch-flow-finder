@@ -95,7 +95,7 @@ const Slide02Problem = () => {
         {/* Left sidebar */}
         <div className="w-[580px] shrink-0 flex flex-col bg-card/40 border-r border-border/30">
           {/* Header */}
-          <div className="px-10 pt-10 pb-6 shrink-0 border-b border-border/20">
+          <div className="px-10 pt-8 pb-5 shrink-0 border-b border-border/20">
             <div className="flex items-center gap-4 opacity-0 animate-fade-in" style={{ animationFillMode: "forwards" }}>
               <div className="w-14 h-14 rounded-2xl bg-destructive/10 flex items-center justify-center">
                 <AlertTriangle className="w-7 h-7 text-destructive" />
@@ -110,7 +110,7 @@ const Slide02Problem = () => {
           </div>
 
           {/* Problem list */}
-          <div className="flex-1 flex flex-col gap-1 px-5 py-4 overflow-y-auto">
+          <div className="flex-1 flex flex-col justify-center gap-1.5 px-5 py-3">
             {problems.map((prob, i) => {
               const PIcon = prob.icon;
               const isActive = selected === i;
@@ -147,67 +147,53 @@ const Slide02Problem = () => {
         </div>
 
         {/* Right detail panel */}
-        <div className="flex-1 flex flex-col px-14 py-10" key={selected}>
+        <div className="flex-1 flex flex-col px-12 pt-7 pb-16 overflow-hidden" key={selected}>
           {/* Header with stat */}
-          <div className="shrink-0 mb-8 animate-fade-in">
-            <div className="flex items-start justify-between">
-              <div className="flex items-center gap-5">
-                <div className="w-[72px] h-[72px] rounded-2xl bg-primary flex items-center justify-center text-primary-foreground shadow-xl shadow-primary/20">
-                  <Icon className="w-9 h-9" />
-                </div>
-                <div>
-                  <span className="text-[15px] text-muted-foreground font-mono">Problem {p.num} of 06</span>
-                  <h3 className="text-[36px] font-extrabold text-foreground leading-tight mt-1">{p.title}</h3>
-                </div>
+          <div className="shrink-0 animate-fade-in">
+            <div className="flex items-center gap-4">
+              <div className="w-[56px] h-[56px] rounded-2xl bg-primary flex items-center justify-center text-primary-foreground shadow-lg shadow-primary/20">
+                <Icon className="w-7 h-7" />
               </div>
-            </div>
-            {/* Big stat callout */}
-            <div className="mt-6 flex items-center gap-6 p-6 rounded-2xl bg-primary/[0.05] border border-primary/15">
-              <span className="text-[56px] font-black text-primary leading-none">{p.stat}</span>
-              <span className="text-[18px] text-muted-foreground uppercase tracking-wider font-semibold">{p.statLabel}</span>
+              <div className="flex-1">
+                <span className="text-[13px] text-muted-foreground font-mono">Problem {p.num} of 06</span>
+                <h3 className="text-[30px] font-extrabold text-foreground leading-tight">{p.title}</h3>
+              </div>
+              <div className="text-right shrink-0">
+                <div className="text-[42px] font-black text-primary leading-none">{p.stat}</div>
+                <div className="text-[13px] text-muted-foreground uppercase tracking-wider mt-1">{p.statLabel}</div>
+              </div>
             </div>
           </div>
 
           {/* Data points */}
-          <div className="flex-1 min-h-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            <h4 className="text-[15px] font-bold text-muted-foreground uppercase tracking-widest mb-5">Key Data Points</h4>
-            <div className="space-y-3">
+          <div className="flex-1 min-h-0 mt-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <h4 className="text-[13px] font-bold text-muted-foreground uppercase tracking-widest mb-3">Key Data Points</h4>
+            <div className="space-y-2.5">
               {p.bullets.map((b, bi) => (
                 <div
                   key={bi}
-                  className="flex items-start gap-4 p-5 rounded-xl bg-card border border-border/30 hover:border-primary/20 hover:shadow-md transition-all duration-300 opacity-0 animate-fade-in"
+                  className="flex items-center gap-3 p-3.5 rounded-xl bg-card border border-border/30 hover:border-primary/20 hover:shadow-md transition-all duration-300 opacity-0 animate-fade-in"
                   style={{ animationDelay: `${0.15 + bi * 0.08}s`, animationFillMode: "forwards" }}
                 >
-                  <span className="w-10 h-10 rounded-xl bg-primary/10 text-primary text-[16px] font-bold flex items-center justify-center shrink-0">
+                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary text-[14px] font-bold flex items-center justify-center shrink-0">
                     {bi + 1}
                   </span>
-                  <span className="text-[18px] text-foreground leading-relaxed">{b}</span>
+                  <span className="text-[15px] text-foreground leading-snug">{b}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Impact bar */}
-          <div className="shrink-0 mt-6 p-5 rounded-2xl bg-destructive/[0.04] border border-destructive/15 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <span className="text-[14px] font-bold text-destructive uppercase tracking-wider">⚠ Business Impact</span>
-            <div className="flex gap-3 mt-3 flex-wrap">
+          <div className="shrink-0 mt-6 p-4 rounded-2xl bg-destructive/[0.04] border border-destructive/15 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <span className="text-[13px] font-bold text-destructive uppercase tracking-wider">⚠ Business Impact</span>
+            <div className="flex gap-2.5 mt-2.5 flex-wrap">
               {p.impact.map((imp, ii) => (
-                <span key={ii} className="px-5 py-2.5 rounded-xl bg-destructive/10 text-destructive text-[16px] font-semibold">
+                <span key={ii} className="px-4 py-2 rounded-lg bg-destructive/10 text-destructive text-[14px] font-semibold">
                   {imp}
                 </span>
               ))}
             </div>
-          </div>
-
-          {/* Navigation dots */}
-          <div className="flex items-center justify-center gap-2.5 mt-6 shrink-0">
-            {problems.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setSelected(i)}
-                className={`rounded-full transition-all duration-300 ${i === selected ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-muted-foreground/20 hover:bg-muted-foreground/40"}`}
-              />
-            ))}
           </div>
         </div>
       </div>
