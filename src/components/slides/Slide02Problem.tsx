@@ -147,52 +147,54 @@ const Slide02Problem = () => {
         </div>
 
         {/* Right detail panel */}
-        <div className="flex-1 flex flex-col justify-center px-12 pb-16 overflow-hidden" key={selected}>
-          {/* Header with stat */}
-          <div className="shrink-0 animate-fade-in">
-            <div className="flex items-center gap-4">
-              <div className="w-[56px] h-[56px] rounded-2xl bg-primary flex items-center justify-center text-primary-foreground shadow-lg shadow-primary/20">
-                <Icon className="w-7 h-7" />
-              </div>
-              <div className="flex-1">
-                <span className="text-[13px] text-muted-foreground font-mono">Problem {p.num} of 06</span>
-                <h3 className="text-[30px] font-extrabold text-foreground leading-tight">{p.title}</h3>
-              </div>
-              <div className="text-right shrink-0">
-                <div className="text-[42px] font-black text-primary leading-none">{p.stat}</div>
-                <div className="text-[13px] text-muted-foreground uppercase tracking-wider mt-1">{p.statLabel}</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Data points */}
-          <div className="flex-1 min-h-0 mt-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            <h4 className="text-[13px] font-bold text-muted-foreground uppercase tracking-widest mb-3">Key Data Points</h4>
-            <div className="space-y-2.5">
-              {p.bullets.map((b, bi) => (
-                <div
-                  key={bi}
-                  className="flex items-center gap-3 p-3.5 rounded-xl bg-card border border-border/30 hover:border-primary/20 hover:shadow-md transition-all duration-300 opacity-0 animate-fade-in"
-                  style={{ animationDelay: `${0.15 + bi * 0.08}s`, animationFillMode: "forwards" }}
-                >
-                  <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary text-[14px] font-bold flex items-center justify-center shrink-0">
-                    {bi + 1}
-                  </span>
-                  <span className="text-[15px] text-foreground leading-snug">{b}</span>
+        <div className="flex-1 flex items-center justify-center px-12 pb-16 overflow-hidden" key={selected}>
+          <div className="w-full max-w-[1100px]">
+            {/* Header with stat */}
+            <div className="animate-fade-in">
+              <div className="flex items-center gap-4">
+                <div className="w-[56px] h-[56px] rounded-2xl bg-primary flex items-center justify-center text-primary-foreground shadow-lg shadow-primary/20">
+                  <Icon className="w-7 h-7" />
                 </div>
-              ))}
+                <div className="flex-1">
+                  <span className="text-[13px] text-muted-foreground font-mono">Problem {p.num} of 06</span>
+                  <h3 className="text-[30px] font-extrabold text-foreground leading-tight">{p.title}</h3>
+                </div>
+                <div className="text-right shrink-0">
+                  <div className="text-[42px] font-black text-primary leading-none">{p.stat}</div>
+                  <div className="text-[13px] text-muted-foreground uppercase tracking-wider mt-1">{p.statLabel}</div>
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Impact bar */}
-          <div className="shrink-0 mt-6 p-4 rounded-2xl bg-destructive/[0.04] border border-destructive/15 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <span className="text-[13px] font-bold text-destructive uppercase tracking-wider">⚠ Business Impact</span>
-            <div className="flex gap-2.5 mt-2.5 flex-wrap">
-              {p.impact.map((imp, ii) => (
-                <span key={ii} className="px-4 py-2 rounded-lg bg-destructive/10 text-destructive text-[14px] font-semibold">
-                  {imp}
-                </span>
-              ))}
+            {/* Data points */}
+            <div className="mt-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <h4 className="text-[13px] font-bold text-muted-foreground uppercase tracking-widest mb-3">Key Data Points</h4>
+              <div className="space-y-2.5">
+                {p.bullets.map((b, bi) => (
+                  <div
+                    key={bi}
+                    className="flex items-center gap-3 p-3.5 rounded-xl bg-card border border-border/30 hover:border-primary/20 hover:shadow-md transition-all duration-300 opacity-0 animate-fade-in"
+                    style={{ animationDelay: `${0.15 + bi * 0.08}s`, animationFillMode: "forwards" }}
+                  >
+                    <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary text-[14px] font-bold flex items-center justify-center shrink-0">
+                      {bi + 1}
+                    </span>
+                    <span className="text-[15px] text-foreground leading-snug">{b}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Impact bar - sits right below data points */}
+            <div className="mt-5 p-4 rounded-2xl bg-destructive/[0.04] border border-destructive/15 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              <span className="text-[13px] font-bold text-destructive uppercase tracking-wider">⚠ Business Impact</span>
+              <div className="flex gap-2.5 mt-2.5 flex-wrap">
+                {p.impact.map((imp, ii) => (
+                  <span key={ii} className="px-4 py-2 rounded-lg bg-destructive/10 text-destructive text-[14px] font-semibold">
+                    {imp}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
