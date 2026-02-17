@@ -7,6 +7,7 @@ import Slide05Platform from "@/components/slides/Slide05Platform";
 import Slide06Features from "@/components/slides/Slide06Features";
 import Slide07Layer1 from "@/components/slides/Slide07Layer1";
 import Slide08Layer2 from "@/components/slides/Slide08Layer2";
+import SlideDataCenter from "@/components/slides/SlideDataCenter";
 import Slide09Models from "@/components/slides/Slide09Models";
 import Slide10Calculator from "@/components/slides/Slide10Calculator";
 import Slide11Business from "@/components/slides/Slide11Business";
@@ -29,6 +30,7 @@ const slides = [
   <Slide06Features />,
   <Slide07Layer1 />,
   <Slide08Layer2 />,
+  <SlideDataCenter />,
   <Slide09Models />,
   <Slide10Calculator />,
   <Slide11Business />,
