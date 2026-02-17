@@ -101,99 +101,90 @@ const Slide02Problem = () => {
 
   return (
     <SlideLayout>
-      <div className="flex flex-col h-full px-16 py-10">
+      <div className="flex flex-col h-full px-16 py-8 justify-between">
         {/* Header */}
-        <div className="flex items-center gap-4 mb-1 opacity-0 animate-fade-in" style={{ animationFillMode: "forwards" }}>
-          <div className="w-11 h-11 rounded-xl bg-destructive/10 flex items-center justify-center">
-            <AlertTriangle className="w-5 h-5 text-destructive" />
+        <div className="shrink-0">
+          <div className="flex items-center gap-3 mb-1 opacity-0 animate-fade-in" style={{ animationFillMode: "forwards" }}>
+            <div className="w-10 h-10 rounded-xl bg-destructive/10 flex items-center justify-center">
+              <AlertTriangle className="w-5 h-5 text-destructive" />
+            </div>
+            <h2 className="text-[40px] font-extrabold text-foreground leading-tight">
+              The Structural Market <span className="text-destructive">Failure</span>
+            </h2>
           </div>
-          <h2 className="text-[44px] font-extrabold text-foreground leading-tight">
-            The Structural Market <span className="text-destructive">Failure</span>
-          </h2>
+          <p
+            className="text-base text-muted-foreground mb-4 ml-[52px] opacity-0 animate-fade-in"
+            style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}
+          >
+            Six systemic failures blocking the clean energy transition — UK/EU focus
+          </p>
         </div>
-        <p
-          className="text-lg text-muted-foreground mb-6 ml-[60px] opacity-0 animate-fade-in"
-          style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}
-        >
-          Six systemic failures blocking the clean energy transition — UK/EU focus
-        </p>
 
-        {/* Problem cards */}
-        <div className="grid grid-cols-3 gap-3.5 flex-1 mb-5">
+        {/* Problem cards — constrained grid */}
+        <div className="grid grid-cols-3 grid-rows-2 gap-3 flex-1 min-h-0 mb-4">
           {problems.map((p, i) => {
             const isOpen = expanded === i;
             return (
               <button
                 key={i}
                 onClick={() => setExpanded(isOpen ? null : i)}
-                className={`group text-left rounded-2xl border p-4 transition-all duration-300 flex flex-col overflow-hidden opacity-0 animate-slide-up ${
+                className={`group text-left rounded-xl border p-3.5 transition-all duration-300 flex flex-col overflow-hidden opacity-0 animate-slide-up ${
                   isOpen
-                    ? "bg-primary/[0.06] border-primary/40 shadow-xl shadow-primary/10 -translate-y-0.5"
+                    ? "bg-primary/[0.06] border-primary/40 shadow-lg shadow-primary/10"
                     : "bg-card/80 border-border/50 hover:border-primary/20 hover:shadow-md"
                 }`}
                 style={{ animationDelay: `${0.15 + i * 0.07}s`, animationFillMode: "forwards" }}
               >
-                {/* Top: number + icon + stat */}
-                <div className="flex items-start justify-between mb-2">
+                <div className="flex items-center justify-between mb-1.5">
                   <div className="flex items-center gap-2">
-                    <span className={`text-xs font-bold px-2 py-0.5 rounded-md transition-colors duration-300 ${
+                    <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded transition-colors duration-300 ${
                       isOpen ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground"
                     }`}>
                       {p.num}
                     </span>
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors duration-300 ${
+                    <div className={`w-7 h-7 rounded-lg flex items-center justify-center transition-colors duration-300 ${
                       isOpen ? "bg-primary/15 text-primary" : "bg-secondary text-muted-foreground"
                     }`}>
-                      <p.icon className="w-4 h-4" />
+                      <p.icon className="w-3.5 h-3.5" />
                     </div>
                   </div>
                   <div className="text-right shrink-0">
-                    <div className={`text-xl font-extrabold leading-none transition-colors duration-300 ${
+                    <div className={`text-lg font-extrabold leading-none transition-colors duration-300 ${
                       isOpen ? "text-primary" : "text-foreground"
                     }`}>
                       {p.stat}
                     </div>
-                    <div className="text-[9px] text-muted-foreground uppercase tracking-wider mt-0.5 max-w-[120px] text-right">
+                    <div className="text-[8px] text-muted-foreground uppercase tracking-wider mt-0.5">
                       {p.statLabel}
                     </div>
                   </div>
                 </div>
 
-                {/* Title */}
-                <h3 className="text-[13px] font-bold text-foreground mb-1 leading-snug">{p.title}</h3>
+                <h3 className="text-[12px] font-bold text-foreground mb-1 leading-snug">{p.title}</h3>
 
-                {/* Collapsed state */}
                 {!isOpen && (
-                  <p className="text-[11px] text-destructive/80 italic mt-auto leading-snug line-clamp-2">
+                  <p className="text-[10px] text-destructive/80 italic mt-auto leading-snug line-clamp-2">
                     ⚠ {p.problem}
                   </p>
                 )}
 
-                {/* Expanded state */}
                 {isOpen && (
-                  <div className="mt-1 animate-fade-in flex flex-col flex-1">
-                    <ul className="space-y-1">
+                  <div className="mt-0.5 animate-fade-in flex flex-col flex-1 overflow-y-auto min-h-0">
+                    <ul className="space-y-0.5">
                       {p.bullets.map((b, bi) => (
-                        <li key={bi} className="flex items-start gap-1.5 text-[11px] text-foreground/80 leading-snug">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1 shrink-0" />
+                        <li key={bi} className="flex items-start gap-1.5 text-[10px] text-foreground/80 leading-snug">
+                          <span className="w-1 h-1 rounded-full bg-primary mt-1 shrink-0" />
                           {b}
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-auto pt-2 border-t border-destructive/15">
-                      <p className="text-[10px] text-destructive font-semibold leading-snug">
+                    <div className="mt-auto pt-1.5 border-t border-destructive/15">
+                      <p className="text-[9px] text-destructive font-semibold leading-snug">
                         ⚠ {p.problem}
                       </p>
                     </div>
                   </div>
                 )}
-
-                {/* Expand indicator */}
-                <div className="flex justify-center mt-2">
-                  <div className={`w-6 h-0.5 rounded-full transition-colors duration-300 ${
-                    isOpen ? "bg-primary" : "bg-border"
-                  }`} />
-                </div>
               </button>
             );
           })}
@@ -201,7 +192,7 @@ const Slide02Problem = () => {
 
         {/* Bottom stats banner */}
         <div
-          className="flex justify-center gap-10 py-3.5 bg-destructive/5 border border-destructive/10 rounded-2xl opacity-0 animate-fade-in"
+          className="shrink-0 flex justify-center gap-10 py-3 bg-destructive/5 border border-destructive/10 rounded-xl opacity-0 animate-fade-in"
           style={{ animationDelay: "0.7s", animationFillMode: "forwards" }}
         >
           {[
@@ -212,8 +203,8 @@ const Slide02Problem = () => {
             { value: "$4T+", label: "Investment Gap" },
           ].map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-2xl font-extrabold text-destructive">{s.value}</div>
-              <div className="text-xs text-muted-foreground">{s.label}</div>
+              <div className="text-xl font-extrabold text-destructive">{s.value}</div>
+              <div className="text-[11px] text-muted-foreground">{s.label}</div>
             </div>
           ))}
         </div>
