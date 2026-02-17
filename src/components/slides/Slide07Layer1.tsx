@@ -9,7 +9,7 @@ const hotspots = [
     icon: Building2,
     label: "Asset Onboarding",
     // position on the image (%)
-    top: "38%", left: "5%",
+    top: "18%", left: "8%",
     details: [
       "Schools, universities, rooftop & utility solar",
       "Geo-tagged location + capacity (kW/MW)",
@@ -24,7 +24,7 @@ const hotspots = [
     id: 1,
     icon: Zap,
     label: "Energy Intelligence",
-    top: "8%", left: "22%",
+    top: "5%", left: "30%",
     details: [
       "Energy production log validation",
       "Grid injection proof & timestamp consistency",
@@ -39,7 +39,7 @@ const hotspots = [
     id: 2,
     icon: Award,
     label: "Certification",
-    top: "8%", left: "52%",
+    top: "10%", left: "62%",
     details: [
       "Geographic eligibility & grid compliance",
       "Registry submission & body validation",
@@ -54,7 +54,7 @@ const hotspots = [
     id: 3,
     icon: Briefcase,
     label: "Enterprise ESG",
-    top: "62%", left: "18%",
+    top: "55%", left: "10%",
     details: [
       "Scope 1/2/3 emissions baseline",
       "Carbon gap analysis & RE100 deficit",
@@ -69,7 +69,7 @@ const hotspots = [
     id: 4,
     icon: Landmark,
     label: "Capital Deployment",
-    top: "58%", left: "45%",
+    top: "55%", left: "38%",
     details: [
       "Enterprise commits capital to real projects",
       "EcoGridia structures agreement & due diligence",
@@ -84,7 +84,7 @@ const hotspots = [
     id: 5,
     icon: FileCheck,
     label: "Compliance & Reporting",
-    top: "48%", left: "68%",
+    top: "55%", left: "62%",
     details: [
       "ESG reports & Scope 2 renewable disclosures",
       "Carbon neutral certification reports",
