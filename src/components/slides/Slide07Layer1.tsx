@@ -7,7 +7,7 @@ const hotspots = [
   {
     id: 0,
     icon: Building2,
-    label: "Asset Onboarding",
+    label: "AssetSync",
     // position on the image (%)
     top: "18%", left: "8%",
     details: [
@@ -23,7 +23,7 @@ const hotspots = [
   {
     id: 1,
     icon: Zap,
-    label: "Energy Intelligence",
+    label: "EnergyIQ",
     top: "5%", left: "30%",
     details: [
       "Energy production log validation",
@@ -38,7 +38,7 @@ const hotspots = [
   {
     id: 2,
     icon: Award,
-    label: "Certification",
+    label: "CertEngine",
     top: "10%", left: "62%",
     details: [
       "Geographic eligibility & grid compliance",
@@ -53,7 +53,7 @@ const hotspots = [
   {
     id: 3,
     icon: Briefcase,
-    label: "Enterprise ESG",
+    label: "CarbonMatch",
     top: "55%", left: "10%",
     details: [
       "Scope 1/2/3 emissions baseline",
@@ -68,7 +68,7 @@ const hotspots = [
   {
     id: 4,
     icon: Landmark,
-    label: "Capital Deployment",
+    label: "CapitalFlow",
     top: "55%", left: "38%",
     details: [
       "Enterprise commits capital to real projects",
@@ -83,7 +83,7 @@ const hotspots = [
   {
     id: 5,
     icon: FileCheck,
-    label: "Compliance & Reporting",
+    label: "ComplianceHub",
     top: "55%", left: "62%",
     details: [
       "ESG reports & Scope 2 renewable disclosures",
