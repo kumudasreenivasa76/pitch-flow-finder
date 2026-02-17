@@ -147,7 +147,7 @@ const Slide02Problem = () => {
         </div>
 
         {/* Right detail panel */}
-        <div className="flex-1 flex flex-col px-12 pt-7 pb-16 overflow-hidden" key={selected}>
+        <div className="flex-1 flex flex-col justify-center px-12 pb-16 overflow-hidden" key={selected}>
           {/* Header with stat */}
           <div className="shrink-0 animate-fade-in">
             <div className="flex items-center gap-4">
