@@ -193,9 +193,14 @@ const SlideDataCenter = () => {
           </div>
         </div>
 
-        {/* Full-bleed image — white bg, object-contain, same as Slide07 */}
+        {/* Full-bleed image — white bg, mix-blend-mode to strip dark bg */}
         <div className="absolute inset-0 bg-white">
-          <img src={datacenterImg} alt="Data Center ecosystem" className="w-full h-full object-contain" />
+          <img
+            src={datacenterImg}
+            alt="Data Center ecosystem"
+            className="w-full h-full object-contain"
+            style={{ mixBlendMode: "multiply" }}
+          />
         </div>
 
         {/* Lifecycle bar — same style as Slide07 */}
