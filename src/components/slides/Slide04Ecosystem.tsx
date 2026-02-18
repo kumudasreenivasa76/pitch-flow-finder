@@ -225,10 +225,11 @@ const NetworkOrb = ({ active }: { active: boolean }) => {
 };
 
 /* ─── Main ─── */
-const CX = 50; // % center x
-const CY = 50; // % center y
-const RX = 340; // px radius x (in 1920-space)
-const RY = 210; // px radius y
+// Orbit radii as % of the 1920×1080 slide canvas
+const CX = 50;   // center x %
+const CY = 50;   // center y %
+const RX = 26;   // radius x as % of width  (≈500px on 1920)
+const RY = 34;   // radius y as % of height (≈367px on 1080)
 
 const Slide04Ecosystem = () => {
   const [selected, setSelected] = useState<number | null>(null);
@@ -281,7 +282,7 @@ const Slide04Ecosystem = () => {
             </p>
           </div>
 
-          {/* SVG connection lines */}
+          {/* SVG connection lines — drawn in % space matching node positions */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
             <defs>
               {stakeholders.map((s) => (
@@ -297,24 +298,20 @@ const Slide04Ecosystem = () => {
             </defs>
             {stakeholders.map((s) => {
               const rad = (s.angle * Math.PI) / 180;
-              const nx = CX + (Math.cos(rad) * RX) / 9.6;
-              const ny = CY + (Math.sin(rad) * RY) / 4.7;
+              const nx = CX + Math.cos(rad) * RX;
+              const ny = CY + Math.sin(rad) * RY;
               const isActive = selected === s.id;
               const isDimmed = selected !== null && !isActive;
               return (
                 <g key={s.id}>
-                  {/* Shadow glow line */}
                   {isActive && (
                     <line
                       x1={`${CX}%`} y1={`${CY}%`}
                       x2={`${nx}%`} y2={`${ny}%`}
-                      stroke={s.lineColor}
-                      strokeWidth="6"
-                      opacity="0.12"
+                      stroke={s.lineColor} strokeWidth="6" opacity="0.12"
                       filter="url(#glow-line)"
                     />
                   )}
-                  {/* Main line */}
                   <line
                     x1={`${CX}%`} y1={`${CY}%`}
                     x2={`${nx}%`} y2={`${ny}%`}
@@ -336,19 +333,13 @@ const Slide04Ecosystem = () => {
             className="relative flex items-center justify-center cursor-pointer z-10"
             style={{ width: 200, height: 200 }}
           >
-            {/* Outer ambient pulse rings */}
             <div className="absolute rounded-full pointer-events-none"
               style={{ inset: -50, border: "1.5px solid rgba(16,185,129,0.18)", animation: "orb-pulse-a 4s ease-in-out infinite" }} />
             <div className="absolute rounded-full pointer-events-none"
               style={{ inset: -30, border: "1.5px solid rgba(6,182,212,0.22)", animation: "orb-pulse-b 4s ease-in-out 1.8s infinite" }} />
-            {/* Slow spinning dashed ring */}
             <div className="absolute rounded-full pointer-events-none"
               style={{ inset: -14, border: "1.5px dashed rgba(16,185,129,0.28)", animation: "orb-rotate 20s linear infinite" }} />
-
-            {/* 3D Network Orb */}
             <NetworkOrb active={selected === null} />
-
-            {/* Center text overlay */}
             <div className="relative z-10 flex flex-col items-center text-center" style={{ animation: "icon-glow 3s ease-in-out infinite" }}>
               <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-1"
                 style={{
@@ -365,8 +356,8 @@ const Slide04Ecosystem = () => {
           {/* ── Stakeholder Nodes ── */}
           {stakeholders.map((s, i) => {
             const rad = (s.angle * Math.PI) / 180;
-            const x = CX + (Math.cos(rad) * RX) / 9.6;
-            const y = CY + (Math.sin(rad) * RY) / 4.7;
+            const x = CX + Math.cos(rad) * RX;
+            const y = CY + Math.sin(rad) * RY;
             const isActive = selected === s.id;
             const isDimmed = selected !== null && !isActive;
             const Icon = s.icon;
@@ -376,8 +367,8 @@ const Slide04Ecosystem = () => {
                 onClick={() => setSelected(isActive ? null : s.id)}
                 className="absolute flex flex-col items-center gap-1.5 z-10 group"
                 style={{
-                  left: `calc(${x}% - 52px)`,
-                  top: `calc(${y}% - 62px)`,
+                left: `calc(${x}% - 44px)`,
+                  top: `calc(${y}% - 54px)`,
                   opacity: isDimmed ? 0.28 : 1,
                   transition: "opacity 0.25s ease",
                   animation: `node-in 0.45s ease-out ${i * 0.08}s both, float-node ${5 + i * 0.4}s ease-in-out ${i * 0.3}s infinite`,
@@ -385,7 +376,7 @@ const Slide04Ecosystem = () => {
               >
                 {/* 3D-style node disc */}
                 <div
-                  className="w-[104px] h-[104px] rounded-full flex items-center justify-center relative transition-all duration-250"
+                  className="w-[88px] h-[88px] rounded-full flex items-center justify-center relative transition-all duration-250"
                   style={{
                     background: isActive
                       ? `radial-gradient(circle at 35% 35%, rgba(255,255,255,0.95), ${s.nodeBg})`
@@ -404,8 +395,8 @@ const Slide04Ecosystem = () => {
                       border: `1px solid ${isActive ? s.nodeBorder : "rgba(16,185,129,0.12)"}`,
                       background: isActive ? s.nodeBg : "rgba(16,185,129,0.03)",
                     }} />
-                  <Icon
-                    className="w-10 h-10 relative z-10 transition-all duration-250"
+                   <Icon
+                    className="w-8 h-8 relative z-10 transition-all duration-250"
                     style={{
                       color: isActive ? s.lineColor : "rgba(16,185,129,0.55)",
                       filter: isActive ? `drop-shadow(0 2px 8px ${s.nodeGlow})` : undefined,
