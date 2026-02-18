@@ -100,3 +100,36 @@
     linear-gradient(90deg, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
 }
+
+/* Premium glass card */
+.glass-card {
+  background: hsla(160, 20%, 99%, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid hsla(160, 15%, 90%, 0.6);
+}
+
+.dark .glass-card {
+  background: hsla(160, 20%, 8%, 0.7);
+  border: 1px solid hsla(160, 15%, 20%, 0.6);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(160, 84%, 39%), hsl(174, 72%, 40%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Premium section header line */
+.section-line {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, hsl(160, 84%, 39%), hsl(174, 72%, 40%));
+  border-radius: 2px;
+}
+
+/* Stat glow */
+.stat-glow {
+  text-shadow: 0 0 40px hsla(160, 84%, 39%, 0.2);
+}

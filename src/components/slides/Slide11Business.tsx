@@ -21,30 +21,46 @@ const streams = [
 
 const Slide11Business = () => (
   <SlideLayout>
-    <div className="flex flex-col h-full px-20 py-16">
-      <h2 className="text-5xl font-bold text-foreground mb-2 animate-fade-in">
-        Business Model: <span className="text-primary">High-Margin, Recurring, Global</span>
-      </h2>
-      <p className="text-2xl text-muted-foreground mb-8">Software-first economics with zero hardware risk.</p>
+    <div className="flex flex-col h-full px-20 py-14">
+      {/* Header */}
+      <div className="flex items-center gap-4 mb-2 opacity-0 animate-fade-in" style={{ animationFillMode: "forwards" }}>
+        <div className="section-line" />
+        <h2 className="text-[44px] font-extrabold text-foreground leading-none">
+          Business Model: <span className="gradient-text">High-Margin, Recurring</span>
+        </h2>
+      </div>
+      <p className="text-[20px] text-muted-foreground mb-8 ml-[60px] opacity-0 animate-fade-in" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
+        Software-first economics with zero hardware risk
+      </p>
 
       {/* Highlights */}
-      <div className="grid grid-cols-4 gap-6 mb-10">
+      <div className="grid grid-cols-4 gap-5 mb-8">
         {highlights.map((h, i) => (
-          <div key={i} className="bg-primary/5 rounded-2xl p-6 text-center border border-primary/20 animate-fade-in" style={{ animationDelay: `${i * 0.1}s` }}>
-            <h.icon className="w-10 h-10 text-primary mx-auto mb-3" />
-            <div className="text-4xl font-bold text-primary">{h.value}</div>
-            <div className="text-lg text-muted-foreground">{h.label}</div>
+          <div
+            key={i}
+            className="rounded-2xl bg-gradient-to-br from-primary/5 to-eco-teal/5 border border-primary/20 p-6 text-center hover:shadow-lg hover:border-primary/40 transition-all duration-300 opacity-0 animate-fade-in"
+            style={{ animationDelay: `${0.1 + i * 0.06}s`, animationFillMode: "forwards" }}
+          >
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
+              <h.icon className="w-6 h-6 text-primary" />
+            </div>
+            <div className="text-[32px] font-extrabold gradient-text">{h.value}</div>
+            <div className="text-[15px] text-muted-foreground font-medium">{h.label}</div>
           </div>
         ))}
       </div>
 
       {/* Revenue streams */}
-      <div className="grid grid-cols-4 gap-4 flex-1">
+      <div className="grid grid-cols-4 gap-3.5 flex-1">
         {streams.map((s, i) => (
-          <div key={i} className="bg-card rounded-xl border border-border p-6 hover:border-primary/40 transition-all animate-fade-in" style={{ animationDelay: `${i * 0.05}s` }}>
-            <div className="text-2xl font-bold text-primary mb-1">{s.margin}</div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">{s.name}</h3>
-            <p className="text-base text-muted-foreground">{s.desc}</p>
+          <div
+            key={i}
+            className="rounded-xl border border-border/40 bg-card p-5 hover:border-primary/30 hover:shadow-md transition-all duration-300 flex flex-col opacity-0 animate-fade-in"
+            style={{ animationDelay: `${0.2 + i * 0.04}s`, animationFillMode: "forwards" }}
+          >
+            <div className="text-[24px] font-extrabold text-primary mb-1">{s.margin}</div>
+            <h3 className="text-[15px] font-bold text-foreground mb-2">{s.name}</h3>
+            <p className="text-[13px] text-muted-foreground leading-relaxed mt-auto">{s.desc}</p>
           </div>
         ))}
       </div>
