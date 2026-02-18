@@ -1,12 +1,11 @@
 import SlideLayout from "../SlideLayout";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
-import { Users, Building2, ShoppingCart, BarChart3 } from "lucide-react";
 
 const metrics = [
-  { label: "Active Vendors", value: "40", sub: "Onboarded", icon: ShoppingCart },
-  { label: "Sites", value: "10", sub: "Under management", icon: Building2 },
-  { label: "Enterprises", value: "3", sub: "Paying customers", icon: BarChart3 },
-  { label: "Subscribers", value: "150", sub: "Platform users", icon: Users },
+  { label: "Active Vendors", value: "40", sub: "Onboarded" },
+  { label: "Sites", value: "10", sub: "Under management" },
+  { label: "Enterprises", value: "3", sub: "Paying customers" },
+  { label: "Subscribers", value: "150", sub: "Platform users" },
 ];
 
 const revenue = [
@@ -19,42 +18,32 @@ const revenue = [
 
 const Slide19Pipeline = () => (
   <SlideLayout>
-    <div className="flex flex-col h-full px-20 py-14">
-      <div className="flex items-center gap-4 mb-2 opacity-0 animate-fade-in" style={{ animationFillMode: "forwards" }}>
-        <div className="section-line" />
-        <h2 className="text-[44px] font-extrabold text-foreground leading-none">
-          Active Revenue <span className="gradient-text">Pipeline</span>
-        </h2>
-      </div>
-      <p className="text-[20px] text-muted-foreground mb-8 ml-[60px] opacity-0 animate-fade-in" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
-        Current month performance and traction metrics
-      </p>
+    <div className="flex flex-col h-full px-20 py-16">
+      <h2 className="text-5xl font-bold text-foreground mb-2 animate-fade-in">
+        Active Revenue <span className="text-primary">Pipeline</span>
+      </h2>
+      <p className="text-2xl text-muted-foreground mb-10">Current month performance and traction metrics.</p>
 
       {/* Metrics */}
-      <div className="grid grid-cols-4 gap-5 mb-8">
+      <div className="grid grid-cols-4 gap-6 mb-10">
         {metrics.map((m, i) => (
-          <div
-            key={i}
-            className="rounded-2xl border border-border/40 bg-card p-6 text-center hover:border-primary/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 opacity-0 animate-fade-in"
-            style={{ animationDelay: `${0.15 + i * 0.06}s`, animationFillMode: "forwards" }}
-          >
-            <m.icon className="w-6 h-6 text-primary mx-auto mb-2" />
-            <div className="text-[40px] font-extrabold gradient-text leading-tight">{m.value}</div>
-            <div className="text-[16px] font-bold text-foreground mt-1">{m.label}</div>
-            <div className="text-[13px] text-muted-foreground">{m.sub}</div>
+          <div key={i} className="bg-card rounded-2xl border border-border p-8 text-center animate-fade-in" style={{ animationDelay: `${i * 0.1}s` }}>
+            <div className="text-5xl font-bold text-primary">{m.value}</div>
+            <div className="text-xl font-semibold text-foreground mt-2">{m.label}</div>
+            <div className="text-lg text-muted-foreground">{m.sub}</div>
           </div>
         ))}
       </div>
 
-      <div className="grid grid-cols-2 gap-8 flex-1">
+      <div className="grid grid-cols-2 gap-10 flex-1">
         {/* Pie chart */}
-        <div className="rounded-2xl border border-border/40 bg-card p-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.35s", animationFillMode: "forwards" }}>
-          <h3 className="text-[18px] font-bold text-foreground mb-4">Revenue Breakdown</h3>
+        <div className="bg-card rounded-2xl border border-border p-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <h3 className="text-2xl font-bold text-foreground mb-4">Revenue Breakdown</h3>
           <ResponsiveContainer width="100%" height="85%">
             <PieChart>
-              <Pie data={revenue} cx="50%" cy="50%" outerRadius={130} innerRadius={60} dataKey="value" label={({ name, value }) => `${name} ${value}%`} labelLine={true} strokeWidth={2}>
+              <Pie data={revenue} cx="50%" cy="50%" outerRadius={140} dataKey="value" label={({ name, value }) => `${name} ${value}%`} labelLine={true}>
                 {revenue.map((entry, i) => (
-                  <Cell key={i} fill={entry.color} stroke="hsl(0, 0%, 100%)" />
+                  <Cell key={i} fill={entry.color} />
                 ))}
               </Pie>
               <Tooltip formatter={(value: number) => [`${value}%`, undefined]} />
@@ -63,18 +52,18 @@ const Slide19Pipeline = () => (
         </div>
 
         {/* Totals */}
-        <div className="flex flex-col gap-5 opacity-0 animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
-          <div className="bg-gradient-to-br from-primary/10 to-eco-teal/10 rounded-2xl border-2 border-primary/30 p-8 text-center flex-1 flex flex-col justify-center">
-            <div className="text-[14px] text-muted-foreground uppercase tracking-wider font-bold mb-2">Monthly Revenue</div>
-            <div className="text-[52px] font-black gradient-text leading-none stat-glow">$125K</div>
+        <div className="flex flex-col gap-6 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <div className="bg-primary/5 rounded-2xl border-2 border-primary p-10 text-center flex-1 flex flex-col justify-center">
+            <div className="text-xl text-muted-foreground mb-2">Monthly Revenue</div>
+            <div className="text-6xl font-bold text-primary">$125K</div>
           </div>
-          <div className="rounded-2xl border border-border/40 bg-card p-8 text-center flex-1 flex flex-col justify-center hover:shadow-lg transition-all">
-            <div className="text-[14px] text-muted-foreground uppercase tracking-wider font-bold mb-2">Annualized Run Rate</div>
-            <div className="text-[48px] font-extrabold text-foreground leading-none">$1.5M</div>
+          <div className="bg-card rounded-2xl border border-border p-10 text-center flex-1 flex flex-col justify-center">
+            <div className="text-xl text-muted-foreground mb-2">Annualized Run Rate</div>
+            <div className="text-6xl font-bold text-foreground">$1.5M</div>
           </div>
-          <div className="rounded-2xl border border-border/40 bg-card p-8 text-center flex-1 flex flex-col justify-center hover:shadow-lg transition-all">
-            <div className="text-[14px] text-muted-foreground uppercase tracking-wider font-bold mb-2">Pipeline Value</div>
-            <div className="text-[48px] font-extrabold text-eco-teal leading-none">$8.5M</div>
+          <div className="bg-card rounded-2xl border border-border p-10 text-center flex-1 flex flex-col justify-center">
+            <div className="text-xl text-muted-foreground mb-2">Pipeline Value</div>
+            <div className="text-6xl font-bold text-eco-teal">$8.5M</div>
           </div>
         </div>
       </div>
