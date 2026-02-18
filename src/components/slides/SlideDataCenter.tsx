@@ -1,157 +1,269 @@
 import { useState } from "react";
 import SlideLayout from "../SlideLayout";
-import { Server, BarChart3, Cpu, Sun, Calculator, Leaf, Monitor, ShieldCheck, X } from "lucide-react";
+import {
+  BarChart3, Map, Navigation, Zap, Shield, Clock,
+  BookOpen, Award, LayoutDashboard, FileText, Lock, X, ChevronRight
+} from "lucide-react";
 import datacenterImg from "@/assets/datacenter-flow-3d.png";
 
-const steps = [
+const phases = [
   {
-    id: 0,
-    icon: Server,
-    label: "DC Onboarding",
-    top: "12%", left: "5%",
-    details: [
-      "Facility details: MW capacity, region, cooling type",
-      "API integrations: Smart meters, BMS, DCIM",
-      "Cloud providers: AWS, Azure, GCP",
-      "Utility bill ingestion & 15-min data streaming",
-    ],
-    output: "Live energy & emissions data dashboard",
-    stat: "15 min",
-    statLabel: "Real-time streaming",
+    id: "P1",
+    label: "Baseline Assessment",
+    color: "bg-eco-emerald",
+    textColor: "text-eco-emerald",
+    borderColor: "border-eco-emerald/30",
+    bgLight: "bg-eco-emerald/10",
   },
   {
-    id: 1,
-    icon: BarChart3,
-    label: "Carbon Baseline",
-    top: "5%", left: "28%",
-    details: [
-      "PUE, WUE, CUE effectiveness metrics",
-      "Scope 1/2/3 emissions calculation",
-      "Generator & cooling emissions breakdown",
-      "Compliance gap analysis (CSRD, SEC, SECR)",
-    ],
-    output: "Carbon Baseline Report + 3-year decarbonization roadmap",
-    stat: "Scope 1-3",
-    statLabel: "Full emissions map",
+    id: "P2",
+    label: "Carbon Strategy",
+    color: "bg-primary",
+    textColor: "text-primary",
+    borderColor: "border-primary/30",
+    bgLight: "bg-primary/10",
   },
   {
-    id: 2,
-    icon: Cpu,
-    label: "OptiCore AI",
-    top: "5%", left: "58%",
-    details: [
-      "Cooling: thermal AI, liquid cooling, free-air modeling",
-      "Power: UPS efficiency, battery comparison, load shifting",
-      "IT: virtualization, zombie server detection",
-      "Workload carbon scoring & ROI-ranked plan",
-    ],
-    output: "Capex vs Opex model + savings forecast",
-    stat: "30%+",
-    statLabel: "Avg efficiency gain",
+    id: "P3",
+    label: "Dashboard Deploy",
+    color: "bg-eco-teal",
+    textColor: "text-eco-teal",
+    borderColor: "border-eco-teal/30",
+    bgLight: "bg-eco-teal/10",
   },
   {
-    id: 3,
-    icon: Sun,
-    label: "RenewLink",
-    top: "38%", left: "15%",
-    details: [
-      "On-site: solar feasibility, battery, microgrid design",
-      "Off-site: VPPA negotiation, REC/I-REC procurement",
-      "Hybrid: solar+wind mix, 24/7 carbon matching",
-      "Financial model + contract negotiation support",
-    ],
-    output: "Renewable Procurement Plan with financial model",
-    stat: "24/7",
-    statLabel: "Carbon matching",
+    id: "P4",
+    label: "Offset & REC",
+    color: "bg-purple-600",
+    textColor: "text-purple-400",
+    borderColor: "border-purple-500/30",
+    bgLight: "bg-purple-500/10",
   },
   {
-    id: 4,
-    icon: Calculator,
-    label: "ResidualCalc",
-    top: "38%", left: "42%",
-    details: [
-      "Post-efficiency remaining emissions calculated",
-      "Post-renewables residual carbon quantified",
-      "Offset requirement automatically determined",
-      "Gap-to-zero pathway generated",
-    ],
-    output: "Exact residual carbon requiring offset",
-    stat: "Auto",
-    statLabel: "Real-time calculation",
-  },
-  {
-    id: 5,
-    icon: Leaf,
-    label: "CarbonVault",
-    top: "38%", left: "65%",
-    details: [
-      "Marketplace: nature-based, engineered removals",
-      "Verra / Gold Standard verification",
-      "Enterprise investment: equity in solar/wind farms",
-      "Blockchain retirement tracking & certificates",
-    ],
-    output: "Verified retirement certificates + ESG documentation",
-    stat: "$50B",
-    statLabel: "Carbon market by 2030",
-  },
-  {
-    id: 6,
-    icon: Monitor,
-    label: "GridView SaaS",
-    top: "62%", left: "28%",
-    details: [
-      "Ops: live kWh, PUE, renewable %, carbon/workload",
-      "Investor: project ROI, credit accrual, risk scoring",
-      "Developer: certification tracking, fundraising pipeline",
-      "AI predictive forecast + anomaly detection",
-    ],
-    output: "Three dashboards: Operations, Investor, Developer",
-    stat: "3 Views",
-    statLabel: "Real-time dashboards",
-  },
-  {
-    id: 7,
-    icon: ShieldCheck,
-    label: "ComplianceOS",
-    top: "62%", left: "60%",
-    details: [
-      "One-click: SECR, ESOS, CSRD, SEC, CDP reports",
-      "Scope 1/2/3 auto-fill from live data",
-      "Double materiality analysis",
-      "Blockchain credit traceability & audit trail",
-    ],
-    output: "Regulatory-ready compliance exports",
-    stat: "5+",
-    statLabel: "Frameworks covered",
+    id: "P5",
+    label: "Exec & Compliance",
+    color: "bg-amber-600",
+    textColor: "text-amber-400",
+    borderColor: "border-amber-500/30",
+    bgLight: "bg-amber-500/10",
   },
 ];
+
+const steps = [
+  // Phase 1
+  {
+    id: 0, phase: "P1", icon: BarChart3,
+    label: "BaselineIQ™",
+    role: "Energy & Infrastructure Baseline",
+    top: "10%", left: "3%",
+    details: [
+      "12–24 months utility bills analysis",
+      "Peak load patterns & IT load vs total facility",
+      "Generator runtime & diesel usage",
+      "Cooling efficiency & UPS losses review",
+      "Historical PUE trends",
+      "Scope 1 (diesel) & Scope 2 (grid) emissions",
+      "Carbon intensity per MWh & per rack",
+      "Energy cost per MW & ESG compliance risk",
+    ],
+    outputs: [
+      "Energy Baseline Report",
+      "Carbon Inventory (Scope 1 & 2)",
+      "Efficiency Gap Analysis",
+      "Sustainability Readiness Score",
+    ],
+    stat: "24mo", statLabel: "Historical analysis",
+  },
+  // Phase 2
+  {
+    id: 1, phase: "P2", icon: Map,
+    label: "CarbonX-Ray™",
+    role: "Deep Carbon Diagnostic",
+    top: "10%", left: "25%",
+    details: [
+      "Carbon heatmap generation",
+      "High-emission zone identification",
+      "Carbon risk exposure modeling",
+      "Benchmark vs industry peers",
+    ],
+    outputs: ["Carbon Risk Report"],
+    stat: "Scope 1–3", statLabel: "Full carbon map",
+  },
+  {
+    id: 2, phase: "P2", icon: Navigation,
+    label: "NetZero Navigator™",
+    role: "Decarbonization Roadmap",
+    top: "10%", left: "48%",
+    details: [
+      "3–10 year carbon reduction plan",
+      "Renewable procurement roadmap",
+      "Offset transition strategy",
+      "24/7 carbon-free target path",
+    ],
+    outputs: ["Executive Sustainability Roadmap"],
+    stat: "10yr", statLabel: "Reduction horizon",
+  },
+  // Phase 3
+  {
+    id: 3, phase: "P3", icon: Zap,
+    label: "VoltIQ™",
+    role: "Real-Time Energy Dashboard",
+    top: "42%", left: "3%",
+    details: [
+      "Smart meters & utility API integration",
+      "Cooling system data feeds",
+      "Live facility load visualization",
+      "Renewable % & grid dependency tracking",
+      "Cost per MWh & carbon intensity display",
+    ],
+    outputs: ["Energy Performance Dashboard"],
+    stat: "Live", statLabel: "Real-time feed",
+  },
+  {
+    id: 4, phase: "P3", icon: Shield,
+    label: "PUE Guardian™",
+    role: "Efficiency Intelligence",
+    top: "42%", left: "25%",
+    details: [
+      "Real-time PUE monitoring",
+      "Cooling inefficiency detection",
+      "Drift detection & alerting",
+      "Efficiency benchmarking",
+    ],
+    outputs: ["Efficiency Intelligence Report"],
+    stat: "PUE", statLabel: "Continuous monitoring",
+  },
+  {
+    id: 5, phase: "P3", icon: Clock,
+    label: "CarbonMatch 24/7™",
+    role: "Hourly Carbon Monitoring",
+    top: "42%", left: "48%",
+    details: [
+      "Real-time grid carbon factor tracking",
+      "24/7 renewable matching",
+      "Market-based accounting",
+    ],
+    outputs: ["Hourly Carbon Matching Report"],
+    stat: "24/7", statLabel: "Carbon matching",
+  },
+  // Phase 4
+  {
+    id: 6, phase: "P4", icon: BookOpen,
+    label: "CarbonLedger™",
+    role: "Offset Modeling Engine",
+    top: "68%", left: "3%",
+    details: [
+      "Annual carbon deficit calculation",
+      "Offset cost simulation",
+      "Voluntary market evaluation",
+      "Offset procurement strategy",
+    ],
+    outputs: ["Offset Strategy Report"],
+    stat: "Auto", statLabel: "Deficit calculation",
+  },
+  {
+    id: 7, phase: "P4", icon: Award,
+    label: "RECMatrix™",
+    role: "REC Management",
+    top: "68%", left: "25%",
+    details: [
+      "REC acquisition tracking",
+      "Registry integration",
+      "Retirement documentation",
+      "Market pricing insights",
+    ],
+    outputs: ["REC Revenue Report"],
+    stat: "I-REC", statLabel: "Global standards",
+  },
+  // Phase 5
+  {
+    id: 8, phase: "P5", icon: LayoutDashboard,
+    label: "GreenBoard™",
+    role: "Executive ESG Dashboard",
+    top: "68%", left: "55%",
+    details: [
+      "Renewable % board view",
+      "Carbon reduction progress",
+      "Offset spend vs impact",
+      "ESG improvement tracking",
+    ],
+    outputs: ["Board-Ready ESG Summary"],
+    stat: "C-Suite", statLabel: "Executive reporting",
+  },
+  {
+    id: 9, phase: "P5", icon: FileText,
+    label: "ComplySphere™",
+    role: "Regulatory Reporting",
+    top: "42%", left: "70%",
+    details: [
+      "SEC climate disclosure exports",
+      "CSRD-ready reporting",
+      "CDP-ready submission pack",
+      "Scope 2 market-based accounting",
+    ],
+    outputs: ["Compliance Report Package"],
+    stat: "5+", statLabel: "Frameworks covered",
+  },
+  {
+    id: 10, phase: "P5", icon: Lock,
+    label: "AuditTrail360™",
+    role: "Audit Data Vault",
+    top: "10%", left: "72%",
+    details: [
+      "Timestamped energy logs",
+      "Carbon proof documentation",
+      "REC retirement verification",
+      "Audit-ready sustainability pack",
+    ],
+    outputs: ["Verified Sustainability Record"],
+    stat: "Blockchain", statLabel: "Tamper-proof logs",
+  },
+];
+
+const phaseMap = Object.fromEntries(phases.map(p => [p.id, p]));
 
 const SlideDataCenter = () => {
   const [active, setActive] = useState<number | null>(null);
   const activeData = active !== null ? steps[active] : null;
+  const activePhase = activeData ? phaseMap[activeData.phase] : null;
 
   return (
     <SlideLayout>
       <div className="relative w-full h-full overflow-hidden">
         {/* Header */}
-        <div className="absolute top-6 left-8 right-8 z-20 flex items-center gap-4 animate-fade-in">
+        <div className="absolute top-5 left-7 right-7 z-20 flex items-center gap-3 animate-fade-in">
           <span className="text-sm font-bold text-primary-foreground bg-primary px-4 py-1.5 rounded-full shadow-lg">Data Center</span>
-          <h2 className="text-3xl font-bold text-foreground drop-shadow-sm">End-to-End Customer Journey</h2>
-          <span className="ml-auto text-sm text-muted-foreground bg-card/80 backdrop-blur px-3 py-1 rounded-full border border-border/50">
-            Click any step to explore
-          </span>
+          <h2 className="text-2xl font-bold text-foreground">EcoGridia – Data Center Entry Flow</h2>
+          <div className="ml-auto flex items-center gap-1.5">
+            {phases.map((p) => (
+              <span key={p.id} className={`text-[10px] font-semibold text-white px-2.5 py-1 rounded-full ${p.color}`}>
+                {p.label}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Background image */}
         <div className="absolute inset-0">
-          <img src={datacenterImg} alt="Data Center 3D ecosystem" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-background/30" />
+          <img src={datacenterImg} alt="Data Center ecosystem" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-background/35" />
+        </div>
+
+        {/* Phase flow bar */}
+        <div className="absolute bottom-14 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1 bg-card/90 backdrop-blur px-5 py-2 rounded-full border border-border/40 shadow">
+          {["Baseline", "Diagnose", "Monitor", "Offset", "Report", "Comply", "Archive"].map((p, i, arr) => (
+            <div key={p} className="flex items-center gap-1">
+              <span className="text-[11px] font-semibold text-primary">{p}</span>
+              {i < arr.length - 1 && <ChevronRight className="w-2.5 h-2.5 text-muted-foreground/50" />}
+            </div>
+          ))}
         </div>
 
         {/* Hotspots */}
         {steps.map((s, i) => {
           const Icon = s.icon;
           const isActive = active === i;
+          const phase = phaseMap[s.phase];
           return (
             <button
               key={s.id}
@@ -159,28 +271,30 @@ const SlideDataCenter = () => {
               className="absolute z-30 group transition-all duration-500 animate-fade-in"
               style={{
                 top: s.top, left: s.left,
-                animationDelay: `${0.3 + i * 0.08}s`,
+                animationDelay: `${0.3 + i * 0.07}s`,
                 animationFillMode: "forwards",
                 opacity: 0,
               }}
             >
               <span
-                className={`absolute -inset-3 rounded-full animate-ping ${isActive ? "bg-primary/30" : "bg-primary/10"}`}
+                className={`absolute -inset-3 rounded-full animate-ping ${isActive ? "bg-primary/25" : "bg-primary/8"}`}
                 style={{ animationDuration: "2.5s" }}
               />
-              <div className={`relative flex items-center gap-2.5 px-4 py-2.5 rounded-xl backdrop-blur-md border shadow-xl transition-all duration-300 cursor-pointer
+              <div className={`relative flex items-center gap-2 px-3 py-2 rounded-xl backdrop-blur-md border shadow-xl transition-all duration-300 cursor-pointer
                 ${isActive
-                  ? "bg-primary text-primary-foreground border-primary/50 scale-110 shadow-primary/30"
-                  : "bg-card/90 text-foreground border-border/60 hover:bg-card hover:border-primary/40 hover:scale-105 hover:shadow-primary/15"
+                  ? `${phase.color} text-white border-white/20 scale-110`
+                  : "bg-card/90 text-foreground border-border/60 hover:bg-card hover:border-primary/40 hover:scale-105"
                 }`}
               >
-                <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors
-                  ${isActive ? "bg-primary-foreground/20" : "bg-primary/10"}`}>
-                  <Icon className="w-4 h-4" />
+                <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors
+                  ${isActive ? "bg-white/20" : "bg-primary/10"}`}>
+                  <Icon className="w-3.5 h-3.5" />
                 </div>
                 <div className="text-left">
-                  <span className="text-xs font-mono opacity-60">Step {i + 1}</span>
-                  <p className="text-sm font-bold leading-tight">{s.label}</p>
+                  <span className={`text-[9px] font-mono opacity-70 ${isActive ? "text-white" : phase.textColor}`}>
+                    {s.phase} · {s.role}
+                  </span>
+                  <p className="text-[12px] font-bold leading-tight">{s.label}</p>
                 </div>
               </div>
             </button>
@@ -188,35 +302,35 @@ const SlideDataCenter = () => {
         })}
 
         {/* Detail panel */}
-        {activeData && (
-          <div className="absolute right-6 top-16 bottom-6 w-[420px] z-40 rounded-2xl bg-card/95 backdrop-blur-xl border border-primary/20 shadow-2xl shadow-primary/10 p-7 flex flex-col animate-slide-in-right">
-            <button onClick={() => setActive(null)} className="absolute top-4 right-4 p-1.5 rounded-lg hover:bg-muted transition-colors">
-              <X className="w-5 h-5 text-muted-foreground" />
+        {activeData && activePhase && (
+          <div className="absolute right-5 top-14 bottom-5 w-[390px] z-40 rounded-2xl bg-card/95 backdrop-blur-xl border border-primary/20 shadow-2xl p-6 flex flex-col animate-slide-in-right">
+            <button onClick={() => setActive(null)} className="absolute top-3 right-3 p-1.5 rounded-lg hover:bg-muted transition-colors">
+              <X className="w-4 h-4 text-muted-foreground" />
             </button>
 
-            <div className="flex items-center gap-4 mb-5">
-              <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center text-primary-foreground shadow-lg shadow-primary/20">
-                {(() => { const Icon = activeData.icon; return <Icon className="w-7 h-7" />; })()}
+            <div className="flex items-center gap-3 mb-4">
+              <div className={`w-12 h-12 rounded-2xl ${activePhase.color} flex items-center justify-center text-white shadow-lg`}>
+                {(() => { const Icon = activeData.icon; return <Icon className="w-6 h-6" />; })()}
               </div>
               <div>
-                <span className="text-sm text-muted-foreground font-mono">Step {activeData.id + 1} of 8</span>
-                <h3 className="text-2xl font-bold text-foreground">{activeData.label}</h3>
+                <span className={`text-[10px] font-mono ${activePhase.textColor}`}>{activeData.phase} · {activeData.role}</span>
+                <h3 className="text-xl font-bold text-foreground">{activeData.label}</h3>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 p-4 rounded-xl bg-primary/[0.06] border border-primary/15 mb-5">
-              <span className="text-3xl font-black text-primary">{activeData.stat}</span>
+            <div className={`flex items-center gap-4 p-3 rounded-xl ${activePhase.bgLight} border ${activePhase.borderColor} mb-4`}>
+              <span className={`text-2xl font-black ${activePhase.textColor}`}>{activeData.stat}</span>
               <span className="text-sm text-muted-foreground">{activeData.statLabel}</span>
             </div>
 
-            <div className="flex-1 space-y-2.5 overflow-y-auto">
+            <div className="flex-1 space-y-2 overflow-y-auto">
               {activeData.details.map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-3 p-3 rounded-lg bg-background/60 border border-border/30 animate-fade-in"
-                  style={{ animationDelay: `${idx * 0.06}s`, animationFillMode: "forwards", opacity: 0 }}
+                  className="flex items-start gap-3 p-2.5 rounded-lg bg-background/60 border border-border/30 animate-fade-in"
+                  style={{ animationDelay: `${idx * 0.05}s`, animationFillMode: "forwards", opacity: 0 }}
                 >
-                  <span className="w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center shrink-0">
+                  <span className={`w-5 h-5 rounded-full ${activePhase.bgLight} ${activePhase.textColor} text-xs font-bold flex items-center justify-center shrink-0`}>
                     {idx + 1}
                   </span>
                   <span className="text-sm text-foreground leading-relaxed">{item}</span>
@@ -224,17 +338,19 @@ const SlideDataCenter = () => {
               ))}
             </div>
 
-            <div className="mt-4 p-3.5 rounded-xl bg-primary/10 border border-primary/20 shrink-0">
-              <span className="text-xs font-bold text-primary uppercase tracking-wide">Output →</span>
-              <p className="text-sm text-foreground mt-1">{activeData.output}</p>
+            <div className={`mt-4 p-3 rounded-xl ${activePhase.bgLight} border ${activePhase.borderColor} shrink-0`}>
+              <span className={`text-xs font-bold ${activePhase.textColor} uppercase tracking-wide`}>Output →</span>
+              {activeData.outputs.map((o, i) => (
+                <p key={i} className="text-sm text-foreground mt-1">✔ {o}</p>
+              ))}
             </div>
 
-            <div className="flex items-center justify-center gap-2 mt-4">
+            <div className="flex items-center justify-center gap-1.5 mt-3">
               {steps.map((_, i) => (
                 <button
                   key={i}
                   onClick={(e) => { e.stopPropagation(); setActive(i); }}
-                  className={`rounded-full transition-all ${i === active ? "w-6 h-2 bg-primary" : "w-2 h-2 bg-muted-foreground/25 hover:bg-muted-foreground/50"}`}
+                  className={`rounded-full transition-all ${i === active ? "w-5 h-2 bg-primary" : "w-2 h-2 bg-muted-foreground/25 hover:bg-muted-foreground/50"}`}
                 />
               ))}
             </div>
