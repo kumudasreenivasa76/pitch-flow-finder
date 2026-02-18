@@ -11,8 +11,11 @@ const stakeholders = [
     id: 1,
     icon: GraduationCap,
     label: "Schools",
-    lineColor: "#34d399",   // emerald
-    nodeGlow: "rgba(52,211,153,0.35)",
+    lineColor: "#059669",
+    nodeBg: "rgba(5,150,105,0.08)",
+    nodeBorder: "rgba(5,150,105,0.35)",
+    nodeGlow: "rgba(5,150,105,0.20)",
+    textColor: "#065f46",
     angle: -90,
     products: [
       { name: "BaselineIQ™", desc: "Energy & carbon baseline" },
@@ -29,8 +32,11 @@ const stakeholders = [
     id: 2,
     icon: Server,
     label: "Data Centers",
-    lineColor: "#22d3ee",   // cyan
-    nodeGlow: "rgba(34,211,238,0.35)",
+    lineColor: "#0891b2",
+    nodeBg: "rgba(8,145,178,0.08)",
+    nodeBorder: "rgba(8,145,178,0.35)",
+    nodeGlow: "rgba(8,145,178,0.20)",
+    textColor: "#0e7490",
     angle: -30,
     products: [
       { name: "BaselineIQ™", desc: "IT vs facility load audit" },
@@ -49,8 +55,11 @@ const stakeholders = [
     id: 3,
     icon: Users,
     label: "Communities",
-    lineColor: "#a78bfa",   // violet
-    nodeGlow: "rgba(167,139,250,0.35)",
+    lineColor: "#7c3aed",
+    nodeBg: "rgba(124,58,237,0.08)",
+    nodeBorder: "rgba(124,58,237,0.30)",
+    nodeGlow: "rgba(124,58,237,0.18)",
+    textColor: "#6d28d9",
     angle: 30,
     products: [
       { name: "TerraScan™", desc: "Rooftop feasibility" },
@@ -66,8 +75,11 @@ const stakeholders = [
     id: 4,
     icon: Landmark,
     label: "Government",
-    lineColor: "#f59e0b",   // amber
-    nodeGlow: "rgba(245,158,11,0.35)",
+    lineColor: "#d97706",
+    nodeBg: "rgba(217,119,6,0.08)",
+    nodeBorder: "rgba(217,119,6,0.30)",
+    nodeGlow: "rgba(217,119,6,0.18)",
+    textColor: "#b45309",
     angle: 90,
     products: [
       { name: "CarbonX-Ray™", desc: "Regional carbon audit" },
@@ -82,8 +94,11 @@ const stakeholders = [
     id: 5,
     icon: TreePine,
     label: "Landowners",
-    lineColor: "#4ade80",   // green
-    nodeGlow: "rgba(74,222,128,0.35)",
+    lineColor: "#16a34a",
+    nodeBg: "rgba(22,163,74,0.08)",
+    nodeBorder: "rgba(22,163,74,0.32)",
+    nodeGlow: "rgba(22,163,74,0.18)",
+    textColor: "#15803d",
     angle: 150,
     products: [
       { name: "TerraScan™", desc: "Land potential assessment" },
@@ -97,8 +112,11 @@ const stakeholders = [
     id: 6,
     icon: HardHat,
     label: "Vendors",
-    lineColor: "#f472b6",   // pink
-    nodeGlow: "rgba(244,114,182,0.35)",
+    lineColor: "#db2777",
+    nodeBg: "rgba(219,39,119,0.08)",
+    nodeBorder: "rgba(219,39,119,0.28)",
+    nodeGlow: "rgba(219,39,119,0.16)",
+    textColor: "#be185d",
     angle: 210,
     products: [
       { name: "EcoMarket™", desc: "Vendor onboarding" },
@@ -112,8 +130,11 @@ const stakeholders = [
     id: 7,
     icon: Briefcase,
     label: "Investors",
-    lineColor: "#fb923c",   // orange
-    nodeGlow: "rgba(251,146,60,0.35)",
+    lineColor: "#ea580c",
+    nodeBg: "rgba(234,88,12,0.08)",
+    nodeBorder: "rgba(234,88,12,0.28)",
+    nodeGlow: "rgba(234,88,12,0.16)",
+    textColor: "#c2410c",
     angle: 270,
     products: [
       { name: "CapStruct™", desc: "SPV modeling" },
@@ -126,7 +147,7 @@ const stakeholders = [
   },
 ];
 
-/* ─── Animated canvas: particles + circuit lines ─── */
+/* ─── Subtle particle canvas ─── */
 const ParticleField = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
@@ -137,13 +158,13 @@ const ParticleField = () => {
     canvas.width = 1920;
     canvas.height = 1080;
 
-    const pts = Array.from({ length: 55 }, () => ({
+    const pts = Array.from({ length: 40 }, () => ({
       x: Math.random() * 1920,
       y: Math.random() * 1080,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-      r: Math.random() * 1.8 + 0.6,
-      op: Math.random() * 0.3 + 0.08,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      r: Math.random() * 1.5 + 0.5,
+      op: Math.random() * 0.12 + 0.04,
     }));
 
     let raf: number;
@@ -155,19 +176,19 @@ const ParticleField = () => {
         if (p.y < 0) p.y = 1080; if (p.y > 1080) p.y = 0;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(52,211,153,${p.op})`;
+        ctx.fillStyle = `rgba(16,185,129,${p.op})`;
         ctx.fill();
       }
       for (let i = 0; i < pts.length; i++) {
         for (let j = i + 1; j < pts.length; j++) {
           const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
           const d = Math.sqrt(dx * dx + dy * dy);
-          if (d < 140) {
+          if (d < 120) {
             ctx.beginPath();
             ctx.moveTo(pts[i].x, pts[i].y);
             ctx.lineTo(pts[j].x, pts[j].y);
-            ctx.strokeStyle = `rgba(52,211,153,${0.06 * (1 - d / 140)})`;
-            ctx.lineWidth = 0.8;
+            ctx.strokeStyle = `rgba(16,185,129,${0.04 * (1 - d / 120)})`;
+            ctx.lineWidth = 0.6;
             ctx.stroke();
           }
         }
@@ -180,21 +201,9 @@ const ParticleField = () => {
   return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />;
 };
 
-/* ─── Pulsing ring on center hub ─── */
-const PulseRing = ({ color, delay }: { color: string; delay: number }) => (
-  <div
-    className="absolute rounded-full border opacity-0"
-    style={{
-      borderColor: color,
-      inset: -20,
-      animation: `ecosys-pulse 3s ease-out ${delay}s infinite`,
-    }}
-  />
-);
-
 /* ─── Main slide ─── */
-const CX = 50; // % center x
-const CY = 50; // % center y
+const CX = 50;
+const CY = 50;
 const RX = 370;
 const RY = 230;
 
@@ -204,37 +213,53 @@ const Slide04Ecosystem = () => {
 
   return (
     <SlideLayout>
-      {/* Inject keyframes */}
       <style>{`
-        @keyframes ecosys-pulse {
-          0%   { transform: scale(1);   opacity: 0.55; }
-          70%  { transform: scale(1.7); opacity: 0;    }
-          100% { transform: scale(1.7); opacity: 0;    }
+        @keyframes hub-spin-ring {
+          to { transform: rotate(360deg); }
         }
-        @keyframes hub-glow {
-          0%,100% { box-shadow: 0 0 40px 10px rgba(52,211,153,0.25), 0 0 80px 20px rgba(52,211,153,0.10); }
-          50%      { box-shadow: 0 0 70px 20px rgba(52,211,153,0.45), 0 0 140px 40px rgba(52,211,153,0.18); }
+        @keyframes hub-pulse-outer {
+          0%,100% { opacity: 0.18; transform: scale(1);   }
+          50%      { opacity: 0.05; transform: scale(1.55);}
         }
-        @keyframes line-dash {
-          to { stroke-dashoffset: -20; }
+        @keyframes hub-pulse-mid {
+          0%,100% { opacity: 0.22; transform: scale(1);   }
+          50%      { opacity: 0.06; transform: scale(1.35);}
+        }
+        @keyframes line-flow {
+          to { stroke-dashoffset: -26; }
+        }
+        @keyframes node-pop {
+          0%   { transform: scale(0.8); opacity: 0; }
+          100% { transform: scale(1);   opacity: 1; }
         }
       `}</style>
 
-      <div className="flex h-full overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(180,40%,8%) 0%, hsl(195,50%,10%) 50%, hsl(210,45%,9%) 100%)" }}>
-
-        {/* ── Left: diagram area ── */}
+      <div
+        className="flex h-full overflow-hidden"
+        style={{ background: "linear-gradient(145deg, #f8fffe 0%, #f0faf7 40%, #f5f9ff 100%)" }}
+      >
+        {/* ── Left: diagram ── */}
         <div className="flex-1 relative flex items-center justify-center overflow-hidden">
           <ParticleField />
 
-          {/* Subtle radial glow behind hub */}
-          <div className="absolute pointer-events-none" style={{ left: "50%", top: "50%", transform: "translate(-50%,-50%)", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(52,211,153,0.12) 0%, transparent 70%)" }} />
+          {/* Soft radial ambient behind hub */}
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              left: "50%", top: "50%",
+              transform: "translate(-50%,-50%)",
+              width: 560, height: 560, borderRadius: "50%",
+              background: "radial-gradient(circle, rgba(16,185,129,0.07) 0%, transparent 68%)",
+            }}
+          />
 
           {/* Title */}
-          <div className="absolute top-7 left-9 z-20">
-            <h2 className="text-[34px] font-extrabold leading-tight" style={{ color: "rgba(255,255,255,0.95)" }}>
-              Institution-Centric <span style={{ color: "#34d399" }}>Ecosystem</span>
+          <div className="absolute top-7 left-10 z-20">
+            <h2 className="text-[34px] font-extrabold leading-tight text-foreground">
+              Institution-Centric{" "}
+              <span className="text-primary">Ecosystem</span>
             </h2>
-            <p className="text-[13px] mt-0.5" style={{ color: "rgba(255,255,255,0.45)" }}>
+            <p className="text-[13px] text-muted-foreground mt-1">
               Every stakeholder connects through EcoGridia
             </p>
           </div>
@@ -243,9 +268,9 @@ const Slide04Ecosystem = () => {
           <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
             <defs>
               {stakeholders.map((s) => (
-                <filter key={`glow-${s.id}`} id={`glow-${s.id}`} x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="3" result="blur" />
-                  <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                <filter key={`gf-${s.id}`} id={`gf-${s.id}`} x="-80%" y="-80%" width="260%" height="260%">
+                  <feGaussianBlur stdDeviation="2.5" result="b" />
+                  <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
                 </filter>
               ))}
             </defs>
@@ -254,6 +279,7 @@ const Slide04Ecosystem = () => {
               const nx = CX + (Math.cos(rad) * RX) / 9.6;
               const ny = CY + (Math.sin(rad) * RY) / 4.7;
               const isActive = selected === s.id;
+              const isDimmed = selected !== null && !isActive;
               return (
                 <line
                   key={s.id}
@@ -261,46 +287,59 @@ const Slide04Ecosystem = () => {
                   x2={`${nx}%`} y2={`${ny}%`}
                   stroke={s.lineColor}
                   strokeWidth={isActive ? 2.5 : 1.2}
-                  strokeDasharray="8 5"
-                  opacity={isActive ? 0.85 : selected ? 0.15 : 0.38}
-                  filter={isActive ? `url(#glow-${s.id})` : undefined}
-                  style={{ animation: isActive ? "line-dash 0.8s linear infinite" : undefined }}
+                  strokeDasharray="10 6"
+                  opacity={isActive ? 0.9 : isDimmed ? 0.08 : 0.3}
+                  filter={isActive ? `url(#gf-${s.id})` : undefined}
+                  style={isActive ? { animation: "line-flow 1s linear infinite" } : undefined}
                 />
               );
             })}
           </svg>
 
-          {/* Center hub — diamond-styled glowing card */}
+          {/* Center Hub */}
           <div
             onClick={() => setSelected(null)}
             className="relative flex items-center justify-center cursor-pointer z-10"
             style={{ width: 160, height: 160 }}
           >
-            {/* Pulse rings */}
-            <PulseRing color="#34d399" delay={0} />
-            <PulseRing color="#22d3ee" delay={1} />
-            <PulseRing color="#a78bfa" delay={2} />
+            {/* Outer ambient pulse rings */}
+            <div className="absolute rounded-full" style={{ inset: -38, border: "1.5px solid rgba(16,185,129,0.18)", animation: "hub-pulse-outer 4s ease-in-out infinite" }} />
+            <div className="absolute rounded-full" style={{ inset: -22, border: "1.5px solid rgba(16,185,129,0.25)", animation: "hub-pulse-mid 4s ease-in-out 1.5s infinite" }} />
+
+            {/* Spinning dashed ring */}
+            <div
+              className="absolute rounded-full"
+              style={{
+                inset: -10,
+                border: "1.5px dashed rgba(16,185,129,0.30)",
+                animation: "hub-spin-ring 18s linear infinite",
+              }}
+            />
+
             {/* Hub card */}
             <div
-              className="absolute inset-0 rounded-[28px] flex flex-col items-center justify-center"
+              className="absolute inset-0 rounded-[30px] flex flex-col items-center justify-center"
               style={{
-                background: "linear-gradient(145deg, rgba(52,211,153,0.18) 0%, rgba(34,211,238,0.10) 100%)",
-                border: "1.5px solid rgba(52,211,153,0.5)",
-                backdropFilter: "blur(12px)",
-                animation: "hub-glow 4s ease-in-out infinite",
+                background: "linear-gradient(145deg, rgba(16,185,129,0.10) 0%, rgba(6,182,212,0.06) 100%)",
+                border: "1.5px solid rgba(16,185,129,0.30)",
+                boxShadow: "0 8px 32px rgba(16,185,129,0.14), 0 2px 8px rgba(16,185,129,0.08)",
                 transform: "rotate(45deg)",
               }}
             />
-            {/* Content (counter-rotated) */}
-            <div className="relative z-10 flex flex-col items-center text-center gap-0.5">
+            {/* Content */}
+            <div className="relative z-10 flex flex-col items-center text-center gap-1">
               <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-1"
-                style={{ background: "linear-gradient(135deg, #10b981, #06b6d4)", boxShadow: "0 0 20px rgba(16,185,129,0.4)" }}
+                className="w-13 h-13 rounded-2xl flex items-center justify-center mb-1.5"
+                style={{
+                  width: 52, height: 52,
+                  background: "linear-gradient(135deg, hsl(160,84%,39%), hsl(186,79%,42%))",
+                  boxShadow: "0 4px 20px rgba(16,185,129,0.35)",
+                }}
               >
-                <Zap className="w-6 h-6" style={{ color: "#fff" }} />
+                <Zap className="w-7 h-7 text-white" />
               </div>
-              <span className="text-[15px] font-extrabold" style={{ color: "#fff" }}>EcoGridia</span>
-              <span className="text-[9px] font-bold tracking-[0.12em] uppercase" style={{ color: "rgba(52,211,153,0.8)" }}>Platform</span>
+              <span className="text-[16px] font-extrabold text-foreground leading-tight">EcoGridia</span>
+              <span className="text-[9px] font-bold tracking-[0.14em] uppercase text-primary">Platform</span>
             </div>
           </div>
 
@@ -310,40 +349,46 @@ const Slide04Ecosystem = () => {
             const x = CX + (Math.cos(rad) * RX) / 9.6;
             const y = CY + (Math.sin(rad) * RY) / 4.7;
             const isActive = selected === s.id;
+            const isDimmed = selected !== null && !isActive;
             const Icon = s.icon;
             return (
               <button
                 key={s.id}
                 onClick={() => setSelected(isActive ? null : s.id)}
                 className="absolute flex flex-col items-center gap-2 z-10 group transition-all duration-200"
-                style={{ left: `calc(${x}% - 48px)`, top: `calc(${y}% - 55px)` }}
+                style={{
+                  left: `calc(${x}% - 48px)`,
+                  top: `calc(${y}% - 58px)`,
+                  opacity: isDimmed ? 0.35 : 1,
+                  animation: `node-pop 0.4s ease-out ${i * 0.07}s both`,
+                }}
               >
-                {/* Circle node */}
+                {/* Circle */}
                 <div
                   className="w-24 h-24 rounded-full flex items-center justify-center transition-all duration-200"
                   style={{
-                    background: isActive
-                      ? `radial-gradient(circle, ${s.nodeGlow} 0%, rgba(255,255,255,0.05) 100%)`
-                      : "rgba(255,255,255,0.04)",
-                    border: `1.5px solid ${isActive ? s.lineColor : "rgba(255,255,255,0.12)"}`,
-                    boxShadow: isActive ? `0 0 24px 6px ${s.nodeGlow}, inset 0 0 12px ${s.nodeGlow}` : "none",
-                    backdropFilter: "blur(8px)",
+                    background: isActive ? s.nodeBg : "rgba(255,255,255,0.85)",
+                    border: `2px solid ${isActive ? s.lineColor : "rgba(0,0,0,0.08)"}`,
+                    boxShadow: isActive
+                      ? `0 0 0 6px ${s.nodeGlow}, 0 8px 28px ${s.nodeGlow}, inset 0 1px 0 rgba(255,255,255,0.6)`
+                      : "0 4px 16px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.8)",
                     transform: isActive ? "scale(1.12)" : undefined,
+                    backdropFilter: "blur(8px)",
                   }}
                 >
                   <Icon
                     className="w-9 h-9 transition-colors duration-200"
-                    style={{ color: isActive ? s.lineColor : "rgba(255,255,255,0.55)" }}
+                    style={{ color: isActive ? s.lineColor : "rgba(0,0,0,0.35)" }}
                   />
                 </div>
                 {/* Label */}
                 <span
                   className="text-[12px] font-bold leading-tight text-center transition-colors duration-200"
-                  style={{ color: isActive ? s.lineColor : "rgba(255,255,255,0.75)" }}
+                  style={{ color: isActive ? s.textColor : "hsl(160,10%,25%)" }}
                 >
                   {s.label}
                 </span>
-                {/* Active dot */}
+                {/* Active indicator dot */}
                 {isActive && (
                   <span
                     className="w-1.5 h-1.5 rounded-full animate-pulse"
@@ -356,10 +401,7 @@ const Slide04Ecosystem = () => {
 
           {/* Hint */}
           {!selected && (
-            <div
-              className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[11px] font-medium tracking-wide animate-pulse"
-              style={{ color: "rgba(255,255,255,0.3)" }}
-            >
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[11px] font-medium tracking-wide animate-pulse text-muted-foreground/50">
               Click a stakeholder to explore
             </div>
           )}
@@ -369,73 +411,88 @@ const Slide04Ecosystem = () => {
         <div
           className="transition-all duration-300 ease-in-out overflow-hidden flex flex-col shrink-0"
           style={{
-            width: sel ? 370 : 0,
+            width: sel ? 368 : 0,
             opacity: sel ? 1 : 0,
-            background: "rgba(10,28,32,0.92)",
-            borderLeft: sel ? "1px solid rgba(52,211,153,0.18)" : "none",
-            backdropFilter: "blur(20px)",
+            background: "#ffffff",
+            borderLeft: sel ? "1px solid hsl(160,20%,90%)" : "none",
+            boxShadow: sel ? "-8px 0 24px rgba(0,0,0,0.04)" : "none",
           }}
         >
           {sel && (
             <div className="flex flex-col h-full overflow-y-auto">
               {/* Header */}
               <div
-                className="px-6 pt-6 pb-4"
-                style={{ borderBottom: `1px solid ${sel.lineColor}33`, background: `linear-gradient(180deg, ${sel.nodeGlow.replace("0.35","0.08")} 0%, transparent 100%)` }}
+                className="px-6 pt-6 pb-5"
+                style={{
+                  background: `linear-gradient(180deg, ${sel.nodeBg} 0%, rgba(255,255,255,0) 100%)`,
+                  borderBottom: `1px solid ${sel.nodeBorder}`,
+                }}
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
                     <div
                       className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
-                      style={{ background: sel.nodeGlow.replace("0.35","0.2"), border: `1px solid ${sel.lineColor}55` }}
+                      style={{
+                        background: sel.nodeBg,
+                        border: `1.5px solid ${sel.nodeBorder}`,
+                        boxShadow: `0 4px 12px ${sel.nodeGlow}`,
+                      }}
                     >
                       <sel.icon className="w-6 h-6" style={{ color: sel.lineColor }} />
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold uppercase tracking-widest mb-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>Stakeholder</p>
-                      <h3 className="text-xl font-extrabold leading-tight" style={{ color: sel.lineColor }}>
+                      <p className="text-[10px] font-bold uppercase tracking-widest mb-0.5 text-muted-foreground">Stakeholder</p>
+                      <h3 className="text-xl font-extrabold leading-tight" style={{ color: sel.textColor }}>
                         {sel.label}
                       </h3>
                     </div>
                   </div>
                   <button
                     onClick={() => setSelected(null)}
-                    className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors"
-                    style={{ background: "rgba(255,255,255,0.05)" }}
+                    className="w-7 h-7 rounded-lg hover:bg-secondary flex items-center justify-center transition-colors shrink-0 mt-1"
                   >
-                    <X className="w-4 h-4" style={{ color: "rgba(255,255,255,0.5)" }} />
+                    <X className="w-4 h-4 text-muted-foreground" />
                   </button>
                 </div>
               </div>
 
               {/* Products */}
-              <div className="px-5 py-4 flex-1" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
-                <p className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: "rgba(255,255,255,0.35)" }}>Products Used</p>
-                <div className="flex flex-col gap-2">
+              <div className="px-5 py-4 flex-1" style={{ borderBottom: "1px solid hsl(160,15%,93%)" }}>
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-3 text-muted-foreground">Products Used</p>
+                <div className="flex flex-col gap-1.5">
                   {sel.products.map((p, i) => (
                     <div
                       key={i}
-                      className="flex items-start gap-2.5 px-3 py-2.5 rounded-xl transition-all"
-                      style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)" }}
+                      className="flex items-start gap-2.5 px-3 py-2 rounded-xl transition-all"
+                      style={{
+                        background: "hsl(160,20%,98%)",
+                        border: "1px solid hsl(160,15%,93%)",
+                      }}
                     >
                       <ChevronRight className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: sel.lineColor }} />
                       <div>
-                        <p className="text-[12px] font-bold leading-tight" style={{ color: "rgba(255,255,255,0.9)" }}>{p.name}</p>
-                        <p className="text-[10px] leading-snug" style={{ color: "rgba(255,255,255,0.4)" }}>{p.desc}</p>
+                        <p className="text-[12px] font-bold text-foreground leading-tight">{p.name}</p>
+                        <p className="text-[10px] text-muted-foreground leading-snug">{p.desc}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Value */}
-              <div className="px-5 py-4" style={{ background: `linear-gradient(180deg, transparent 0%, ${sel.nodeGlow.replace("0.35","0.07")} 100%)` }}>
-                <p className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: "rgba(255,255,255,0.35)" }}>Value Delivered</p>
+              {/* Value Delivered */}
+              <div
+                className="px-5 py-4"
+                style={{ background: `linear-gradient(180deg, rgba(255,255,255,0) 0%, ${sel.nodeBg} 100%)` }}
+              >
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-3 text-muted-foreground">Value Delivered</p>
                 <div className="flex flex-col gap-2">
                   {sel.values.map((v, i) => (
-                    <div key={i} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: sel.lineColor }} />
-                      <span className="text-[12px] font-semibold" style={{ color: "rgba(255,255,255,0.8)" }}>{v}</span>
+                    <div key={i} className="flex items-center gap-2.5">
+                      <span
+                        className="w-2 h-2 rounded-full shrink-0"
+                        style={{ background: sel.lineColor, boxShadow: `0 0 6px ${sel.nodeGlow}` }}
+                      />
+                      <span className="text-[12px] font-semibold text-foreground">{v}</span>
                     </div>
                   ))}
                 </div>
