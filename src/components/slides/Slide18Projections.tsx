@@ -6,23 +6,23 @@ import {
 } from "recharts";
 
 const revenueData = [
-  { year: "FY25", revenue: 3.3, grossProfit: 2.5, netProfit: 0.69 },
-  { year: "FY26", revenue: 12.1, grossProfit: 9.4, netProfit: 5.2 },
-  { year: "FY27", revenue: 34.9, grossProfit: 27.9, netProfit: 19.3 },
-  { year: "FY28", revenue: 83.8, grossProfit: 68.7, netProfit: 53.2 },
-  { year: "FY29", revenue: 169.7, grossProfit: 142.5, netProfit: 87.8 },
-  { year: "FY30", revenue: 297.2, grossProfit: 252.6, netProfit: 160.0 },
-  { year: "FY31", revenue: 481.1, grossProfit: 413.8, netProfit: 268.5 },
-  { year: "FY32", revenue: 725.8, grossProfit: 631.4, netProfit: 417.2 },
-  { year: "FY33", revenue: 1050, grossProfit: 921.5, netProfit: 617.6 },
-  { year: "FY34", revenue: 1460, grossProfit: 1300, netProfit: 879.9 },
+  { year: "FY26", revenue: 3.3, grossProfit: 2.5, netProfit: 0.69 },
+  { year: "FY27", revenue: 12.1, grossProfit: 9.4, netProfit: 5.2 },
+  { year: "FY28", revenue: 34.9, grossProfit: 27.9, netProfit: 19.3 },
+  { year: "FY29", revenue: 83.8, grossProfit: 68.7, netProfit: 53.2 },
+  { year: "FY30", revenue: 169.7, grossProfit: 142.5, netProfit: 87.8 },
+  { year: "FY31", revenue: 297.2, grossProfit: 252.6, netProfit: 160.0 },
+  { year: "FY32", revenue: 481.1, grossProfit: 413.8, netProfit: 268.5 },
+  { year: "FY33", revenue: 725.8, grossProfit: 631.4, netProfit: 417.2 },
+  { year: "FY34", revenue: 1050, grossProfit: 921.5, netProfit: 617.6 },
+  { year: "FY35", revenue: 1460, grossProfit: 1300, netProfit: 879.9 },
 ];
 
 const marginData = [
-  { year: "FY25", margin: 76 }, { year: "FY26", margin: 78 }, { year: "FY27", margin: 80 },
-  { year: "FY28", margin: 82 }, { year: "FY29", margin: 84 }, { year: "FY30", margin: 85 },
-  { year: "FY31", margin: 86 }, { year: "FY32", margin: 87 }, { year: "FY33", margin: 88 },
-  { year: "FY34", margin: 89 },
+  { year: "FY26", margin: 76 }, { year: "FY27", margin: 78 }, { year: "FY28", margin: 80 },
+  { year: "FY29", margin: 82 }, { year: "FY30", margin: 84 }, { year: "FY31", margin: 85 },
+  { year: "FY32", margin: 86 }, { year: "FY33", margin: 87 }, { year: "FY34", margin: 88 },
+  { year: "FY35", margin: 89 },
 ];
 
 interface YearDetail {
@@ -38,25 +38,25 @@ interface YearDetail {
 }
 
 const yearDetails: YearDetail[] = [
-  { year: "FY25", total: "49", dc: "22", revenue: "$3.3M", grossProfit: "$2.5M", netProfit: "$0.69M", margin: "76%", opex: "$1.78M",
+  { year: "FY26", total: "49", dc: "22", revenue: "$3.3M", grossProfit: "$2.5M", netProfit: "$0.69M", margin: "76%", opex: "$1.78M",
     stakeholders: [{ name: "Schools", count: "18", role: "Beachhead" }, { name: "SME SaaS", count: "5", role: "Volume" }, { name: "Data Centers", count: "22", role: "Core" }, { name: "Projects", count: "2", role: "Infra" }, { name: "Marketplace", count: "2", role: "Supply" }] },
-  { year: "FY26", total: "154", dc: "71", revenue: "$12.1M", grossProfit: "$9.4M", netProfit: "$5.2M", margin: "78%", opex: "$4.19M",
+  { year: "FY27", total: "154", dc: "71", revenue: "$12.1M", grossProfit: "$9.4M", netProfit: "$5.2M", margin: "78%", opex: "$4.19M",
     stakeholders: [{ name: "Schools", count: "35", role: "Beachhead" }, { name: "SME SaaS", count: "22", role: "Volume" }, { name: "Data Centers", count: "71", role: "Core" }, { name: "Projects", count: "12", role: "Infra" }, { name: "Marketplace", count: "14", role: "Supply" }] },
-  { year: "FY27", total: "382", dc: "182", revenue: "$34.9M", grossProfit: "$27.9M", netProfit: "$19.3M", margin: "80%", opex: "$8.51M",
+  { year: "FY28", total: "382", dc: "182", revenue: "$34.9M", grossProfit: "$27.9M", netProfit: "$19.3M", margin: "80%", opex: "$8.51M",
     stakeholders: [{ name: "Schools", count: "85", role: "Beachhead" }, { name: "SME SaaS", count: "55", role: "Volume" }, { name: "Data Centers", count: "182", role: "Core" }, { name: "Projects", count: "28", role: "Infra" }, { name: "Marketplace", count: "32", role: "Supply" }] },
-  { year: "FY28", total: "785", dc: "385", revenue: "$83.8M", grossProfit: "$68.7M", netProfit: "$53.2M", margin: "82%", opex: "$15.37M",
+  { year: "FY29", total: "785", dc: "385", revenue: "$83.8M", grossProfit: "$68.7M", netProfit: "$53.2M", margin: "82%", opex: "$15.37M",
     stakeholders: [{ name: "Schools", count: "180", role: "Beachhead" }, { name: "SME SaaS", count: "120", role: "Volume" }, { name: "Data Centers", count: "385", role: "Core" }, { name: "Projects", count: "45", role: "Infra" }, { name: "Marketplace", count: "55", role: "Supply" }] },
-  { year: "FY29", total: "1,365", dc: "675", revenue: "$169.7M", grossProfit: "$142.5M", netProfit: "$87.8M", margin: "84%", opex: "$25.27M",
+  { year: "FY30", total: "1,365", dc: "675", revenue: "$169.7M", grossProfit: "$142.5M", netProfit: "$87.8M", margin: "84%", opex: "$25.27M",
     stakeholders: [{ name: "Schools", count: "380", role: "Beachhead" }, { name: "SME SaaS", count: "310", role: "Volume" }, { name: "Data Centers", count: "675", role: "Core" }, { name: "Projects", count: "240", role: "Infra" }, { name: "Marketplace", count: "520", role: "Supply" }] },
-  { year: "FY30", total: "2,115", dc: "1,065", revenue: "$297.2M", grossProfit: "$252.6M", netProfit: "$160.0M", margin: "85%",
+  { year: "FY31", total: "2,115", dc: "1,065", revenue: "$297.2M", grossProfit: "$252.6M", netProfit: "$160.0M", margin: "85%",
     stakeholders: [{ name: "Schools", count: "480", role: "Beachhead" }, { name: "SME SaaS", count: "420", role: "Volume" }, { name: "Data Centers", count: "1,065", role: "Core" }, { name: "Projects", count: "320", role: "Infra" }, { name: "Marketplace", count: "680", role: "Supply" }] },
-  { year: "FY31", total: "3,045", dc: "1,565", revenue: "$481.1M", grossProfit: "$413.8M", netProfit: "$268.5M", margin: "86%",
+  { year: "FY32", total: "3,045", dc: "1,565", revenue: "$481.1M", grossProfit: "$413.8M", netProfit: "$268.5M", margin: "86%",
     stakeholders: [{ name: "Schools", count: "620", role: "Beachhead" }, { name: "SME SaaS", count: "550", role: "Volume" }, { name: "Data Centers", count: "1,565", role: "Core" }, { name: "Projects", count: "410", role: "Infra" }, { name: "Marketplace", count: "900", role: "Supply" }] },
-  { year: "FY32", total: "4,155", dc: "2,175", revenue: "$725.8M", grossProfit: "$631.4M", netProfit: "$417.2M", margin: "87%",
+  { year: "FY33", total: "4,155", dc: "2,175", revenue: "$725.8M", grossProfit: "$631.4M", netProfit: "$417.2M", margin: "87%",
     stakeholders: [{ name: "Schools", count: "780", role: "Beachhead" }, { name: "SME SaaS", count: "700", role: "Volume" }, { name: "Data Centers", count: "2,175", role: "Core" }, { name: "Projects", count: "520", role: "Infra" }, { name: "Marketplace", count: "1,100", role: "Supply" }] },
-  { year: "FY33", total: "5,445", dc: "2,895", revenue: "$1.05B", grossProfit: "$921.5M", netProfit: "$617.6M", margin: "88%",
+  { year: "FY34", total: "5,445", dc: "2,895", revenue: "$1.05B", grossProfit: "$921.5M", netProfit: "$617.6M", margin: "88%",
     stakeholders: [{ name: "Schools", count: "950", role: "Beachhead" }, { name: "SME SaaS", count: "850", role: "Volume" }, { name: "Data Centers", count: "2,895", role: "Core" }, { name: "Projects", count: "650", role: "Infra" }, { name: "Marketplace", count: "1,350", role: "Supply" }] },
-  { year: "FY34", total: "6,915", dc: "3,725", revenue: "$1.46B", grossProfit: "$1.30B", netProfit: "$879.9M", margin: "89%",
+  { year: "FY35", total: "6,915", dc: "3,725", revenue: "$1.46B", grossProfit: "$1.30B", netProfit: "$879.9M", margin: "89%",
     stakeholders: [{ name: "Schools", count: "1,150", role: "Beachhead" }, { name: "SME SaaS", count: "1,050", role: "Volume" }, { name: "Data Centers", count: "3,725", role: "Core" }, { name: "Projects", count: "800", role: "Infra" }, { name: "Marketplace", count: "1,600", role: "Supply" }] },
 ];
 
@@ -90,13 +90,13 @@ const Slide18Projections = () => {
               <h2 className="text-[30px] font-bold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 ECOGRIDIA — <span className="text-primary">Operating Dashboard</span>
               </h2>
-              <p className="text-[12px] text-muted-foreground">10-Year Growth Model · FY25–FY34 · <span className="text-primary font-semibold">Click any year for details</span></p>
+              <p className="text-[12px] text-muted-foreground">10-Year Growth Model · FY26–FY35 · <span className="text-primary font-semibold">Click any year for details</span></p>
             </div>
             <div className="flex gap-2">
               {[
-                { l: "FY34 Revenue", v: "$1.46B" },
-                { l: "FY34 Customers", v: "6,915" },
-                { l: "FY34 Margin", v: "89%" },
+                { l: "FY35 Revenue", v: "$1.46B" },
+                { l: "FY35 Customers", v: "6,915" },
+                { l: "FY35 Margin", v: "89%" },
               ].map((k) => (
                 <div key={k.l} className="bg-card border border-border rounded-lg px-3 py-1.5 text-center">
                   <div className="text-[18px] font-bold text-primary leading-tight">{k.v}</div>
@@ -282,7 +282,7 @@ const Slide18Projections = () => {
                   {/* Mix + OPEX stacked */}
                   <div className="flex flex-col gap-3 flex-[2] min-h-0">
                     <div className="bg-card border border-border rounded-xl p-3 flex-1 min-h-0 overflow-auto animate-fade-in" style={{ animationDelay: "0.25s" }}>
-                      <MiniLabel>🏢 Customer Mix — FY29</MiniLabel>
+                      <MiniLabel>🏢 Customer Mix — FY30</MiniLabel>
                       <table className="w-full text-[10px]">
                         <tbody>
                           {yearDetails[4].stakeholders.map((r) => (
@@ -318,10 +318,10 @@ const Slide18Projections = () => {
         {/* Bottom bar */}
         <div className="h-[40px] bg-[#14532d] flex items-center justify-center gap-8 px-10 shrink-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
           {[
-            { l: "FY25→FY34", v: "$3.3M → $1.46B" },
+            { l: "FY26→FY35", v: "$3.3M → $1.46B" },
             { l: "10Y CAGR", v: "~95%" },
-            { l: "Net Margin FY34", v: "60%" },
-            { l: "DC Customers FY34", v: "3,725" },
+            { l: "Net Margin FY35", v: "60%" },
+            { l: "DC Customers FY35", v: "3,725" },
             { l: "Gross Margin", v: "76% → 89%" },
           ].map((m) => (
             <div key={m.l} className="flex items-center gap-1.5">
