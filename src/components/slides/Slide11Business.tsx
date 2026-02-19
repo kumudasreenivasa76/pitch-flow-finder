@@ -1,95 +1,10 @@
 import SlideLayout from "../SlideLayout";
-import { TrendingUp, RefreshCw, Shield, Globe, Zap, Brain, Wind, Leaf, FileCheck, DollarSign } from "lucide-react";
-
-const highlights = [
-  { icon: TrendingUp, value: "80%+", label: "Avg Gross Margin" },
-  { icon: RefreshCw, value: "Recurring", label: "Revenue Type" },
-  { icon: Shield, value: "Zero", label: "Hardware Risk" },
-  { icon: Globe, value: "Enabled", label: "Global Scale" },
-];
-
-const streams = [
-  {
-    icon: Zap,
-    color: "#16a34a",
-    borderColor: "#16a34a",
-    name: "GridForge™",
-    sub: "Infrastructure Orchestration",
-    type: "Recurring + Fee",
-    typeColor: "#16a34a",
-    typeBg: "#dcfce7",
-    margin: "~80%",
-    drivers: ["BaselinePro™ audits ($27k→$50k)", "Project orchestration fee (12%)", "Site management SaaS"],
-  },
-  {
-    icon: Brain,
-    color: "#2563eb",
-    borderColor: "#2563eb",
-    name: "VoltIQ™",
-    sub: "Energy Intelligence OS",
-    type: "SaaS + Savings Share",
-    typeColor: "#2563eb",
-    typeBg: "#dbeafe",
-    margin: "~85–90%",
-    drivers: ["Starter: $11k→$17k", "Professional: $35k→$58k", "WattWise AI: 20% of savings"],
-  },
-  {
-    icon: Wind,
-    color: "#7c3aed",
-    borderColor: "#7c3aed",
-    name: "GridLink™",
-    sub: "Renewable Procurement",
-    type: "Transaction",
-    typeColor: "#7c3aed",
-    typeBg: "#ede9fe",
-    margin: "~70–80%",
-    drivers: ["PPA commission: 8%", "VPPA advisory: 6%", "PPA: $635k→$1.2M"],
-  },
-  {
-    icon: Leaf,
-    color: "#ea580c",
-    borderColor: "#ea580c",
-    name: "RECMatrix™",
-    sub: "Carbon Marketplace",
-    type: "Transaction + Platform",
-    typeColor: "#ea580c",
-    typeBg: "#ffedd5",
-    margin: "~75–85%",
-    drivers: ["8% REC markup", "Carbon credit spreads", "55%→85% attach rate"],
-  },
-  {
-    icon: FileCheck,
-    color: "#ca8a04",
-    borderColor: "#ca8a04",
-    name: "CarbonOS™",
-    sub: "Compliance & ESG AI",
-    type: "Recurring SaaS",
-    typeColor: "#ca8a04",
-    typeBg: "#fef9c3",
-    margin: "~85%",
-    drivers: ["CarbonLedger™ & ComplySphere™", "AuditTrail360™", "ESG audits: $760→$1,330"],
-  },
-  {
-    icon: DollarSign,
-    color: "#16a34a",
-    borderColor: "#16a34a",
-    name: "CapitalFlow™",
-    sub: "Structured Finance",
-    type: "Fee-Based",
-    typeColor: "#db2777",
-    typeBg: "#fce7f3",
-    margin: "~70–75%",
-    drivers: ["Tax credit optimization", "Financing facilitation", "Incentive navigation"],
-  },
-];
+import { Brain, Wind, Leaf, FileCheck, DollarSign, Zap, Star } from "lucide-react";
 
 const Slide11Business = () => (
   <SlideLayout>
-    <div
-      className="w-full h-full overflow-hidden relative"
-      style={{ background: "#ffffff" }}
-    >
-      {/* Graph-paper grid — matches reference photo */}
+    <div className="w-full h-full overflow-hidden relative bg-white">
+      {/* Graph-paper grid */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -99,11 +14,9 @@ const Slide11Business = () => (
           opacity: 0.35,
         }}
       />
-      {/* Subtle top accent line */}
       <div className="absolute top-0 left-0 right-0 h-1 pointer-events-none" style={{ background: "linear-gradient(90deg, #16a34a, #2563eb, #7c3aed)" }} />
 
-      <div className="relative z-10 flex flex-col h-full px-14 pt-8 pb-5">
-
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-14 pt-8 pb-5">
         {/* Header */}
         <div className="text-center mb-4 animate-fade-in">
           <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
@@ -113,114 +26,184 @@ const Slide11Business = () => (
             High-Margin, Recurring, <span className="text-primary">Global</span>
           </h2>
           <p className="text-[15px] text-muted-foreground mt-1">
-            EcoGridia monetizes clean energy across infrastructure, intelligence, markets, partners, and capital — without owning hardware.
+            SaaS-first platform monetizing clean energy across intelligence, markets & capital — zero hardware.
           </p>
         </div>
 
-        {/* Highlights row */}
-        <div className="flex justify-center gap-3 mb-4 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-          {highlights.map((h, i) => {
-            const Icon = h.icon;
-            return (
-              <div
-                key={i}
-                className="flex items-center gap-2.5 px-5 py-2.5 rounded-full border-2 bg-white/80 shadow-sm"
-                style={{ borderColor: "#e2e8f0" }}
-              >
-                <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "#f0fdf4" }}>
-                  <Icon className="w-4 h-4" style={{ color: "#16a34a" }} />
+        {/* PRIMARY ENGINE — VoltIQ */}
+        <div
+          className="w-full rounded-2xl border-2 border-blue-500/30 bg-gradient-to-r from-blue-50/80 to-indigo-50/60 p-5 mb-4 animate-fade-in relative overflow-hidden"
+          style={{ animationDelay: "0.1s", animationFillMode: "forwards", opacity: 0 }}
+        >
+          <div className="absolute top-3 right-4 flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest">
+            <Star className="w-3 h-3" /> Primary Revenue Engine
+          </div>
+          <div className="flex items-start gap-5">
+            <div className="w-14 h-14 rounded-2xl bg-blue-600/10 border-2 border-blue-600/25 flex items-center justify-center shrink-0">
+              <Brain className="w-7 h-7 text-blue-600" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-3 mb-1">
+                <h3 className="text-[24px] font-black text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                  VoltIQ™ — Energy Intelligence OS
+                </h3>
+                <span className="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-700 text-[11px] font-bold">SaaS + Savings Share</span>
+              </div>
+              <p className="text-[13px] text-muted-foreground mb-3">Primary recurring revenue layer — the core SaaS platform driving valuation</p>
+              <div className="grid grid-cols-4 gap-3">
+                <div className="rounded-xl bg-white border border-blue-200/60 p-3 text-center">
+                  <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">Starter</div>
+                  <div className="text-[18px] font-black text-blue-600">$11K–$17K</div>
+                  <div className="text-[10px] text-muted-foreground">ARR per customer</div>
+                </div>
+                <div className="rounded-xl bg-white border border-blue-200/60 p-3 text-center">
+                  <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">Professional</div>
+                  <div className="text-[18px] font-black text-blue-600">$35K–$58K</div>
+                  <div className="text-[10px] text-muted-foreground">ARR per customer</div>
+                </div>
+                <div className="rounded-xl bg-white border border-blue-200/60 p-3 text-center">
+                  <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">Enterprise</div>
+                  <div className="text-[18px] font-black text-blue-600">$85K+</div>
+                  <div className="text-[10px] text-muted-foreground">ARR per customer</div>
+                </div>
+                <div className="rounded-xl bg-white border border-blue-200/60 p-3 text-center">
+                  <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">WattWise AI</div>
+                  <div className="text-[18px] font-black text-blue-600">20%</div>
+                  <div className="text-[10px] text-muted-foreground">of energy savings</div>
+                </div>
+              </div>
+            </div>
+            <div className="text-right shrink-0 pl-3">
+              <div className="text-[32px] font-black text-blue-600 leading-none">85–90%</div>
+              <div className="text-[11px] text-muted-foreground uppercase tracking-wider mt-1">Gross Margin</div>
+            </div>
+          </div>
+        </div>
+
+        {/* EXPANSION ENGINES */}
+        <div className="w-full mb-3">
+          <div className="flex items-center gap-2 mb-2 animate-fade-in" style={{ animationDelay: "0.2s", animationFillMode: "forwards", opacity: 0 }}>
+            <div className="h-px flex-1 bg-border/40" />
+            <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-widest px-3">Expansion & Monetization Layer</span>
+            <div className="h-px flex-1 bg-border/40" />
+          </div>
+          <div className="grid grid-cols-3 gap-3 animate-fade-in" style={{ animationDelay: "0.25s", animationFillMode: "forwards", opacity: 0 }}>
+            {/* GridLink */}
+            <div className="rounded-xl bg-white border-t-[3px] border-violet-500 p-4 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 rounded-lg bg-violet-500/10 border border-violet-500/25 flex items-center justify-center">
+                  <Wind className="w-4 h-4 text-violet-600" />
                 </div>
                 <div>
-                  <div className="text-[18px] font-extrabold text-foreground leading-none">{h.value}</div>
-                  <div className="text-[11px] text-muted-foreground">{h.label}</div>
+                  <h4 className="text-[15px] font-extrabold text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>GridLink™</h4>
+                  <p className="text-[10px] text-muted-foreground">Renewable Procurement</p>
                 </div>
+                <span className="ml-auto text-[15px] font-black text-violet-600">~70–80%</span>
               </div>
-            );
-          })}
+              <div className="space-y-1">
+                <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-violet-500 shrink-0" /><span className="text-[12px] text-foreground/80">PPA commission: 8% • VPPA: 6%</span></div>
+                <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-violet-500 shrink-0" /><span className="text-[12px] font-bold text-violet-700">Commission on $500K–$1.7M PPAs</span></div>
+              </div>
+            </div>
+
+            {/* RECMatrix */}
+            <div className="rounded-xl bg-white border-t-[3px] border-orange-500 p-4 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 rounded-lg bg-orange-500/10 border border-orange-500/25 flex items-center justify-center">
+                  <Leaf className="w-4 h-4 text-orange-600" />
+                </div>
+                <div>
+                  <h4 className="text-[15px] font-extrabold text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>RECMatrix™</h4>
+                  <p className="text-[10px] text-muted-foreground">Carbon Marketplace</p>
+                </div>
+                <span className="ml-auto text-[15px] font-black text-orange-600">~75–85%</span>
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" /><span className="text-[12px] text-foreground/80">8% REC markup + carbon spreads</span></div>
+                <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" /><span className="text-[12px] font-bold text-orange-700">55–85% customer attach rate</span></div>
+              </div>
+            </div>
+
+            {/* CarbonOS */}
+            <div className="rounded-xl bg-white border-t-[3px] border-yellow-500 p-4 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 rounded-lg bg-yellow-500/10 border border-yellow-500/25 flex items-center justify-center">
+                  <FileCheck className="w-4 h-4 text-yellow-600" />
+                </div>
+                <div>
+                  <h4 className="text-[15px] font-extrabold text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>CarbonOS™</h4>
+                  <p className="text-[10px] text-muted-foreground">Compliance & ESG AI</p>
+                </div>
+                <span className="ml-auto text-[15px] font-black text-yellow-600">~85%</span>
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-yellow-500 shrink-0" /><span className="text-[12px] text-foreground/80">CarbonLedger™ + AuditTrail360™</span></div>
+                <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-yellow-500 shrink-0" /><span className="text-[12px] font-bold text-yellow-700">Enterprise ESG & compliance buyers</span></div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Revenue streams grid */}
-        <div className="grid grid-cols-3 gap-3 flex-1">
-          {streams.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <div
-                key={i}
-                className="bg-white/90 rounded-xl p-4 flex flex-col gap-1.5 shadow-sm animate-fade-in hover:shadow-md transition-all"
-                style={{
-                  borderTop: `3px solid ${s.borderColor}`,
-                  animationDelay: `${0.12 + i * 0.07}s`,
-                  animationFillMode: "forwards",
-                  opacity: 0,
-                }}
-              >
-                <div className="flex items-center gap-2.5 mb-1">
-                  <div
-                    className="w-9 h-9 rounded-lg flex items-center justify-center shadow-sm"
-                    style={{ background: `${s.color}15`, border: `1.5px solid ${s.color}30` }}
-                  >
-                    <Icon className="w-4 h-4" style={{ color: s.color }} />
-                  </div>
-                  <div>
-                    <h3 className="text-[16px] font-extrabold text-foreground leading-none" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                      {s.name}
-                    </h3>
-                    <p className="text-[11px] text-muted-foreground">{s.sub}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between">
-                  <span
-                    className="px-2.5 py-0.5 rounded-full text-[11px] font-bold"
-                    style={{ background: s.typeBg, color: s.typeColor }}
-                  >
-                    {s.type}
-                  </span>
-                  <span className="text-[16px] font-extrabold" style={{ color: s.color }}>{s.margin}</span>
-                </div>
-
-                <div className="mt-1 flex flex-col gap-0.5">
-                  {s.drivers.map((d, j) => (
-                    <div key={j} className="flex items-start gap-1.5">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: s.color }} />
-                      <span className="text-[12px] text-foreground/80">{d}</span>
-                    </div>
-                  ))}
-                </div>
+        {/* SERVICES ROW */}
+        <div className="w-full mb-4">
+          <div className="grid grid-cols-2 gap-3 animate-fade-in" style={{ animationDelay: "0.35s", animationFillMode: "forwards", opacity: 0 }}>
+            {/* GridForge */}
+            <div className="rounded-xl bg-white border border-border/40 p-3.5 shadow-sm flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center shrink-0">
+                <Zap className="w-4 h-4 text-emerald-600" />
               </div>
-            );
-          })}
+              <div className="flex-1 min-w-0">
+                <h4 className="text-[14px] font-extrabold text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>GridForge™</h4>
+                <p className="text-[10px] text-muted-foreground">Implementation & Project Orchestration</p>
+              </div>
+              <div className="text-right shrink-0">
+                <div className="text-[14px] font-black text-emerald-600">~80%</div>
+                <div className="text-[10px] text-muted-foreground">Recurring + Fee</div>
+              </div>
+            </div>
+
+            {/* CapitalFlow */}
+            <div className="rounded-xl bg-white border border-border/40 p-3.5 shadow-sm flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center shrink-0">
+                <DollarSign className="w-4 h-4 text-emerald-600" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h4 className="text-[14px] font-extrabold text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>CapitalFlow™</h4>
+                <p className="text-[10px] text-muted-foreground">Financing & Incentive Intelligence</p>
+              </div>
+              <div className="text-right shrink-0">
+                <div className="text-[14px] font-black text-emerald-600">~70–75%</div>
+                <div className="text-[10px] text-muted-foreground">Fee-Based</div>
+              </div>
+            </div>
+          </div>
         </div>
 
+        {/* Bottom metrics bar */}
         <div
-          className="mt-4 rounded-2xl flex items-center justify-around py-3 px-8 animate-fade-in"
+          className="w-full rounded-2xl flex items-center justify-around py-3 px-8 animate-fade-in"
           style={{
             background: "linear-gradient(90deg, #14532d 0%, #166534 50%, #14532d 100%)",
-            animationDelay: "0.6s",
+            animationDelay: "0.5s",
             animationFillMode: "forwards",
             opacity: 0,
           }}
         >
           <div className="text-center">
             <div className="text-[22px] font-extrabold text-white">76–89%</div>
-            <div className="text-[11px] text-green-200">Gross Margins</div>
+            <div className="text-[11px] text-green-200">Gross Margin</div>
           </div>
           <div className="w-px h-8 bg-white/20" />
           <div className="text-center">
-            <div className="text-[22px] font-extrabold text-white">6 Streams</div>
-            <div className="text-[11px] text-green-200">Diversified</div>
+            <div className="text-[22px] font-extrabold text-white">6 Revenue Engines</div>
+            <div className="text-[11px] text-green-200">SaaS + Transactions + Compliance</div>
           </div>
           <div className="w-px h-8 bg-white/20" />
           <div className="text-center">
-            <div className="text-[22px] font-extrabold text-white">Zero</div>
-            <div className="text-[11px] text-green-200">Hardware Risk</div>
-          </div>
-          <div className="w-px h-8 bg-white/20" />
-          <div className="text-[14px] font-bold text-white italic max-w-[350px]">
-            "EcoGridia captures value at every layer without carrying hardware risk"
+            <div className="text-[22px] font-extrabold text-white">Zero Hardware Risk</div>
+            <div className="text-[11px] text-green-200">Asset-Light Model</div>
           </div>
         </div>
-
       </div>
     </div>
   </SlideLayout>
