@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import SlideLayout from "../SlideLayout";
 import { Zap, Mail, Globe, ArrowRight, DollarSign, Target, Users, Rocket, Code, ShoppingCart, Scale, Landmark } from "lucide-react";
-import hero3d from "@/assets/hero-3d.jpg";
+import ask3d from "@/assets/ask-3d.png";
 
 /* ── Interactive particle background (matches Slide01) ── */
 const ParticleBackground = () => {
@@ -183,7 +183,7 @@ const Slide20Ask = () => {
             {/* 3D image */}
             <div className="relative opacity-0 animate-slide-in-right mb-6" style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}>
               <div className="animate-float">
-                <img src={hero3d} alt="3D isometric clean energy infrastructure"
+                <img src={ask3d} alt="3D isometric clean energy investment"
                   className="w-full max-w-[520px] h-auto rounded-2xl shadow-2xl shadow-primary/10" />
               </div>
               <div className="absolute inset-0 rounded-2xl pointer-events-none animate-shimmer"
