@@ -1,118 +1,73 @@
 
+# Fix All VC-Identified Financial Issues
 
-# EcoGridia Investor Pitch Deck
+## Overview
+Address the 5 critical issues from the VC audit to strengthen the financial narrative and credibility of the pitch deck.
 
-A 20-slide interactive pitch deck web app with slide navigation, animations, and rich data visualizations for EcoGridia — an infrastructure SaaS for distributed clean energy.
+---
 
-## Slide Navigation & Layout
-- Full-screen slide-based layout with Previous/Next buttons and dot indicators
-- Keyboard arrow key navigation
-- Slide counter (e.g., "1 / 20")
-- Smooth transitions between slides
-- Clean white/light background with a subtle grid pattern
+## Fix 1: Payback Period Inconsistency (Slide16UnitEcon)
+The CAC Payback card says **~20 months** but the bottom summary bar says **<12 months**. These contradict each other.
 
-## Slide 1 — Title Slide
-- EcoGridia logo and hero platform image
-- Headline: "Infrastructure SaaS for Distributed Clean Energy"
-- Tagline and subtitle text
-- Green accent color scheme throughout
+**Action:** Standardize to **~20 months** everywhere (the mathematically correct number: $174K CAC / ~$8,700 monthly GP = ~20 months). Update the bottom bar "Payback" from "<12 mo" to "~20 mo" and the Investor KPI Strip "Payback Period" value from "< 12 mo" to "~20 mo".
 
-## Slide 2 — The Problem
-- "The Clean Energy Transition Is Broken" headline
-- 6 problem cards (Unused Capacity, Unpredictable Demand, No Real Access, Broken Reporting, Locked Out, No Unified System) with click-to-expand details
-- Key stats banner: $3T+ market, 100M+ rooftops, 4B+ people excluded
+---
 
-## Slide 3 — The Solution
-- 6 interactive solution tabs (Unused→Productive, Speculative→Pre-Sold, etc.)
-- Each tab shows Problem → EcoGridia Solution → Impact
-- Animated stat highlights at the bottom
+## Fix 2: Reorder Slides — Traction Before Projections (Index.tsx)
+VCs want to see **proof first, then projections**. Currently: Projections (Slide 18) comes before Traction (Slide 19).
 
-## Slide 4 — Institution-Centric Ecosystem
-- Ecosystem diagram showing how institutions connect through EcoGridia
-- Visual showing Schools, Data Centers, Landowners, Vendors, Government, Energy stakeholders
+**Action:** Swap the order so Traction (First 90 Days) appears immediately after Unit Economics / Segments, and Projections (10-Year Dashboard) comes after. New order in the financial section:
+```text
+... Slide16bSegments
+    Slide19Pipeline (Traction - moved up)
+    Slide18Projections (Projections - moved down)
+    Slide20Ask
+```
 
-## Slide 5 — Three-Layer Platform
-- L1: Infrastructure Execution, L2: Intelligence & Compliance, L3: Market & Monetization
-- Each layer with description, target users, and value proposition
+---
 
-## Slide 6 — 9 Core Features
-- Numbered feature grid (Asset Digitization, Digital Twin, AI Forecasting, Project SaaS, VoltIQ, Energy Units, Compliance, Settlement, Dashboards)
-- Click-to-expand detail panels
+## Fix 3: Redesign GTM Slide for Specificity (Slide13GTM)
+The current Gantt chart is too generic. VCs want to see specific sales motions and channel economics.
 
-## Slide 7 — Layer 1: Green Infrastructure SaaS
-- 7 numbered capability cards with descriptions
-- Platform illustration
+**Action:** Replace the Gantt + status grid layout with a more actionable GTM slide containing:
+- **Sales Motion**: Two-column layout showing PLG (self-serve) vs. Enterprise (direct sales) paths
+- **Channel Strategy**: Specific acquisition channels with estimated CAC per channel
+- **First 10 Customers Playbook**: Concrete steps (pilot schools, direct enterprise outreach, marketplace seeding)
+- **Key Milestones**: Timeline with specific revenue triggers (not generic phase names)
+- Keep the bottom metrics bar but update values to reflect channel-specific targets
 
-## Slide 8 — Layer 2: Green Intelligence & Market
-- Tab navigation for different stakeholder views (Enterprises, Schools, Consulting, Regulators)
-- 8 numbered feature sections with bullet points
+---
 
-## Slide 9 — Participation Models
-- 3 model cards: Enterprise Project Ownership, Shared Projects, Bulk Energy Procurement
-- Stakeholder lists for each model
-- Click-for-details interaction
+## Fix 4: Add "Today vs Target" on Unit Economics (Slide16UnitEcon)
+Show current 90-day unit economics alongside FY30 targets so VCs see trajectory.
 
-## Slide 10 — Impact Calculator (Interactive)
-- Location selector (country, state, city)
-- Asset type selector
-- Adjustable parameters (land area slider, duration slider)
-- Real-time calculated results: Sq Ft, kWh/Year, Tons CO₂, $/Year, Total value
+**Action:** Add a "Today vs FY30" comparison row at the top of the slide, showing:
+- Today: ARPU ~$2,225 / Margin ~78% / LTV/CAC ~4.8x / Payback ~12mo
+- FY30 Target: ARPU $124K / Margin 84% / LTV/CAC 5.0x / Payback ~20mo
 
-## Slide 11 — Business Model
-- "High-Margin, Recurring, Global" headline
-- 4 key metric highlights (80%+ margin, Recurring, Zero hardware risk, Global)
-- 8 revenue stream cards with margin percentages
+This will be a compact horizontal comparison strip between the header and the main 3-column grid.
 
-## Slide 12 — Pricing Model
-- Tiered pricing table with early-stage and growth-stage sections
-- Core SaaS, Enterprise Subscriptions, Compliance, Consulting, Project Execution, Marketplace, VoltIQ, Community Capital
-- Unit economics summary (margins, ACV range, LTV:CAC, payback)
+---
 
-## Slide 13 — Go-To-Market Roadmap
-- 4-phase timeline: Supply Lock-In → Demand Activation → Community Flywheel → Government & Infrastructure
-- Each phase with goals, actions, and outcomes
+## Fix 5: Add Assumptions to Projections (Slide18Projections)
+The 442x revenue growth lacks visible assumptions, hurting credibility.
 
-## Slide 14 — Competitive Comparison
-- Feature comparison table (EcoGridia vs 5 competitors)
-- Color-coded: Full / Partial / None coverage indicators
-- 12 feature rows
+**Action:** Add a "Key Assumptions" card in the right column showing:
+- Headcount scaling (e.g., 10 FY26 to 240 FY35)
+- CAC trends (declining with scale)
+- Net Revenue Retention (>120%)
+- Expansion rate assumptions
+- Add a visual emphasis on FY26-FY28 as "Near-Term Focus" (highlight first 3 years in the chart) with FY29+ labeled as "Scale Targets"
 
-## Slide 15 — TAM / SAM / SOM
-- Market sizing with 4 market segments ($50B + $25B + $15B + $10B = $100B+ TAM)
-- TAM → SAM ($25B) → SOM ($60M ARR) funnel
-- Click-to-expand breakdowns
+---
 
-## Slide 16 — Unit Economics by Stakeholder
-- 4 stakeholder cards (Landowners, Vendors, Enterprises, Consumers) with Revenue/yr, Margin, LTV, LTV/CAC
-- Platform economics summary bar
+## Technical Details
 
-## Slide 17 — Business Model & Financials
-- Two business lines: EcoGridia Sites ($40M) and Subscriptions ($20M)
-- Revenue streams breakdown for each
-- Traction indicators
+### Files Modified
+1. **src/components/slides/Slide16UnitEcon.tsx** — Fix payback inconsistency + add Today vs FY30 comparison strip
+2. **src/pages/Index.tsx** — Swap Slide19Pipeline and Slide18Projections order
+3. **src/components/slides/Slide13GTM.tsx** — Full redesign with PLG vs Enterprise sales motions, channel strategy, and first-10-customers playbook
+4. **src/components/slides/Slide18Projections.tsx** — Add Key Assumptions card and near-term focus visual treatment
 
-## Slide 18 — 5-Year Projections
-- Bar chart showing Revenue, Expenses, Profit over 5 years using Recharts
-- Y5 combined targets summary
-- Key financial highlights
-
-## Slide 19 — Active Revenue Pipeline
-- Current month metrics: 40 vendors, 10 sites, 3 enterprises, 150 subscribers
-- Revenue breakdown pie/bar with percentages
-- Monthly total and annualized figures
-
-## Slide 20 — The Ask & Closing
-- $2M Pre-Seed raise details
-- 18-month milestones list
-- Use of Funds breakdown (pie chart or progress bars)
-- Closing tagline: "The SaaS platform for how humanity owns, verifies, and pays for clean energy"
-- Contact information
-
-## Design & Styling
-- Green/teal primary accent color (#10B981 range)
-- Clean, professional typography
-- Subtle grid background pattern
-- Card-based layouts with hover effects
-- Smooth animations and transitions between slides
-- Fully responsive design
-
+### No new dependencies required
+All changes use existing React, Tailwind, and Recharts patterns already in the codebase.
