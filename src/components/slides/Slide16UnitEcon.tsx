@@ -3,145 +3,157 @@ import SlideLayout from "../SlideLayout";
 
 const Slide16UnitEcon = () => (
   <SlideLayout>
-    <div className="flex flex-col h-full px-20 py-8 bg-white">
-      <h2 className="text-5xl font-bold text-foreground mb-1 animate-fade-in">
-        Core Assumptions — <span className="text-primary">Year 5 Baseline</span>
-      </h2>
-      <p className="text-xl text-muted-foreground mb-8">Validated unit economics across all customer segments.</p>
+    <div className="relative w-full h-full flex flex-col bg-white overflow-hidden">
+      {/* Grid background */}
+      <div className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "linear-gradient(to right, #c7d2d8 1px, transparent 1px), linear-gradient(to bottom, #c7d2d8 1px, transparent 1px)",
+          backgroundSize: "60px 60px", opacity: 0.35,
+        }}
+      />
+      <div className="absolute top-0 left-0 right-0 h-1 pointer-events-none"
+        style={{ background: "linear-gradient(90deg, #16a34a, #2563eb, #7c3aed)" }}
+      />
 
-      <div className="grid grid-cols-3 gap-6 mb-6">
+      <div className="relative z-10 flex flex-col h-full px-14 pt-8 pb-5">
+        {/* Header */}
+        <div className="text-center mb-5 animate-fade-in">
+          <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
+            Unit Economics
+          </span>
+          <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            Core Assumptions — <span className="text-primary">Year 5 Baseline</span>
+          </h2>
+          <p className="text-[15px] text-muted-foreground mt-1">Validated unit economics across all customer segments.</p>
+        </div>
 
-        {/* Col 1: Customer Revenue + LTV */}
-        <div className="flex flex-col gap-6">
-          {/* Assumptions */}
-          <div className="bg-card rounded-2xl border border-border p-6 animate-fade-in">
-            <h3 className="text-lg font-bold text-primary mb-4 uppercase tracking-wide">Core Assumptions</h3>
-            <div className="space-y-3">
-              {[
-                { label: "Total Revenue", value: "$169.7M" },
-                { label: "Total Customers", value: "1,365" },
-                { label: "Gross Margin", value: "84%" },
-                { label: "Annual Churn", value: "15%" },
-              ].map((r) => (
-                <div key={r.label} className="flex justify-between items-center border-b border-border pb-2 last:border-0 last:pb-0">
-                  <span className="text-base text-muted-foreground">{r.label}</span>
-                  <span className="text-base font-bold text-foreground">{r.value}</span>
-                </div>
-              ))}
+        {/* Main grid */}
+        <div className="grid grid-cols-3 gap-4 flex-1 min-h-0">
+
+          {/* Col 1 */}
+          <div className="flex flex-col gap-3">
+            <CompactTable title="Core Assumptions" color="#16a34a" delay="0.05s" rows={[
+              { label: "Total Revenue", value: "$169.7M" },
+              { label: "Total Customers", value: "1,365" },
+              { label: "Gross Margin", value: "84%" },
+              { label: "Annual Churn", value: "15%" },
+            ]} />
+            <CompactTable title="Customer Revenue" color="#0d9488" delay="0.1s" rows={[
+              { label: "Blended ARPU", value: "$124,300" },
+              { label: "Gross Profit / Customer", value: "$104,412" },
+              { label: "Avg Customer Lifetime", value: "6.7 years" },
+            ]} />
+          </div>
+
+          {/* Col 2: LTV + CAC */}
+          <div className="flex flex-col gap-3">
+            <ValueCard label="Lifetime Value (LTV)" value="$693K" sub="Per enterprise customer" color="#16a34a" borderColor="#16a34a" delay="0.15s"
+              details={[
+                { l: "Formula", r: "GP ÷ Churn Rate" },
+                { l: "$104,412 ÷ 0.15", r: "= $696,080" },
+              ]}
+            />
+            <ValueCard label="Customer Acquisition Cost" value="$140K" sub="Target LTV:CAC = 5x" color="#059669" borderColor="#059669" delay="0.2s"
+              details={[
+                { l: "LTV:CAC Target", r: "5x" },
+                { l: "$693K ÷ 5", r: "= $138,600" },
+              ]}
+            />
+            <div className="rounded-xl border border-primary/20 bg-primary/5 px-4 py-2.5 text-center animate-fade-in"
+              style={{ animationDelay: "0.25s", animationFillMode: "forwards", opacity: 0 }}>
+              <div className="text-[11px] text-muted-foreground font-semibold uppercase tracking-widest">CAC Payback</div>
+              <div className="text-[22px] font-black text-primary">~16 months</div>
             </div>
           </div>
 
-          {/* Customer Revenue */}
-          <div className="bg-card rounded-2xl border border-border p-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            <h3 className="text-lg font-bold text-eco-teal mb-4 uppercase tracking-wide">Customer Revenue Metrics</h3>
-            <div className="space-y-3">
-              {[
-                { label: "Blended ARPU", value: "$124,300" },
-                { label: "Gross Profit / Customer", value: "$104,412" },
-                { label: "Avg Customer Lifetime", value: "6.7 years" },
-              ].map((r) => (
-                <div key={r.label} className="flex justify-between items-center border-b border-border pb-2 last:border-0 last:pb-0">
-                  <span className="text-base text-muted-foreground">{r.label}</span>
-                  <span className="text-base font-bold text-foreground">{r.value}</span>
-                </div>
-              ))}
-            </div>
+          {/* Col 3 */}
+          <div className="flex flex-col gap-3">
+            <CompactTable title="Data Center Segment (Y5)" color="#0d9488" delay="0.25s" rows={[
+              { label: "Revenue", value: "$44.8M" },
+              { label: "Customers", value: "675" },
+              { label: "ARPU", value: "$66,350" },
+              { label: "Gross Profit / DC", value: "$55,700" },
+              { label: "Implied LTV", value: "$371,000" },
+              { label: "Est. DC CAC (5x)", value: "$74,000" },
+            ]} />
+            <CompactTable title="Company Efficiency" color="#16a34a" delay="0.3s" rows={[
+              { label: "Revenue / FTE", value: "$707K" },
+              { label: "EBITDA Margin", value: "69%" },
+              { label: "Net Margin", value: "51.7%" },
+              { label: "Gross Margin Trend", value: "76% → 89%" },
+            ]} />
           </div>
         </div>
 
-        {/* Col 2: LTV + CAC + Summary */}
-        <div className="flex flex-col gap-4 justify-start">
-          {/* LTV */}
-          <div className="bg-card rounded-xl border-2 border-primary p-4 animate-fade-in" style={{ animationDelay: "0.15s" }}>
-            <h3 className="text-sm font-bold text-primary mb-2 uppercase tracking-wide">Lifetime Value (LTV)</h3>
-            <div className="text-4xl font-black text-primary mb-0.5">$693K</div>
-            <div className="text-xs text-muted-foreground mb-3">Per enterprise customer</div>
-            <div className="space-y-1.5 text-xs">
-              <div className="flex justify-between"><span className="text-muted-foreground">Formula</span><span className="font-semibold text-foreground">GP ÷ Churn Rate</span></div>
-              <div className="flex justify-between"><span className="text-muted-foreground">$104,412 ÷ 0.15</span><span className="font-semibold text-foreground">= $696,080</span></div>
-            </div>
-          </div>
-
-          {/* CAC */}
-          <div className="bg-card rounded-xl border-2 border-eco-emerald p-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <h3 className="text-sm font-bold text-eco-emerald mb-2 uppercase tracking-wide">Customer Acquisition Cost</h3>
-            <div className="text-4xl font-black text-eco-emerald mb-0.5">$140K</div>
-            <div className="text-xs text-muted-foreground mb-3">Target LTV:CAC = 5x</div>
-            <div className="space-y-1.5 text-xs">
-              <div className="flex justify-between"><span className="text-muted-foreground">LTV:CAC Target</span><span className="font-semibold text-foreground">5x</span></div>
-              <div className="flex justify-between"><span className="text-muted-foreground">$693K ÷ 5</span><span className="font-semibold text-foreground">= $138,600</span></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Col 3: Data Center + Efficiency */}
-        <div className="flex flex-col gap-6">
-          {/* Data Center */}
-          <div className="bg-card rounded-2xl border border-border p-6 animate-fade-in" style={{ animationDelay: "0.25s" }}>
-            <h3 className="text-lg font-bold text-eco-teal mb-4 uppercase tracking-wide">Data Center Segment (Y5)</h3>
-            <div className="space-y-3">
-              {[
-                { label: "Revenue", value: "$44.8M" },
-                { label: "Customers", value: "675" },
-                { label: "ARPU", value: "$66,350" },
-                { label: "Gross Profit / DC", value: "$55,700" },
-                { label: "Implied LTV", value: "$371,000" },
-                { label: "Est. DC CAC (5x)", value: "$74,000" },
-              ].map((r) => (
-                <div key={r.label} className="flex justify-between items-center border-b border-border pb-2 last:border-0 last:pb-0">
-                  <span className="text-sm text-muted-foreground">{r.label}</span>
-                  <span className="text-sm font-bold text-foreground">{r.value}</span>
+        {/* Summary bar */}
+        <div className="flex justify-center mt-4 animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "forwards", opacity: 0 }}>
+          <div className="inline-flex items-center gap-5 rounded-2xl px-8 py-3"
+            style={{ background: "linear-gradient(90deg, #14532d 0%, #166534 50%, #14532d 100%)" }}>
+            {[
+              { label: "ARPU", value: "$124K" },
+              { label: "Margin", value: "84%" },
+              { label: "LTV", value: "$693K" },
+              { label: "CAC", value: "$140K" },
+              { label: "LTV:CAC", value: "5x" },
+              { label: "Payback", value: "16 mo" },
+            ].map((m, i, arr) => (
+              <React.Fragment key={m.label}>
+                <div className="text-center">
+                  <div className="text-[16px] font-black text-white leading-tight">{m.value}</div>
+                  <div className="text-[10px] text-green-200">{m.label}</div>
                 </div>
-              ))}
-            </div>
+                {i < arr.length - 1 && <div className="w-px h-7 bg-white/20 shrink-0" />}
+              </React.Fragment>
+            ))}
           </div>
-
-          {/* Efficiency */}
-          <div className="bg-card rounded-2xl border border-border p-6 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <h3 className="text-lg font-bold text-primary mb-4 uppercase tracking-wide">Company Efficiency</h3>
-            <div className="space-y-3">
-              {[
-                { label: "Revenue / FTE", value: "$707K" },
-                { label: "EBITDA Margin", value: "69%" },
-                { label: "Net Margin", value: "51.7%" },
-                { label: "Gross Margin Trend", value: "76% → 89%" },
-              ].map((r) => (
-                <div key={r.label} className="flex justify-between items-center border-b border-border pb-2 last:border-0 last:pb-0">
-                  <span className="text-sm text-muted-foreground">{r.label}</span>
-                  <span className="text-sm font-bold text-foreground">{r.value}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Summary bar */}
-      <div className="flex justify-center mt-6 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-        <div
-          className="flex items-center gap-8 rounded-2xl px-10 py-4"
-          style={{ background: "linear-gradient(90deg, #14532d 0%, #166534 50%, #14532d 100%)", width: "55%" }}
-        >
-          {[
-            { label: "ARPU", value: "$124,300" },
-            { label: "Gross Margin", value: "84%" },
-            { label: "LTV", value: "~$693K" },
-            { label: "CAC", value: "~$140K" },
-            { label: "LTV:CAC", value: "5x" },
-            { label: "CAC Payback", value: "~16 mo" },
-          ].map((m, i, arr) => (
-            <React.Fragment key={m.label}>
-              <div className="text-center flex-1">
-                <div className="text-xl font-black text-white">{m.value}</div>
-                <div className="text-xs text-green-200">{m.label}</div>
-              </div>
-              {i < arr.length - 1 && <div className="w-px h-8 bg-white/20 shrink-0" />}
-            </React.Fragment>
-          ))}
         </div>
       </div>
     </div>
   </SlideLayout>
+);
+
+/* ── Compact table card ── */
+const CompactTable = ({ title, color, delay, rows }: {
+  title: string; color: string; delay: string;
+  rows: { label: string; value: string }[];
+}) => (
+  <div className="bg-white/90 rounded-xl border border-border/60 shadow-sm animate-fade-in"
+    style={{ animationDelay: delay, animationFillMode: "forwards", opacity: 0 }}>
+    <div className="px-4 py-2 border-b border-border/40">
+      <h3 className="text-[12px] font-bold uppercase tracking-widest" style={{ color }}>{title}</h3>
+    </div>
+    <div className="px-4 py-2">
+      {rows.map((r) => (
+        <div key={r.label} className="flex justify-between items-center py-1.5 border-b border-border/30 last:border-0">
+          <span className="text-[13px] text-muted-foreground">{r.label}</span>
+          <span className="text-[13px] font-bold text-foreground">{r.value}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+/* ── Value highlight card ── */
+const ValueCard = ({ label, value, sub, color, borderColor, delay, details }: {
+  label: string; value: string; sub: string; color: string; borderColor: string; delay: string;
+  details: { l: string; r: string }[];
+}) => (
+  <div className="bg-white/90 rounded-xl border-2 shadow-sm animate-fade-in"
+    style={{ borderColor, animationDelay: delay, animationFillMode: "forwards", opacity: 0 }}>
+    <div className="px-4 py-3">
+      <div className="text-[11px] font-bold uppercase tracking-widest mb-1" style={{ color }}>{label}</div>
+      <div className="text-[28px] font-black leading-none" style={{ color }}>{value}</div>
+      <div className="text-[11px] text-muted-foreground mt-0.5">{sub}</div>
+    </div>
+    <div className="px-4 py-2 border-t border-border/30">
+      {details.map((d) => (
+        <div key={d.l} className="flex justify-between text-[11px] py-0.5">
+          <span className="text-muted-foreground">{d.l}</span>
+          <span className="font-semibold text-foreground">{d.r}</span>
+        </div>
+      ))}
+    </div>
+  </div>
 );
 
 export default Slide16UnitEcon;
