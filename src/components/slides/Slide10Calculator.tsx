@@ -78,7 +78,7 @@ const Slide10Calculator = () => {
 
   return (
     <SlideLayout>
-      <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden px-14 pt-8 pb-5">
+      <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden px-14 pt-5 pb-4">
         {/* Grid background */}
         <div className="absolute inset-0 pointer-events-none"
           style={{
@@ -90,7 +90,7 @@ const Slide10Calculator = () => {
         {/* Main content area — centered vertically */}
         <div className="relative z-10 flex flex-col items-center w-full">
           {/* Header — Slide 3 style */}
-          <div className="text-center mb-5 animate-fade-in">
+          <div className="text-center mb-4 animate-fade-in">
             <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
               AI-Powered Calculator
             </span>
@@ -101,7 +101,7 @@ const Slide10Calculator = () => {
           </div>
 
           {/* Two-column layout */}
-          <div className="grid grid-cols-[380px_1fr] gap-6 items-start">
+          <div className="grid grid-cols-[380px_1fr] gap-6 w-full max-w-[1200px] items-start">
             {/* Left: Controls */}
             <div className="space-y-3">
               {/* Location */}
@@ -240,12 +240,14 @@ const Slide10Calculator = () => {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="relative z-10 w-full mt-4 bg-[#14532d] px-14 py-2.5 flex items-center justify-between rounded-lg">
-          <span className="text-[12px] text-emerald-200/80 font-medium">Powered by EcoGridia AI • Location-aware energy modeling</span>
-          <span className={`text-[11px] font-semibold px-3 py-1 rounded-full ${aiData ? "bg-emerald-500/20 text-emerald-300" : "bg-white/10 text-white/50"}`}>
-            {aiData ? `✓ AI estimates for ${city}` : "Default estimates"}
-          </span>
+        {/* Bottom tagline — Slide 3 style */}
+        <div className="relative z-10 mt-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <div className="flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-primary/20 bg-primary/5 shadow-sm">
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-[15px] font-semibold text-primary">
+              {aiData ? `✓ AI estimates for ${city}` : "Powered by EcoGridia AI • Location-aware energy modeling"}
+            </span>
+          </div>
         </div>
       </div>
     </SlideLayout>
