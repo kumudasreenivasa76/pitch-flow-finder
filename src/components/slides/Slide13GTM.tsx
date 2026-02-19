@@ -54,9 +54,15 @@ const statusGrid = [
 ];
 
 const statusColor: Record<string, string> = {
-  green: "#16a34a",
-  yellow: "#ca8a04",
-  red: "#dc2626",
+  green: "#dcfce7",
+  yellow: "#fef9c3",
+  red: "#fee2e2",
+};
+
+const statusTextColor: Record<string, string> = {
+  green: "#15803d",
+  yellow: "#a16207",
+  red: "#b91c1c",
 };
 
 const Slide13GTM = () => (
@@ -137,8 +143,8 @@ const Slide13GTM = () => (
                 {sg.cells.map((cell, j) => (
                   <div
                     key={j}
-                    className="flex items-center justify-center text-white text-[13px] font-bold text-center p-3 border border-white/30"
-                    style={{ background: statusColor[cell.status] }}
+                    className="flex items-center justify-center text-[13px] font-bold text-center p-3 border border-white/60"
+                    style={{ background: statusColor[cell.status], color: statusTextColor[cell.status] }}
                   >
                     {cell.label}
                   </div>
