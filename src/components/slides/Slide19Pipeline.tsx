@@ -42,7 +42,7 @@ const Slide19Pipeline = () => {
 
   return (
     <SlideLayout>
-      <div className="relative flex flex-col h-full">
+      <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden px-14 pt-8 pb-5">
         {/* Grid background */}
         <div className="absolute inset-0 pointer-events-none"
           style={{
@@ -50,9 +50,8 @@ const Slide19Pipeline = () => {
             backgroundSize: "60px 60px", opacity: 0.5,
           }}
         />
-        <div className="relative z-10 h-1.5 w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 shrink-0" />
 
-        <div className="flex flex-col flex-1 px-14 pt-8 pb-5 overflow-hidden">
+        <div className="relative z-10 flex flex-col w-full flex-1 min-h-0">
           {/* Header */}
           <div className="flex items-center justify-between mb-3 animate-fade-in">
             <div>

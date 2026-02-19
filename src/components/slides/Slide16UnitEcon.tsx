@@ -3,7 +3,7 @@ import SlideLayout from "../SlideLayout";
 
 const Slide16UnitEcon = () => (
   <SlideLayout>
-    <div className="relative w-full h-full flex flex-col bg-white overflow-hidden">
+    <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden px-14 pt-8 pb-5">
       {/* Grid background */}
       <div className="absolute inset-0 pointer-events-none"
         style={{
@@ -11,11 +11,8 @@ const Slide16UnitEcon = () => (
             backgroundSize: "60px 60px", opacity: 0.5,
         }}
       />
-      <div className="absolute top-0 left-0 right-0 h-1 pointer-events-none"
-        style={{ background: "linear-gradient(90deg, #16a34a, #2563eb, #7c3aed)" }}
-      />
 
-      <div className="relative z-10 flex flex-col h-full px-14 pt-8 pb-5">
+      <div className="relative z-10 flex flex-col w-full">
         {/* Header */}
         <div className="text-center mb-5 animate-fade-in">
           <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
