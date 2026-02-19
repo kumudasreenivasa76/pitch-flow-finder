@@ -14,6 +14,8 @@ const categories = [
     textColor: "text-primary",
     borderColor: "border-primary/30",
     bgColor: "bg-primary/10",
+    iconBg: "#dcfce7",
+    iconColor: "#15803d",
     products: [
       {
         icon: Search, name: "BaselineIQ™", tagline: "Energy & Carbon Baseline Assessment",
@@ -39,6 +41,8 @@ const categories = [
     textColor: "text-eco-emerald",
     borderColor: "border-eco-emerald/30",
     bgColor: "bg-eco-emerald/10",
+    iconBg: "#d1fae5",
+    iconColor: "#065f46",
     products: [
       {
         icon: Globe, name: "TerraScan™", tagline: "Land & Rooftop Intelligence",
@@ -79,6 +83,8 @@ const categories = [
     textColor: "text-eco-teal",
     borderColor: "border-eco-teal/30",
     bgColor: "bg-eco-teal/10",
+    iconBg: "#ccfbf1",
+    iconColor: "#0f766e",
     products: [
       {
         icon: Activity, name: "VoltIQ™", tagline: "Real-Time Energy Intelligence",
@@ -114,6 +120,8 @@ const categories = [
     textColor: "text-primary",
     borderColor: "border-primary/30",
     bgColor: "bg-primary/10",
+    iconBg: "#dcfce7",
+    iconColor: "#15803d",
     products: [
       {
         icon: FileCheck, name: "RECMatrix™", tagline: "Renewable Energy Certificate Engine",
@@ -129,11 +137,13 @@ const categories = [
   },
   {
     id: "V",
-    label: "Executive & Investor Intelligence",
+    label: "Executive Intelligence",
     color: "bg-eco-amber",
     textColor: "text-eco-amber",
     borderColor: "border-eco-amber/30",
     bgColor: "bg-eco-amber/10",
+    iconBg: "#fef9c3",
+    iconColor: "#a16207",
     products: [
       {
         icon: BarChart3, name: "GreenBoard™", tagline: "Executive ESG Dashboard",
@@ -159,6 +169,8 @@ const categories = [
     textColor: "text-eco-emerald",
     borderColor: "border-eco-emerald/30",
     bgColor: "bg-eco-emerald/10",
+    iconBg: "#d1fae5",
+    iconColor: "#065f46",
     products: [
       {
         icon: FileText, name: "ComplySphere™", tagline: "Regulatory Reporting Engine",
@@ -174,96 +186,98 @@ const categories = [
   },
 ];
 
-// Flat product list for selection
-const allProducts = categories.flatMap((cat, ci) =>
-  cat.products.map((p, pi) => ({ ...p, catId: cat.id, catLabel: cat.label, catColor: cat.color, catTextColor: cat.textColor, catBorderColor: cat.borderColor, catBgColor: cat.bgColor, catIdx: ci, prodIdx: pi }))
+const allProducts = categories.flatMap((cat) =>
+  cat.products.map((p) => ({ ...p, catId: cat.id, catLabel: cat.label, catColor: cat.color, catTextColor: cat.textColor, catBorderColor: cat.borderColor, catBgColor: cat.bgColor, iconBg: cat.iconBg, iconColor: cat.iconColor }))
 );
 
-const segments = ["Universities & Schools", "Housing Communities", "Utility-Scale Solar", "Data Centers", "Enterprises", "Infrastructure Funds", "Climate Investors"];
-
 const Slide06Features = () => {
-  const [selectedCat, setSelectedCat] = useState(0);
   const [selectedProd, setSelectedProd] = useState(0);
-
-  const cat = categories[selectedCat];
-  const prod = cat.products[selectedProd] ?? cat.products[0];
+  const prod = allProducts[selectedProd];
   const Icon = prod.icon;
-
-  const handleCatSelect = (ci: number) => {
-    setSelectedCat(ci);
-    setSelectedProd(0);
-  };
 
   return (
     <SlideLayout>
       <div className="flex h-full overflow-hidden">
-        {/* Left: Category + Product sidebar */}
-        <div className="w-[300px] shrink-0 flex flex-col bg-card/40 border-r border-border/30 overflow-y-auto">
+
+        {/* Left panel: Title + App icon grid */}
+        <div className="w-[340px] shrink-0 flex flex-col bg-card/50 border-r border-border/30">
+          {/* Title */}
           <div className="px-5 pt-6 pb-4 border-b border-border/20 shrink-0">
-            <div className="flex items-center gap-3 opacity-0 animate-fade-in" style={{ animationFillMode: "forwards" }}>
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                <Zap className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <h2 className="text-[20px] font-extrabold text-foreground leading-tight">
-                  <span className="text-primary">20</span> Products
-                </h2>
-                <p className="text-[11px] text-muted-foreground">The EcoGridia Suite</p>
-              </div>
+            <div className="opacity-0 animate-fade-in" style={{ animationFillMode: "forwards" }}>
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground mb-1">The EcoGridia Suite</p>
+              <h2 className="text-[22px] font-extrabold text-foreground leading-tight">
+                Platform <span className="text-primary">Apps</span>
+              </h2>
+              <p className="text-[12px] text-muted-foreground mt-1">
+                <span className="font-bold text-primary">20 products</span> across 6 modules — tap any to explore
+              </p>
             </div>
           </div>
 
-          <div className="flex flex-col gap-1 px-2 py-3">
-            {categories.map((c, ci) => {
-              const isActiveCat = selectedCat === ci;
-              return (
-                <div key={ci} className="opacity-0 animate-fade-in" style={{ animationDelay: `${0.05 + ci * 0.04}s`, animationFillMode: "forwards" }}>
-                  <button
-                    onClick={() => handleCatSelect(ci)}
-                    className={`w-full flex items-center gap-2 px-3 py-2.5 rounded-xl text-left transition-all duration-200 ${
-                      isActiveCat ? `${c.bgColor} border border-${c.id}` : "hover:bg-card border border-transparent"
-                    }`}
-                  >
-                    <span className={`text-[10px] font-extrabold px-1.5 py-0.5 rounded-md ${c.color} text-primary-foreground`}>{c.id}</span>
-                    <span className={`text-[12px] font-bold leading-tight ${isActiveCat ? c.textColor : "text-foreground"}`}>{c.label}</span>
-                    <span className="ml-auto text-[10px] text-muted-foreground">{c.products.length}</span>
-                    <ChevronRight className={`w-3.5 h-3.5 shrink-0 transition-transform ${isActiveCat ? `${c.textColor} translate-x-0.5` : "text-muted-foreground/40"}`} />
-                  </button>
-
-                  {isActiveCat && (
-                    <div className="ml-4 mt-1 flex flex-col gap-0.5">
-                      {c.products.map((p, pi) => {
-                        const PIcon = p.icon;
-                        const isActiveProd = selectedProd === pi;
-                        return (
-                          <button
-                            key={pi}
-                            onClick={() => setSelectedProd(pi)}
-                            className={`flex items-center gap-2 px-3 py-2 rounded-lg text-left transition-all duration-150 ${
-                              isActiveProd ? `${c.bgColor} border border-${c.id}/30` : "hover:bg-secondary/50 border border-transparent"
-                            }`}
-                          >
-                            <PIcon className={`w-3.5 h-3.5 shrink-0 ${isActiveProd ? c.textColor : "text-muted-foreground"}`} />
-                            <span className={`text-[11px] font-semibold leading-tight ${isActiveProd ? c.textColor : "text-muted-foreground"}`}>{p.name}</span>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  )}
+          {/* App icon grid — scrollable */}
+          <div className="flex-1 overflow-y-auto px-4 py-4">
+            {categories.map((cat, ci) => (
+              <div key={ci} className="mb-4">
+                {/* Category label */}
+                <div className="flex items-center gap-1.5 mb-2 opacity-0 animate-fade-in" style={{ animationDelay: `${0.04 + ci * 0.04}s`, animationFillMode: "forwards" }}>
+                  <span className={`text-[9px] font-extrabold px-1.5 py-0.5 rounded-md ${cat.color} text-primary-foreground`}>{cat.id}</span>
+                  <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">{cat.label}</span>
                 </div>
-              );
-            })}
-          </div>
 
-          {/* Segments */}
-          <div className="mt-auto px-3 pb-4 shrink-0">
-            <div className="p-3 rounded-xl bg-card border border-border/30">
+                {/* Product app icons */}
+                <div className="grid grid-cols-3 gap-2">
+                  {cat.products.map((p, pi) => {
+                    const PIcon = p.icon;
+                    const globalIdx = allProducts.findIndex(ap => ap.name === p.name);
+                    const isActive = selectedProd === globalIdx;
+                    return (
+                      <button
+                        key={pi}
+                        onClick={() => setSelectedProd(globalIdx)}
+                        className={`flex flex-col items-center gap-1.5 p-2 rounded-2xl transition-all duration-200 opacity-0 animate-fade-in group ${
+                          isActive
+                            ? "bg-primary/10 ring-2 ring-primary/40 scale-105 shadow-md"
+                            : "hover:bg-secondary/70 hover:scale-105"
+                        }`}
+                        style={{ animationDelay: `${0.06 + ci * 0.04 + pi * 0.02}s`, animationFillMode: "forwards" }}
+                      >
+                        {/* App icon */}
+                        <div
+                          className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm transition-transform duration-200 group-hover:scale-110"
+                          style={{
+                            background: isActive
+                              ? `linear-gradient(135deg, ${cat.iconBg}, ${cat.iconBg}cc)`
+                              : cat.iconBg,
+                            boxShadow: isActive ? `0 4px 14px ${cat.iconColor}40` : "0 2px 6px rgba(0,0,0,0.08)"
+                          }}
+                        >
+                          <PIcon
+                            className="w-5 h-5"
+                            style={{ color: cat.iconColor }}
+                          />
+                        </div>
+                        {/* Label */}
+                        <span
+                          className="text-[9px] font-semibold text-center leading-tight line-clamp-2 w-full"
+                          style={{ color: isActive ? cat.iconColor : undefined }}
+                        >
+                          {p.name.replace("™", "")}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+
+            {/* Segments */}
+            <div className="mt-2 p-3 rounded-xl bg-card border border-border/30">
               <div className="flex items-center gap-1.5 mb-2">
                 <Users className="w-3 h-3 text-primary" />
                 <p className="text-[9px] font-bold text-muted-foreground uppercase tracking-widest">Segments Served</p>
               </div>
               <div className="flex flex-wrap gap-1">
-                {segments.map((s) => (
+                {["Universities", "K-12 Schools", "Data Centers", "Enterprises", "Climate Funds", "Housing"].map((s) => (
                   <span key={s} className="text-[9px] font-semibold text-primary bg-primary/10 px-1.5 py-0.5 rounded-full">{s}</span>
                 ))}
               </div>
@@ -272,62 +286,60 @@ const Slide06Features = () => {
         </div>
 
         {/* Right: Product Detail */}
-        <div className="flex-1 flex items-center justify-center px-10 overflow-hidden" key={`${selectedCat}-${selectedProd}`}>
+        <div className="flex-1 flex items-center justify-center px-10 overflow-hidden" key={selectedProd}>
           <div className="w-full max-w-[780px]">
             {/* Header */}
             <div className="flex items-start gap-5 animate-fade-in">
-              <div className={`w-14 h-14 rounded-2xl ${cat.color} flex items-center justify-center text-primary-foreground shadow-lg shrink-0`}>
-                <Icon className="w-7 h-7" />
+              <div
+                className="w-16 h-16 rounded-3xl flex items-center justify-center shadow-xl shrink-0"
+                style={{
+                  background: `linear-gradient(135deg, ${prod.iconBg}, ${prod.iconBg}bb)`,
+                  boxShadow: `0 8px 24px ${prod.iconColor}35`
+                }}
+              >
+                <Icon className="w-8 h-8" style={{ color: prod.iconColor }} />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-0.5">
-                  <span className={`text-[11px] font-extrabold px-2 py-0.5 rounded-full ${cat.color} text-primary-foreground`}>{cat.id}</span>
-                  <span className="text-[12px] text-muted-foreground font-mono">{cat.label}</span>
+                  <span className={`text-[11px] font-extrabold px-2 py-0.5 rounded-full ${prod.catColor} text-primary-foreground`}>{prod.catId}</span>
+                  <span className="text-[12px] text-muted-foreground font-mono">{prod.catLabel}</span>
                 </div>
                 <h3 className="text-[30px] font-extrabold text-foreground leading-tight">{prod.name}</h3>
-                <p className={`text-[16px] font-semibold ${cat.textColor}`}>{prod.tagline}</p>
+                <p className="text-[15px] font-semibold" style={{ color: prod.iconColor }}>{prod.tagline}</p>
               </div>
             </div>
 
             {/* Features grid */}
-            <div className="mt-6 grid grid-cols-2 gap-3 animate-fade-in" style={{ animationDelay: "0.08s" }}>
+            <div className="mt-6 grid grid-cols-2 gap-3">
               {prod.features.map((f, i) => (
                 <div
                   key={i}
                   className="flex items-start gap-2.5 px-4 py-3 rounded-xl bg-card border border-border/30 opacity-0 animate-fade-in hover:border-primary/20 transition-all"
-                  style={{ animationDelay: `${0.1 + i * 0.04}s`, animationFillMode: "forwards" }}
+                  style={{ animationDelay: `${0.08 + i * 0.04}s`, animationFillMode: "forwards" }}
                 >
-                  <span className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${cat.color}`} />
+                  <span className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ background: prod.iconColor }} />
                   <span className="text-[13px] text-foreground leading-snug">{f}</span>
                 </div>
               ))}
             </div>
 
             {/* Output bar */}
-            <div className={`mt-5 p-4 rounded-2xl ${cat.bgColor} border ${cat.borderColor} animate-fade-in`} style={{ animationDelay: "0.3s" }}>
-              <span className={`text-[11px] font-bold uppercase tracking-wider ${cat.textColor}`}>✓ Output</span>
+            <div
+              className="mt-5 p-4 rounded-2xl border animate-fade-in"
+              style={{
+                background: prod.iconBg + "55",
+                borderColor: prod.iconColor + "30",
+                animationDelay: "0.3s"
+              }}
+            >
+              <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: prod.iconColor }}>✓ Output</span>
               <p className="text-[15px] font-semibold text-foreground mt-1 leading-snug">{prod.output}</p>
             </div>
 
-            {/* Category product strip */}
-            <div className="mt-4 flex flex-wrap gap-2 animate-fade-in" style={{ animationDelay: "0.35s" }}>
-              {cat.products.map((p, pi) => {
-                const PIcon = p.icon;
-                return (
-                  <button
-                    key={pi}
-                    onClick={() => setSelectedProd(pi)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[11px] font-semibold transition-all border ${
-                      selectedProd === pi
-                        ? `${cat.bgColor} ${cat.textColor} ${cat.borderColor}`
-                        : "bg-secondary text-muted-foreground border-transparent hover:border-border/30"
-                    }`}
-                  >
-                    <PIcon className="w-3 h-3" />
-                    {p.name}
-                  </button>
-                );
-              })}
+            {/* Navigation hint */}
+            <div className="mt-4 flex items-center gap-2 animate-fade-in" style={{ animationDelay: "0.38s" }}>
+              <ChevronRight className="w-3.5 h-3.5 text-muted-foreground/40" />
+              <p className="text-[11px] text-muted-foreground">Select any app icon on the left to explore products</p>
             </div>
           </div>
         </div>
