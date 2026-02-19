@@ -117,7 +117,7 @@ const Slide19Pipeline = () => {
               {/* ARR Pie Chart */}
               <div className="bg-card border border-border rounded-xl p-3 flex-1 min-h-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
                 <MiniLabel>📊 ARR Contribution by Segment</MiniLabel>
-                <div className="flex-1 h-full min-h-0">
+                <div className="h-[180px]">
                   <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
                       <Pie data={pieData} cx="50%" cy="50%" outerRadius={80} innerRadius={40} dataKey="value" paddingAngle={2}
