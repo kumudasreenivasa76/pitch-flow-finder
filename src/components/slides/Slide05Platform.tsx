@@ -1,6 +1,6 @@
 import SlideLayout from "../SlideLayout";
 import { Cloud, Cpu, ShieldCheck, Layers, DollarSign } from "lucide-react";
-import flowImg from "@/assets/ecogridia-flow-3d.jpg";
+import flowImg from "@/assets/slide05-platform-3d.png";
 
 const layers = [
   {
