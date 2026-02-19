@@ -116,7 +116,8 @@ const Slide16UnitEcon = () => (
       </div>
 
       {/* Summary bar */}
-      <div className="bg-primary/5 rounded-2xl p-6 mt-6 flex justify-between items-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
+      <div className="flex justify-center mt-6 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+      <div className="bg-primary/5 rounded-2xl p-4 flex justify-between items-center w-1/2 gap-4">
         {[
           { label: "ARPU", value: "$124,300" },
           { label: "Gross Margin", value: "84%" },
@@ -130,6 +131,7 @@ const Slide16UnitEcon = () => (
             <div className="text-sm text-muted-foreground">{m.label}</div>
           </div>
         ))}
+      </div>
       </div>
     </div>
   </SlideLayout>
