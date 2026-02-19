@@ -279,9 +279,12 @@ const Slide18Projections = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {yearDetails.map((r) => (
-                          <tr key={r.year} className="border-b border-border/30">
-                            <td className="py-1 font-medium text-foreground">{r.year}</td>
+                        {yearDetails.map((r, i) => (
+                          <tr key={r.year} className={`border-b border-border/30 ${i < 3 ? "bg-emerald-50/40" : ""}`}>
+                            <td className="py-1 font-medium text-foreground">
+                              {r.year}
+                              {i < 3 && <span className="ml-1 text-[7px] text-emerald-600 font-bold">FOCUS</span>}
+                            </td>
                             <td className="text-right py-1 font-bold text-primary">{r.revenue}</td>
                             <td className="text-right py-1 font-semibold text-foreground">{r.grossProfit}</td>
                             <td className="text-right py-1 font-semibold text-foreground">{r.netProfit}</td>
@@ -292,34 +295,45 @@ const Slide18Projections = () => {
                     </table>
                   </div>
 
-                  {/* Mix + OPEX stacked */}
+                  {/* Key Assumptions */}
                   <div className="flex flex-col gap-3 flex-[2] min-h-0">
-                    <div className="bg-card border border-border rounded-xl p-3 flex-1 min-h-0 overflow-auto animate-fade-in" style={{ animationDelay: "0.25s" }}>
-                      <MiniLabel>🏢 Customer Mix — FY30</MiniLabel>
-                      <table className="w-full text-[10px]">
-                        <tbody>
-                          {yearDetails[4].stakeholders.map((r) => (
-                            <tr key={r.name} className="border-b border-border/30">
-                              <td className="py-1 font-medium text-foreground">{r.name}</td>
-                              <td className="text-center py-1 font-bold text-primary">{r.count}</td>
-                              <td className="text-right py-1 text-[9px] text-muted-foreground">{r.role}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
+                    <div className="bg-amber-50/50 border-2 border-amber-400/30 rounded-xl p-3 flex-1 min-h-0 overflow-auto animate-fade-in" style={{ animationDelay: "0.25s" }}>
+                      <MiniLabel>📋 Key Assumptions</MiniLabel>
+                      <div className="space-y-1.5">
+                        {[
+                          { l: "Headcount", v: "10 → 240 FTE", sub: "FY26 → FY35" },
+                          { l: "CAC Trend", v: "Declining", sub: "Scale efficiencies" },
+                          { l: "NRR", v: "> 120%", sub: "Upsell + expansion" },
+                          { l: "Expansion Rate", v: "35% / yr", sub: "Multi-site + credits" },
+                          { l: "Churn", v: "12% annual", sub: "Contractual lock-in" },
+                          { l: "Pricing Growth", v: "5–8% / yr", sub: "Value-based increases" },
+                        ].map((a) => (
+                          <div key={a.l} className="flex items-center justify-between py-1 border-b border-amber-200/50 last:border-0">
+                            <div>
+                              <div className="text-[11px] font-bold text-foreground">{a.l}</div>
+                              <div className="text-[8px] text-muted-foreground">{a.sub}</div>
+                            </div>
+                            <div className="text-[12px] font-black text-amber-700">{a.v}</div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                     <div className="bg-card border border-border rounded-xl p-3 flex-1 min-h-0 overflow-auto animate-fade-in" style={{ animationDelay: "0.3s" }}>
-                      <MiniLabel>🔥 Burn & OPEX</MiniLabel>
-                      <table className="w-full text-[10px]">
-                        <tbody>
-                          {yearDetails.filter((r) => r.opex).map((r) => (
-                            <tr key={r.year} className="border-b border-border/30">
-                              <td className="py-1 font-medium text-foreground">{r.year}</td>
-                              <td className="text-right py-1 font-bold text-primary">{r.opex}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
+                      <MiniLabel>🎯 Near-Term Focus: FY26–FY28</MiniLabel>
+                      <div className="space-y-1.5">
+                        {[
+                          { l: "FY26", v: "$3.3M", tag: "Launch + first 49 customers" },
+                          { l: "FY27", v: "$12.1M", tag: "3.7× growth, 154 customers" },
+                          { l: "FY28", v: "$34.9M", tag: "2.9× growth, unit econ proven" },
+                        ].map((y) => (
+                          <div key={y.l} className="flex items-center gap-2 py-1 border-b border-border/30 last:border-0">
+                            <span className="text-[11px] font-bold text-primary w-8">{y.l}</span>
+                            <span className="text-[13px] font-black text-foreground">{y.v}</span>
+                            <span className="text-[9px] text-muted-foreground flex-1 text-right">{y.tag}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-2 text-[9px] text-muted-foreground italic text-center">FY29+ are scale targets contingent on near-term execution</div>
                     </div>
                   </div>
                 </div>
