@@ -245,47 +245,62 @@ const Slide18Projections = () => {
                 </div>
               ) : (
                 <div className="flex gap-3 flex-[4] min-h-0">
-                  {/* Mix table */}
-                  <div className="bg-card border border-border rounded-xl p-3 flex-1 min-h-0 overflow-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                    <MiniLabel>🏢 Customer Mix — FY29</MiniLabel>
+                  {/* Revenue & Profit Table */}
+                  <div className="bg-card border border-border rounded-xl p-3 flex-[3] min-h-0 overflow-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
+                    <MiniLabel>💰 Revenue & Profit Summary</MiniLabel>
                     <table className="w-full text-[10px]">
                       <thead>
                         <tr className="border-b border-border">
-                          <th className="text-left py-1 text-muted-foreground font-semibold">Stakeholder</th>
-                          <th className="text-center py-1 text-muted-foreground font-semibold">#</th>
-                          <th className="text-right py-1 text-muted-foreground font-semibold">Role</th>
+                          <th className="text-left py-1 text-muted-foreground font-semibold">Year</th>
+                          <th className="text-right py-1 text-muted-foreground font-semibold">Revenue</th>
+                          <th className="text-right py-1 text-muted-foreground font-semibold">Gross Profit</th>
+                          <th className="text-right py-1 text-muted-foreground font-semibold">Net Profit</th>
+                          <th className="text-right py-1 text-muted-foreground font-semibold">Margin</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {yearDetails[4].stakeholders.map((r) => (
-                          <tr key={r.name} className="border-b border-border/30">
-                            <td className="py-1.5 font-medium text-foreground">{r.name}</td>
-                            <td className="text-center py-1.5 font-bold text-primary">{r.count}</td>
-                            <td className="text-right py-1.5 text-muted-foreground text-[9px]">{r.role}</td>
+                        {yearDetails.map((r) => (
+                          <tr key={r.year} className="border-b border-border/30">
+                            <td className="py-1 font-medium text-foreground">{r.year}</td>
+                            <td className="text-right py-1 font-bold text-primary">{r.revenue}</td>
+                            <td className="text-right py-1 font-semibold text-foreground">{r.grossProfit}</td>
+                            <td className="text-right py-1 font-semibold text-foreground">{r.netProfit}</td>
+                            <td className="text-right py-1 font-semibold text-primary">{r.margin}</td>
                           </tr>
                         ))}
                       </tbody>
                     </table>
                   </div>
-                  {/* OPEX table */}
-                  <div className="bg-card border border-border rounded-xl p-3 flex-1 min-h-0 overflow-auto animate-fade-in" style={{ animationDelay: "0.25s" }}>
-                    <MiniLabel>🔥 Burn & OPEX</MiniLabel>
-                    <table className="w-full text-[10px]">
-                      <thead>
-                        <tr className="border-b border-border">
-                          <th className="text-left py-1 text-muted-foreground font-semibold">Year</th>
-                          <th className="text-right py-1 text-muted-foreground font-semibold">OPEX</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {yearDetails.filter((r) => r.opex).map((r) => (
-                          <tr key={r.year} className="border-b border-border/30">
-                            <td className="py-1.5 font-medium text-foreground">{r.year}</td>
-                            <td className="text-right py-1.5 font-bold text-primary">{r.opex}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
+
+                  {/* Mix + OPEX stacked */}
+                  <div className="flex flex-col gap-3 flex-[2] min-h-0">
+                    <div className="bg-card border border-border rounded-xl p-3 flex-1 min-h-0 overflow-auto animate-fade-in" style={{ animationDelay: "0.25s" }}>
+                      <MiniLabel>🏢 Customer Mix — FY29</MiniLabel>
+                      <table className="w-full text-[10px]">
+                        <tbody>
+                          {yearDetails[4].stakeholders.map((r) => (
+                            <tr key={r.name} className="border-b border-border/30">
+                              <td className="py-1 font-medium text-foreground">{r.name}</td>
+                              <td className="text-center py-1 font-bold text-primary">{r.count}</td>
+                              <td className="text-right py-1 text-[9px] text-muted-foreground">{r.role}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <div className="bg-card border border-border rounded-xl p-3 flex-1 min-h-0 overflow-auto animate-fade-in" style={{ animationDelay: "0.3s" }}>
+                      <MiniLabel>🔥 Burn & OPEX</MiniLabel>
+                      <table className="w-full text-[10px]">
+                        <tbody>
+                          {yearDetails.filter((r) => r.opex).map((r) => (
+                            <tr key={r.year} className="border-b border-border/30">
+                              <td className="py-1 font-medium text-foreground">{r.year}</td>
+                              <td className="text-right py-1 font-bold text-primary">{r.opex}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               )}
