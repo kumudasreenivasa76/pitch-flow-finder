@@ -199,11 +199,6 @@ const SlideDataCenter = () => {
             src={datacenterImg}
             alt="Data Center ecosystem"
             className="w-full h-full object-contain"
-            style={{
-              mixBlendMode: "multiply",
-              filter: "brightness(3) contrast(0.6) saturate(0.4)",
-              opacity: 0.3,
-            }}
           />
         </div>
 
