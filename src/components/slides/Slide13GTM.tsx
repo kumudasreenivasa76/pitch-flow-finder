@@ -2,7 +2,7 @@ import SlideLayout from "../SlideLayout";
 
 const Slide13GTM = () => (
   <SlideLayout>
-    <div className="relative w-full h-full flex flex-col bg-white overflow-hidden px-14 pt-8 pb-5">
+    <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden px-14 pt-8 pb-5">
       {/* Grid background */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -14,7 +14,7 @@ const Slide13GTM = () => (
         }}
       />
 
-      <div className="relative z-10 flex flex-col h-full">
+      <div className="relative z-10 flex flex-col items-center w-full">
         {/* Header */}
         <div className="text-center mb-4 animate-fade-in">
           <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
@@ -27,15 +27,15 @@ const Slide13GTM = () => (
         </div>
 
         {/* Main: PLG vs Enterprise */}
-        <div className="grid grid-cols-2 gap-4 flex-1 min-h-0 animate-fade-in" style={{ animationDelay: "0.05s" }}>
+        <div className="grid grid-cols-2 gap-4 w-full animate-fade-in" style={{ animationDelay: "0.05s" }}>
 
           {/* PLG Track */}
           <div className="flex flex-col gap-3">
-            <div className="rounded-xl border-2 border-emerald-500/30 bg-white shadow-sm flex flex-col flex-1">
+            <div className="rounded-xl border-2 border-emerald-500/30 bg-white shadow-sm flex flex-col">
               <div className="px-4 py-2.5 bg-emerald-500 text-white text-[14px] font-extrabold rounded-t-[10px] flex items-center gap-2">
                 <span>🚀</span> PLG — Self-Serve
               </div>
-              <div className="px-4 py-3 flex-1 flex flex-col justify-between">
+              <div className="px-4 py-3">
                 <div className="space-y-2">
                   <MotionStep step="1" text="Free energy audit via platform → lead capture" />
                   <MotionStep step="2" text="Self-serve SaaS onboarding ($99–$499/mo)" />
@@ -54,11 +54,11 @@ const Slide13GTM = () => (
 
           {/* Enterprise Track */}
           <div className="flex flex-col gap-3">
-            <div className="rounded-xl border-2 border-blue-500/30 bg-white shadow-sm flex flex-col flex-1">
+            <div className="rounded-xl border-2 border-blue-500/30 bg-white shadow-sm flex flex-col">
               <div className="px-4 py-2.5 bg-blue-600 text-white text-[14px] font-extrabold rounded-t-[10px] flex items-center gap-2">
                 <span>🏢</span> Enterprise — Direct Sales
               </div>
-              <div className="px-4 py-3 flex-1 flex flex-col justify-between">
+              <div className="px-4 py-3">
                 <div className="space-y-2">
                   <MotionStep step="1" text="Outbound to data center ops & facility managers" />
                   <MotionStep step="2" text="Custom pilot (60-day free POC with ROI report)" />

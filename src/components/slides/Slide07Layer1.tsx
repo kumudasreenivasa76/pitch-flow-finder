@@ -45,13 +45,26 @@ const Slide07Layer1 = () => {
   return (
     <SlideLayout>
       <div className="relative w-full h-full overflow-hidden bg-white">
-        {/* Header */}
-        <div className="absolute top-5 left-7 right-7 z-20 flex items-center gap-3 animate-fade-in">
-          <span className="text-sm font-bold text-primary-foreground bg-primary px-4 py-1.5 rounded-full shadow-lg">EcoGridia Flow</span>
-          <h2 className="text-2xl font-bold text-foreground drop-shadow-sm">Normal Project Flow — 15 Products</h2>
-          <div className="ml-auto flex items-center gap-2">
+        {/* Grid background */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: "linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)",
+            backgroundSize: "60px 60px", opacity: 0.5,
+          }}
+        />
+
+        {/* Header — Slide 3 style */}
+        <div className="relative z-20 text-center pt-6 pb-2 px-7 animate-fade-in">
+          <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
+            EcoGridia Flow
+          </span>
+          <h2 className="text-[36px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            Complete End-to-End <span className="text-primary">Project Flow</span>
+          </h2>
+          <p className="text-[14px] text-muted-foreground mt-1">15 products across 3 layers — click a stakeholder to filter</p>
+          <div className="flex items-center justify-center gap-1.5 mt-2">
             {["L1 · Green Infrastructure Cloud™", "L2 · Energy Intelligence OS™", "L3 · Carbon & Compliance Exchange™"].map((label, li) => (
-              <span key={li} className={`text-xs font-semibold text-primary-foreground px-2.5 py-1 rounded-full ${["bg-primary", "bg-eco-teal", "bg-eco-emerald"][li]}`}>
+              <span key={li} className={`text-[11px] font-semibold text-primary-foreground px-2.5 py-1 rounded-full ${["bg-primary", "bg-eco-teal", "bg-eco-emerald"][li]}`}>
                 {label}
               </span>
             ))}
@@ -59,7 +72,7 @@ const Slide07Layer1 = () => {
         </div>
 
         {/* Stakeholder tabs */}
-        <div className="absolute top-[52px] left-7 right-7 z-20 flex items-center gap-1.5 animate-fade-in">
+        <div className="relative z-20 flex items-center gap-1.5 justify-center px-7 py-1 animate-fade-in">
           {stakeholders.map((s) => {
             const SIcon = s.icon;
             const isActive = activeStakeholder === s.id;
