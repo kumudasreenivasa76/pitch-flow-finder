@@ -32,13 +32,13 @@ const Slide16UnitEcon = () => (
 
           {/* Col 1 */}
           <div className="flex flex-col gap-3">
-            <CompactTable title="Core Assumptions" color="#16a34a" delay="0.05s" rows={[
+            <CompactTable className="flex-1" title="Core Assumptions" color="#16a34a" delay="0.05s" rows={[
               { label: "Total Revenue", value: "$169.7M" },
               { label: "Total Customers", value: "1,365" },
               { label: "Gross Margin", value: "84%" },
               { label: "Annual Churn", value: "15%" },
             ]} />
-            <CompactTable title="Customer Revenue" color="#0d9488" delay="0.1s" rows={[
+            <CompactTable className="flex-1" title="Customer Revenue" color="#0d9488" delay="0.1s" rows={[
               { label: "Blended ARPU", value: "$124,300" },
               { label: "Gross Profit / Customer", value: "$104,412" },
               { label: "Avg Customer Lifetime", value: "6.7 years" },
@@ -47,28 +47,30 @@ const Slide16UnitEcon = () => (
 
           {/* Col 2: LTV + CAC */}
           <div className="flex flex-col gap-3">
-            <ValueCard label="Lifetime Value (LTV)" value="$693K" sub="Per enterprise customer" color="#16a34a" borderColor="#16a34a" delay="0.15s"
+            <ValueCard className="flex-1" label="Lifetime Value (LTV)" value="$693K" sub="Per enterprise customer" color="#16a34a" borderColor="#16a34a" delay="0.15s"
               details={[
                 { l: "Formula", r: "GP ÷ Churn Rate" },
                 { l: "$104,412 ÷ 0.15", r: "= $696,080" },
               ]}
             />
-            <ValueCard label="Customer Acquisition Cost" value="$140K" sub="Target LTV:CAC = 5x" color="#059669" borderColor="#059669" delay="0.2s"
+            <ValueCard className="flex-1" label="Customer Acquisition Cost" value="$140K" sub="Target LTV:CAC = 5x" color="#059669" borderColor="#059669" delay="0.2s"
               details={[
                 { l: "LTV:CAC Target", r: "5x" },
                 { l: "$693K ÷ 5", r: "= $138,600" },
               ]}
             />
-            <div className="rounded-xl border border-primary/20 bg-primary/5 px-4 py-2.5 text-center animate-fade-in"
+            <div className="rounded-xl border border-primary/20 bg-primary/5 px-4 py-2.5 text-center animate-fade-in flex items-center justify-center"
               style={{ animationDelay: "0.25s", animationFillMode: "forwards", opacity: 0 }}>
-              <div className="text-[11px] text-muted-foreground font-semibold uppercase tracking-widest">CAC Payback</div>
-              <div className="text-[22px] font-black text-primary">~16 months</div>
+              <div>
+                <div className="text-[11px] text-muted-foreground font-semibold uppercase tracking-widest">CAC Payback</div>
+                <div className="text-[22px] font-black text-primary">~16 months</div>
+              </div>
             </div>
           </div>
 
           {/* Col 3 */}
           <div className="flex flex-col gap-3">
-            <CompactTable title="Data Center Segment (Y5)" color="#0d9488" delay="0.25s" rows={[
+            <CompactTable className="flex-1" title="Data Center Segment (Y5)" color="#0d9488" delay="0.25s" rows={[
               { label: "Revenue", value: "$44.8M" },
               { label: "Customers", value: "675" },
               { label: "ARPU", value: "$66,350" },
@@ -76,7 +78,7 @@ const Slide16UnitEcon = () => (
               { label: "Implied LTV", value: "$371,000" },
               { label: "Est. DC CAC (5x)", value: "$74,000" },
             ]} />
-            <CompactTable title="Company Efficiency" color="#16a34a" delay="0.3s" rows={[
+            <CompactTable className="flex-1" title="Company Efficiency" color="#16a34a" delay="0.3s" rows={[
               { label: "Revenue / FTE", value: "$707K" },
               { label: "EBITDA Margin", value: "69%" },
               { label: "Net Margin", value: "51.7%" },
@@ -113,16 +115,16 @@ const Slide16UnitEcon = () => (
 );
 
 /* ── Compact table card ── */
-const CompactTable = ({ title, color, delay, rows }: {
+const CompactTable = ({ title, color, delay, rows, className = "" }: {
   title: string; color: string; delay: string;
-  rows: { label: string; value: string }[];
+  rows: { label: string; value: string }[]; className?: string;
 }) => (
-  <div className="bg-white/90 rounded-xl border border-border/60 shadow-sm animate-fade-in"
+  <div className={`bg-white/90 rounded-xl border border-border/60 shadow-sm animate-fade-in flex flex-col ${className}`}
     style={{ animationDelay: delay, animationFillMode: "forwards", opacity: 0 }}>
     <div className="px-4 py-2 border-b border-border/40">
       <h3 className="text-[12px] font-bold uppercase tracking-widest" style={{ color }}>{title}</h3>
     </div>
-    <div className="px-4 py-2">
+    <div className="px-4 py-2 flex-1 flex flex-col justify-evenly">
       {rows.map((r) => (
         <div key={r.label} className="flex justify-between items-center py-1.5 border-b border-border/30 last:border-0">
           <span className="text-[13px] text-muted-foreground">{r.label}</span>
@@ -134,13 +136,13 @@ const CompactTable = ({ title, color, delay, rows }: {
 );
 
 /* ── Value highlight card ── */
-const ValueCard = ({ label, value, sub, color, borderColor, delay, details }: {
+const ValueCard = ({ label, value, sub, color, borderColor, delay, details, className = "" }: {
   label: string; value: string; sub: string; color: string; borderColor: string; delay: string;
-  details: { l: string; r: string }[];
+  details: { l: string; r: string }[]; className?: string;
 }) => (
-  <div className="bg-white/90 rounded-xl border-2 shadow-sm animate-fade-in"
+  <div className={`bg-white/90 rounded-xl border-2 shadow-sm animate-fade-in flex flex-col ${className}`}
     style={{ borderColor, animationDelay: delay, animationFillMode: "forwards", opacity: 0 }}>
-    <div className="px-4 py-3">
+    <div className="px-4 py-3 flex-1 flex flex-col justify-center">
       <div className="text-[11px] font-bold uppercase tracking-widest mb-1" style={{ color }}>{label}</div>
       <div className="text-[28px] font-black leading-none" style={{ color }}>{value}</div>
       <div className="text-[11px] text-muted-foreground mt-0.5">{sub}</div>
