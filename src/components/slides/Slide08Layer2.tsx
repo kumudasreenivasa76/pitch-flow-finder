@@ -37,7 +37,7 @@ const Slide08Layer2 = () => {
 
   return (
     <SlideLayout>
-      <div className="relative w-full h-full flex flex-col bg-white overflow-hidden px-14 pt-8 pb-5">
+      <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden px-14 pt-8 pb-5">
         {/* Grid background */}
         <div className="absolute inset-0 pointer-events-none"
           style={{
@@ -46,7 +46,7 @@ const Slide08Layer2 = () => {
           }}
         />
 
-        <div className="relative z-10 flex flex-col h-full">
+        <div className="relative z-10 flex flex-col items-center w-full">
           {/* Header */}
           <div className="text-center mb-4 animate-fade-in">
             <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
@@ -76,7 +76,7 @@ const Slide08Layer2 = () => {
           </div>
 
           {/* Content */}
-          <div className="grid grid-cols-2 gap-5 flex-1 animate-fade-in" key={active}>
+          <div className="grid grid-cols-2 gap-5 w-full animate-fade-in" key={active}>
             {stakeholderViews[active].features.map((f) => (
               <div key={f.num} className="rounded-2xl border-2 border-border/40 bg-white p-6 shadow-sm">
                 <div className="flex items-center gap-3 mb-4">
