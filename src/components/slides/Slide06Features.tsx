@@ -83,7 +83,7 @@ const Slide06Features = () => {
 
   return (
     <SlideLayout>
-      <div className="flex flex-col h-full" style={{ background: "#ffffff" }}>
+      <div className="flex flex-col items-center justify-center h-full" style={{ background: "#ffffff" }}>
 
         {/* Top gradient bar */}
         <div className="h-1.5 w-full shrink-0" style={{ background: "linear-gradient(90deg, #10b981, #0d9488, #0ea5e9, #8b5cf6, #f59e0b)" }} />
