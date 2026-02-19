@@ -61,20 +61,14 @@ const Slide05Platform = () => {
         {/* LEFT — 3D image on dark panel */}
         <div className="relative z-10 w-[480px] shrink-0 flex items-center justify-center py-6 pl-8">
           <div
-            className="relative w-full rounded-2xl overflow-hidden flex items-center justify-center"
-            style={{
-              background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)",
-              minHeight: "420px",
-            }}
+            className="relative w-full rounded-2xl overflow-hidden flex items-center justify-center bg-white border border-border/30"
+            style={{ minHeight: "420px" }}
           >
-            {/* subtle glow behind image */}
-            <div className="absolute inset-0 pointer-events-none" style={{
-              background: "radial-gradient(ellipse at center, rgba(79,70,229,0.15) 0%, transparent 70%)",
-            }} />
             <img
               src={flowImg}
               alt="EcoGridia Three-Layer Platform"
               className="relative z-10 w-full h-auto object-contain"
+              style={{ mixBlendMode: "multiply" }}
             />
           </div>
         </div>
