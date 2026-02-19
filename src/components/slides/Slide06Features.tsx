@@ -89,24 +89,24 @@ const Slide06Features = () => {
         <div className="h-1.5 w-full shrink-0" style={{ background: "linear-gradient(90deg, #10b981, #0d9488, #0ea5e9, #8b5cf6, #f59e0b)" }} />
 
         {/* Header row */}
-        <div className="flex items-center justify-between px-14 py-3 border-b shrink-0" style={{ borderColor: "#e5e7eb" }}>
+        <div className="flex items-center justify-between px-14 py-2 border-b shrink-0" style={{ borderColor: "#e5e7eb" }}>
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] mb-0.5" style={{ color: "#6b7280" }}>The EcoGridia Suite</p>
-            <h2 className="text-[36px] font-extrabold leading-none" style={{ color: "#111827", fontFamily: "'Space Grotesk', system-ui, sans-serif" }}>
+            <h2 className="text-[28px] font-extrabold leading-none" style={{ color: "#111827", fontFamily: "'Space Grotesk', system-ui, sans-serif" }}>
               Product <span style={{ color: "#10b981" }}>Apps</span>
             </h2>
           </div>
           <div className="flex items-center gap-8">
             <div className="text-center">
-              <p className="text-[32px] font-extrabold" style={{ color: "#10b981" }}>20</p>
+              <p className="text-[24px] font-extrabold" style={{ color: "#10b981" }}>20</p>
               <p className="text-[11px] font-semibold uppercase tracking-wider" style={{ color: "#6b7280" }}>Products</p>
             </div>
-            <div className="w-px h-10" style={{ background: "#e5e7eb" }} />
+            <div className="w-px h-8" style={{ background: "#e5e7eb" }} />
             <div className="text-center">
-              <p className="text-[32px] font-extrabold" style={{ color: "#10b981" }}>6</p>
+              <p className="text-[24px] font-extrabold" style={{ color: "#10b981" }}>6</p>
               <p className="text-[11px] font-semibold uppercase tracking-wider" style={{ color: "#6b7280" }}>Modules</p>
             </div>
-            <div className="w-px h-10" style={{ background: "#e5e7eb" }} />
+            <div className="w-px h-8" style={{ background: "#e5e7eb" }} />
             <div className="flex flex-wrap gap-1.5 max-w-[340px]">
               {["Universities", "K-12 Schools", "Data Centers", "Enterprises", "Climate Funds", "Housing"].map((s) => (
                 <span key={s} className="text-[10px] font-semibold px-2.5 py-1 rounded-full" style={{ background: "#f0fdf4", color: "#15803d", border: "1px solid #bbf7d0" }}>{s}</span>
@@ -119,11 +119,11 @@ const Slide06Features = () => {
         <div className="flex flex-1 min-h-0">
 
           {/* LEFT: App icon grid */}
-          <div className="w-[580px] shrink-0 border-r overflow-y-auto px-8 py-4" style={{ borderColor: "#e5e7eb", background: "#fafafa" }}>
+          <div className="w-[560px] shrink-0 border-r overflow-y-auto px-6 py-3" style={{ borderColor: "#e5e7eb", background: "#fafafa" }}>
             {categories.map((cat, ci) => (
-              <div key={ci} className="mb-3">
+              <div key={ci} className="mb-2">
                 {/* Category header */}
-                <div className="flex items-center gap-2 mb-2">
+                <div className="flex items-center gap-2 mb-1.5">
                   <span className="w-5 h-5 rounded-md flex items-center justify-center text-[9px] font-black text-white shrink-0"
                     style={{ background: catBadgeColors[cat.id] }}>{cat.id}</span>
                   <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: "#374151" }}>{cat.label}</span>
@@ -132,7 +132,7 @@ const Slide06Features = () => {
                 </div>
 
                 {/* Product icons row */}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2">
                   {cat.products.map((p, pi) => {
                     const PIcon = p.icon;
                     const globalIdx = allProducts.findIndex(ap => ap.name === p.name);
@@ -142,11 +142,11 @@ const Slide06Features = () => {
                         key={pi}
                         onClick={() => setSelectedProd(globalIdx)}
                         className="flex flex-col items-center gap-1.5 transition-all duration-200 group"
-                        style={{ width: "72px" }}
+                        style={{ width: "64px" }}
                       >
                         {/* App icon */}
                         <div
-                          className="w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-200"
+                          className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-200"
                           style={{
                             background: isActive
                               ? `linear-gradient(135deg, ${cat.iconBg}, ${cat.iconBg}99)`
@@ -157,10 +157,10 @@ const Slide06Features = () => {
                             transform: isActive ? "scale(1.1)" : "scale(1)",
                           }}
                         >
-                          <PIcon className="w-6 h-6" style={{ color: cat.iconColor }} />
+                          <PIcon className="w-5 h-5" style={{ color: cat.iconColor }} />
                         </div>
                         {/* Name label */}
-                        <span className="text-[9.5px] font-semibold text-center leading-tight w-full"
+                        <span className="text-[8.5px] font-semibold text-center leading-tight w-full"
                           style={{ color: isActive ? cat.iconColor : "#374151" }}>
                           {p.name.replace("™", "")}
                         </span>
@@ -173,26 +173,26 @@ const Slide06Features = () => {
           </div>
 
           {/* RIGHT: Product detail */}
-          <div className="flex-1 flex flex-col px-10 py-5 overflow-y-auto" key={selectedProd}>
+          <div className="flex-1 flex flex-col px-8 py-4 overflow-y-auto" key={selectedProd}>
 
             {/* Product header */}
-            <div className="flex items-start gap-4 mb-4">
+            <div className="flex items-start gap-3 mb-3">
               <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0"
+                className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
                 style={{
                   background: `linear-gradient(135deg, ${prod.iconBg}, ${prod.iconBg}aa)`,
                   boxShadow: `0 8px 24px ${prod.iconColor}30`
                 }}
               >
-                <Icon className="w-8 h-8" style={{ color: prod.iconColor }} />
+                <Icon className="w-6 h-6" style={{ color: prod.iconColor }} />
               </div>
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-[10px] font-black px-2 py-0.5 rounded text-white" style={{ background: catBadgeColors[prod.catId] }}>{prod.catId}</span>
                   <span className="text-[11px] font-medium" style={{ color: "#6b7280" }}>{prod.catLabel}</span>
                 </div>
-                <h3 className="text-[28px] font-extrabold leading-tight" style={{ color: "#111827", fontFamily: "'Space Grotesk', system-ui, sans-serif" }}>{prod.name}</h3>
-                <p className="text-[14px] font-semibold mt-0.5" style={{ color: prod.iconColor }}>{prod.tagline}</p>
+                <h3 className="text-[22px] font-extrabold leading-tight" style={{ color: "#111827", fontFamily: "'Space Grotesk', system-ui, sans-serif" }}>{prod.name}</h3>
+                <p className="text-[12px] font-semibold mt-0.5" style={{ color: prod.iconColor }}>{prod.tagline}</p>
               </div>
             </div>
 
@@ -203,25 +203,25 @@ const Slide06Features = () => {
             <p className="text-[10px] font-black uppercase tracking-widest mb-2" style={{ color: "#9ca3af" }}>Key Capabilities</p>
 
             {/* Features grid */}
-            <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 flex-1 content-start">
+            <div className="grid grid-cols-2 gap-x-2 gap-y-1 flex-1 content-start">
               {prod.features.map((f, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg"
+                  className="flex items-center gap-1.5 px-2 py-1 rounded-md"
                   style={{
                     background: prod.iconBg + "55",
                     border: `1px solid ${prod.iconColor}15`,
                   }}
                 >
                   <div className="w-1 h-1 rounded-full shrink-0" style={{ background: prod.iconColor }} />
-                  <span className="text-[12px] leading-tight" style={{ color: "#374151" }}>{f}</span>
+                  <span className="text-[11px] leading-tight" style={{ color: "#374151" }}>{f}</span>
                 </div>
               ))}
             </div>
 
             {/* Output bar */}
             <div
-              className="mt-3 px-4 py-3 rounded-xl flex items-start gap-3"
+              className="mt-2 px-3 py-2 rounded-lg flex items-start gap-2"
               style={{
                 background: prod.iconBg + "88",
                 border: `1.5px solid ${prod.iconColor}30`
@@ -230,14 +230,14 @@ const Slide06Features = () => {
               <ChevronRight className="w-4 h-4 mt-0.5 shrink-0" style={{ color: prod.iconColor }} />
               <div>
                 <p className="text-[10px] font-black uppercase tracking-widest mb-1" style={{ color: prod.iconColor }}>Deliverable Output</p>
-                <p className="text-[14px] font-semibold leading-snug" style={{ color: "#111827" }}>{prod.output}</p>
+                <p className="text-[12px] font-semibold leading-snug" style={{ color: "#111827" }}>{prod.output}</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="shrink-0 px-14 py-3 flex items-center justify-between" style={{ background: "#14532d" }}>
+        <div className="shrink-0 px-14 py-2 flex items-center justify-between" style={{ background: "#14532d" }}>
           <p className="text-[11px] font-semibold text-white/70">Tap any product icon to explore capabilities</p>
           <p className="text-[11px] font-bold text-white/90">EcoGridia · 20-Product Platform Suite</p>
         </div>
