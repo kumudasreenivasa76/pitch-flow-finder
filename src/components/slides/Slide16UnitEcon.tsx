@@ -12,7 +12,7 @@ const Slide16UnitEcon = () => (
         }}
       />
 
-      <div className="relative z-10 flex flex-col w-full">
+      <div className="relative z-10 w-full">
         {/* Header */}
         <div className="text-center mb-5 animate-fade-in">
           <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
@@ -65,7 +65,7 @@ const Slide16UnitEcon = () => (
         </div>
 
         {/* Main grid */}
-        <div className="grid grid-cols-3 gap-4 flex-1 min-h-0">
+        <div className="grid grid-cols-3 gap-4">
 
           {/* Col 1 */}
           <div className="flex flex-col gap-3">
