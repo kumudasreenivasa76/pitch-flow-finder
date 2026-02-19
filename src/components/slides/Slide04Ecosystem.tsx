@@ -8,7 +8,7 @@ import ecosystemImg from "@/assets/ecogridia-ecosystem-3d.png";
 
 const stakeholders = [
   {
-    id: 1, icon: GraduationCap, label: "Schools",
+    id: 1, icon: GraduationCap, label: "Schools & Universities",
     color: "#059669", bg: "rgba(5,150,105,0.12)", border: "rgba(5,150,105,0.40)", text: "#065f46",
     products: [
       { name: "BaselineIQ™", desc: "Energy & carbon baseline" },
@@ -21,7 +21,7 @@ const stakeholders = [
     values: ["Lower electricity cost", "Carbon-neutral campus roadmap", "Student sustainability dashboards", "Grant & funding readiness"],
   },
   {
-    id: 2, icon: Server, label: "Data",
+    id: 2, icon: Server, label: "Data Centers",
     color: "#0891b2", bg: "rgba(8,145,178,0.12)", border: "rgba(8,145,178,0.40)", text: "#0e7490",
     products: [
       { name: "BaselineIQ™", desc: "IT vs facility load audit" },
@@ -45,7 +45,7 @@ const stakeholders = [
     values: ["Land monetization", "Long-term lease income", "Climate asset participation"],
   },
   {
-    id: 0, icon: Cpu, label: "EcoGridia",
+    id: 0, icon: Cpu, label: "EcoGridia Hub",
     color: "#059669", bg: "rgba(5,150,105,0.12)", border: "rgba(5,150,105,0.40)", text: "#065f46",
     products: [
       { name: "Infrastructure SaaS", desc: "End-to-end platform" },
@@ -56,7 +56,7 @@ const stakeholders = [
     values: ["Single platform for all stakeholders", "No fragmentation", "One source of truth", "From asset to compliance"],
   },
   {
-    id: 6, icon: HardHat, label: "Vendors",
+    id: 6, icon: HardHat, label: "EPC Vendors",
     color: "#db2777", bg: "rgba(219,39,119,0.12)", border: "rgba(219,39,119,0.30)", text: "#be185d",
     products: [
       { name: "EcoMarket™", desc: "Vendor onboarding" },
@@ -67,7 +67,7 @@ const stakeholders = [
     values: ["Verified project pipeline", "Performance-based ranking", "Structured contract flow", "Marketplace visibility"],
   },
   {
-    id: 5, icon: Users, label: "Green",
+    id: 5, icon: Users, label: "Green Communities",
     color: "#7c3aed", bg: "rgba(124,58,237,0.10)", border: "rgba(124,58,237,0.35)", text: "#6d28d9",
     products: [
       { name: "TerraScan™", desc: "Rooftop feasibility" },
@@ -78,7 +78,7 @@ const stakeholders = [
     values: ["Reduced energy bills", "Shared solar income", "Community sustainability", "Passive yield for residents"],
   },
   {
-    id: 4, icon: Landmark, label: "Government",
+    id: 4, icon: Landmark, label: "Government & Regulators",
     color: "#d97706", bg: "rgba(217,119,6,0.10)", border: "rgba(217,119,6,0.35)", text: "#b45309",
     products: [
       { name: "CarbonX-Ray™", desc: "Regional carbon audit" },
@@ -89,7 +89,7 @@ const stakeholders = [
     values: ["Net-zero progress tracking", "Climate reporting", "Policy impact measurement", "Regional renewable monitoring"],
   },
   {
-    id: 7, icon: Zap, label: "Energy",
+    id: 7, icon: Zap, label: "Energy Investors",
     color: "#ea580c", bg: "rgba(234,88,12,0.10)", border: "rgba(234,88,12,0.30)", text: "#c2410c",
     products: [
       { name: "CapStruct™", desc: "SPV modeling" },
@@ -221,7 +221,7 @@ const Slide04Ecosystem = () => {
         </div>
 
         {/* Bottom tab bar */}
-        <div className="relative z-10 flex items-center gap-2 mt-4 shrink-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+        <div className="relative z-10 flex items-center gap-1.5 mt-4 shrink-0 animate-fade-in flex-wrap justify-center" style={{ animationDelay: "0.3s" }}>
           {stakeholders.map((s) => {
             const Icon = s.icon;
             const isActive = selected === s.id;
@@ -229,14 +229,14 @@ const Slide04Ecosystem = () => {
               <button
                 key={s.id}
                 onClick={() => setSelected(isActive ? null : s.id)}
-                className="flex items-center gap-2 px-4 py-2 rounded-full border-2 text-[14px] font-semibold transition-all duration-300"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-full border-2 text-[13px] font-semibold transition-all duration-300 whitespace-nowrap"
                 style={{
                   background: isActive ? s.color : "white",
                   borderColor: isActive ? s.color : "#e5e7eb",
                   color: isActive ? "white" : "#374151",
                 }}
               >
-                <Icon className="w-4 h-4" />
+                <Icon className="w-3.5 h-3.5 shrink-0" />
                 {s.label}
               </button>
             );
