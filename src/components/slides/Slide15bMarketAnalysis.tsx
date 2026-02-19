@@ -80,7 +80,7 @@ const Slide15bMarketAnalysis = () => (
         }}
       />
 
-      <div className="relative z-10 flex flex-col flex-1 px-16 pt-8 pb-4">
+      <div className="relative z-10 flex flex-col flex-1 px-14 pt-8 pb-5">
         {/* Header */}
         <div className="flex items-start justify-between mb-6 animate-fade-in">
           <div>

@@ -91,7 +91,7 @@ const Slide10Calculator = () => {
         {/* Top gradient bar */}
         <div className="relative z-10 h-1.5 w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 shrink-0" />
 
-        <div className="relative z-10 flex flex-col h-full px-10 pt-5 pb-4">
+        <div className="relative z-10 flex flex-col h-full px-14 pt-8 pb-5">
           {/* Header row with image */}
           <div className="flex items-center gap-6 mb-4">
             <div className="flex-1">
@@ -249,7 +249,7 @@ const Slide10Calculator = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="relative z-10 bg-[#14532d] px-10 py-2.5 flex items-center justify-between shrink-0">
+        <div className="relative z-10 bg-[#14532d] px-14 py-2.5 flex items-center justify-between shrink-0">
           <span className="text-[12px] text-emerald-200/80 font-medium">Powered by EcoGridia AI • Location-aware energy modeling</span>
           <span className={`text-[11px] font-semibold px-3 py-1 rounded-full ${aiData ? "bg-emerald-500/20 text-emerald-300" : "bg-white/10 text-white/50"}`}>
             {aiData ? `✓ AI estimates for ${city}` : "Default estimates"}

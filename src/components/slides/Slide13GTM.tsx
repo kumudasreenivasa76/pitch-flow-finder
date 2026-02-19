@@ -67,7 +67,7 @@ const statusTextColor: Record<string, string> = {
 
 const Slide13GTM = () => (
   <SlideLayout>
-    <div className="relative w-full h-full flex flex-col bg-white overflow-hidden px-14 py-8">
+    <div className="relative w-full h-full flex flex-col bg-white overflow-hidden px-14 pt-8 pb-5">
       {/* Subtle grid background — matches Slide 2 */}
       <div
         className="absolute inset-0 pointer-events-none"

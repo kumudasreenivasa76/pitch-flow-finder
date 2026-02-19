@@ -107,7 +107,7 @@ const Slide04Ecosystem = () => {
 
   return (
     <SlideLayout>
-      <div className="relative w-full h-full flex flex-col items-center bg-white overflow-hidden px-14 pt-7 pb-5">
+      <div className="relative w-full h-full flex flex-col items-center bg-white overflow-hidden px-14 pt-8 pb-5">
 
         {/* Grid background */}
         <div className="absolute inset-0 pointer-events-none"

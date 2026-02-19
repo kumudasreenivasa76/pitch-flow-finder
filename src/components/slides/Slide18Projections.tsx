@@ -83,7 +83,7 @@ const Slide18Projections = () => {
         />
         <div className="relative z-10 h-1.5 w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 shrink-0" />
 
-        <div className="flex flex-col flex-1 px-10 py-4 overflow-hidden">
+        <div className="flex flex-col flex-1 px-14 pt-8 pb-5 overflow-hidden">
           {/* Header */}
           <div className="flex items-center justify-between mb-3 animate-fade-in">
             <div>
