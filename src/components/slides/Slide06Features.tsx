@@ -89,7 +89,7 @@ const Slide06Features = () => {
         <div className="h-1.5 w-full shrink-0" style={{ background: "linear-gradient(90deg, #10b981, #0d9488, #0ea5e9, #8b5cf6, #f59e0b)" }} />
 
         {/* Header row */}
-        <div className="flex items-center justify-between px-14 py-5 border-b shrink-0" style={{ borderColor: "#e5e7eb" }}>
+        <div className="flex items-center justify-between px-14 py-3 border-b shrink-0" style={{ borderColor: "#e5e7eb" }}>
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] mb-0.5" style={{ color: "#6b7280" }}>The EcoGridia Suite</p>
             <h2 className="text-[36px] font-extrabold leading-none" style={{ color: "#111827", fontFamily: "'Space Grotesk', system-ui, sans-serif" }}>
@@ -119,11 +119,11 @@ const Slide06Features = () => {
         <div className="flex flex-1 min-h-0">
 
           {/* LEFT: App icon grid */}
-          <div className="w-[580px] shrink-0 border-r overflow-y-auto px-8 py-6" style={{ borderColor: "#e5e7eb", background: "#fafafa" }}>
+          <div className="w-[580px] shrink-0 border-r overflow-y-auto px-8 py-4" style={{ borderColor: "#e5e7eb", background: "#fafafa" }}>
             {categories.map((cat, ci) => (
-              <div key={ci} className="mb-5">
+              <div key={ci} className="mb-3">
                 {/* Category header */}
-                <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center gap-2 mb-2">
                   <span className="w-5 h-5 rounded-md flex items-center justify-center text-[9px] font-black text-white shrink-0"
                     style={{ background: catBadgeColors[cat.id] }}>{cat.id}</span>
                   <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: "#374151" }}>{cat.label}</span>
@@ -173,10 +173,10 @@ const Slide06Features = () => {
           </div>
 
           {/* RIGHT: Product detail */}
-          <div className="flex-1 flex flex-col px-12 py-8 overflow-y-auto" key={selectedProd}>
+          <div className="flex-1 flex flex-col px-10 py-5 overflow-y-auto" key={selectedProd}>
 
             {/* Product header */}
-            <div className="flex items-start gap-5 mb-6">
+            <div className="flex items-start gap-4 mb-4">
               <div
                 className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0"
                 style={{
@@ -197,10 +197,10 @@ const Slide06Features = () => {
             </div>
 
             {/* Divider */}
-            <div className="h-px mb-5" style={{ background: "#f3f4f6" }} />
+            <div className="h-px mb-3" style={{ background: "#f3f4f6" }} />
 
             {/* Features label */}
-            <p className="text-[10px] font-black uppercase tracking-widest mb-3" style={{ color: "#9ca3af" }}>Key Capabilities</p>
+            <p className="text-[10px] font-black uppercase tracking-widest mb-2" style={{ color: "#9ca3af" }}>Key Capabilities</p>
 
             {/* Features grid */}
             <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 flex-1 content-start">
@@ -221,7 +221,7 @@ const Slide06Features = () => {
 
             {/* Output bar */}
             <div
-              className="mt-5 px-5 py-4 rounded-2xl flex items-start gap-3"
+              className="mt-3 px-4 py-3 rounded-xl flex items-start gap-3"
               style={{
                 background: prod.iconBg + "88",
                 border: `1.5px solid ${prod.iconColor}30`
