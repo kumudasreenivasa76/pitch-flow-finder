@@ -174,7 +174,7 @@ const Slide16bSegments = () => {
             <h2 className="text-3xl font-black text-foreground tracking-tight">
               Unit Economics by <span className="text-primary">Stakeholder Segment</span>
             </h2>
-            <p className="text-sm text-muted-foreground mt-0.5">FY29 Baseline — 5x LTV:CAC Target Across All Segments</p>
+            <p className="text-sm text-muted-foreground mt-0.5">FY30 Baseline — 5x LTV:CAC Target Across All Segments</p>
           </div>
           {/* KPI chips */}
           <div className="flex gap-3">
@@ -314,7 +314,7 @@ const Slide16bSegments = () => {
 
             {/* Segment revenue bars */}
             <div className="mt-3">
-              <div className="text-xs font-bold text-muted-foreground mb-2 uppercase tracking-wide">FY29 Revenue Distribution</div>
+              <div className="text-xs font-bold text-muted-foreground mb-2 uppercase tracking-wide">FY30 Revenue Distribution</div>
               {[
                 { label: "Data Centers", value: 44.8, pct: 100, color: "bg-primary" },
                 { label: "Education", value: 19, pct: 42, color: "bg-eco-teal" },

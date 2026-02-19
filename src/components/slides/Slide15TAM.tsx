@@ -109,9 +109,9 @@ const Slide15TAM = () => {
                 <div className="text-[12px] text-muted-foreground mt-1">~2% SAM · 10-year trajectory</div>
                 <div className="grid grid-cols-3 gap-2 mt-3">
                   {[
-                    { label: "FY26 Sites", val: "50" },
-                    { label: "FY29 Sites", val: "1,365" },
-                    { label: "FY34 Sites", val: "6,915" },
+                    { label: "FY27 Sites", val: "50" },
+                    { label: "FY30 Sites", val: "1,365" },
+                    { label: "FY35 Sites", val: "6,915" },
                   ].map((s) => (
                     <div key={s.label} className="bg-white/80 rounded-lg px-2 py-1.5 border border-violet-200 text-center">
                       <div className="text-[15px] font-black text-foreground">{s.val}</div>
