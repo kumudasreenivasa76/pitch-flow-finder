@@ -95,9 +95,16 @@ const SlideLayers = () => {
 
   return (
     <SlideLayout>
-      <div className="flex h-full">
+      <div className="relative flex h-full">
+        {/* Grid background */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: "linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)",
+            backgroundSize: "60px 60px", opacity: 0.5,
+          }}
+        />
         {/* Left sidebar */}
-        <div className="w-[480px] shrink-0 flex flex-col bg-card/40 border-r border-border/30">
+        <div className="relative z-10 w-[480px] shrink-0 flex flex-col bg-card/40 border-r border-border/30">
           <div className="px-7 pt-7 pb-4 shrink-0 border-b border-border/20">
             <div className="flex items-center gap-4 opacity-0 animate-fade-in" style={{ animationFillMode: "forwards" }}>
               <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
@@ -164,7 +171,7 @@ const SlideLayers = () => {
         </div>
 
         {/* Right detail panel */}
-        <div className="flex-1 flex items-center justify-center px-8 overflow-hidden" key={selected}>
+        <div className="relative z-10 flex-1 flex items-center justify-center px-8 overflow-hidden" key={selected}>
           <div className="w-full max-w-[700px]">
             {/* Header */}
             <div className="flex items-center gap-4 mb-5 animate-fade-in">

@@ -73,10 +73,10 @@ const Slide15bMarketAnalysis = () => (
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage:
-            "linear-gradient(to right, #c7d2d8 1px, transparent 1px), linear-gradient(to bottom, #c7d2d8 1px, transparent 1px)",
+            backgroundImage:
+            "linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)",
           backgroundSize: "60px 60px",
-          opacity: 0.35,
+          opacity: 0.5,
         }}
       />
 
