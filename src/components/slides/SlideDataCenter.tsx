@@ -193,13 +193,17 @@ const SlideDataCenter = () => {
           </div>
         </div>
 
-        {/* Full-bleed image — white bg, mix-blend-mode to strip dark bg */}
+        {/* Full-bleed image — lightened to match Slide07 white aesthetic */}
         <div className="absolute inset-0 bg-white">
           <img
             src={datacenterImg}
             alt="Data Center ecosystem"
             className="w-full h-full object-contain"
-            style={{ mixBlendMode: "multiply" }}
+            style={{
+              mixBlendMode: "multiply",
+              filter: "brightness(3) contrast(0.6) saturate(0.4)",
+              opacity: 0.3,
+            }}
           />
         </div>
 
