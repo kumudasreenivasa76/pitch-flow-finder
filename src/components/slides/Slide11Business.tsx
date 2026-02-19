@@ -102,37 +102,37 @@ const Slide11Business = () => (
       {/* Subtle top accent line */}
       <div className="absolute top-0 left-0 right-0 h-1 pointer-events-none" style={{ background: "linear-gradient(90deg, #16a34a, #2563eb, #7c3aed)" }} />
 
-      <div className="relative z-10 flex flex-col h-full px-16 pt-10 pb-6">
+      <div className="relative z-10 flex flex-col h-full px-14 pt-8 pb-5">
 
         {/* Header */}
-        <div className="text-center mb-6 animate-fade-in">
-          <span className="text-[22px] font-bold tracking-widest uppercase" style={{ color: "#16a34a" }}>
-            BUSINESS MODEL
+        <div className="text-center mb-4 animate-fade-in">
+          <span className="inline-block px-5 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-[14px] font-bold tracking-widest uppercase mb-3">
+            Business Model
           </span>
-          <h2 className="text-[56px] font-extrabold text-foreground leading-tight mt-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            High-Margin, Recurring, Global
+          <h2 className="text-[44px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            High-Margin, Recurring, <span className="text-primary">Global</span>
           </h2>
-          <p className="text-[22px] text-muted-foreground mt-1">
+          <p className="text-[16px] text-muted-foreground mt-1">
             EcoGridia monetizes clean energy across infrastructure, intelligence, markets, partners, and capital — without owning hardware.
           </p>
         </div>
 
         {/* Highlights row */}
-        <div className="flex justify-center gap-4 mb-7 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+        <div className="flex justify-center gap-3 mb-4 animate-fade-in" style={{ animationDelay: "0.1s" }}>
           {highlights.map((h, i) => {
             const Icon = h.icon;
             return (
               <div
                 key={i}
-                className="flex items-center gap-3 px-7 py-3 rounded-full border-2 bg-white/80 shadow-sm"
+                className="flex items-center gap-2.5 px-5 py-2.5 rounded-full border-2 bg-white/80 shadow-sm"
                 style={{ borderColor: "#e2e8f0" }}
               >
-                <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: "#f0fdf4" }}>
-                  <Icon className="w-5 h-5" style={{ color: "#16a34a" }} />
+                <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "#f0fdf4" }}>
+                  <Icon className="w-4 h-4" style={{ color: "#16a34a" }} />
                 </div>
                 <div>
-                  <div className="text-[22px] font-extrabold text-foreground leading-none">{h.value}</div>
-                  <div className="text-[14px] text-muted-foreground">{h.label}</div>
+                  <div className="text-[18px] font-extrabold text-foreground leading-none">{h.value}</div>
+                  <div className="text-[11px] text-muted-foreground">{h.label}</div>
                 </div>
               </div>
             );
@@ -140,53 +140,50 @@ const Slide11Business = () => (
         </div>
 
         {/* Revenue streams grid */}
-        <div className="grid grid-cols-3 gap-4 flex-1">
+        <div className="grid grid-cols-3 gap-3 flex-1">
           {streams.map((s, i) => {
             const Icon = s.icon;
             return (
               <div
                 key={i}
-                className="bg-white/90 rounded-2xl p-6 flex flex-col gap-2 shadow-sm animate-fade-in hover:shadow-md transition-all"
+                className="bg-white/90 rounded-xl p-4 flex flex-col gap-1.5 shadow-sm animate-fade-in hover:shadow-md transition-all"
                 style={{
-                  borderTop: `4px solid ${s.borderColor}`,
+                  borderTop: `3px solid ${s.borderColor}`,
                   animationDelay: `${0.12 + i * 0.07}s`,
                   animationFillMode: "forwards",
                   opacity: 0,
                 }}
               >
-                {/* Icon + name */}
-                <div className="flex items-center gap-3 mb-1">
+                <div className="flex items-center gap-2.5 mb-1">
                   <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center shadow-sm"
+                    className="w-9 h-9 rounded-lg flex items-center justify-center shadow-sm"
                     style={{ background: `${s.color}15`, border: `1.5px solid ${s.color}30` }}
                   >
-                    <Icon className="w-5 h-5" style={{ color: s.color }} />
+                    <Icon className="w-4 h-4" style={{ color: s.color }} />
                   </div>
                   <div>
-                    <h3 className="text-[20px] font-extrabold text-foreground leading-none" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    <h3 className="text-[16px] font-extrabold text-foreground leading-none" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                       {s.name}
                     </h3>
-                    <p className="text-[13px] text-muted-foreground">{s.sub}</p>
+                    <p className="text-[11px] text-muted-foreground">{s.sub}</p>
                   </div>
                 </div>
 
-                {/* Type badge */}
                 <div className="flex items-center justify-between">
                   <span
-                    className="px-3 py-1 rounded-full text-[13px] font-bold"
+                    className="px-2.5 py-0.5 rounded-full text-[11px] font-bold"
                     style={{ background: s.typeBg, color: s.typeColor }}
                   >
                     {s.type}
                   </span>
-                  <span className="text-[20px] font-extrabold" style={{ color: s.color }}>{s.margin}</span>
+                  <span className="text-[16px] font-extrabold" style={{ color: s.color }}>{s.margin}</span>
                 </div>
 
-                {/* Drivers */}
-                <div className="mt-1 flex flex-col gap-1">
+                <div className="mt-1 flex flex-col gap-0.5">
                   {s.drivers.map((d, j) => (
-                    <div key={j} className="flex items-start gap-2">
+                    <div key={j} className="flex items-start gap-1.5">
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: s.color }} />
-                      <span className="text-[14px] text-foreground/80">{d}</span>
+                      <span className="text-[12px] text-foreground/80">{d}</span>
                     </div>
                   ))}
                 </div>
@@ -195,9 +192,8 @@ const Slide11Business = () => (
           })}
         </div>
 
-        {/* Bottom bar */}
         <div
-          className="mt-5 rounded-2xl flex items-center justify-around py-4 px-10 animate-fade-in"
+          className="mt-4 rounded-2xl flex items-center justify-around py-3 px-8 animate-fade-in"
           style={{
             background: "linear-gradient(90deg, #14532d 0%, #166534 50%, #14532d 100%)",
             animationDelay: "0.6s",
@@ -206,21 +202,21 @@ const Slide11Business = () => (
           }}
         >
           <div className="text-center">
-            <div className="text-[32px] font-extrabold text-white">76–89%</div>
-            <div className="text-[15px] text-green-200">Gross Margins</div>
+            <div className="text-[22px] font-extrabold text-white">76–89%</div>
+            <div className="text-[11px] text-green-200">Gross Margins</div>
           </div>
-          <div className="w-px h-10 bg-white/20" />
+          <div className="w-px h-8 bg-white/20" />
           <div className="text-center">
-            <div className="text-[32px] font-extrabold text-white">6 Streams</div>
-            <div className="text-[15px] text-green-200">Diversified</div>
+            <div className="text-[22px] font-extrabold text-white">6 Streams</div>
+            <div className="text-[11px] text-green-200">Diversified</div>
           </div>
-          <div className="w-px h-10 bg-white/20" />
+          <div className="w-px h-8 bg-white/20" />
           <div className="text-center">
-            <div className="text-[32px] font-extrabold text-white">Zero</div>
-            <div className="text-[15px] text-green-200">Hardware Risk</div>
+            <div className="text-[22px] font-extrabold text-white">Zero</div>
+            <div className="text-[11px] text-green-200">Hardware Risk</div>
           </div>
-          <div className="w-px h-10 bg-white/20" />
-          <div className="text-[18px] font-bold text-white italic">
+          <div className="w-px h-8 bg-white/20" />
+          <div className="text-[14px] font-bold text-white italic max-w-[350px]">
             "EcoGridia captures value at every layer without carrying hardware risk"
           </div>
         </div>

@@ -3,76 +3,92 @@ import { Building2, CreditCard } from "lucide-react";
 
 const Slide17Financials = () => (
   <SlideLayout>
-    <div className="flex flex-col h-full px-20 py-16">
-      <h2 className="text-5xl font-bold text-foreground mb-2 animate-fade-in">
-        Business Model & <span className="text-primary">Financials</span>
-      </h2>
-      <p className="text-2xl text-muted-foreground mb-10">Two synergistic business lines driving $60M combined revenue.</p>
+    <div className="relative w-full h-full flex flex-col bg-white overflow-hidden px-14 py-8">
+      {/* Grid background */}
+      <div className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)",
+          backgroundSize: "60px 60px", opacity: 0.5,
+        }}
+      />
 
-      <div className="grid grid-cols-2 gap-10 flex-1">
-        {/* EcoGridia Sites */}
-        <div className="bg-card rounded-2xl border border-border p-10 animate-fade-in">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 rounded-xl bg-primary flex items-center justify-center">
-              <Building2 className="w-8 h-8 text-primary-foreground" />
+      <div className="relative z-10 flex flex-col h-full">
+        {/* Header */}
+        <div className="text-center mb-5 animate-fade-in">
+          <span className="inline-block px-5 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-[14px] font-bold tracking-widest uppercase mb-3">
+            Business Model
+          </span>
+          <h2 className="text-[44px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            Business Model & <span className="text-primary">Financials</span>
+          </h2>
+          <p className="text-[16px] text-muted-foreground mt-1">Two synergistic business lines driving $60M combined revenue.</p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-6 flex-1 min-h-0">
+          {/* EcoGridia Sites */}
+          <div className="bg-white/90 rounded-2xl border-2 border-border/40 p-6 animate-fade-in shadow-sm" style={{ animationDelay: "0.05s", animationFillMode: "forwards", opacity: 0 }}>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
+                <Building2 className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <div>
+                <h3 className="text-[22px] font-extrabold text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>EcoGridia Sites</h3>
+                <div className="text-[28px] font-black text-primary leading-none">$40M</div>
+              </div>
             </div>
-            <div>
-              <h3 className="text-3xl font-bold text-foreground">EcoGridia Sites</h3>
-              <div className="text-4xl font-bold text-primary">$40M</div>
+            <div className="space-y-2">
+              {[
+                { stream: "Project Execution Fees", value: "$16M" },
+                { stream: "Vendor Commissions", value: "$8M" },
+                { stream: "Monitoring & Maintenance", value: "$6M" },
+                { stream: "Asset Management", value: "$5M" },
+                { stream: "Insurance & Compliance", value: "$5M" },
+              ].map((r) => (
+                <div key={r.stream} className="flex justify-between py-2.5 border-b border-border/40 last:border-0">
+                  <span className="text-[14px] text-foreground">{r.stream}</span>
+                  <span className="text-[14px] font-bold text-primary">{r.value}</span>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="space-y-4">
-            {[
-              { stream: "Project Execution Fees", value: "$16M" },
-              { stream: "Vendor Commissions", value: "$8M" },
-              { stream: "Monitoring & Maintenance", value: "$6M" },
-              { stream: "Asset Management", value: "$5M" },
-              { stream: "Insurance & Compliance", value: "$5M" },
-            ].map((r) => (
-              <div key={r.stream} className="flex justify-between py-3 border-b border-border last:border-0">
-                <span className="text-xl text-foreground">{r.stream}</span>
-                <span className="text-xl font-bold text-primary">{r.value}</span>
+
+          {/* Subscriptions */}
+          <div className="bg-white/90 rounded-2xl border-2 border-border/40 p-6 animate-fade-in shadow-sm" style={{ animationDelay: "0.1s", animationFillMode: "forwards", opacity: 0 }}>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-xl bg-eco-teal flex items-center justify-center">
+                <CreditCard className="w-6 h-6 text-primary-foreground" />
               </div>
-            ))}
+              <div>
+                <h3 className="text-[22px] font-extrabold text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Subscriptions</h3>
+                <div className="text-[28px] font-black text-eco-teal leading-none">$20M</div>
+              </div>
+            </div>
+            <div className="space-y-2">
+              {[
+                { stream: "Enterprise SaaS", value: "$8M" },
+                { stream: "VoltIQ Premium", value: "$4M" },
+                { stream: "Marketplace Fees", value: "$3M" },
+                { stream: "Compliance Module", value: "$3M" },
+                { stream: "Data & Analytics", value: "$2M" },
+              ].map((r) => (
+                <div key={r.stream} className="flex justify-between py-2.5 border-b border-border/40 last:border-0">
+                  <span className="text-[14px] text-foreground">{r.stream}</span>
+                  <span className="text-[14px] font-bold text-eco-teal">{r.value}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Subscriptions */}
-        <div className="bg-card rounded-2xl border border-border p-10 animate-fade-in" style={{ animationDelay: "0.15s" }}>
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 rounded-xl bg-eco-teal flex items-center justify-center">
-              <CreditCard className="w-8 h-8 text-primary-foreground" />
+        {/* Traction */}
+        <div className="flex justify-center gap-8 mt-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          {["LOIs Signed", "Pipeline Active", "Revenue Generating"].map((t, i) => (
+            <div key={t} className="flex items-center gap-2 text-[14px]">
+              <div className={`w-3 h-3 rounded-full ${i === 2 ? "bg-primary" : "bg-primary/40"}`} />
+              <span className="text-muted-foreground">{t}</span>
             </div>
-            <div>
-              <h3 className="text-3xl font-bold text-foreground">Subscriptions</h3>
-              <div className="text-4xl font-bold text-eco-teal">$20M</div>
-            </div>
-          </div>
-          <div className="space-y-4">
-            {[
-              { stream: "Enterprise SaaS", value: "$8M" },
-              { stream: "VoltIQ Premium", value: "$4M" },
-              { stream: "Marketplace Fees", value: "$3M" },
-              { stream: "Compliance Module", value: "$3M" },
-              { stream: "Data & Analytics", value: "$2M" },
-            ].map((r) => (
-              <div key={r.stream} className="flex justify-between py-3 border-b border-border last:border-0">
-                <span className="text-xl text-foreground">{r.stream}</span>
-                <span className="text-xl font-bold text-eco-teal">{r.value}</span>
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
-      </div>
-
-      {/* Traction */}
-      <div className="flex justify-center gap-16 mt-8 py-4">
-        {["LOIs Signed", "Pipeline Active", "Revenue Generating"].map((t, i) => (
-          <div key={t} className="flex items-center gap-2 text-xl">
-            <div className={`w-4 h-4 rounded-full ${i === 2 ? "bg-primary" : "bg-primary/40"}`} />
-            <span className="text-muted-foreground">{t}</span>
-          </div>
-        ))}
       </div>
     </div>
   </SlideLayout>
