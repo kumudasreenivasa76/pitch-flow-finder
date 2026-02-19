@@ -68,10 +68,10 @@ const Slide05Platform = () => {
                 <Layers className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-[32px] font-extrabold text-foreground leading-none">
-                  Three-Layer <span className="text-primary">Platform</span>
+                <h2 className="text-[28px] font-extrabold text-foreground leading-tight">
+                  The EcoGridia <span className="text-primary">Integrated Climate</span> Infrastructure Platform
                 </h2>
-                <p className="text-[14px] text-muted-foreground mt-1">15 Integrated Products · Full Clean Energy Stack</p>
+                <p className="text-[13px] text-muted-foreground mt-1">Three Intelligence Layers. One Unified Energy Stack.</p>
               </div>
             </div>
           </div>
