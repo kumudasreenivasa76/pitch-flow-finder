@@ -101,7 +101,7 @@ const Slide10Calculator = () => {
           </div>
 
           {/* Two-column layout */}
-          <div className="grid grid-cols-[380px_1fr] gap-6 w-full max-w-[1200px] items-start">
+          <div className="grid grid-cols-[380px_1fr] gap-6 w-full max-w-[1200px] items-center">
             {/* Left: Controls */}
             <div className="space-y-3">
               {/* Location */}
