@@ -231,7 +231,7 @@ const Slide03Solution = () => {
         </div>
 
         {/* 3-column panel */}
-        <div className="relative z-10 w-full max-w-[1600px] grid grid-cols-3 gap-4 flex-1" key={selected}>
+        <div className="relative z-10 w-full max-w-[1600px] grid grid-cols-3 gap-4" key={selected}>
 
           {/* LEFT — Problem */}
           <div className="rounded-2xl border-2 border-amber-200 bg-amber-50/80 p-7 flex flex-col animate-fade-in">
@@ -239,7 +239,7 @@ const Slide03Solution = () => {
             <h4 className="text-[20px] font-bold text-amber-900 mb-3 leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               {s.problem.heading}
             </h4>
-            <p className="text-[16px] text-amber-800 leading-relaxed flex-1">{s.problem.text}</p>
+            <p className="text-[16px] text-amber-800 leading-relaxed">{s.problem.text}</p>
           </div>
 
           {/* CENTER — Solution */}
@@ -248,7 +248,7 @@ const Slide03Solution = () => {
             <h4 className="text-[20px] font-bold text-primary-foreground mb-4 leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               {s.title}
             </h4>
-            <div className="flex-1 space-y-3">
+            <div className="space-y-3">
               {s.solution.bullets.map((b, bi) => (
                 <div key={bi} className="flex items-start gap-3 animate-fade-in" style={{ animationDelay: `${0.1 + bi * 0.06}s` }}>
                   <CheckCircle className="w-5 h-5 text-primary-foreground/90 shrink-0 mt-0.5" />
@@ -264,7 +264,7 @@ const Slide03Solution = () => {
             <h4 className="text-[20px] font-bold text-foreground mb-3 leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               {s.impact.heading}
             </h4>
-            <p className="text-[16px] text-foreground/80 leading-relaxed flex-1">{s.impact.text}</p>
+            <p className="text-[16px] text-foreground/80 leading-relaxed">{s.impact.text}</p>
             <button className="mt-4 flex items-center gap-1.5 text-[14px] text-eco-teal font-semibold hover:underline">
               <Info className="w-4 h-4" /> Learn more
             </button>
