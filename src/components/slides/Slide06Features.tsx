@@ -116,10 +116,10 @@ const Slide06Features = () => {
         </div>
 
         {/* Main body */}
-        <div className="flex flex-1 min-h-0">
+        <div className="flex flex-1 min-h-0 overflow-hidden">
 
           {/* LEFT: App icon grid */}
-          <div className="w-[560px] shrink-0 border-r px-5 py-2" style={{ borderColor: "#e5e7eb", background: "#fafafa" }}>
+          <div className="w-[560px] shrink-0 border-r px-5 py-1.5 overflow-hidden" style={{ borderColor: "#e5e7eb", background: "#fafafa" }}>
             {categories.map((cat, ci) => (
               <div key={ci} className="mb-1">
                 {/* Category header */}
@@ -171,12 +171,12 @@ const Slide06Features = () => {
           </div>
 
           {/* RIGHT: Product detail */}
-          <div className="flex-1 flex flex-col px-8 py-3" key={selectedProd}>
+          <div className="flex-1 flex flex-col px-8 py-2 overflow-hidden" key={selectedProd}>
 
             {/* Product header */}
-            <div className="flex items-start gap-3 mb-3">
+            <div className="flex items-start gap-3 mb-2">
               <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
                 style={{
                   background: `linear-gradient(135deg, ${prod.iconBg}, ${prod.iconBg}aa)`,
                   boxShadow: `0 8px 24px ${prod.iconColor}30`
@@ -195,13 +195,13 @@ const Slide06Features = () => {
             </div>
 
             {/* Divider */}
-            <div className="h-px mb-3" style={{ background: "#f3f4f6" }} />
+            <div className="h-px mb-2" style={{ background: "#f3f4f6" }} />
 
             {/* Features label */}
-            <p className="text-[10px] font-black uppercase tracking-widest mb-2" style={{ color: "#9ca3af" }}>Key Capabilities</p>
+            <p className="text-[10px] font-black uppercase tracking-widest mb-1.5" style={{ color: "#9ca3af" }}>Key Capabilities</p>
 
             {/* Features grid */}
-            <div className="grid grid-cols-2 gap-x-2 gap-y-1 flex-1 content-start">
+            <div className="grid grid-cols-2 gap-x-2 gap-y-1 content-start">
               {prod.features.map((f, i) => (
                 <div
                   key={i}
