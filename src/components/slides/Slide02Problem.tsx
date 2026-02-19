@@ -1,6 +1,6 @@
 import SlideLayout from "../SlideLayout";
 import { useState } from "react";
-import { DollarSign, FileCheck, Blocks, Server, Coins, Activity, AlertTriangle, ChevronRight } from "lucide-react";
+import { DollarSign, FileCheck, Blocks, Server, Coins, Activity, ChevronRight, X } from "lucide-react";
 
 const problems = [
   {
@@ -9,6 +9,7 @@ const problems = [
     title: "Rising & Volatile Energy Costs",
     stat: "15–25%",
     statLabel: "US price increase (3yr)",
+    preview: "US commercial electricity prices increased ~15–25% in the past 3 years",
     bullets: [
       "US commercial electricity prices increased ~15–25% in the past 3 years",
       "Industrial facilities spend $500K–$5M annually on electricity",
@@ -23,6 +24,7 @@ const problems = [
     title: "ESG & SEC Compliance Pressure",
     stat: "10K+",
     statLabel: "US companies impacted",
+    preview: "10,000+ US companies impacted by climate disclosure expectations",
     bullets: [
       "10,000+ US companies impacted by climate disclosure expectations",
       "3,000+ public companies preparing for SEC reporting",
@@ -36,6 +38,7 @@ const problems = [
     title: "Fragmented Renewable Ecosystem",
     stat: "6–9 mo",
     statLabel: "avg project delay",
+    preview: "Solar EPCs, consultants, carbon brokers operate in silos across 3–5 vendors",
     bullets: [
       "Solar EPCs, consultants, carbon brokers operate separately",
       "70% of projects require coordination across 3–5 vendors",
@@ -49,6 +52,7 @@ const problems = [
     title: "DC Renewable Procurement",
     stat: "2x",
     statLabel: "DC demand doubling",
+    preview: "Hyperscalers committed to 100% renewable energy (RE100), demand set to double",
     bullets: [
       "Hyperscalers committed to 100% renewable energy (RE100)",
       "Data center electricity demand expected to double regionally",
@@ -62,6 +66,7 @@ const problems = [
     title: "Unmonetized RECs (Leakage)",
     stat: "$1–2B",
     statLabel: "US REC market/yr",
+    preview: "Thousands of small installations don't actively trade RECs — 10–20% revenue unused",
     bullets: [
       "US REC market size: $1–2B annually",
       "Thousands of small installations don't actively trade RECs",
@@ -75,6 +80,7 @@ const problems = [
     title: "No Real-Time Energy Intelligence",
     stat: "20–30%",
     statLabel: "solar underperformance",
+    preview: "20–30% of installed solar underperforms without monitoring or analytics",
     bullets: [
       "20–30% of installed solar underperforms without monitoring",
       "50% of mid-market firms lack real-time energy analytics",
@@ -84,120 +90,153 @@ const problems = [
   },
 ];
 
+const stats = [
+  { value: "$500K–$5M", label: "annual electricity spend per facility" },
+  { value: "10K+", label: "US companies facing ESG disclosure" },
+  { value: "6–9mo", label: "average renewable project delay" },
+];
+
 const Slide02Problem = () => {
-  const [selected, setSelected] = useState<number>(0);
-  const p = problems[selected];
-  const Icon = p.icon;
+  const [selected, setSelected] = useState<number | null>(null);
+  const active = selected !== null ? problems[selected] : null;
 
   return (
     <SlideLayout>
-      <div className="flex h-full">
-        {/* Left sidebar */}
-        <div className="w-[580px] shrink-0 flex flex-col bg-card/40 border-r border-border/30">
-          {/* Header */}
-          <div className="px-10 pt-8 pb-5 shrink-0 border-b border-border/20">
-            <div className="flex items-center gap-4 opacity-0 animate-fade-in" style={{ animationFillMode: "forwards" }}>
-              <div className="w-14 h-14 rounded-2xl bg-destructive/10 flex items-center justify-center">
-                <AlertTriangle className="w-7 h-7 text-destructive" />
-              </div>
-              <div>
-                <h2 className="text-[40px] font-extrabold text-foreground leading-none">
-                  Market <span className="text-destructive">Failure</span>
-                </h2>
-                <p className="text-[18px] text-muted-foreground mt-1">6 systemic US market failures</p>
-              </div>
-            </div>
-          </div>
+      <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden px-24 py-10">
 
-          {/* Problem list */}
-          <div className="flex-1 flex flex-col justify-center gap-1.5 px-5 py-3">
-            {problems.map((prob, i) => {
-              const PIcon = prob.icon;
-              const isActive = selected === i;
-              return (
-                <button
-                  key={i}
-                  onClick={() => setSelected(i)}
-                  className={`flex items-center gap-4 px-5 py-4 rounded-2xl text-left transition-all duration-300 opacity-0 animate-fade-in ${
-                    isActive
-                      ? "bg-primary/10 border-2 border-primary/30 shadow-lg shadow-primary/5"
-                      : "bg-transparent border-2 border-transparent hover:bg-card hover:border-border/30"
-                  }`}
-                  style={{ animationDelay: `${0.08 + i * 0.05}s`, animationFillMode: "forwards" }}
-                >
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${
-                    isActive ? "bg-primary text-primary-foreground shadow-md shadow-primary/20" : "bg-secondary text-muted-foreground"
-                  }`}>
-                    <PIcon className="w-6 h-6" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className={`text-[18px] font-bold leading-tight transition-colors ${isActive ? "text-primary" : "text-foreground"}`}>
+        {/* Subtle grid background */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: "linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+            opacity: 0.5,
+          }}
+        />
+
+        {/* Header */}
+        <div className="relative z-10 text-center mb-10 animate-fade-in">
+          <span className="inline-block px-5 py-1.5 rounded-full border border-amber-300 bg-amber-50 text-amber-700 text-[16px] font-bold tracking-widest uppercase mb-5">
+            The Problem
+          </span>
+          <h2 className="text-[56px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            The US Energy Market Is <span className="text-destructive">Broken</span>
+          </h2>
+          <p className="text-[20px] text-muted-foreground mt-3">
+            Fragmented systems, rising costs, and no unified infrastructure
+          </p>
+        </div>
+
+        {/* 3×2 Card Grid */}
+        <div className="relative z-10 grid grid-cols-3 gap-5 w-full max-w-[1520px]">
+          {problems.map((prob, i) => {
+            const Icon = prob.icon;
+            return (
+              <button
+                key={i}
+                onClick={() => setSelected(i)}
+                className="flex items-start gap-4 p-6 rounded-2xl bg-white border-2 border-border/40 hover:border-primary/40 hover:shadow-xl shadow-sm text-left transition-all duration-300 group animate-fade-in"
+                style={{ animationDelay: `${0.05 + i * 0.06}s`, animationFillMode: "forwards", opacity: 0 }}
+              >
+                {/* Icon */}
+                <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center shrink-0 group-hover:bg-primary/10 group-hover:border-primary/30 transition-colors">
+                  <Icon className="w-5 h-5 text-amber-600 group-hover:text-primary transition-colors" />
+                </div>
+
+                {/* Text */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between mb-1">
+                    <h3 className="text-[20px] font-bold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                       {prob.title}
-                    </p>
-                    <p className="text-[14px] text-muted-foreground mt-0.5">{prob.statLabel}</p>
+                    </h3>
+                    <ChevronRight className="w-5 h-5 text-muted-foreground/40 group-hover:text-primary group-hover:translate-x-0.5 transition-all shrink-0 ml-2" />
                   </div>
-                  <span className={`text-[26px] font-extrabold shrink-0 transition-colors ${isActive ? "text-primary" : "text-foreground/70"}`}>
-                    {prob.stat}
+                  <p className="text-[14px] text-muted-foreground leading-snug line-clamp-2">{prob.preview}</p>
+                  <span className="mt-2 inline-block text-[13px] font-semibold text-primary group-hover:underline">
+                    Click for details
                   </span>
-                  <ChevronRight className={`w-5 h-5 shrink-0 transition-all duration-300 ${isActive ? "text-primary translate-x-1" : "text-muted-foreground/40"}`} />
-                </button>
-              );
-            })}
-          </div>
+                </div>
+              </button>
+            );
+          })}
         </div>
 
-        {/* Right detail panel */}
-        <div className="flex-1 flex items-center justify-center px-12 pb-16 overflow-hidden" key={selected}>
-          <div className="w-full max-w-[1100px]">
-            {/* Header with stat */}
-            <div className="animate-fade-in">
-              <div className="flex items-center gap-4">
-                <div className="w-[56px] h-[56px] rounded-2xl bg-primary flex items-center justify-center text-primary-foreground shadow-lg shadow-primary/20">
-                  <Icon className="w-7 h-7" />
+        {/* Stats bar */}
+        <div className="relative z-10 flex items-center gap-6 mt-8 animate-fade-in" style={{ animationDelay: "0.5s", animationFillMode: "forwards", opacity: 0 }}>
+          {stats.map((s, i) => (
+            <div key={i} className="flex items-center gap-3 px-7 py-3.5 rounded-full border-2 border-border/40 bg-white shadow-sm">
+              <span className="text-[26px] font-black text-primary" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{s.value}</span>
+              <span className="text-[15px] text-muted-foreground">{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Detail modal overlay */}
+        {active && (
+          <div
+            className="absolute inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm animate-fade-in"
+            onClick={() => setSelected(null)}
+          >
+            <div
+              className="relative w-[680px] bg-white rounded-3xl shadow-2xl border border-border/30 p-10 animate-fade-in"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelected(null)}
+                className="absolute top-4 right-4 p-2 rounded-xl hover:bg-muted transition-colors"
+              >
+                <X className="w-5 h-5 text-muted-foreground" />
+              </button>
+
+              {/* Modal header */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+                  {(() => { const Icon = active.icon; return <Icon className="w-7 h-7 text-primary" />; })()}
                 </div>
-                <div className="flex-1">
-                  <span className="text-[13px] text-muted-foreground font-mono">Problem {p.num} of 06</span>
-                  <h3 className="text-[30px] font-extrabold text-foreground leading-tight">{p.title}</h3>
+                <div>
+                  <span className="text-[13px] text-muted-foreground font-mono">Problem {active.num} of 06</span>
+                  <h3 className="text-[28px] font-extrabold text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    {active.title}
+                  </h3>
                 </div>
-                <div className="text-right shrink-0">
-                  <div className="text-[42px] font-black text-primary leading-none">{p.stat}</div>
-                  <div className="text-[13px] text-muted-foreground uppercase tracking-wider mt-1">{p.statLabel}</div>
+                <div className="ml-auto text-right shrink-0">
+                  <div className="text-[38px] font-black text-primary leading-none">{active.stat}</div>
+                  <div className="text-[12px] text-muted-foreground uppercase tracking-wider mt-1">{active.statLabel}</div>
                 </div>
               </div>
-            </div>
 
-            {/* Data points */}
-            <div className="mt-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <h4 className="text-[13px] font-bold text-muted-foreground uppercase tracking-widest mb-3">Key Data Points</h4>
-              <div className="space-y-2.5">
-                {p.bullets.map((b, bi) => (
-                  <div
-                    key={bi}
-                    className="flex items-center gap-3 p-3.5 rounded-xl bg-card border border-border/30 hover:border-primary/20 hover:shadow-md transition-all duration-300 opacity-0 animate-fade-in"
-                    style={{ animationDelay: `${0.15 + bi * 0.08}s`, animationFillMode: "forwards" }}
-                  >
-                    <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary text-[14px] font-bold flex items-center justify-center shrink-0">
-                      {bi + 1}
-                    </span>
-                    <span className="text-[15px] text-foreground leading-snug">{b}</span>
+              {/* Bullets */}
+              <div className="space-y-3 mb-6">
+                {active.bullets.map((b, bi) => (
+                  <div key={bi} className="flex items-start gap-3 p-3.5 rounded-xl bg-muted/40 border border-border/20">
+                    <span className="w-7 h-7 rounded-lg bg-primary/10 text-primary text-[13px] font-bold flex items-center justify-center shrink-0">{bi + 1}</span>
+                    <span className="text-[16px] text-foreground leading-snug">{b}</span>
                   </div>
                 ))}
               </div>
-            </div>
 
-            {/* Impact bar - sits right below data points */}
-            <div className="mt-5 p-4 rounded-2xl bg-destructive/[0.04] border border-destructive/15 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              <span className="text-[13px] font-bold text-destructive uppercase tracking-wider">⚠ Business Impact</span>
-              <div className="flex gap-2.5 mt-2.5 flex-wrap">
-                {p.impact.map((imp, ii) => (
-                  <span key={ii} className="px-4 py-2 rounded-lg bg-destructive/10 text-destructive text-[14px] font-semibold">
-                    {imp}
-                  </span>
+              {/* Impact */}
+              <div className="p-4 rounded-2xl bg-destructive/5 border border-destructive/15">
+                <span className="text-[13px] font-bold text-destructive uppercase tracking-wider">⚠ Business Impact</span>
+                <div className="flex gap-2.5 mt-2.5 flex-wrap">
+                  {active.impact.map((imp, ii) => (
+                    <span key={ii} className="px-4 py-2 rounded-lg bg-destructive/10 text-destructive text-[14px] font-semibold">{imp}</span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Nav dots */}
+              <div className="flex items-center justify-center gap-2 mt-6">
+                {problems.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setSelected(i)}
+                    className={`rounded-full transition-all ${i === selected ? "w-6 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-muted-foreground/25 hover:bg-muted-foreground/50"}`}
+                  />
                 ))}
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </SlideLayout>
   );
