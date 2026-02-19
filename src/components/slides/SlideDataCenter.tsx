@@ -180,10 +180,10 @@ const SlideDataCenter = () => {
     <SlideLayout>
       <div className="relative w-full h-full overflow-hidden bg-white">
 
-        {/* Header — identical structure to Slide07 */}
+        {/* Header — identical to Slide07 */}
         <div className="absolute top-5 left-7 right-7 z-20 flex items-center gap-3 animate-fade-in">
           <span className="text-sm font-bold text-primary-foreground bg-primary px-4 py-1.5 rounded-full shadow-lg">Data Center</span>
-          <h2 className="text-2xl font-bold text-foreground">EcoGridia – Data Center Entry Flow</h2>
+          <h2 className="text-2xl font-bold text-foreground drop-shadow-sm">EcoGridia – Data Center Entry Flow</h2>
           <div className="ml-auto flex items-center gap-2">
             {phases.map((p) => (
               <span key={p.id} className={`text-xs font-semibold text-white px-2.5 py-1 rounded-full ${p.color}`}>
@@ -193,7 +193,7 @@ const SlideDataCenter = () => {
           </div>
         </div>
 
-        {/* Full-bleed image — white bg, mix-blend-mode to strip dark bg */}
+        {/* Full-bleed image — same as Slide07: white bg + mix-blend-mode multiply */}
         <div className="absolute inset-0 bg-white">
           <img
             src={datacenterImg}
@@ -228,7 +228,7 @@ const SlideDataCenter = () => {
               <span className={`absolute -inset-2 rounded-full animate-ping ${isActive ? "bg-primary/30" : "bg-primary/10"}`} style={{ animationDuration: "2.8s" }} />
               <div className={`relative flex items-center gap-2 px-3 py-2 rounded-xl backdrop-blur-md border shadow-lg transition-all duration-300 cursor-pointer
                 ${isActive
-                  ? `${phase.color} text-white border-white/30 scale-110`
+                  ? `${phase.color} text-primary-foreground border-white/30 scale-110`
                   : "bg-card/90 text-foreground border-border/60 hover:bg-card hover:border-primary/40 hover:scale-105"
                 }`}
               >
@@ -252,18 +252,13 @@ const SlideDataCenter = () => {
             </button>
 
             <div className="flex items-center gap-3 mb-4">
-              <div className={`w-12 h-12 rounded-2xl ${activePhase.color} flex items-center justify-center text-white shadow-lg`}>
+              <div className={`w-12 h-12 rounded-2xl ${activePhase.color} flex items-center justify-center text-primary-foreground shadow-lg`}>
                 {(() => { const Icon = activeData.icon; return <Icon className="w-6 h-6" />; })()}
               </div>
               <div>
                 <span className="text-[11px] text-muted-foreground font-mono">{activeData.phase} · {activeData.role}</span>
                 <h3 className="text-xl font-bold text-foreground">{activeData.label}</h3>
               </div>
-            </div>
-
-            <div className={`flex items-center gap-4 p-3 rounded-xl ${activePhase.bgLight} border ${activePhase.borderColor} mb-4`}>
-              <span className={`text-2xl font-black ${activePhase.textColor}`}>{activeData.stat}</span>
-              <span className="text-sm text-muted-foreground">{activeData.statLabel}</span>
             </div>
 
             <div className="flex-1 space-y-2 overflow-y-auto">
@@ -278,8 +273,8 @@ const SlideDataCenter = () => {
 
             <div className={`mt-4 p-3 rounded-xl ${activePhase.bgLight} border ${activePhase.borderColor} shrink-0`}>
               <span className={`text-xs font-bold ${activePhase.textColor} uppercase tracking-wide`}>Output →</span>
-              {activeData.outputs.map((o, i) => (
-                <p key={i} className="text-sm text-foreground mt-1">✔ {o}</p>
+              {activeData.outputs.map((o, oi) => (
+                <p key={oi} className="text-sm text-foreground mt-1">✔ {o}</p>
               ))}
             </div>
 
