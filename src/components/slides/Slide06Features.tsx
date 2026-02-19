@@ -83,40 +83,37 @@ const Slide06Features = () => {
 
   return (
     <SlideLayout>
-      <div className="flex flex-col items-center justify-center h-full" style={{ background: "#ffffff" }}>
+      <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden px-14 pt-8 pb-5">
 
-        {/* Top gradient bar */}
-        <div className="h-1.5 w-full shrink-0" style={{ background: "linear-gradient(90deg, #10b981, #0d9488, #0ea5e9, #8b5cf6, #f59e0b)" }} />
+        {/* Grid background */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: "linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+            opacity: 0.5,
+          }}
+        />
 
-        {/* Header row */}
-        <div className="flex items-center justify-between px-14 py-2 border-b shrink-0" style={{ borderColor: "#e5e7eb" }}>
-          <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.25em] mb-0.5" style={{ color: "#6b7280" }}>The EcoGridia Suite</p>
-            <h2 className="text-[28px] font-extrabold leading-none" style={{ color: "#111827", fontFamily: "'Space Grotesk', system-ui, sans-serif" }}>
-              Product <span style={{ color: "#10b981" }}>Apps</span>
-            </h2>
-          </div>
-          <div className="flex items-center gap-8">
-            <div className="text-center">
-              <p className="text-[24px] font-extrabold" style={{ color: "#10b981" }}>20</p>
-              <p className="text-[11px] font-semibold uppercase tracking-wider" style={{ color: "#6b7280" }}>Products</p>
-            </div>
-            <div className="w-px h-8" style={{ background: "#e5e7eb" }} />
-            <div className="text-center">
-              <p className="text-[24px] font-extrabold" style={{ color: "#10b981" }}>6</p>
-              <p className="text-[11px] font-semibold uppercase tracking-wider" style={{ color: "#6b7280" }}>Modules</p>
-            </div>
-            <div className="w-px h-8" style={{ background: "#e5e7eb" }} />
-            <div className="flex flex-wrap gap-1.5 max-w-[340px]">
-              {["Universities", "K-12 Schools", "Data Centers", "Enterprises", "Climate Funds", "Housing"].map((s) => (
-                <span key={s} className="text-[10px] font-semibold px-2.5 py-1 rounded-full" style={{ background: "#f0fdf4", color: "#15803d", border: "1px solid #bbf7d0" }}>{s}</span>
-              ))}
-            </div>
+        {/* Header */}
+        <div className="relative z-10 text-center mb-4">
+          <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
+            The EcoGridia Suite
+          </span>
+          <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            20 Products Across <span className="text-primary">6 Modules</span>
+          </h2>
+          <p className="text-[15px] text-muted-foreground mt-1">
+            Full-stack renewable infrastructure — from baseline to compliance
+          </p>
+          <div className="flex items-center justify-center gap-2 mt-2 flex-wrap">
+            {["Universities", "K-12 Schools", "Data Centers", "Enterprises", "Climate Funds", "Housing"].map((s) => (
+              <span key={s} className="text-[11px] font-semibold px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary">{s}</span>
+            ))}
           </div>
         </div>
 
         {/* Main body */}
-        <div className="flex min-h-0 overflow-hidden">
+        <div className="relative z-10 flex min-h-0 overflow-hidden w-full">
 
           {/* LEFT: App icon grid */}
           <div className="w-[560px] shrink-0 border-r px-5 py-1.5 overflow-hidden" style={{ borderColor: "#e5e7eb", background: "#fafafa" }}>
@@ -235,7 +232,7 @@ const Slide06Features = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="shrink-0 px-14 py-2 flex items-center justify-between" style={{ background: "#14532d" }}>
+        <div className="relative z-10 shrink-0 w-full px-14 py-2 flex items-center justify-between mt-4" style={{ background: "#14532d", borderRadius: "8px" }}>
           <p className="text-[11px] font-semibold text-white/70">Tap any product icon to explore capabilities</p>
           <p className="text-[11px] font-bold text-white/90">EcoGridia · 20-Product Platform Suite</p>
         </div>
