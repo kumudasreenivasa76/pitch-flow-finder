@@ -106,13 +106,13 @@ const Slide11Business = () => (
 
         {/* Header */}
         <div className="text-center mb-4 animate-fade-in">
-          <span className="inline-block px-5 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-[14px] font-bold tracking-widest uppercase mb-3">
-            Business Model
+          <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
+            Revenue Streams
           </span>
-          <h2 className="text-[44px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             High-Margin, Recurring, <span className="text-primary">Global</span>
           </h2>
-          <p className="text-[16px] text-muted-foreground mt-1">
+          <p className="text-[15px] text-muted-foreground mt-1">
             EcoGridia monetizes clean energy across infrastructure, intelligence, markets, partners, and capital — without owning hardware.
           </p>
         </div>

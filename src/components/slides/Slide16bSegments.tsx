@@ -169,12 +169,13 @@ const Slide16bSegments = () => {
         />
 
         {/* Header */}
-        <div className="flex items-center justify-between mb-5">
+        <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className="text-3xl font-black text-foreground tracking-tight">
+            <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">Segment Economics</span>
+            <h2 className="text-[40px] font-extrabold text-foreground leading-tight tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               Unit Economics by <span className="text-primary">Stakeholder Segment</span>
             </h2>
-            <p className="text-sm text-muted-foreground mt-0.5">FY30 Baseline — 5x LTV:CAC Target Across All Segments</p>
+            <p className="text-[15px] text-muted-foreground mt-0.5">FY30 Baseline — 5x LTV:CAC Target Across All Segments</p>
           </div>
           {/* KPI chips */}
           <div className="flex gap-3">

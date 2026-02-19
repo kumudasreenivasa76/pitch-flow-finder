@@ -172,9 +172,9 @@ const Slide12Pricing = () => {
           {/* Header + Toggle */}
           <div className="flex items-center justify-between mb-5 animate-fade-in">
             <div>
-              <span className="text-[18px] font-bold tracking-widest uppercase text-primary">ECOGRIDIA™ PRICING MODEL</span>
+              <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">Pricing Model</span>
               <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                Multi-Stream · High-Margin · Asset-Light
+                Multi-Stream · High-Margin · <span className="text-primary">Asset-Light</span>
               </h2>
             </div>
 

@@ -48,14 +48,14 @@ const Slide08Layer2 = () => {
 
         <div className="relative z-10 flex flex-col h-full">
           {/* Header */}
-          <div className="text-center mb-5 animate-fade-in">
-            <span className="inline-block px-5 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-[14px] font-bold tracking-widest uppercase mb-3">
-              Layer 2
+          <div className="text-center mb-4 animate-fade-in">
+            <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
+              Stakeholder Intelligence
             </span>
-            <h2 className="text-[44px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               Green Intelligence & <span className="text-eco-teal">Market</span>
             </h2>
-            <p className="text-[16px] text-muted-foreground mt-1">Tailored intelligence for every stakeholder.</p>
+            <p className="text-[15px] text-muted-foreground mt-1">Tailored intelligence for every stakeholder.</p>
           </div>
 
           {/* Tabs */}

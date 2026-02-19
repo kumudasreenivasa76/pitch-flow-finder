@@ -120,13 +120,13 @@ const Slide04Ecosystem = () => {
 
         {/* Header */}
         <div className="relative z-10 text-center mb-4 animate-fade-in shrink-0">
-          <span className="inline-block px-5 py-1.5 rounded-full border border-primary/30 bg-primary/8 text-primary text-[14px] font-bold tracking-widest uppercase mb-3">
-            Institution-Centric Ecosystem
+          <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
+            Stakeholder Ecosystem
           </span>
-          <h2 className="text-[44px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            How Clean Energy Runs Through Institutions
+          <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            How Clean Energy Runs Through <span className="text-primary">Institutions</span>
           </h2>
-          <p className="text-[17px] text-muted-foreground mt-1.5">
+          <p className="text-[15px] text-muted-foreground mt-1">
             EcoGridia connects institutions, infrastructure, vendors, and regulators through a{" "}
             <span className="text-primary font-semibold">single infrastructure SaaS layer.</span>
           </p>

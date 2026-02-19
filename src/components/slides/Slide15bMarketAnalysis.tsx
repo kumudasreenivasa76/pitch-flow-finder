@@ -84,13 +84,13 @@ const Slide15bMarketAnalysis = () => (
         {/* Header */}
         <div className="flex items-start justify-between mb-6 animate-fade-in">
           <div>
-            <span className="inline-block px-4 py-1 rounded-full border border-emerald-300 bg-emerald-50 text-emerald-700 text-[14px] font-bold tracking-widest uppercase mb-3">
+            <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
               Market Analysis
             </span>
-            <h2 className="text-[44px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               Energy, Carbon & Compliance <span className="text-primary">Converging</span>
             </h2>
-            <p className="text-[17px] text-muted-foreground mt-1">Organizations with large energy footprints face rising costs, stricter disclosure, and fragmented tooling.</p>
+            <p className="text-[15px] text-muted-foreground mt-1">Organizations with large energy footprints face rising costs, stricter disclosure, and fragmented tooling.</p>
           </div>
 
           {/* Market gap pill */}
