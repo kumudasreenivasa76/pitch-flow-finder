@@ -101,14 +101,14 @@ const BubbleTooltip = ({ active, payload }: any) => {
 
 const Slide14Competition = () => (
   <SlideLayout>
-    <div className="relative w-full h-full flex flex-col bg-white overflow-hidden px-14 pt-7 pb-4">
+    <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden px-14 pt-8 pb-5">
       {/* Grid bg */}
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: "linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)",
         backgroundSize: "60px 60px", opacity: 0.5,
       }} />
 
-      <div className="relative z-10 flex flex-col h-full">
+      <div className="relative z-10 w-full">
         {/* Header */}
         <div className="text-center mb-3 animate-fade-in">
           <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-1">
@@ -121,12 +121,12 @@ const Slide14Competition = () => (
         </div>
 
         {/* Main: Bubble Chart + Matrix */}
-        <div className="grid grid-cols-2 gap-4 flex-1 min-h-0">
+        <div className="grid grid-cols-2 gap-4">
 
           {/* Bubble Chart */}
           <div className="rounded-xl border border-border/40 bg-white shadow-sm p-3 animate-fade-in flex flex-col" style={{ animationDelay: "0.05s" }}>
             <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider mb-1">Market Positioning Map</div>
-            <div className="flex-1 min-h-0">
+            <div className="h-[320px]">
               <ResponsiveContainer width="100%" height="100%">
                 <ScatterChart margin={{ top: 20, right: 20, bottom: 25, left: 15 }}>
                   <XAxis type="number" dataKey="x" domain={[10, 100]} tick={{ fontSize: 10 }} tickLine={false} axisLine={{ stroke: "#e5e7eb" }}>
@@ -167,7 +167,7 @@ const Slide14Competition = () => (
           {/* Feature Matrix */}
           <div className="rounded-xl border border-border/40 bg-white shadow-sm p-3 animate-fade-in flex flex-col" style={{ animationDelay: "0.1s" }}>
             <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider mb-1">Capability Matrix</div>
-            <div className="flex-1 overflow-auto">
+            <div className="overflow-auto">
               <table className="w-full text-left">
                 <thead>
                   <tr className="border-b-2 border-border">
