@@ -1,96 +1,32 @@
 import { useState } from "react";
 import SlideLayout from "../SlideLayout";
-import { MapPin, Sun, Activity, DollarSign, Zap, ShoppingBag, BarChart3, Brain, Award, PieChart, Target, LayoutDashboard, FileText, Lock, X, ArrowRight } from "lucide-react";
+import { MapPin, Sun, Activity, DollarSign, Zap, ShoppingBag, BarChart3, Brain, Award, PieChart, Target, X, ArrowRight, GraduationCap, Server, Home, Landmark, TreePine, Wrench, TrendingUp } from "lucide-react";
 import ecosystemImg from "@/assets/slide07-ecosystem-white.png";
 
 const hotspots = [
-  // L1 — Green Infrastructure Cloud™
-  {
-    id: 0, layer: "L1", icon: MapPin, label: "TerraScan™",
-    top: "10%", left: "3%",
-    role: "Site Feasibility",
-    details: ["Rooftop / land identification", "MW potential estimation", "Structural readiness check", "Grid proximity analysis"],
-    output: "Feasibility Report + Capacity Estimate",
-  },
-  {
-    id: 1, layer: "L1", icon: Sun, label: "HelioTwin™",
-    top: "3%", left: "22%",
-    role: "3D Solar Modeling",
-    details: ["3D digital twin creation", "Irradiance simulation", "Shading analysis", "Annual generation forecast"],
-    output: "Projected kWh/year + Performance Ratio",
-  },
-  {
-    id: 2, layer: "L1", icon: Activity, label: "CarbonX-Ray™",
-    top: "3%", left: "43%",
-    role: "Baseline Carbon Audit",
-    details: ["Scope 1 & 2 emissions mapping", "Current energy intensity", "Carbon heatmap generation", "ESG readiness score"],
-    output: "Carbon Baseline Report",
-  },
-  {
-    id: 3, layer: "L1", icon: DollarSign, label: "CapStruct™",
-    top: "3%", left: "63%",
-    role: "Financial Structuring",
-    details: ["CAPEX vs OPEX comparison", "IRR / NPV modeling", "LCOE calculation", "Ownership model (Direct / SPV / PPA)"],
-    output: "Financial Feasibility & Investment Plan",
-  },
-  {
-    id: 4, layer: "L1", icon: Zap, label: "SolarForge™",
-    top: "45%", left: "3%",
-    role: "Project Execution",
-    details: ["EPC vendor selection", "SLA definition", "Installation tracking", "Commissioning verification"],
-    output: "Live Solar Asset",
-  },
-  {
-    id: 5, layer: "L1", icon: Activity, label: "GridLink™",
-    top: "45%", left: "22%",
-    role: "Utility Integration",
-    details: ["Net metering setup", "Grid synchronization", "Renewable matching % tracking", "PPA alignment"],
-    output: "Operational Renewable Flow",
-  },
-  {
-    id: 6, layer: "L1", icon: ShoppingBag, label: "EcoMarket™",
-    top: "45%", left: "43%",
-    role: "Vendor Management",
-    details: ["O&M tracking", "SLA compliance monitoring", "Warranty tracking", "Vendor performance scorecards"],
-    output: "Operational Stability",
-  },
-  // L2 — Energy Intelligence OS™
-  {
-    id: 7, layer: "L2", icon: BarChart3, label: "VoltIQ™",
-    top: "45%", left: "63%",
-    role: "Real-Time Energy Dashboard",
-    details: ["Live generation tracking", "Consumption vs production", "Renewable mix %", "Cost savings visualization"],
-    output: "Energy Performance Dashboard",
-  },
-  {
-    id: 8, layer: "L2", icon: Brain, label: "WattWise AI™",
-    top: "75%", left: "3%",
-    role: "Optimization Engine",
-    details: ["Load forecasting", "Solar degradation alerts", "Peak shaving recommendations", "Battery optimization"],
-    output: "Improved Efficiency + Lower Bills",
-  },
-  // L3 — Carbon & Compliance Exchange™
-  {
-    id: 9, layer: "L3", icon: Award, label: "RECMatrix™",
-    top: "75%", left: "22%",
-    role: "REC Management",
-    details: ["REC generation tracking", "Registry integration", "REC inventory dashboard", "Market value estimation"],
-    output: "REC Revenue Opportunity",
-  },
-  {
-    id: 10, layer: "L3", icon: PieChart, label: "CarbonLedger™",
-    top: "75%", left: "43%",
-    role: "Carbon Accounting",
-    details: ["Carbon avoided calculation", "Offset valuation", "Multi-site aggregation", "Carbon asset visibility"],
-    output: "Carbon Asset Report",
-  },
-  {
-    id: 11, layer: "L3", icon: Target, label: "NetZero Navigator™",
-    top: "75%", left: "63%",
-    role: "Target Tracking",
-    details: ["Renewable % progress", "Carbon reduction trajectory", "Gap-to-target visualization"],
-    output: "Net-Zero Progress Dashboard",
-  },
+  { id: 0, layer: "L1", icon: MapPin, label: "TerraScan™", top: "10%", left: "3%", role: "Site Feasibility", details: ["Rooftop / land identification", "MW potential estimation", "Structural readiness check", "Grid proximity analysis"], output: "Feasibility Report + Capacity Estimate" },
+  { id: 1, layer: "L1", icon: Sun, label: "HelioTwin™", top: "3%", left: "22%", role: "3D Solar Modeling", details: ["3D digital twin creation", "Irradiance simulation", "Shading analysis", "Annual generation forecast"], output: "Projected kWh/year + Performance Ratio" },
+  { id: 2, layer: "L1", icon: Activity, label: "CarbonX-Ray™", top: "3%", left: "43%", role: "Baseline Carbon Audit", details: ["Scope 1 & 2 emissions mapping", "Current energy intensity", "Carbon heatmap generation", "ESG readiness score"], output: "Carbon Baseline Report" },
+  { id: 3, layer: "L1", icon: DollarSign, label: "CapStruct™", top: "3%", left: "63%", role: "Financial Structuring", details: ["CAPEX vs OPEX comparison", "IRR / NPV modeling", "LCOE calculation", "Ownership model (Direct / SPV / PPA)"], output: "Financial Feasibility & Investment Plan" },
+  { id: 4, layer: "L1", icon: Zap, label: "SolarForge™", top: "45%", left: "3%", role: "Project Execution", details: ["EPC vendor selection", "SLA definition", "Installation tracking", "Commissioning verification"], output: "Live Solar Asset" },
+  { id: 5, layer: "L1", icon: Activity, label: "GridLink™", top: "45%", left: "22%", role: "Utility Integration", details: ["Net metering setup", "Grid synchronization", "Renewable matching % tracking", "PPA alignment"], output: "Operational Renewable Flow" },
+  { id: 6, layer: "L1", icon: ShoppingBag, label: "EcoMarket™", top: "45%", left: "43%", role: "Vendor Management", details: ["O&M tracking", "SLA compliance monitoring", "Warranty tracking", "Vendor performance scorecards"], output: "Operational Stability" },
+  { id: 7, layer: "L2", icon: BarChart3, label: "VoltIQ™", top: "45%", left: "63%", role: "Real-Time Energy Dashboard", details: ["Live generation tracking", "Consumption vs production", "Renewable mix %", "Cost savings visualization"], output: "Energy Performance Dashboard" },
+  { id: 8, layer: "L2", icon: Brain, label: "WattWise AI™", top: "75%", left: "3%", role: "Optimization Engine", details: ["Load forecasting", "Solar degradation alerts", "Peak shaving recommendations", "Battery optimization"], output: "Improved Efficiency + Lower Bills" },
+  { id: 9, layer: "L3", icon: Award, label: "RECMatrix™", top: "75%", left: "22%", role: "REC Management", details: ["REC generation tracking", "Registry integration", "REC inventory dashboard", "Market value estimation"], output: "REC Revenue Opportunity" },
+  { id: 10, layer: "L3", icon: PieChart, label: "CarbonLedger™", top: "75%", left: "43%", role: "Carbon Accounting", details: ["Carbon avoided calculation", "Offset valuation", "Multi-site aggregation", "Carbon asset visibility"], output: "Carbon Asset Report" },
+  { id: 11, layer: "L3", icon: Target, label: "NetZero Navigator™", top: "75%", left: "63%", role: "Target Tracking", details: ["Renewable % progress", "Carbon reduction trajectory", "Gap-to-target visualization"], output: "Net-Zero Progress Dashboard" },
+];
+
+const stakeholders = [
+  { id: "all", label: "All", icon: Zap, color: "#10b981", products: hotspots.map(h => h.id) },
+  { id: "schools", label: "Schools & Universities", icon: GraduationCap, color: "#0ea5e9", products: [0, 1, 2, 3, 4, 5, 7, 9, 10, 11] },
+  { id: "datacenters", label: "Data Centers", icon: Server, color: "#8b5cf6", products: [2, 3, 5, 7, 8, 9, 10, 11] },
+  { id: "communities", label: "Communities", icon: Home, color: "#f59e0b", products: [0, 1, 3, 4, 5, 7, 9, 10] },
+  { id: "government", label: "Government", icon: Landmark, color: "#ef4444", products: [2, 7, 9, 10, 11] },
+  { id: "landowners", label: "Landowners", icon: TreePine, color: "#065f46", products: [0, 1, 3, 4, 6] },
+  { id: "vendors", label: "EPC Vendors", icon: Wrench, color: "#6366f1", products: [4, 6] },
+  { id: "investors", label: "Investors", icon: TrendingUp, color: "#d946ef", products: [3, 7, 9, 10, 11] },
 ];
 
 const layerColors: Record<string, string> = {
@@ -101,7 +37,10 @@ const layerColors: Record<string, string> = {
 
 const Slide07Layer1 = () => {
   const [active, setActive] = useState<number | null>(null);
+  const [activeStakeholder, setActiveStakeholder] = useState("all");
   const activeData = active !== null ? hotspots[active] : null;
+  const currentStakeholder = stakeholders.find(s => s.id === activeStakeholder)!;
+  const visibleProducts = currentStakeholder.products;
 
   return (
     <SlideLayout>
@@ -117,6 +56,33 @@ const Slide07Layer1 = () => {
               </span>
             ))}
           </div>
+        </div>
+
+        {/* Stakeholder tabs */}
+        <div className="absolute top-[52px] left-7 right-7 z-20 flex items-center gap-1.5 animate-fade-in">
+          {stakeholders.map((s) => {
+            const SIcon = s.icon;
+            const isActive = activeStakeholder === s.id;
+            return (
+              <button
+                key={s.id}
+                onClick={() => { setActiveStakeholder(s.id); setActive(null); }}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-200 border"
+                style={{
+                  background: isActive ? s.color : "rgba(255,255,255,0.9)",
+                  color: isActive ? "#fff" : "#374151",
+                  borderColor: isActive ? s.color : "#e5e7eb",
+                  boxShadow: isActive ? `0 2px 8px ${s.color}40` : "none",
+                }}
+              >
+                <SIcon className="w-3.5 h-3.5" />
+                {s.label}
+                {s.id !== "all" && (
+                  <span className="text-[9px] ml-0.5 opacity-75">({s.products.length})</span>
+                )}
+              </button>
+            );
+          })}
         </div>
 
         {/* Full-bleed image */}
@@ -139,18 +105,26 @@ const Slide07Layer1 = () => {
           const Icon = h.icon;
           const isActive = active === i;
           const layerColor = layerColors[h.layer];
+          const isVisible = visibleProducts.includes(h.id);
           return (
             <button
               key={h.id}
-              onClick={() => setActive(isActive ? null : i)}
-              className="absolute z-30 group transition-all duration-500 animate-fade-in"
-              style={{ top: h.top, left: h.left, animationDelay: `${0.2 + i * 0.06}s`, animationFillMode: "forwards", opacity: 0 }}
+              onClick={() => isVisible && setActive(isActive ? null : i)}
+              className={`absolute z-30 group transition-all duration-500 animate-fade-in ${!isVisible ? "pointer-events-none" : ""}`}
+              style={{
+                top: h.top, left: h.left,
+                animationDelay: `${0.2 + i * 0.06}s`, animationFillMode: "forwards", opacity: 0,
+                filter: isVisible ? "none" : "grayscale(1)",
+                transform: isVisible ? "scale(1)" : "scale(0.85)",
+              }}
             >
-              <span className={`absolute -inset-2 rounded-full animate-ping ${isActive ? "bg-primary/30" : "bg-primary/10"}`} style={{ animationDuration: "2.8s" }} />
+              {isVisible && <span className={`absolute -inset-2 rounded-full animate-ping ${isActive ? "bg-primary/30" : "bg-primary/10"}`} style={{ animationDuration: "2.8s" }} />}
               <div className={`relative flex items-center gap-2 px-3 py-2 rounded-xl backdrop-blur-md border shadow-lg transition-all duration-300 cursor-pointer
-                ${isActive
-                  ? `${layerColor} text-primary-foreground border-primary/50 scale-110`
-                  : "bg-card/90 text-foreground border-border/60 hover:bg-card hover:border-primary/40 hover:scale-105"
+                ${!isVisible
+                  ? "bg-muted/50 text-muted-foreground border-border/30 opacity-30"
+                  : isActive
+                    ? `${layerColor} text-primary-foreground border-primary/50 scale-110`
+                    : "bg-card/90 text-foreground border-border/60 hover:bg-card hover:border-primary/40 hover:scale-105"
                 }`}
               >
                 <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors ${isActive ? "bg-white/20" : "bg-primary/10"}`}>
@@ -172,7 +146,6 @@ const Slide07Layer1 = () => {
               <X className="w-4 h-4 text-muted-foreground" />
             </button>
 
-            {/* Header */}
             <div className="flex items-center gap-3 mb-4">
               <div className={`w-12 h-12 rounded-2xl ${layerColors[activeData.layer]} flex items-center justify-center text-primary-foreground shadow-lg`}>
                 {(() => { const Icon = activeData.icon; return <Icon className="w-6 h-6" />; })()}
@@ -183,7 +156,6 @@ const Slide07Layer1 = () => {
               </div>
             </div>
 
-            {/* Details */}
             <div className="flex-1 space-y-2 overflow-y-auto">
               {activeData.details.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-background/60 border border-border/30 animate-fade-in"
@@ -194,17 +166,15 @@ const Slide07Layer1 = () => {
               ))}
             </div>
 
-            {/* Output */}
             <div className="mt-4 p-3 rounded-xl bg-primary/10 border border-primary/20 shrink-0">
               <span className="text-xs font-bold text-primary uppercase tracking-wide">Output →</span>
               <p className="text-sm text-foreground mt-1">{activeData.output}</p>
             </div>
 
-            {/* Dot nav */}
             <div className="flex items-center justify-center gap-1.5 mt-3">
-              {hotspots.map((_, i) => (
-                <button key={i} onClick={(e) => { e.stopPropagation(); setActive(i); }}
-                  className={`rounded-full transition-all ${i === active ? "w-5 h-2 bg-primary" : "w-2 h-2 bg-muted-foreground/25 hover:bg-muted-foreground/50"}`}
+              {hotspots.filter(h => visibleProducts.includes(h.id)).map((h) => (
+                <button key={h.id} onClick={(e) => { e.stopPropagation(); setActive(h.id); }}
+                  className={`rounded-full transition-all ${h.id === active ? "w-5 h-2 bg-primary" : "w-2 h-2 bg-muted-foreground/25 hover:bg-muted-foreground/50"}`}
                 />
               ))}
             </div>
