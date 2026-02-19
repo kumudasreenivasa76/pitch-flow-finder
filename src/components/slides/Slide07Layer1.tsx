@@ -44,7 +44,7 @@ const Slide07Layer1 = () => {
 
   return (
     <SlideLayout>
-      <div className="relative w-full h-full overflow-hidden bg-white">
+      <div className="relative w-full h-full overflow-hidden bg-white flex flex-col">
         {/* Grid background */}
         <div className="absolute inset-0 pointer-events-none"
           style={{
@@ -54,17 +54,17 @@ const Slide07Layer1 = () => {
         />
 
         {/* Header — Slide 3 style */}
-        <div className="relative z-20 text-center pt-6 pb-2 px-7 animate-fade-in">
-          <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
+        <div className="relative z-20 text-center pt-5 pb-1 px-7 animate-fade-in shrink-0">
+          <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[12px] font-bold tracking-widest uppercase mb-1">
             EcoGridia Flow
           </span>
-          <h2 className="text-[36px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h2 className="text-[32px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Complete End-to-End <span className="text-primary">Project Flow</span>
           </h2>
-          <p className="text-[14px] text-muted-foreground mt-1">15 products across 3 layers — click a stakeholder to filter</p>
-          <div className="flex items-center justify-center gap-1.5 mt-2">
+          <p className="text-[13px] text-muted-foreground mt-0.5">15 products across 3 layers — click a stakeholder to filter</p>
+          <div className="flex items-center justify-center gap-1.5 mt-1.5">
             {["L1 · Green Infrastructure Cloud™", "L2 · Energy Intelligence OS™", "L3 · Carbon & Compliance Exchange™"].map((label, li) => (
-              <span key={li} className={`text-[11px] font-semibold text-primary-foreground px-2.5 py-1 rounded-full ${["bg-primary", "bg-eco-teal", "bg-eco-emerald"][li]}`}>
+              <span key={li} className={`text-[10px] font-semibold text-primary-foreground px-2 py-0.5 rounded-full ${["bg-primary", "bg-eco-teal", "bg-eco-emerald"][li]}`}>
                 {label}
               </span>
             ))}
@@ -72,7 +72,7 @@ const Slide07Layer1 = () => {
         </div>
 
         {/* Stakeholder tabs */}
-        <div className="relative z-20 flex items-center gap-1.5 justify-center px-7 py-1 animate-fade-in">
+        <div className="relative z-20 flex items-center gap-1.5 justify-center px-7 py-1 animate-fade-in shrink-0">
           {stakeholders.map((s) => {
             const SIcon = s.icon;
             const isActive = activeStakeholder === s.id;
@@ -98,22 +98,21 @@ const Slide07Layer1 = () => {
           })}
         </div>
 
-        {/* Full-bleed image */}
-        <div className="absolute inset-0 bg-white">
+        {/* Image area — relative container for hotspots */}
+        <div className="relative flex-1 min-h-0 z-10">
           <img src={ecosystemImg} alt="EcoGridia project flow" className="w-full h-full object-contain" />
-        </div>
 
-        {/* Lifecycle bar at bottom */}
-        <div className="absolute bottom-14 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 bg-card/90 backdrop-blur px-5 py-2 rounded-full border border-border/40 shadow">
-          {["Discover", "Design", "Build", "Monitor", "Optimize", "Certify", "Report", "Scale"].map((p, i, arr) => (
-            <div key={p} className="flex items-center gap-1.5">
-              <span className="text-[11px] font-semibold text-primary">{p}</span>
-              {i < arr.length - 1 && <ArrowRight className="w-2.5 h-2.5 text-muted-foreground/50" />}
-            </div>
-          ))}
-        </div>
+          {/* Lifecycle bar at bottom */}
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 bg-card/90 backdrop-blur px-5 py-2 rounded-full border border-border/40 shadow">
+            {["Discover", "Design", "Build", "Monitor", "Optimize", "Certify", "Report", "Scale"].map((p, i, arr) => (
+              <div key={p} className="flex items-center gap-1.5">
+                <span className="text-[11px] font-semibold text-primary">{p}</span>
+                {i < arr.length - 1 && <ArrowRight className="w-2.5 h-2.5 text-muted-foreground/50" />}
+              </div>
+            ))}
+          </div>
 
-        {/* Hotspots */}
+          {/* Hotspots */}
         {hotspots.map((h, i) => {
           const Icon = h.icon;
           const isActive = active === i;
@@ -150,7 +149,8 @@ const Slide07Layer1 = () => {
               </div>
             </button>
           );
-        })}
+          })}
+        </div>
 
         {/* Detail panel */}
         {activeData && (
