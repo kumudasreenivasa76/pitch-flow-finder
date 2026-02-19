@@ -168,7 +168,7 @@ const Slide06Features = () => {
           </div>
 
           {/* RIGHT: Product detail */}
-          <div className="flex-1 flex flex-col px-8 py-2 overflow-hidden" key={selectedProd}>
+          <div className="flex-1 flex flex-col justify-center px-8 py-2 overflow-hidden" key={selectedProd}>
 
             {/* Product header */}
             <div className="flex items-start gap-3 mb-2">
