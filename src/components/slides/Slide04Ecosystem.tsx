@@ -4,7 +4,7 @@ import {
   GraduationCap, Server, Users, Landmark, TreePine, HardHat, Briefcase,
   Zap, X, ChevronRight, Cpu
 } from "lucide-react";
-import ecosystemImg from "@/assets/ecogridia-ecosystem-3d.png";
+import ecosystemImg from "@/assets/ecosystem-white-bg.png";
 
 const stakeholders = [
   {
@@ -107,37 +107,37 @@ const Slide04Ecosystem = () => {
 
   return (
     <SlideLayout>
-      <div className="relative w-full h-full flex flex-col items-center bg-white overflow-hidden px-16 py-6">
+      <div className="relative w-full h-full flex flex-col items-center bg-white overflow-hidden px-14 pt-7 pb-5">
 
         {/* Grid background */}
         <div className="absolute inset-0 pointer-events-none"
           style={{
             backgroundImage: "linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)",
             backgroundSize: "60px 60px",
-            opacity: 0.5,
+            opacity: 0.4,
           }}
         />
 
         {/* Header */}
-        <div className="relative z-10 text-center mb-5 animate-fade-in shrink-0">
-          <span className="inline-block px-5 py-1.5 rounded-full border border-primary/30 bg-primary/8 text-primary text-[15px] font-bold tracking-widest uppercase mb-3">
+        <div className="relative z-10 text-center mb-4 animate-fade-in shrink-0">
+          <span className="inline-block px-5 py-1.5 rounded-full border border-primary/30 bg-primary/8 text-primary text-[14px] font-bold tracking-widest uppercase mb-3">
             Institution-Centric Ecosystem
           </span>
-          <h2 className="text-[48px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h2 className="text-[44px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             How Clean Energy Runs Through Institutions
           </h2>
-          <p className="text-[18px] text-muted-foreground mt-2">
+          <p className="text-[17px] text-muted-foreground mt-1.5">
             EcoGridia connects institutions, infrastructure, vendors, and regulators through a{" "}
             <span className="text-primary font-semibold">single infrastructure SaaS layer.</span>
           </p>
         </div>
 
-        {/* Dark image container */}
-        <div className="relative z-10 w-full flex-1 rounded-2xl overflow-hidden shadow-2xl" style={{ maxHeight: 680 }}>
+        {/* White-bg image container */}
+        <div className="relative z-10 w-full flex-1 rounded-2xl overflow-hidden bg-white" style={{ maxHeight: 730 }}>
           <img
             src={ecosystemImg}
             alt="EcoGridia Institution-Centric Ecosystem"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
 
           {/* Overlay detail card */}
