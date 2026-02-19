@@ -88,7 +88,7 @@ const Slide05Platform = () => {
               Platform Architecture
             </span>
             <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              From Physical Assets to Financial Products
+              Software Platform Turning Energy Infrastructure into <span className="text-primary">Financial Assets</span>
             </h2>
           </div>
 
