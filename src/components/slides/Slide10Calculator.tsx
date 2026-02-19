@@ -3,7 +3,7 @@ import { useState, useCallback } from "react";
 import { Slider } from "@/components/ui/slider";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2, Sparkles, Sun, Wind, Zap, MapPin, TreePine, DollarSign, BatteryCharging, TrendingUp } from "lucide-react";
-import calculatorHero from "@/assets/calculator-hero-3d.png";
+
 
 const COUNTRIES_CITIES: Record<string, string[]> = {
   "United States": ["Phoenix, AZ", "Los Angeles, CA", "Houston, TX", "Denver, CO", "Miami, FL", "Chicago, IL"],
@@ -105,7 +105,7 @@ const Slide10Calculator = () => {
               </h2>
               <p className="text-[14px] text-muted-foreground mt-1">Real-time location intelligence for clean energy projects.</p>
             </div>
-            <img src={calculatorHero} alt="Energy landscape" className="w-[200px] h-[110px] object-contain drop-shadow-lg" />
+            
           </div>
 
           {/* Main content */}
