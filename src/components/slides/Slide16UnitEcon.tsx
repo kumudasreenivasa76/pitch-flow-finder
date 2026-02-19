@@ -49,24 +49,24 @@ const Slide16UnitEcon = () => (
         </div>
 
         {/* Col 2: LTV + CAC + Summary */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
           {/* LTV */}
-          <div className="bg-card rounded-2xl border-2 border-primary p-6 animate-fade-in" style={{ animationDelay: "0.15s" }}>
-            <h3 className="text-lg font-bold text-primary mb-4 uppercase tracking-wide">Lifetime Value (LTV)</h3>
-            <div className="text-5xl font-black text-primary mb-1">$693K</div>
-            <div className="text-sm text-muted-foreground mb-4">Per enterprise customer</div>
-            <div className="space-y-2 text-sm">
+          <div className="bg-card rounded-xl border-2 border-primary p-4 animate-fade-in" style={{ animationDelay: "0.15s" }}>
+            <h3 className="text-sm font-bold text-primary mb-2 uppercase tracking-wide">Lifetime Value (LTV)</h3>
+            <div className="text-4xl font-black text-primary mb-0.5">$693K</div>
+            <div className="text-xs text-muted-foreground mb-3">Per enterprise customer</div>
+            <div className="space-y-1.5 text-xs">
               <div className="flex justify-between"><span className="text-muted-foreground">Formula</span><span className="font-semibold text-foreground">GP ÷ Churn Rate</span></div>
               <div className="flex justify-between"><span className="text-muted-foreground">$104,412 ÷ 0.15</span><span className="font-semibold text-foreground">= $696,080</span></div>
             </div>
           </div>
 
           {/* CAC */}
-          <div className="bg-card rounded-2xl border-2 border-eco-emerald p-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <h3 className="text-lg font-bold text-eco-emerald mb-4 uppercase tracking-wide">Customer Acquisition Cost</h3>
-            <div className="text-5xl font-black text-eco-emerald mb-1">$140K</div>
-            <div className="text-sm text-muted-foreground mb-4">Target LTV:CAC = 5x</div>
-            <div className="space-y-2 text-sm">
+          <div className="bg-card rounded-xl border-2 border-eco-emerald p-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <h3 className="text-sm font-bold text-eco-emerald mb-2 uppercase tracking-wide">Customer Acquisition Cost</h3>
+            <div className="text-4xl font-black text-eco-emerald mb-0.5">$140K</div>
+            <div className="text-xs text-muted-foreground mb-3">Target LTV:CAC = 5x</div>
+            <div className="space-y-1.5 text-xs">
               <div className="flex justify-between"><span className="text-muted-foreground">LTV:CAC Target</span><span className="font-semibold text-foreground">5x</span></div>
               <div className="flex justify-between"><span className="text-muted-foreground">$693K ÷ 5</span><span className="font-semibold text-foreground">= $138,600</span></div>
             </div>
