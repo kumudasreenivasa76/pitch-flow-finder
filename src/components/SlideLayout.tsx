@@ -26,7 +26,7 @@ const SlideLayout = ({ children, className = "" }: SlideLayoutProps) => {
         className="slide-scaler"
         style={{ transform: `scale(${scale})` }}
       >
-        <div className={`w-full h-full grid-bg overflow-hidden relative ${className}`}>
+        <div className={`w-full h-full grid-bg overflow-hidden ${className}`}>
           {children}
         </div>
       </div>

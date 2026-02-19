@@ -1,153 +1,178 @@
 import SlideLayout from "../SlideLayout";
-import { Wrench, Brain, DollarSign, Layers, Zap, BarChart3 } from "lucide-react";
-import ecosystemImg from "@/assets/ecogridia-ecosystem-3d.png";
+import { useState } from "react";
+import { Cloud, Cpu, ShieldCheck, ChevronRight, ArrowRight, Layers } from "lucide-react";
 
-const layerRows = [
+const layers = [
   {
     id: "L1",
-    icon: Wrench,
-    name: "Infrastructure Execution",
-    tagline: '"Software-Driven Physical Energy"',
-    who: ["Asset owners", "EPCs", "Developers"],
-    what: "Digitizes physical assets (land, rooftops, plants) — from feasibility to live solar generation",
-    insight: "This is the wedge",
+    label: "GREEN INFRASTRUCTURE CLOUD™",
+    subtitle: "Discover → Design → Build",
+    color: "bg-primary",
+    textColor: "text-primary",
+    icon: Cloud,
+    products: [
+      { num: "01", name: "TerraScan™", role: "Site Feasibility", output: "Feasibility Report + Capacity Estimate" },
+      { num: "02", name: "HelioTwin™", role: "3D Solar Modeling", output: "Projected kWh/year + Performance Ratio" },
+      { num: "03", name: "CarbonX-Ray™", role: "Baseline Carbon Audit", output: "Carbon Baseline Report" },
+      { num: "04", name: "CapStruct™", role: "Financial Structuring", output: "Financial Feasibility & Investment Plan" },
+      { num: "05", name: "SolarForge™", role: "Project Execution", output: "Live Solar Asset" },
+      { num: "06", name: "GridLink™", role: "Utility Integration", output: "Operational Renewable Flow" },
+      { num: "07", name: "EcoMarket™", role: "Vendor Management", output: "Operational Stability" },
+    ],
   },
   {
     id: "L2",
-    icon: Brain,
-    name: "Intelligence & Compliance",
-    tagline: '"Financial-Grade Energy Intelligence"',
-    who: ["Enterprises", "Green consultants", "CFOs"],
-    what: "Converts raw energy data → auditable intelligence, ESG reporting & AI optimization",
-    insight: "Compliance budgets are non-optional",
+    label: "ENERGY INTELLIGENCE OS™",
+    subtitle: "Monitor → Optimize → Predict",
+    color: "bg-eco-teal",
+    textColor: "text-eco-teal",
+    icon: Cpu,
+    products: [
+      { num: "08", name: "VoltIQ™", role: "Real-Time Energy Dashboard", output: "Energy Performance Dashboard" },
+      { num: "09", name: "WattWise AI™", role: "Optimization Engine", output: "Improved Efficiency + Lower Bills" },
+    ],
   },
   {
     id: "L3",
-    icon: DollarSign,
-    name: "Market & Monetization",
-    tagline: '"Turning Energy into a Tradeable Asset"',
-    who: ["Buyers", "Procurement teams", "Funds"],
-    what: "Converts energy into: sq-ft, kWh, carbon credits, RECs — tradeable financial products",
-    insight: "Tradeable assets",
+    label: "CARBON & COMPLIANCE EXCHANGE™",
+    subtitle: "Monetize → Report → Prove",
+    color: "bg-eco-emerald",
+    textColor: "text-eco-emerald",
+    icon: ShieldCheck,
+    products: [
+      { num: "10", name: "RECMatrix™", role: "REC Management", output: "REC Revenue Opportunity" },
+      { num: "11", name: "CarbonLedger™", role: "Carbon Accounting", output: "Carbon Asset Report" },
+      { num: "12", name: "NetZero Navigator™", role: "Target Tracking", output: "Net-Zero Progress Dashboard" },
+      { num: "13", name: "GreenBoard™", role: "Executive View", output: "Board-Ready Summary" },
+      { num: "14", name: "ComplySphere™", role: "ESG Reporting", output: "Compliance Report" },
+      { num: "15", name: "AuditTrail360™", role: "Audit Vault", output: "Verified Sustainability Record" },
+    ],
   },
 ];
 
-const badges = [
-  { icon: Layers, label: "Single Platform" },
-  { icon: Zap, label: "Full Stack Control" },
-  { icon: BarChart3, label: "High-Margin SaaS" },
-];
+const phases = ["Discover", "Design", "Build", "Monitor", "Optimize", "Certify", "Report", "Scale"];
 
-const Slide05Platform = () => (
-  <SlideLayout>
-    <div
-      className="absolute inset-0 flex"
-      style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-    >
-      {/* ── LEFT: Dark 3D Visual ── */}
-      <div className="w-[520px] shrink-0 flex items-center justify-center relative overflow-hidden" style={{ background: "#0a1a14" }}>
-        {/* Subtle radial glow */}
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 60%, rgba(16,185,129,0.18) 0%, transparent 70%)" }} />
-        <img
-          src={ecosystemImg}
-          alt="EcoGridia 3D Platform"
-          className="w-full h-full object-cover opacity-90"
-        />
-        {/* Bottom labels */}
-        <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-10">
-          {["L1", "L2", "L3"].map((l) => (
-            <span
-              key={l}
-              className="text-[13px] font-bold text-primary/80 tracking-widest"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
-            >
-              {l}
-            </span>
-          ))}
-        </div>
-      </div>
+const Slide05Platform = () => {
+  const [selected, setSelected] = useState(0);
+  const l = layers[selected];
+  const Icon = l.icon;
 
-      {/* ── RIGHT: Content ── */}
-      <div className="flex-1 flex flex-col justify-center px-16 py-12" style={{ background: "hsl(var(--background))" }}>
-
-        {/* Badge + Title */}
-        <div className="mb-10">
-          <div className="inline-flex items-center gap-2 border border-primary/30 rounded-full px-4 py-1.5 mb-5" style={{ background: "hsl(160 84% 39% / 0.08)" }}>
-            <span className="text-[12px] font-bold text-primary">Three-Layer Infrastructure SaaS</span>
-          </div>
-          <h2 className="text-[42px] font-extrabold text-foreground leading-tight">
-            From <span className="text-primary">Physical Assets</span> to Financial Products
-          </h2>
-        </div>
-
-        {/* Layer rows */}
-        <div className="flex flex-col gap-0 border border-border/40 rounded-2xl overflow-hidden mb-8">
-          {layerRows.map((row, i) => {
-            const Icon = row.icon;
-            return (
-              <div
-                key={row.id}
-                className={`flex items-start gap-6 px-7 py-6 group hover:bg-primary/[0.03] transition-colors ${
-                  i < layerRows.length - 1 ? "border-b border-border/40" : ""
-                }`}
-              >
-                {/* Layer badge */}
-                <div className="shrink-0 flex flex-col items-center gap-1.5 pt-0.5">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-lg" style={{ background: "hsl(160 84% 25%)" }}>
-                    <Icon style={{ width: 20, height: 20 }} />
-                  </div>
-                  <span
-                    className="text-[10px] font-black text-primary tracking-widest"
-                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                  >
-                    {row.id}
-                  </span>
-                </div>
-
-                {/* Name + tagline */}
-                <div className="w-[240px] shrink-0">
-                  <p className="text-[18px] font-extrabold text-foreground leading-tight">{row.name}</p>
-                  <p className="text-[12px] font-semibold text-primary mt-1 italic">{row.tagline}</p>
-                  <div className="flex flex-wrap gap-1 mt-2">
-                    <span className="text-[11px] text-muted-foreground font-medium">Who:</span>
-                    {row.who.map((w) => (
-                      <span key={w} className="text-[11px] text-foreground/70">{w}</span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* What */}
-                <div className="flex-1">
-                  <p className="text-[11px] text-muted-foreground font-semibold mb-1">What:</p>
-                  <p className="text-[13px] text-foreground/80 leading-snug">{row.what}</p>
-                </div>
-
-                {/* Insight */}
-                <div className="shrink-0 flex items-center">
-                  <span className="text-[13px] text-muted-foreground font-medium">→</span>
-                  <span className="text-[13px] text-foreground font-semibold ml-2 italic">{row.insight}</span>
-                </div>
+  return (
+    <SlideLayout>
+      <div className="flex h-full">
+        {/* Left sidebar */}
+        <div className="w-[480px] shrink-0 flex flex-col bg-card/40 border-r border-border/30">
+          <div className="px-7 pt-7 pb-4 shrink-0 border-b border-border/20">
+            <div className="flex items-center gap-4 opacity-0 animate-fade-in" style={{ animationFillMode: "forwards" }}>
+              <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                <Layers className="w-6 h-6 text-primary" />
               </div>
-            );
-          })}
+              <div>
+                <h2 className="text-[32px] font-extrabold text-foreground leading-none">
+                  Three-Layer <span className="text-primary">Platform</span>
+                </h2>
+                <p className="text-[14px] text-muted-foreground mt-1">15 Integrated Products · Full Clean Energy Stack</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex-1 flex flex-col justify-center gap-3 px-5 py-4">
+            {layers.map((layer, i) => {
+              const LIcon = layer.icon;
+              const isActive = selected === i;
+              return (
+                <button
+                  key={i}
+                  onClick={() => setSelected(i)}
+                  className={`flex items-center gap-4 px-5 py-5 rounded-2xl text-left transition-all duration-300 opacity-0 animate-fade-in ${
+                    isActive
+                      ? "bg-primary/10 border-2 border-primary/30 shadow-lg shadow-primary/5"
+                      : "bg-transparent border-2 border-transparent hover:bg-card hover:border-border/30"
+                  }`}
+                  style={{ animationDelay: `${0.08 + i * 0.06}s`, animationFillMode: "forwards" }}
+                >
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${
+                    isActive ? `${layer.color} text-primary-foreground shadow-md` : "bg-secondary text-muted-foreground"
+                  }`}>
+                    <LIcon className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <span className={`text-[11px] font-bold uppercase tracking-wider ${isActive ? "text-primary" : "text-muted-foreground"}`}>
+                      Layer {layer.id}
+                    </span>
+                    <p className={`text-[15px] font-bold leading-tight transition-colors ${isActive ? "text-primary" : "text-foreground"}`}>
+                      {layer.label}
+                    </p>
+                    <p className="text-[12px] text-muted-foreground mt-0.5">{layer.subtitle}</p>
+                  </div>
+                  <ChevronRight className={`w-4 h-4 shrink-0 transition-all duration-300 ${isActive ? "text-primary translate-x-1" : "text-muted-foreground/40"}`} />
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Lifecycle flow bar */}
+          <div className="px-5 pb-5 shrink-0">
+            <div className="p-3 rounded-xl bg-card border border-border/30">
+              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-2 text-center">Project Lifecycle</p>
+              <div className="flex items-center justify-center flex-wrap gap-1">
+                {phases.map((p, i) => (
+                  <div key={p} className="flex items-center gap-1">
+                    <span className="text-[10px] font-semibold text-primary">{p}</span>
+                    {i < phases.length - 1 && <ArrowRight className="w-2.5 h-2.5 text-muted-foreground/40" />}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Bottom badges */}
-        <div className="flex gap-3">
-          {badges.map(({ icon: BadgeIcon, label }) => (
-            <div
-              key={label}
-              className="flex items-center gap-2 border border-primary/25 rounded-full px-4 py-2"
-              style={{ background: "hsl(160 84% 39% / 0.07)" }}
-            >
-              <BadgeIcon style={{ width: 14, height: 14 }} className="text-primary" />
-              <span className="text-[12px] font-bold text-foreground">{label}</span>
+        {/* Right detail panel */}
+        <div className="flex-1 flex items-center justify-center px-8 overflow-hidden" key={selected}>
+          <div className="w-full max-w-[700px]">
+            {/* Header */}
+            <div className="flex items-center gap-4 mb-5 animate-fade-in">
+              <div className={`w-12 h-12 rounded-2xl ${l.color} flex items-center justify-center text-primary-foreground shadow-lg`}>
+                <Icon className="w-6 h-6" />
+              </div>
+              <div>
+                <span className="text-[11px] text-muted-foreground font-mono uppercase tracking-wider">Layer {l.id}</span>
+                <h3 className="text-[22px] font-extrabold text-foreground leading-tight">{l.label}</h3>
+                <p className="text-[13px] text-primary font-semibold">{l.subtitle}</p>
+              </div>
             </div>
-          ))}
+
+            {/* Products grid */}
+            <div className="grid grid-cols-2 gap-3 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              {l.products.map((p, pi) => (
+                <div
+                  key={pi}
+                  className="rounded-xl bg-card border border-border/30 p-4 opacity-0 animate-fade-in hover:border-primary/30 hover:shadow-md transition-all"
+                  style={{ animationDelay: `${0.12 + pi * 0.05}s`, animationFillMode: "forwards" }}
+                >
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="text-[11px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full font-mono">{p.num}</span>
+                    <span className="text-[15px] font-bold text-foreground">{p.name}</span>
+                  </div>
+                  <p className="text-[12px] text-muted-foreground mb-2">{p.role}</p>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                    <span className="text-[11px] text-primary font-medium leading-snug">{p.output}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Product count */}
+            <div className="mt-4 p-3 rounded-xl bg-primary/[0.05] border border-primary/20 animate-fade-in flex items-center gap-3" style={{ animationDelay: "0.35s" }}>
+              <span className="text-[12px] font-bold text-primary uppercase tracking-wider">✓ {l.products.length} Integrated Products</span>
+              <span className="text-[12px] text-muted-foreground">— {l.subtitle}</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </SlideLayout>
-);
+    </SlideLayout>
+  );
+};
 
 export default Slide05Platform;
