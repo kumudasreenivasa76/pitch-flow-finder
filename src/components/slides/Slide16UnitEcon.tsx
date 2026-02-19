@@ -87,9 +87,28 @@ const Slide16UnitEcon = () => (
           </div>
         </div>
 
+        {/* Investor KPI Strip */}
+        <div className="grid grid-cols-4 gap-3 mt-3 animate-fade-in" style={{ animationDelay: "0.35s", animationFillMode: "forwards", opacity: 0 }}>
+          {[
+            { label: "LTV / CAC", value: "> 5×", status: "✅", color: "#16a34a", bg: "rgba(22,163,74,0.08)" },
+            { label: "Payback Period", value: "< 12 mo", status: "✅", color: "#0d9488", bg: "rgba(13,148,136,0.08)" },
+            { label: "Net Revenue Retention", value: "> 120%", status: "✅", color: "#2563eb", bg: "rgba(37,99,235,0.08)" },
+            { label: "ACV Trend", value: "Rising ↑", status: "📈", color: "#7c3aed", bg: "rgba(124,58,237,0.08)" },
+          ].map((k) => (
+            <div key={k.label} className="rounded-xl border-2 px-4 py-2.5 flex items-center gap-3"
+              style={{ borderColor: k.color, background: k.bg }}>
+              <span className="text-xl">{k.status}</span>
+              <div className="flex-1 min-w-0">
+                <div className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground">{k.label}</div>
+                <div className="text-[20px] font-black leading-tight" style={{ color: k.color }}>{k.value}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
         {/* Summary bar */}
-        <div className="flex justify-center mt-4 animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "forwards", opacity: 0 }}>
-          <div className="inline-flex items-center gap-5 rounded-2xl px-8 py-3"
+        <div className="flex justify-center mt-2 animate-fade-in" style={{ animationDelay: "0.45s", animationFillMode: "forwards", opacity: 0 }}>
+          <div className="inline-flex items-center gap-5 rounded-2xl px-8 py-2"
             style={{ background: "linear-gradient(90deg, #14532d 0%, #166534 50%, #14532d 100%)" }}>
             {[
               { label: "ARPU", value: "$124K" },
@@ -97,14 +116,14 @@ const Slide16UnitEcon = () => (
               { label: "LTV", value: "$870K" },
               { label: "CAC", value: "$174K" },
               { label: "LTV:CAC", value: "5.0×" },
-              { label: "Payback", value: "~20 mo" },
+              { label: "Payback", value: "<12 mo" },
             ].map((m, i, arr) => (
               <React.Fragment key={m.label}>
                 <div className="text-center">
-                  <div className="text-[16px] font-black text-white leading-tight">{m.value}</div>
-                  <div className="text-[10px] text-green-200">{m.label}</div>
+                  <div className="text-[14px] font-black text-white leading-tight">{m.value}</div>
+                  <div className="text-[9px] text-green-200">{m.label}</div>
                 </div>
-                {i < arr.length - 1 && <div className="w-px h-7 bg-white/20 shrink-0" />}
+                {i < arr.length - 1 && <div className="w-px h-5 bg-white/20 shrink-0" />}
               </React.Fragment>
             ))}
           </div>
