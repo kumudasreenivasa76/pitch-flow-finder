@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import SlideLayout from "../SlideLayout";
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
@@ -64,7 +64,7 @@ const chartTick = { fontSize: 9, fill: "#6b7280" };
 const gridStroke = "#e5e7eb";
 
 const MiniLabel = ({ children }: { children: React.ReactNode }) => (
-  <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-1.5">{children}</div>
+  <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-1">{children}</div>
 );
 
 const Slide18Projections = () => {
@@ -82,38 +82,42 @@ const Slide18Projections = () => {
           }}
         />
 
-        <div className="relative z-10 flex flex-col w-full flex-1 min-h-0">
+        <div className="relative z-10 w-full max-w-[1600px]">
           {/* Header */}
-          <div className="flex items-center justify-between mb-3 animate-fade-in">
-            <div>
-              <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">Growth Projections</span>
-              <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                EcoGridia — <span className="text-primary">Operating Dashboard</span>
-              </h2>
-              <p className="text-[12px] text-muted-foreground">10-Year Growth Model · FY26–FY35 · <span className="text-primary font-semibold">Click any year for details</span></p>
-            </div>
-            <div className="flex gap-2">
-              {[
-                { l: "FY35 Revenue", v: "$1.46B" },
-                { l: "FY35 Customers", v: "6,915" },
-                { l: "FY35 Margin", v: "89%" },
-              ].map((k) => (
-                <div key={k.l} className="bg-card border border-border rounded-lg px-3 py-1.5 text-center">
-                  <div className="text-[18px] font-bold text-primary leading-tight">{k.v}</div>
-                  <div className="text-[8px] text-muted-foreground font-medium">{k.l}</div>
-                </div>
-              ))}
-            </div>
+          <div className="text-center mb-3 animate-fade-in">
+            <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
+              Growth Projections
+            </span>
+            <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              EcoGridia — <span className="text-primary">Operating Dashboard</span>
+            </h2>
+            <p className="text-[12px] text-muted-foreground mt-0.5">10-Year Growth Model · FY26–FY35 · <span className="text-primary font-semibold">Click any year for details</span></p>
           </div>
 
-          {/* Main grid */}
-          <div className="grid grid-cols-12 gap-3 flex-1 min-h-0">
+          {/* KPI strip */}
+          <div className="flex justify-center gap-2 mb-3 animate-fade-in" style={{ animationDelay: "0.02s" }}>
+            {[
+              { l: "FY35 Revenue", v: "$1.46B" },
+              { l: "FY35 Customers", v: "6,915" },
+              { l: "FY35 Margin", v: "89%" },
+              { l: "10Y CAGR", v: "~95%" },
+              { l: "Net Margin FY35", v: "60%" },
+            ].map((k) => (
+              <div key={k.l} className="bg-card border border-border rounded-lg px-3 py-1.5 text-center">
+                <div className="text-[16px] font-bold text-primary leading-tight">{k.v}</div>
+                <div className="text-[8px] text-muted-foreground font-medium">{k.l}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Main grid: Charts left, Tables right */}
+          <div className="grid grid-cols-12 gap-3">
 
             {/* LEFT: Charts */}
-            <div className="col-span-5 flex flex-col gap-3 min-h-0">
-              <div className="bg-card border border-border rounded-xl p-3 flex flex-col flex-[3] min-h-0 animate-fade-in" style={{ animationDelay: "0.05s" }}>
+            <div className="col-span-5 flex flex-col gap-3">
+              <div className="bg-card border border-border rounded-xl p-3 animate-fade-in" style={{ animationDelay: "0.05s" }}>
                 <MiniLabel>💰 Revenue & Profit ($M)</MiniLabel>
-                <div className="flex-1 min-h-0">
+                <div className="h-[200px]">
                   <ResponsiveContainer width="100%" height="100%">
                     <ComposedChart data={revenueData}>
                       <defs>
@@ -133,9 +137,9 @@ const Slide18Projections = () => {
                   </ResponsiveContainer>
                 </div>
               </div>
-              <div className="bg-card border border-border rounded-xl p-3 flex flex-col flex-[2] min-h-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <div className="bg-card border border-border rounded-xl p-3 animate-fade-in" style={{ animationDelay: "0.1s" }}>
                 <MiniLabel>🟢 Gross Margin Trajectory</MiniLabel>
-                <div className="flex-1 min-h-0">
+                <div className="h-[140px]">
                   <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={marginData}>
                       <defs>
@@ -155,11 +159,11 @@ const Slide18Projections = () => {
               </div>
             </div>
 
-            {/* RIGHT: Tables + clickable detail */}
-            <div className="col-span-7 flex flex-col gap-3 min-h-0">
+            {/* RIGHT: Tables */}
+            <div className="col-span-7 flex flex-col gap-3">
 
-              {/* Customer Acquisition with Revenue & Profit rows */}
-              <div className="bg-card border border-border rounded-xl p-3 min-h-0 overflow-auto animate-fade-in flex-[3]" style={{ animationDelay: "0.15s" }}>
+              {/* Customer Acquisition & Financials table */}
+              <div className="bg-card border border-border rounded-xl p-3 animate-fade-in" style={{ animationDelay: "0.15s" }}>
                 <MiniLabel>📊 Customer Acquisition & Financials</MiniLabel>
                 <table className="w-full text-[10px]">
                   <thead>
@@ -177,49 +181,34 @@ const Slide18Projections = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b border-border/50">
-                      <td className="py-1 font-medium text-foreground">Customers</td>
-                      {yearDetails.map((r) => (
-                        <td key={r.year} className={`text-center py-1 font-bold ${selectedYear === r.year ? "text-primary bg-primary/5" : "text-primary"}`}>{r.total}</td>
-                      ))}
-                    </tr>
-                    <tr className="border-b border-border/50">
-                      <td className="py-1 font-medium text-foreground">DC</td>
-                      {yearDetails.map((r) => (
-                        <td key={r.year} className={`text-center py-1 font-semibold ${selectedYear === r.year ? "text-foreground bg-primary/5" : "text-foreground"}`}>{r.dc}</td>
-                      ))}
-                    </tr>
-                    <tr className="border-b border-border/50">
-                      <td className="py-1 font-medium text-foreground">Revenue</td>
-                      {yearDetails.map((r) => (
-                        <td key={r.year} className={`text-center py-1 font-bold ${selectedYear === r.year ? "text-primary bg-primary/5" : "text-primary"}`}>{r.revenue}</td>
-                      ))}
-                    </tr>
-                    <tr className="border-b border-border/50">
-                      <td className="py-1 font-medium text-foreground">Gross</td>
-                      {yearDetails.map((r) => (
-                        <td key={r.year} className={`text-center py-1 font-semibold ${selectedYear === r.year ? "text-foreground bg-primary/5" : "text-foreground"}`}>{r.grossProfit}</td>
-                      ))}
-                    </tr>
-                    <tr>
-                      <td className="py-1 font-medium text-foreground">Net</td>
-                      {yearDetails.map((r) => (
-                        <td key={r.year} className={`text-center py-1 font-semibold ${selectedYear === r.year ? "text-foreground bg-primary/5" : "text-muted-foreground"}`}>{r.netProfit}</td>
-                      ))}
-                    </tr>
+                    {[
+                      { label: "Customers", key: "total" as const, bold: true },
+                      { label: "DC", key: "dc" as const, bold: false },
+                      { label: "Revenue", key: "revenue" as const, bold: true },
+                      { label: "Gross", key: "grossProfit" as const, bold: false },
+                      { label: "Net", key: "netProfit" as const, bold: false },
+                    ].map((row) => (
+                      <tr key={row.label} className="border-b border-border/50 last:border-0">
+                        <td className="py-1 font-medium text-foreground">{row.label}</td>
+                        {yearDetails.map((r) => (
+                          <td key={r.year} className={`text-center py-1 ${row.bold ? "font-bold" : "font-semibold"} ${selectedYear === r.year ? "text-primary bg-primary/5" : row.bold ? "text-primary" : "text-foreground"}`}>
+                            {r[row.key]}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
 
-              {/* Detail panel (on click) OR default mix + opex */}
+              {/* Detail panel OR Key Assumptions + Near-Term */}
               {detail ? (
-                <div className="bg-primary/5 border-2 border-primary/30 rounded-xl p-4 flex-[4] min-h-0 overflow-auto animate-fade-in">
+                <div className="bg-primary/5 border-2 border-primary/30 rounded-xl p-3 animate-fade-in">
                   <div className="flex items-center justify-between mb-2">
                     <MiniLabel>🔍 {detail.year} Breakdown</MiniLabel>
                     <button onClick={() => setSelectedYear(null)} className="text-[9px] text-muted-foreground hover:text-foreground transition-colors underline">Close</button>
                   </div>
                   <div className="grid grid-cols-2 gap-3">
-                    {/* Financial summary */}
                     <div>
                       <div className="text-[9px] font-bold text-muted-foreground uppercase mb-1">Financials</div>
                       <div className="grid grid-cols-2 gap-1.5">
@@ -231,14 +220,13 @@ const Slide18Projections = () => {
                           { l: "Customers", v: detail.total },
                           ...(detail.opex ? [{ l: "OPEX", v: detail.opex }] : []),
                         ].map((m) => (
-                          <div key={m.l} className="bg-card border border-border rounded-lg px-2 py-1.5 text-center">
-                            <div className="text-[14px] font-bold text-primary">{m.v}</div>
+                          <div key={m.l} className="bg-card border border-border rounded-lg px-2 py-1 text-center">
+                            <div className="text-[13px] font-bold text-primary">{m.v}</div>
                             <div className="text-[8px] text-muted-foreground">{m.l}</div>
                           </div>
                         ))}
                       </div>
                     </div>
-                    {/* Stakeholder breakdown */}
                     <div>
                       <div className="text-[9px] font-bold text-muted-foreground uppercase mb-1">Stakeholder Acquisition</div>
                       <table className="w-full text-[10px]">
@@ -252,9 +240,9 @@ const Slide18Projections = () => {
                         <tbody>
                           {detail.stakeholders.map((s) => (
                             <tr key={s.name} className="border-b border-border/30">
-                              <td className="py-1 font-medium text-foreground">{s.name}</td>
-                              <td className="text-center py-1 font-bold text-primary">{s.count}</td>
-                              <td className="text-right py-1 text-[9px] text-muted-foreground">{s.role}</td>
+                              <td className="py-0.5 font-medium text-foreground">{s.name}</td>
+                              <td className="text-center py-0.5 font-bold text-primary">{s.count}</td>
+                              <td className="text-right py-0.5 text-[9px] text-muted-foreground">{s.role}</td>
                             </tr>
                           ))}
                         </tbody>
@@ -263,98 +251,73 @@ const Slide18Projections = () => {
                   </div>
                 </div>
               ) : (
-                <div className="flex gap-3 flex-[4] min-h-0">
-                  {/* Revenue & Profit Table */}
-                  <div className="bg-card border border-border rounded-xl p-3 flex-[3] min-h-0 overflow-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                    <MiniLabel>💰 Revenue & Profit Summary</MiniLabel>
-                    <table className="w-full text-[10px]">
-                      <thead>
-                        <tr className="border-b border-border">
-                          <th className="text-left py-1 text-muted-foreground font-semibold">Year</th>
-                          <th className="text-right py-1 text-muted-foreground font-semibold">Revenue</th>
-                          <th className="text-right py-1 text-muted-foreground font-semibold">Gross Profit</th>
-                          <th className="text-right py-1 text-muted-foreground font-semibold">Net Profit</th>
-                          <th className="text-right py-1 text-muted-foreground font-semibold">Margin</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {yearDetails.map((r, i) => (
-                          <tr key={r.year} className={`border-b border-border/30 ${i < 3 ? "bg-emerald-50/40" : ""}`}>
-                            <td className="py-1 font-medium text-foreground">
-                              {r.year}
-                              {i < 3 && <span className="ml-1 text-[7px] text-emerald-600 font-bold">FOCUS</span>}
-                            </td>
-                            <td className="text-right py-1 font-bold text-primary">{r.revenue}</td>
-                            <td className="text-right py-1 font-semibold text-foreground">{r.grossProfit}</td>
-                            <td className="text-right py-1 font-semibold text-foreground">{r.netProfit}</td>
-                            <td className="text-right py-1 font-semibold text-primary">{r.margin}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-
+                <div className="grid grid-cols-2 gap-3">
                   {/* Key Assumptions */}
-                  <div className="flex flex-col gap-3 flex-[2] min-h-0">
-                    <div className="bg-amber-50/50 border-2 border-amber-400/30 rounded-xl p-3 flex-1 min-h-0 overflow-auto animate-fade-in" style={{ animationDelay: "0.25s" }}>
-                      <MiniLabel>📋 Key Assumptions</MiniLabel>
-                      <div className="space-y-1.5">
-                        {[
-                          { l: "Headcount", v: "10 → 240 FTE", sub: "FY26 → FY35" },
-                          { l: "CAC Trend", v: "Declining", sub: "Scale efficiencies" },
-                          { l: "NRR", v: "> 120%", sub: "Upsell + expansion" },
-                          { l: "Expansion Rate", v: "35% / yr", sub: "Multi-site + credits" },
-                          { l: "Churn", v: "12% annual", sub: "Contractual lock-in" },
-                          { l: "Pricing Growth", v: "5–8% / yr", sub: "Value-based increases" },
-                        ].map((a) => (
-                          <div key={a.l} className="flex items-center justify-between py-1 border-b border-amber-200/50 last:border-0">
-                            <div>
-                              <div className="text-[11px] font-bold text-foreground">{a.l}</div>
-                              <div className="text-[8px] text-muted-foreground">{a.sub}</div>
-                            </div>
-                            <div className="text-[12px] font-black text-amber-700">{a.v}</div>
+                  <div className="bg-amber-50/50 border-2 border-amber-400/30 rounded-xl p-3 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+                    <MiniLabel>📋 Key Assumptions</MiniLabel>
+                    <div className="space-y-1">
+                      {[
+                        { l: "Headcount", v: "10 → 240 FTE", sub: "FY26 → FY35" },
+                        { l: "CAC Trend", v: "Declining", sub: "Scale efficiencies" },
+                        { l: "NRR", v: "> 120%", sub: "Upsell + expansion" },
+                        { l: "Expansion Rate", v: "35% / yr", sub: "Multi-site + credits" },
+                        { l: "Churn", v: "12% annual", sub: "Contractual lock-in" },
+                        { l: "Pricing Growth", v: "5–8% / yr", sub: "Value-based increases" },
+                      ].map((a) => (
+                        <div key={a.l} className="flex items-center justify-between py-0.5 border-b border-amber-200/50 last:border-0">
+                          <div>
+                            <div className="text-[10px] font-bold text-foreground">{a.l}</div>
+                            <div className="text-[8px] text-muted-foreground">{a.sub}</div>
                           </div>
-                        ))}
-                      </div>
+                          <div className="text-[11px] font-black text-amber-700">{a.v}</div>
+                        </div>
+                      ))}
                     </div>
-                    <div className="bg-card border border-border rounded-xl p-3 flex-1 min-h-0 overflow-auto animate-fade-in" style={{ animationDelay: "0.3s" }}>
-                      <MiniLabel>🎯 Near-Term Focus: FY26–FY28</MiniLabel>
-                      <div className="space-y-1.5">
-                        {[
-                          { l: "FY26", v: "$3.3M", tag: "Launch + first 49 customers" },
-                          { l: "FY27", v: "$12.1M", tag: "3.7× growth, 154 customers" },
-                          { l: "FY28", v: "$34.9M", tag: "2.9× growth, unit econ proven" },
-                        ].map((y) => (
-                          <div key={y.l} className="flex items-center gap-2 py-1 border-b border-border/30 last:border-0">
-                            <span className="text-[11px] font-bold text-primary w-8">{y.l}</span>
-                            <span className="text-[13px] font-black text-foreground">{y.v}</span>
-                            <span className="text-[9px] text-muted-foreground flex-1 text-right">{y.tag}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="mt-2 text-[9px] text-muted-foreground italic text-center">FY29+ are scale targets contingent on near-term execution</div>
+                  </div>
+                  {/* Near-Term Focus */}
+                  <div className="bg-card border border-border rounded-xl p-3 animate-fade-in" style={{ animationDelay: "0.25s" }}>
+                    <MiniLabel>🎯 Near-Term Focus: FY26–FY28</MiniLabel>
+                    <div className="space-y-1">
+                      {[
+                        { l: "FY26", v: "$3.3M", tag: "Launch + first 49 customers" },
+                        { l: "FY27", v: "$12.1M", tag: "3.7× growth, 154 customers" },
+                        { l: "FY28", v: "$34.9M", tag: "2.9× growth, unit econ proven" },
+                      ].map((y) => (
+                        <div key={y.l} className="flex items-center gap-2 py-1 border-b border-border/30 last:border-0">
+                          <span className="text-[10px] font-bold text-primary w-8">{y.l}</span>
+                          <span className="text-[12px] font-black text-foreground">{y.v}</span>
+                          <span className="text-[9px] text-muted-foreground flex-1 text-right">{y.tag}</span>
+                        </div>
+                      ))}
                     </div>
+                    <div className="mt-1.5 text-[9px] text-muted-foreground italic text-center">FY29+ are scale targets contingent on near-term execution</div>
                   </div>
                 </div>
               )}
             </div>
           </div>
-        </div>
 
-        {/* Bottom bar */}
-        <div className="h-[40px] bg-[#14532d] flex items-center justify-center gap-8 px-10 shrink-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-          {[
-            { l: "FY26→FY35", v: "$3.3M → $1.46B" },
-            { l: "10Y CAGR", v: "~95%" },
-            { l: "Net Margin FY35", v: "60%" },
-            { l: "DC Customers FY35", v: "3,725" },
-            { l: "Gross Margin", v: "76% → 89%" },
-          ].map((m) => (
-            <div key={m.l} className="flex items-center gap-1.5">
-              <span className="text-emerald-300/70 text-[10px] font-medium">{m.l}</span>
-              <span className="text-white text-[12px] font-bold">{m.v}</span>
+          {/* Bottom summary strip */}
+          <div className="flex justify-center mt-3 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="inline-flex items-center gap-5 rounded-2xl px-8 py-2"
+              style={{ background: "linear-gradient(90deg, #14532d 0%, #166534 50%, #14532d 100%)" }}>
+              {[
+                { l: "FY26→FY35", v: "$3.3M → $1.46B" },
+                { l: "10Y CAGR", v: "~95%" },
+                { l: "Net Margin FY35", v: "60%" },
+                { l: "DC Customers FY35", v: "3,725" },
+                { l: "Gross Margin", v: "76% → 89%" },
+              ].map((m, i, arr) => (
+                <React.Fragment key={m.l}>
+                  <div className="text-center">
+                    <div className="text-[13px] font-black text-white leading-tight">{m.v}</div>
+                    <div className="text-[9px] text-green-200">{m.l}</div>
+                  </div>
+                  {i < arr.length - 1 && <div className="w-px h-5 bg-white/20 shrink-0" />}
+                </React.Fragment>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </SlideLayout>
