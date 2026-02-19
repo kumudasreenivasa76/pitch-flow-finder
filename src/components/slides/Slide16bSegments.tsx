@@ -206,10 +206,10 @@ const Slide16bSegments = () => {
             ))}
           </div>
 
-          {/* CENTER: detail card */}
-          <div className={`flex-1 rounded-2xl border-2 ${seg.borderColor} ${seg.bgColor} p-5 flex flex-col min-w-0`}>
+          {/* CENTER: detail card - broken into smaller sections */}
+          <div className="flex-1 flex flex-col gap-2 min-w-0">
             {/* Card header */}
-            <div className="flex items-center gap-3 mb-4">
+            <div className={`rounded-xl border ${seg.borderColor} ${seg.bgColor} px-4 py-2 flex items-center gap-3`}>
               <span className={`text-xs font-bold px-3 py-1 rounded-full ${seg.pillBg}`}>{seg.tag}</span>
               {seg.customers !== "per project" && seg.customers !== "Platform flywheel" && (
                 <span className="text-xs text-muted-foreground">
@@ -221,19 +221,19 @@ const Slide16bSegments = () => {
               </span>
             </div>
 
-            {/* Metrics grid */}
-            <div className="grid grid-cols-2 gap-x-6 gap-y-0 flex-1">
+            {/* Metrics in small rectangular cards - pairs */}
+            <div className="grid grid-cols-2 gap-2 flex-1">
               {seg.metrics.map((m) => (
-                <div key={m.label} className="flex justify-between items-center border-b border-border/40 py-2">
-                  <span className="text-xs text-muted-foreground">{m.label}</span>
-                  <span className={`text-sm font-black ${seg.color}`}>{m.value}</span>
+                <div key={m.label} className={`rounded-xl border ${seg.borderColor}/30 bg-white px-4 py-3 flex items-center justify-between`}>
+                  <span className="text-[11px] text-muted-foreground font-medium">{m.label}</span>
+                  <span className={`text-[15px] font-black ${seg.color}`}>{m.value}</span>
                 </div>
               ))}
             </div>
 
             {/* LTV vs CAC bar */}
             {seg.id !== "proc" && (
-              <div className="mt-4 pt-3 border-t border-border/30">
+              <div className={`rounded-xl border ${seg.borderColor}/30 bg-white px-4 py-2.5`}>
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-[10px] text-muted-foreground font-semibold uppercase tracking-wide">LTV vs CAC</span>
                   <span className={`text-xs font-bold ${seg.color}`}>5x ratio</span>
@@ -252,8 +252,8 @@ const Slide16bSegments = () => {
             )}
 
             {/* Bullets */}
-            <div className="mt-3 pt-3 border-t border-border/30">
-              <p className="text-xs italic text-muted-foreground mb-2 font-semibold">{seg.highlight}</p>
+            <div className={`rounded-xl border ${seg.borderColor}/30 bg-white px-4 py-2.5`}>
+              <p className="text-xs italic text-muted-foreground mb-1.5 font-semibold">{seg.highlight}</p>
               <div className="flex flex-wrap gap-1.5">
                 {seg.bullets.map((b) => (
                   <span key={b} className={`text-[10px] px-2 py-1 rounded-md font-semibold ${seg.pillBg}`}>{b}</span>
