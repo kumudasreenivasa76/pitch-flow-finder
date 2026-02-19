@@ -24,7 +24,7 @@ const Slide15TAM = () => {
           </div>
 
           {/* Main 2-column */}
-          <div className="flex gap-6 w-full">
+          <div className="flex gap-6 w-full items-center">
 
             {/* LEFT: TAM / SAM / SOM — bold numbers in BLACK */}
             <div className="w-[48%] flex flex-col gap-3 justify-center">
@@ -129,7 +129,7 @@ const Slide15TAM = () => {
             </div>
 
             {/* RIGHT: Dashboard */}
-            <div className="w-[52%] flex flex-col gap-3">
+            <div className="w-[52%] flex flex-col gap-3 justify-center">
               {/* KPI row */}
               <div className="grid grid-cols-2 gap-3 animate-fade-in" style={{ animationDelay: "0.15s", animationFillMode: "forwards", opacity: 0 }}>
                 {[
