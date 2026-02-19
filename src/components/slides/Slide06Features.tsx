@@ -116,7 +116,7 @@ const Slide06Features = () => {
         </div>
 
         {/* Main body */}
-        <div className="flex flex-1 min-h-0 overflow-hidden">
+        <div className="flex min-h-0 overflow-hidden">
 
           {/* LEFT: App icon grid */}
           <div className="w-[560px] shrink-0 border-r px-5 py-1.5 overflow-hidden" style={{ borderColor: "#e5e7eb", background: "#fafafa" }}>
