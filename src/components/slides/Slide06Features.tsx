@@ -203,19 +203,18 @@ const Slide06Features = () => {
             <p className="text-[10px] font-black uppercase tracking-widest mb-3" style={{ color: "#9ca3af" }}>Key Capabilities</p>
 
             {/* Features grid */}
-            <div className="grid grid-cols-2 gap-2.5 flex-1">
+            <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 flex-1 content-start">
               {prod.features.map((f, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-3 px-4 py-3 rounded-xl"
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg"
                   style={{
                     background: prod.iconBg + "55",
-                    border: `1px solid ${prod.iconColor}20`,
-                    animationDelay: `${i * 0.04}s`
+                    border: `1px solid ${prod.iconColor}15`,
                   }}
                 >
-                  <div className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" style={{ background: prod.iconColor }} />
-                  <span className="text-[13px] leading-snug" style={{ color: "#374151" }}>{f}</span>
+                  <div className="w-1 h-1 rounded-full shrink-0" style={{ background: prod.iconColor }} />
+                  <span className="text-[12px] leading-tight" style={{ color: "#374151" }}>{f}</span>
                 </div>
               ))}
             </div>
