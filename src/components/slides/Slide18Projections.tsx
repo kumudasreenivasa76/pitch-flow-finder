@@ -82,7 +82,7 @@ const Slide18Projections = () => {
           }}
         />
 
-        <div className="relative z-10 w-full max-w-[1600px]">
+        <div className="relative z-10 w-full max-w-[1600px] aspect-video flex flex-col justify-center">
           {/* Header */}
           <div className="text-center mb-1.5 animate-fade-in">
             <span className="inline-block px-3 py-0.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-[11px] font-bold tracking-widest uppercase mb-1">
