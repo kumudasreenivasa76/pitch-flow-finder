@@ -12,19 +12,51 @@ import {
   ReferenceLine,
 } from "recharts";
 
-/* ── Competitor data ── */
+/* ── Competitor data (user-specified positions & sizes) ── */
 const competitors = [
-  { name: "EcoGridia", x: 95, y: 90, z: 180, funding: "$2M (raising)", color: "hsl(142, 71%, 45%)", status: "Pre-Seed", moat: "Full-stack platform + AI + marketplace" },
-  { name: "Arcadia", x: 40, y: 70, z: 500, funding: "$400M+", color: "hsl(220, 70%, 55%)", status: "Series D", moat: "Community solar marketplace" },
-  { name: "Watershed", x: 30, y: 65, z: 400, funding: "$350M+", color: "hsl(250, 60%, 55%)", status: "Series C", moat: "Carbon accounting for enterprises" },
-  { name: "Stem", x: 55, y: 55, z: 160, funding: "$92M", color: "hsl(30, 80%, 55%)", status: "Series B", moat: "AI energy platform (UK)" },
-  { name: "GridBeyond", x: 50, y: 45, z: 120, funding: "$60M", color: "hsl(200, 60%, 50%)", status: "Series B", moat: "AI energy optimization" },
-  { name: "Aurora Solar", x: 25, y: 80, z: 550, funding: "$500M+", color: "hsl(45, 80%, 50%)", status: "Series D", moat: "Solar design & sales tools" },
-  { name: "Persefoni", x: 35, y: 50, z: 200, funding: "$100M+", color: "hsl(340, 60%, 50%)", status: "Series B", moat: "Carbon management/reporting" },
-  { name: "LevelTen", x: 20, y: 40, z: 100, funding: "$40M", color: "hsl(170, 50%, 45%)", status: "Series B", moat: "PPA marketplace only" },
+  { name: "EcoGridia", x: 92, y: 90, z: 600, funding: "$2M (raising)", color: "hsl(142, 71%, 45%)", status: "Pre-Seed", moat: "Full-Stack Energy OS", sublabel: "Full-Stack Energy OS" },
+  { name: "Arcadia", x: 42, y: 68, z: 400, funding: "$400M+", color: "hsl(220, 70%, 55%)", status: "Series D", moat: "Strong data + community, not full stack", sublabel: "" },
+  { name: "Watershed", x: 30, y: 62, z: 400, funding: "$350M+", color: "hsl(270, 60%, 55%)", status: "Series C", moat: "ESG heavy, weak execution + monetization", sublabel: "" },
+  { name: "Stem", x: 55, y: 55, z: 400, funding: "$92M", color: "hsl(30, 80%, 55%)", status: "Series B", moat: "Hardware + storage focused", sublabel: "" },
+  { name: "GridBeyond", x: 50, y: 45, z: 400, funding: "$60M", color: "hsl(45, 80%, 50%)", status: "Series B", moat: "Optimization player", sublabel: "" },
+  { name: "Persefoni", x: 35, y: 50, z: 300, funding: "$100M+", color: "hsl(0, 65%, 50%)", status: "Series B", moat: "Carbon accounting only", sublabel: "" },
+  { name: "LevelTen", x: 25, y: 40, z: 200, funding: "$40M", color: "hsl(142, 50%, 45%)", status: "Series B", moat: "Marketplace only", sublabel: "" },
 ];
 
-/* ── Feature comparison (honest: Built / Building / Roadmap) ── */
+/* ── Custom label renderer ── */
+const CustomBubbleLabel = (props: any) => {
+  const { cx, cy, payload } = props;
+  if (!payload) return null;
+  const isEco = payload.name === "EcoGridia";
+  return (
+    <g>
+      <text
+        x={cx}
+        y={cy - (isEco ? 14 : 8)}
+        textAnchor="middle"
+        fill={isEco ? "hsl(142, 71%, 30%)" : "#374151"}
+        fontSize={isEco ? 13 : 10}
+        fontWeight={isEco ? 900 : 600}
+      >
+        {payload.name}
+      </text>
+      {isEco && payload.sublabel && (
+        <text
+          x={cx}
+          y={cy + 2}
+          textAnchor="middle"
+          fill="hsl(142, 71%, 40%)"
+          fontSize={9}
+          fontWeight={600}
+        >
+          {payload.sublabel}
+        </text>
+      )}
+    </g>
+  );
+};
+
+/* ── Feature comparison ── */
 const features = [
   "Energy Intelligence", "AI Forecasting", "Digital Twins", "Renewable Marketplace",
   "Community Layer", "ESG Compliance", "PPA / VPPA Execution",
@@ -56,7 +88,7 @@ const BubbleTooltip = ({ active, payload }: any) => {
   if (!active || !payload?.length) return null;
   const d = payload[0].payload;
   return (
-    <div className="bg-background border border-border rounded-lg px-3 py-2 shadow-lg text-[11px] max-w-[200px]">
+    <div className="bg-background border border-border rounded-lg px-3 py-2 shadow-lg text-[11px] max-w-[220px]">
       <div className="font-bold text-foreground text-[13px]">{d.name}</div>
       <div className="text-muted-foreground mt-1">{d.moat}</div>
       <div className="flex gap-3 mt-1.5">
@@ -85,7 +117,7 @@ const Slide14Competition = () => (
           <h2 className="text-[36px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Only Full-Stack <span className="text-primary">Energy Platform</span>
           </h2>
-          <p className="text-[14px] text-muted-foreground mt-0.5">Platform breadth × market focus — bubble size = funding raised</p>
+          <p className="text-[14px] text-muted-foreground mt-0.5">Platform breadth × market focus — bubble size = platform scope</p>
         </div>
 
         {/* Main: Bubble Chart + Matrix */}
@@ -96,27 +128,33 @@ const Slide14Competition = () => (
             <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider mb-1">Market Positioning Map</div>
             <div className="flex-1 min-h-0">
               <ResponsiveContainer width="100%" height="100%">
-                <ScatterChart margin={{ top: 10, right: 15, bottom: 25, left: 10 }}>
-                  <XAxis type="number" dataKey="x" domain={[0, 100]} tick={{ fontSize: 10 }} tickLine={false} axisLine={{ stroke: "#e5e7eb" }}>
+                <ScatterChart margin={{ top: 20, right: 20, bottom: 25, left: 15 }}>
+                  <XAxis type="number" dataKey="x" domain={[10, 100]} tick={{ fontSize: 10 }} tickLine={false} axisLine={{ stroke: "#e5e7eb" }}>
                     <Label value="Platform Breadth →" position="bottom" offset={5} style={{ fontSize: 10, fill: "#94a3b8" }} />
                   </XAxis>
-                  <YAxis type="number" dataKey="y" domain={[0, 100]} tick={{ fontSize: 10 }} tickLine={false} axisLine={{ stroke: "#e5e7eb" }}>
+                  <YAxis type="number" dataKey="y" domain={[30, 100]} tick={{ fontSize: 10 }} tickLine={false} axisLine={{ stroke: "#e5e7eb" }}>
                     <Label value="Market Traction →" angle={-90} position="left" offset={-2} style={{ fontSize: 10, fill: "#94a3b8" }} />
                   </YAxis>
-                  <ZAxis type="number" dataKey="z" range={[300, 3000]} />
+                  <ZAxis type="number" dataKey="z" range={[400, 4000]} />
                   <ReferenceLine x={50} stroke="#e5e7eb" strokeDasharray="4 4" />
-                  <ReferenceLine y={50} stroke="#e5e7eb" strokeDasharray="4 4" />
+                  <ReferenceLine y={55} stroke="#e5e7eb" strokeDasharray="4 4" />
                   <Tooltip content={<BubbleTooltip />} />
-                  <Scatter data={competitors}>
+                  <Scatter data={competitors} label={<CustomBubbleLabel />}>
                     {competitors.map((c, i) => (
-                      <Cell key={i} fill={c.color} fillOpacity={c.name === "EcoGridia" ? 0.9 : 0.5} stroke={c.name === "EcoGridia" ? c.color : "transparent"} strokeWidth={c.name === "EcoGridia" ? 3 : 0} />
+                      <Cell
+                        key={i}
+                        fill={c.color}
+                        fillOpacity={c.name === "EcoGridia" ? 0.85 : 0.45}
+                        stroke={c.name === "EcoGridia" ? c.color : "transparent"}
+                        strokeWidth={c.name === "EcoGridia" ? 3 : 0}
+                      />
                     ))}
                   </Scatter>
                 </ScatterChart>
               </ResponsiveContainer>
             </div>
             {/* Legend */}
-            <div className="flex flex-wrap gap-2 mt-1 justify-center">
+            <div className="flex flex-wrap gap-2.5 mt-1 justify-center">
               {competitors.map((c) => (
                 <div key={c.name} className="flex items-center gap-1">
                   <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: c.color, opacity: c.name === "EcoGridia" ? 1 : 0.6 }} />
