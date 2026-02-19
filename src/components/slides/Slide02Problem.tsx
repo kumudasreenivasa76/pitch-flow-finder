@@ -102,7 +102,7 @@ const Slide02Problem = () => {
 
   return (
     <SlideLayout>
-      <div className="relative w-full h-full flex flex-col bg-white overflow-hidden px-14 pt-8 pb-5">
+      <div className="relative w-full h-full flex flex-col items-center bg-white overflow-hidden px-14 pt-8 pb-5">
 
         {/* Subtle grid background */}
         <div className="absolute inset-0 pointer-events-none"
@@ -127,7 +127,7 @@ const Slide02Problem = () => {
         </div>
 
         {/* 3×2 Card Grid */}
-        <div className="relative z-10 grid grid-cols-3 gap-5 w-full max-w-[1520px]">
+        <div className="relative z-10 grid grid-cols-3 gap-5 w-full max-w-[1520px] mx-auto">
           {problems.map((prob, i) => {
             const Icon = prob.icon;
             return (
@@ -161,7 +161,7 @@ const Slide02Problem = () => {
         </div>
 
         {/* Stats bar */}
-        <div className="relative z-10 flex items-center gap-6 mt-8 animate-fade-in" style={{ animationDelay: "0.5s", animationFillMode: "forwards", opacity: 0 }}>
+        <div className="relative z-10 flex items-center justify-center gap-6 mt-8 animate-fade-in" style={{ animationDelay: "0.5s", animationFillMode: "forwards", opacity: 0 }}>
           {stats.map((s, i) => (
             <div key={i} className="flex items-center gap-3 px-7 py-3.5 rounded-full border-2 border-border/40 bg-white shadow-sm">
               <span className="text-[26px] font-black text-primary" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{s.value}</span>
