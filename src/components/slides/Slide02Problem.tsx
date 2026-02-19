@@ -102,7 +102,7 @@ const Slide02Problem = () => {
 
   return (
     <SlideLayout>
-      <div className="relative w-full h-full flex flex-col items-center bg-white overflow-hidden px-14 pt-8 pb-5">
+      <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden px-14 pt-8 pb-5">
 
         {/* Subtle grid background */}
         <div className="absolute inset-0 pointer-events-none"
