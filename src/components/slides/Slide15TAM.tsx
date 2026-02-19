@@ -30,99 +30,94 @@ const Slide15TAM = () => {
           {/* Main: Left funnel visual + Right dashboard */}
           <div className="flex gap-8 flex-1 min-h-0">
 
-            {/* ── LEFT: Visual funnel ── */}
-            <div className="w-[55%] flex flex-col items-center justify-center relative">
-              {/* TAM - widest */}
-              <div className="w-full rounded-2xl border-2 border-emerald-300 bg-gradient-to-r from-emerald-50 to-emerald-100/60 p-5 mb-[-8px] relative z-30 animate-fade-in"
+            {/* ── LEFT: TAM / SAM / SOM Boxes ── */}
+            <div className="w-[55%] flex flex-col gap-5 justify-center">
+
+              {/* TAM */}
+              <div className="rounded-2xl border-2 border-emerald-300 bg-gradient-to-br from-emerald-50 to-white p-6 animate-fade-in shadow-sm"
                 style={{ animationDelay: "0.05s", animationFillMode: "forwards", opacity: 0 }}>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-2xl bg-emerald-500 flex flex-col items-center justify-center text-white shadow-lg">
-                      <div className="text-[9px] font-bold tracking-widest uppercase">TAM</div>
-                      <div className="text-[24px] font-black leading-none">$14B+</div>
-                    </div>
-                    <div>
-                      <div className="text-[18px] font-extrabold text-emerald-800" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Total Addressable Market</div>
-                      <div className="text-[12px] text-muted-foreground">~356,000 global target sites × $40k blended platform value</div>
-                    </div>
+                <div className="flex items-center gap-5 mb-4">
+                  <div className="w-20 h-20 rounded-2xl bg-emerald-500 flex flex-col items-center justify-center text-white shadow-lg shrink-0">
+                    <div className="text-[10px] font-bold tracking-widest uppercase">TAM</div>
+                    <div className="text-[28px] font-black leading-none">$14B+</div>
                   </div>
-                  <div className="flex gap-2">
-                    {[
-                      { label: "Universities", val: "25K" },
-                      { label: "K-12", val: "120K" },
-                      { label: "Data Centers", val: "11K" },
-                      { label: "Enterprises", val: "200K" },
-                    ].map((s) => (
-                      <div key={s.label} className="bg-white rounded-xl px-3 py-2 border border-emerald-200 text-center min-w-[80px]">
-                        <div className="text-[15px] font-black text-emerald-700">{s.val}</div>
-                        <div className="text-[9px] text-muted-foreground font-semibold">{s.label}</div>
-                      </div>
-                    ))}
+                  <div>
+                    <div className="text-[20px] font-extrabold text-emerald-800" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Total Addressable Market</div>
+                    <div className="text-[13px] text-muted-foreground mt-0.5">~356,000 global target sites × $40k blended platform value</div>
                   </div>
+                </div>
+                <div className="grid grid-cols-4 gap-3">
+                  {[
+                    { label: "Universities", val: "25K" },
+                    { label: "K-12 Schools", val: "120K" },
+                    { label: "Data Centers", val: "11K" },
+                    { label: "Enterprises", val: "200K" },
+                  ].map((s) => (
+                    <div key={s.label} className="bg-white rounded-xl px-3 py-2.5 border border-emerald-200 text-center">
+                      <div className="text-[18px] font-black text-emerald-700">{s.val}</div>
+                      <div className="text-[10px] text-muted-foreground font-semibold">{s.label}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* SAM - narrower */}
-              <div className="w-[88%] rounded-2xl border-2 border-blue-300 bg-gradient-to-r from-blue-50 to-blue-100/60 p-5 mb-[-8px] relative z-20 animate-fade-in"
+              {/* SAM */}
+              <div className="rounded-2xl border-2 border-blue-300 bg-gradient-to-br from-blue-50 to-white p-6 animate-fade-in shadow-sm"
                 style={{ animationDelay: "0.12s", animationFillMode: "forwards", opacity: 0 }}>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-2xl bg-blue-500 flex flex-col items-center justify-center text-white shadow-lg">
-                      <div className="text-[9px] font-bold tracking-widest uppercase">SAM</div>
-                      <div className="text-[24px] font-black leading-none">$3.9B</div>
-                    </div>
-                    <div>
-                      <div className="text-[18px] font-extrabold text-blue-800" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Serviceable Available Market</div>
-                      <div className="text-[12px] text-muted-foreground">US, UK & EU priority · ~98,000 targetable sites</div>
-                    </div>
+                <div className="flex items-center gap-5 mb-4">
+                  <div className="w-20 h-20 rounded-2xl bg-blue-500 flex flex-col items-center justify-center text-white shadow-lg shrink-0">
+                    <div className="text-[10px] font-bold tracking-widest uppercase">SAM</div>
+                    <div className="text-[28px] font-black leading-none">$3.9B</div>
                   </div>
-                  <div className="flex gap-2">
-                    {[
-                      { label: "Universities", val: "8K" },
-                      { label: "Schools", val: "25K" },
-                      { label: "Data Centers", val: "5K" },
-                      { label: "Enterprises", val: "60K" },
-                    ].map((s) => (
-                      <div key={s.label} className="bg-white rounded-xl px-3 py-2 border border-blue-200 text-center min-w-[72px]">
-                        <div className="text-[15px] font-black text-blue-700">{s.val}</div>
-                        <div className="text-[9px] text-muted-foreground font-semibold">{s.label}</div>
-                      </div>
-                    ))}
+                  <div>
+                    <div className="text-[20px] font-extrabold text-blue-800" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Serviceable Available Market</div>
+                    <div className="text-[13px] text-muted-foreground mt-0.5">US, UK & EU priority · ~98,000 targetable sites</div>
                   </div>
+                </div>
+                <div className="grid grid-cols-4 gap-3">
+                  {[
+                    { label: "Universities", val: "8K" },
+                    { label: "Schools", val: "25K" },
+                    { label: "Data Centers", val: "5K" },
+                    { label: "Enterprises", val: "60K" },
+                  ].map((s) => (
+                    <div key={s.label} className="bg-white rounded-xl px-3 py-2.5 border border-blue-200 text-center">
+                      <div className="text-[18px] font-black text-blue-700">{s.val}</div>
+                      <div className="text-[10px] text-muted-foreground font-semibold">{s.label}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* SOM - narrowest */}
-              <div className="w-[72%] rounded-2xl border-2 border-violet-300 bg-gradient-to-r from-violet-50 to-violet-100/60 p-5 relative z-10 animate-fade-in"
+              {/* SOM */}
+              <div className="rounded-2xl border-2 border-violet-300 bg-gradient-to-br from-violet-50 to-white p-6 animate-fade-in shadow-sm"
                 style={{ animationDelay: "0.2s", animationFillMode: "forwards", opacity: 0 }}>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-2xl bg-violet-500 flex flex-col items-center justify-center text-white shadow-lg">
-                      <div className="text-[9px] font-bold tracking-widest uppercase">SOM</div>
-                      <div className="text-[18px] font-black leading-none">$250M+</div>
-                    </div>
-                    <div>
-                      <div className="text-[17px] font-extrabold text-violet-800" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Serviceable Obtainable</div>
-                      <div className="text-[12px] text-muted-foreground">~2% SAM · 10-year trajectory</div>
-                    </div>
+                <div className="flex items-center gap-5 mb-4">
+                  <div className="w-20 h-20 rounded-2xl bg-violet-500 flex flex-col items-center justify-center text-white shadow-lg shrink-0">
+                    <div className="text-[10px] font-bold tracking-widest uppercase">SOM</div>
+                    <div className="text-[22px] font-black leading-none">$250M+</div>
                   </div>
-                  <div className="flex gap-2">
-                    {[
-                      { label: "FY26", val: "50" },
-                      { label: "FY29", val: "1,365" },
-                      { label: "FY34", val: "6,915" },
-                    ].map((s) => (
-                      <div key={s.label} className="bg-white rounded-xl px-3 py-2 border border-violet-200 text-center min-w-[68px]">
-                        <div className="text-[14px] font-black text-violet-700">{s.val}</div>
-                        <div className="text-[9px] text-muted-foreground font-semibold">{s.label}</div>
-                      </div>
-                    ))}
+                  <div>
+                    <div className="text-[20px] font-extrabold text-violet-800" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Serviceable Obtainable Market</div>
+                    <div className="text-[13px] text-muted-foreground mt-0.5">~2% SAM · 10-year trajectory</div>
                   </div>
+                </div>
+                <div className="grid grid-cols-3 gap-3">
+                  {[
+                    { label: "FY26 Sites", val: "50" },
+                    { label: "FY29 Sites", val: "1,365" },
+                    { label: "FY34 Sites", val: "6,915" },
+                  ].map((s) => (
+                    <div key={s.label} className="bg-white rounded-xl px-3 py-2.5 border border-violet-200 text-center">
+                      <div className="text-[18px] font-black text-violet-700">{s.val}</div>
+                      <div className="text-[10px] text-muted-foreground font-semibold">{s.label}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* Connecting arrows visual */}
-              <div className="flex items-center gap-3 mt-4 animate-fade-in" style={{ animationDelay: "0.3s", animationFillMode: "forwards", opacity: 0 }}>
+              {/* Flow indicator */}
+              <div className="flex items-center justify-center gap-3 animate-fade-in" style={{ animationDelay: "0.28s", animationFillMode: "forwards", opacity: 0 }}>
                 <span className="text-[12px] font-bold text-emerald-600 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200">Global</span>
                 <span className="text-muted-foreground">→</span>
                 <span className="text-[12px] font-bold text-blue-600 px-3 py-1 rounded-full bg-blue-50 border border-blue-200">US/UK/EU</span>
