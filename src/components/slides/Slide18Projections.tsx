@@ -73,8 +73,15 @@ const Slide18Projections = () => {
 
   return (
     <SlideLayout>
-      <div className="flex flex-col h-full relative">
-        <div className="h-1.5 w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 shrink-0" />
+      <div className="relative flex flex-col h-full">
+        {/* Grid background */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: "linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)",
+            backgroundSize: "60px 60px", opacity: 0.5,
+          }}
+        />
+        <div className="relative z-10 h-1.5 w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 shrink-0" />
 
         <div className="flex flex-col flex-1 px-10 py-4 overflow-hidden">
           {/* Header */}

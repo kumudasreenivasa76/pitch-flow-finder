@@ -159,7 +159,14 @@ const Slide16bSegments = () => {
 
   return (
     <SlideLayout>
-      <div className="flex flex-col h-full px-14 py-8 bg-white">
+      <div className="relative flex flex-col h-full px-14 py-8 bg-white">
+        {/* Grid background */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: "linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)",
+            backgroundSize: "60px 60px", opacity: 0.5,
+          }}
+        />
 
         {/* Header */}
         <div className="flex items-center justify-between mb-5">
