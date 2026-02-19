@@ -184,7 +184,7 @@ const Slide10Calculator = () => {
             </div>
 
             {/* Right: Results */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col justify-center gap-3">
               {/* Total Value — hero card on top */}
               <div className="rounded-2xl bg-gradient-to-r from-primary via-emerald-600 to-teal-500 p-6 flex items-center justify-between shadow-lg relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10" style={{
