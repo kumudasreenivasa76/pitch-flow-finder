@@ -241,7 +241,7 @@ const Slide12Pricing = () => {
                     <span className="text-[13px] text-muted-foreground">{selectedStream.sub}</span>
                   </div>
                 </div>
-                <div className="flex flex-col gap-2 flex-1">
+                <div className="flex flex-col gap-2">
                   {selectedStream.rows.map((r, i) => (
                     <div key={i} className="flex items-center justify-between px-5 py-3 rounded-xl"
                       style={{ background: i % 2 === 0 ? `${selectedStream.color}07` : "transparent", border: `1px solid ${selectedStream.color}15` }}>
@@ -343,7 +343,7 @@ const Slide12Pricing = () => {
                 </div>
 
                 {/* Pricing table */}
-                <div className="flex-1 overflow-y-auto">
+                <div className="overflow-y-auto">
                   {/* Table header */}
                   <div className="grid grid-cols-[1fr_180px_110px] gap-2 px-4 py-2 mb-1">
                     <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider">Product</span>
