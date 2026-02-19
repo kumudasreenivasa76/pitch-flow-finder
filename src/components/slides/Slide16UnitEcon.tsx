@@ -22,7 +22,7 @@ const Slide16UnitEcon = () => (
             Unit Economics
           </span>
           <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Core Assumptions — <span className="text-primary">Year 5 (FY30)</span>
+            Unit Economics — <span className="text-primary">FY30 Baseline</span>
           </h2>
           <p className="text-[15px] text-muted-foreground mt-1">Validated unit economics across all customer segments.</p>
         </div>
@@ -32,7 +32,7 @@ const Slide16UnitEcon = () => (
 
           {/* Col 1 */}
           <div className="flex flex-col gap-3">
-            <CompactTable className="flex-1" title="Core Assumptions" color="#16a34a" delay="0.05s" rows={[
+            <CompactTable className="flex-1" title="Key Metrics" color="#16a34a" delay="0.05s" rows={[
               { label: "Total Revenue", value: "$169.7M" },
               { label: "Total Customers", value: "1,365" },
               { label: "Gross Margin", value: "84%" },
