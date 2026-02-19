@@ -81,11 +81,11 @@ const Slide13GTM = () => (
 
       <div className="relative z-10 flex flex-col h-full">
         {/* Header — matches Slide 2 style */}
-        <div className="text-center mb-6 animate-fade-in">
-          <span className="inline-block px-5 py-1.5 rounded-full border border-amber-300 bg-amber-50 text-amber-700 text-[16px] font-bold tracking-widest uppercase mb-4">
+        <div className="text-center mb-4 animate-fade-in">
+          <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
             Go-To-Market Strategy
           </span>
-          <h2 className="text-[52px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Portfolio Delivery <span className="text-primary">Roadmap</span>
           </h2>
           <p className="text-[20px] text-muted-foreground mt-2">Four phases to market dominance — 24 months to scale</p>

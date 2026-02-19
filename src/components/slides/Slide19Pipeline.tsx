@@ -56,7 +56,8 @@ const Slide19Pipeline = () => {
           {/* Header */}
           <div className="flex items-center justify-between mb-3 animate-fade-in">
             <div>
-              <h2 className="text-[28px] font-bold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">Early Traction</span>
+              <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 EcoGridia — <span className="text-primary">First 90 Days Traction</span>
               </h2>
               <p className="text-[12px] text-muted-foreground">Post-launch run-rate · Proving product-market signal</p>

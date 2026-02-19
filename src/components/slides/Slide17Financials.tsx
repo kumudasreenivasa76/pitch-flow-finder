@@ -14,14 +14,14 @@ const Slide17Financials = () => (
 
       <div className="relative z-10 flex flex-col h-full">
         {/* Header */}
-        <div className="text-center mb-5 animate-fade-in">
-          <span className="inline-block px-5 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-[14px] font-bold tracking-widest uppercase mb-3">
-            Business Model
+        <div className="text-center mb-4 animate-fade-in">
+          <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
+            Revenue Breakdown
           </span>
-          <h2 className="text-[44px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Business Model & <span className="text-primary">Financials</span>
           </h2>
-          <p className="text-[16px] text-muted-foreground mt-1">Two synergistic business lines driving $60M combined revenue.</p>
+          <p className="text-[15px] text-muted-foreground mt-1">Two synergistic business lines driving $60M combined revenue.</p>
         </div>
 
         <div className="grid grid-cols-2 gap-6 flex-1 min-h-0">

@@ -180,7 +180,7 @@ const Slide03Solution = () => {
 
   return (
     <SlideLayout>
-      <div className="relative w-full h-full flex flex-col items-center bg-white overflow-hidden px-16 py-8">
+      <div className="relative w-full h-full flex flex-col bg-white overflow-hidden px-14 pt-8 pb-5">
 
         {/* Grid background */}
         <div className="absolute inset-0 pointer-events-none"
@@ -192,17 +192,17 @@ const Slide03Solution = () => {
         />
 
         {/* Header */}
-        <div className="relative z-10 text-center mb-6 animate-fade-in">
-          <span className="inline-block px-5 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-[15px] font-bold tracking-widest uppercase mb-4">
+        <div className="relative z-10 text-center mb-4 animate-fade-in">
+          <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
             The Solution
           </span>
-          <h2 className="text-[50px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             EcoGridia Solves Each Problem <span className="text-primary">Directly</span>
           </h2>
-          <p className="text-[18px] text-muted-foreground mt-2">
+          <p className="text-[15px] text-muted-foreground mt-1">
             Infrastructure SaaS aligned with the problem — no mismatch, no red flags
           </p>
-          <p className="text-[15px] text-primary mt-1.5 flex items-center justify-center gap-1.5">
+          <p className="text-[13px] text-primary mt-1 flex items-center justify-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-primary inline-block" />
             Click a solution to explore details
           </p>

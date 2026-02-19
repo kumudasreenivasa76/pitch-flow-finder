@@ -83,11 +83,11 @@ const Slide05Platform = () => {
         <div className="relative z-10 flex-1 flex flex-col justify-center py-10 pr-14 pl-4">
 
           {/* Badge + headline */}
-          <div className="mb-7 animate-fade-in">
-            <span className="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/8 text-primary text-[14px] font-bold tracking-widest uppercase mb-4">
-              Three-Layer Infrastructure SaaS
+          <div className="mb-5 animate-fade-in">
+            <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
+              Platform Architecture
             </span>
-            <h2 className="text-[46px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               From Physical Assets to Financial Products
             </h2>
           </div>

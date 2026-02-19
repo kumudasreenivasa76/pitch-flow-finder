@@ -96,7 +96,7 @@ const Slide09Models = () => {
 
   return (
     <SlideLayout>
-      <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden px-24 py-10">
+      <div className="relative w-full h-full flex flex-col bg-white overflow-hidden px-14 pt-8 pb-5">
 
         {/* Grid background */}
         <div className="absolute inset-0 pointer-events-none"
@@ -108,14 +108,14 @@ const Slide09Models = () => {
         />
 
         {/* Header */}
-        <div className="relative z-10 text-center mb-10 animate-fade-in">
-          <span className="inline-block px-5 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-[16px] font-bold tracking-widest uppercase mb-5">
+        <div className="relative z-10 text-center mb-5 animate-fade-in">
+          <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
             Participation Models
           </span>
-          <h2 className="text-[56px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Three Pathways to <span className="text-primary">Clean Energy</span>
           </h2>
-          <p className="text-[20px] text-muted-foreground mt-3">
+          <p className="text-[15px] text-muted-foreground mt-1">
             Own, share, or procure — every organization finds its fit
           </p>
         </div>

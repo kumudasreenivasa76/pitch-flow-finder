@@ -60,8 +60,8 @@ const yearDetails: YearDetail[] = [
     stakeholders: [{ name: "Schools", count: "1,150", role: "Beachhead" }, { name: "SME SaaS", count: "1,050", role: "Volume" }, { name: "Data Centers", count: "3,725", role: "Core" }, { name: "Projects", count: "800", role: "Infra" }, { name: "Marketplace", count: "1,600", role: "Supply" }] },
 ];
 
-const chartTick = { fontSize: 9, fill: "hsl(160, 10%, 50%)" };
-const gridStroke = "hsl(160, 10%, 90%)";
+const chartTick = { fontSize: 9, fill: "#6b7280" };
+const gridStroke = "#e5e7eb";
 
 const MiniLabel = ({ children }: { children: React.ReactNode }) => (
   <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-1.5">{children}</div>
@@ -87,8 +87,9 @@ const Slide18Projections = () => {
           {/* Header */}
           <div className="flex items-center justify-between mb-3 animate-fade-in">
             <div>
-              <h2 className="text-[30px] font-bold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                ECOGRIDIA — <span className="text-primary">Operating Dashboard</span>
+              <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">Growth Projections</span>
+              <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                EcoGridia — <span className="text-primary">Operating Dashboard</span>
               </h2>
               <p className="text-[12px] text-muted-foreground">10-Year Growth Model · FY26–FY35 · <span className="text-primary font-semibold">Click any year for details</span></p>
             </div>
@@ -116,13 +117,19 @@ const Slide18Projections = () => {
                 <div className="flex-1 min-h-0">
                   <ResponsiveContainer width="100%" height="100%">
                     <ComposedChart data={revenueData}>
+                      <defs>
+                        <linearGradient id="revenueGrad" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="5%" stopColor="#10b981" stopOpacity={0.25} />
+                          <stop offset="95%" stopColor="#10b981" stopOpacity={0.02} />
+                        </linearGradient>
+                      </defs>
                       <CartesianGrid strokeDasharray="3 3" stroke={gridStroke} />
                       <XAxis dataKey="year" tick={chartTick} tickLine={false} axisLine={false} />
                       <YAxis tick={chartTick} tickLine={false} axisLine={false} tickFormatter={(v) => v >= 1000 ? `$${(v/1000).toFixed(1)}B` : `$${v}M`} />
                       <Tooltip contentStyle={{ fontSize: 10, borderRadius: 8 }} formatter={(v: number) => [v >= 1000 ? `$${(v/1000).toFixed(2)}B` : `$${v}M`, undefined]} />
-                      <Area type="monotone" dataKey="revenue" name="Revenue" fill="hsl(160, 84%, 39%)" fillOpacity={0.12} stroke="hsl(160, 84%, 39%)" strokeWidth={2} />
-                      <Line type="monotone" dataKey="grossProfit" name="Gross Profit" stroke="hsl(174, 72%, 40%)" strokeWidth={1.5} dot={false} />
-                      <Line type="monotone" dataKey="netProfit" name="Net Profit" stroke="hsl(152, 68%, 30%)" strokeWidth={1.5} dot={false} />
+                      <Area type="monotone" dataKey="revenue" name="Revenue" fill="url(#revenueGrad)" fillOpacity={1} stroke="#10b981" strokeWidth={2.5} />
+                      <Line type="monotone" dataKey="grossProfit" name="Gross Profit" stroke="#3b82f6" strokeWidth={2} dot={false} />
+                      <Line type="monotone" dataKey="netProfit" name="Net Profit" stroke="#8b5cf6" strokeWidth={2} dot={false} />
                     </ComposedChart>
                   </ResponsiveContainer>
                 </div>
@@ -132,11 +139,17 @@ const Slide18Projections = () => {
                 <div className="flex-1 min-h-0">
                   <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={marginData}>
+                      <defs>
+                        <linearGradient id="marginGrad" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.3} />
+                          <stop offset="95%" stopColor="#f59e0b" stopOpacity={0.02} />
+                        </linearGradient>
+                      </defs>
                       <CartesianGrid strokeDasharray="3 3" stroke={gridStroke} />
                       <XAxis dataKey="year" tick={chartTick} tickLine={false} axisLine={false} />
                       <YAxis domain={[70, 92]} tick={chartTick} tickLine={false} axisLine={false} tickFormatter={(v) => `${v}%`} />
                       <Tooltip contentStyle={{ fontSize: 10, borderRadius: 8 }} formatter={(v: number) => [`${v}%`, undefined]} />
-                      <Area type="monotone" dataKey="margin" fill="hsl(160, 84%, 39%)" fillOpacity={0.18} stroke="hsl(160, 84%, 39%)" strokeWidth={2} />
+                      <Area type="monotone" dataKey="margin" fill="url(#marginGrad)" fillOpacity={1} stroke="#f59e0b" strokeWidth={2.5} />
                     </AreaChart>
                   </ResponsiveContainer>
                 </div>
