@@ -4,21 +4,21 @@ import { MapPin, Sun, Activity, DollarSign, Zap, ShoppingBag, BarChart3, Brain, 
 import ecosystemImg from "@/assets/slide07-ecosystem-white.png";
 
 const hotspots = [
-  // Row 1 — Discovery & Planning (top edges, left & right of image)
-  { id: 0, layer: "L1", icon: MapPin, label: "TerraScan™", top: "5%", left: "1%", role: "Site Feasibility", details: ["Rooftop / land identification", "MW potential estimation", "Structural readiness check", "Grid proximity analysis"], output: "Feasibility Report + Capacity Estimate" },
-  { id: 1, layer: "L1", icon: Sun, label: "HelioTwin™", top: "5%", left: "22%", role: "3D Solar Modeling", details: ["3D digital twin creation", "Irradiance simulation", "Shading analysis", "Annual generation forecast"], output: "Projected kWh/year + Performance Ratio" },
-  { id: 2, layer: "L1", icon: Activity, label: "CarbonX-Ray™", top: "5%", left: "62%", role: "Baseline Carbon Audit", details: ["Scope 1 & 2 emissions mapping", "Current energy intensity", "Carbon heatmap generation", "ESG readiness score"], output: "Carbon Baseline Report" },
-  { id: 3, layer: "L1", icon: DollarSign, label: "CapStruct™", top: "5%", left: "82%", role: "Financial Structuring", details: ["CAPEX vs OPEX comparison", "IRR / NPV modeling", "LCOE calculation", "Ownership model (Direct / SPV / PPA)"], output: "Financial Feasibility & Investment Plan" },
-  // Row 2 — Execution & Monitoring (mid-left & mid-right)
-  { id: 4, layer: "L1", icon: Zap, label: "SolarForge™", top: "40%", left: "1%", role: "Project Execution", details: ["EPC vendor selection", "SLA definition", "Installation tracking", "Commissioning verification"], output: "Live Solar Asset" },
-  { id: 5, layer: "L1", icon: Activity, label: "GridLink™", top: "40%", left: "22%", role: "Utility Integration", details: ["Net metering setup", "Grid synchronization", "Renewable matching % tracking", "PPA alignment"], output: "Operational Renewable Flow" },
-  { id: 6, layer: "L1", icon: ShoppingBag, label: "EcoMarket™", top: "40%", left: "62%", role: "Vendor Management", details: ["O&M tracking", "SLA compliance monitoring", "Warranty tracking", "Vendor performance scorecards"], output: "Operational Stability" },
-  { id: 7, layer: "L2", icon: BarChart3, label: "VoltIQ™", top: "40%", left: "82%", role: "Real-Time Energy Dashboard", details: ["Live generation tracking", "Consumption vs production", "Renewable mix %", "Cost savings visualization"], output: "Energy Performance Dashboard" },
-  // Row 3 — Certification & Compliance (bottom edges)
-  { id: 8, layer: "L2", icon: Brain, label: "WattWise AI™", top: "75%", left: "1%", role: "Optimization Engine", details: ["Load forecasting", "Solar degradation alerts", "Peak shaving recommendations", "Battery optimization"], output: "Improved Efficiency + Lower Bills" },
-  { id: 9, layer: "L3", icon: Award, label: "RECMatrix™", top: "75%", left: "22%", role: "REC Management", details: ["REC generation tracking", "Registry integration", "REC inventory dashboard", "Market value estimation"], output: "REC Revenue Opportunity" },
-  { id: 10, layer: "L3", icon: PieChart, label: "CarbonLedger™", top: "75%", left: "62%", role: "Carbon Accounting", details: ["Carbon avoided calculation", "Offset valuation", "Multi-site aggregation", "Carbon asset visibility"], output: "Carbon Asset Report" },
-  { id: 11, layer: "L3", icon: Target, label: "NetZero Navigator™", top: "75%", left: "82%", role: "Target Tracking", details: ["Renewable % progress", "Carbon reduction trajectory", "Gap-to-target visualization"], output: "Net-Zero Progress Dashboard" },
+  // Row 1 — Discovery & Planning (aligned to top illustration elements)
+  { id: 0, layer: "L1", icon: MapPin, label: "TerraScan™", top: "2%", left: "18%", role: "Site Feasibility", details: ["Rooftop / land identification", "MW potential estimation", "Structural readiness check", "Grid proximity analysis"], output: "Feasibility Report + Capacity Estimate" },
+  { id: 1, layer: "L1", icon: Sun, label: "HelioTwin™", top: "2%", left: "38%", role: "3D Solar Modeling", details: ["3D digital twin creation", "Irradiance simulation", "Shading analysis", "Annual generation forecast"], output: "Projected kWh/year + Performance Ratio" },
+  { id: 2, layer: "L1", icon: Activity, label: "CarbonX-Ray™", top: "2%", left: "58%", role: "Baseline Carbon Audit", details: ["Scope 1 & 2 emissions mapping", "Current energy intensity", "Carbon heatmap generation", "ESG readiness score"], output: "Carbon Baseline Report" },
+  { id: 3, layer: "L1", icon: DollarSign, label: "CapStruct™", top: "2%", left: "78%", role: "Financial Structuring", details: ["CAPEX vs OPEX comparison", "IRR / NPV modeling", "LCOE calculation", "Ownership model (Direct / SPV / PPA)"], output: "Financial Feasibility & Investment Plan" },
+  // Row 2 — Execution & Monitoring (aligned to mid illustration elements)
+  { id: 4, layer: "L1", icon: Zap, label: "SolarForge™", top: "38%", left: "18%", role: "Project Execution", details: ["EPC vendor selection", "SLA definition", "Installation tracking", "Commissioning verification"], output: "Live Solar Asset" },
+  { id: 5, layer: "L1", icon: Activity, label: "GridLink™", top: "38%", left: "38%", role: "Utility Integration", details: ["Net metering setup", "Grid synchronization", "Renewable matching % tracking", "PPA alignment"], output: "Operational Renewable Flow" },
+  { id: 6, layer: "L1", icon: ShoppingBag, label: "EcoMarket™", top: "38%", left: "58%", role: "Vendor Management", details: ["O&M tracking", "SLA compliance monitoring", "Warranty tracking", "Vendor performance scorecards"], output: "Operational Stability" },
+  { id: 7, layer: "L2", icon: BarChart3, label: "VoltIQ™", top: "38%", left: "78%", role: "Real-Time Energy Dashboard", details: ["Live generation tracking", "Consumption vs production", "Renewable mix %", "Cost savings visualization"], output: "Energy Performance Dashboard" },
+  // Row 3 — Certification & Compliance (aligned to bottom illustration elements)
+  { id: 8, layer: "L2", icon: Brain, label: "WattWise AI™", top: "72%", left: "18%", role: "Optimization Engine", details: ["Load forecasting", "Solar degradation alerts", "Peak shaving recommendations", "Battery optimization"], output: "Improved Efficiency + Lower Bills" },
+  { id: 9, layer: "L3", icon: Award, label: "RECMatrix™", top: "72%", left: "38%", role: "REC Management", details: ["REC generation tracking", "Registry integration", "REC inventory dashboard", "Market value estimation"], output: "REC Revenue Opportunity" },
+  { id: 10, layer: "L3", icon: PieChart, label: "CarbonLedger™", top: "72%", left: "58%", role: "Carbon Accounting", details: ["Carbon avoided calculation", "Offset valuation", "Multi-site aggregation", "Carbon asset visibility"], output: "Carbon Asset Report" },
+  { id: 11, layer: "L3", icon: Target, label: "NetZero Navigator™", top: "72%", left: "78%", role: "Target Tracking", details: ["Renewable % progress", "Carbon reduction trajectory", "Gap-to-target visualization"], output: "Net-Zero Progress Dashboard" },
 ];
 
 const stakeholders = [
