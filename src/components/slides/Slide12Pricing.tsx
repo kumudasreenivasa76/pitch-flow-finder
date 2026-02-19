@@ -155,7 +155,7 @@ const Slide12Pricing = () => {
 
   return (
     <SlideLayout>
-      <div className="w-full h-full overflow-hidden relative" style={{ background: "#ffffff" }}>
+      <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden px-14 pt-8 pb-5">
         {/* Graph-paper grid */}
         <div className="absolute inset-0 pointer-events-none"
           style={{
@@ -163,35 +163,34 @@ const Slide12Pricing = () => {
             backgroundSize: "60px 60px", opacity: 0.5,
           }}
         />
-        {/* Top accent */}
-        <div className="absolute top-0 left-0 right-0 h-1 pointer-events-none"
-          style={{ background: "linear-gradient(90deg, #16a34a, #2563eb, #7c3aed, #db2777)" }}
-        />
 
-        <div className="relative z-10 flex flex-col h-full px-14 pt-8 pb-5">
-          {/* Header + Toggle */}
-          <div className="flex items-center justify-between mb-5 animate-fade-in">
-            <div>
-              <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">Pricing Model</span>
-              <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                Multi-Stream · High-Margin · <span className="text-primary">Asset-Light</span>
-              </h2>
-            </div>
+        <div className="relative z-10 flex flex-col items-center w-full">
+          {/* Header — centered like Slide 3 */}
+          <div className="text-center mb-4 animate-fade-in">
+            <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">Pricing Model</span>
+            <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              Multi-Stream · High-Margin · <span className="text-primary">Asset-Light</span>
+            </h2>
+            <p className="text-[15px] text-muted-foreground mt-1">
+              Diversified monetization across products and stakeholder segments
+            </p>
 
             {/* Toggle */}
-            <div className="flex items-center bg-muted/50 rounded-full p-1 border border-border/40">
-              <button
-                onClick={() => setView("product")}
-                className={`px-5 py-2 rounded-full text-[14px] font-bold transition-all duration-200 ${view === "product" ? "bg-primary text-white shadow-md" : "text-muted-foreground hover:text-foreground"}`}
-              >
-                By Product
-              </button>
-              <button
-                onClick={() => setView("stakeholder")}
-                className={`px-5 py-2 rounded-full text-[14px] font-bold transition-all duration-200 ${view === "stakeholder" ? "bg-primary text-white shadow-md" : "text-muted-foreground hover:text-foreground"}`}
-              >
-                By Stakeholder
-              </button>
+            <div className="flex items-center justify-center gap-2 mt-3">
+              <div className="flex items-center bg-muted/50 rounded-full p-1 border border-border/40">
+                <button
+                  onClick={() => setView("product")}
+                  className={`px-5 py-2 rounded-full text-[14px] font-bold transition-all duration-200 ${view === "product" ? "bg-primary text-white shadow-md" : "text-muted-foreground hover:text-foreground"}`}
+                >
+                  By Product
+                </button>
+                <button
+                  onClick={() => setView("stakeholder")}
+                  className={`px-5 py-2 rounded-full text-[14px] font-bold transition-all duration-200 ${view === "stakeholder" ? "bg-primary text-white shadow-md" : "text-muted-foreground hover:text-foreground"}`}
+                >
+                  By Stakeholder
+                </button>
+              </div>
             </div>
           </div>
 
