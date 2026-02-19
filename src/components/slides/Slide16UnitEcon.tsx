@@ -27,6 +27,46 @@ const Slide16UnitEcon = () => (
           <p className="text-[15px] text-muted-foreground mt-1">Validated unit economics across all customer segments.</p>
         </div>
 
+        {/* Today vs FY30 comparison strip */}
+        <div className="grid grid-cols-2 gap-3 mb-3 animate-fade-in" style={{ animationDelay: "0.02s", animationFillMode: "forwards", opacity: 0 }}>
+          <div className="rounded-xl border-2 border-amber-400/40 bg-amber-50/50 px-5 py-2.5 flex items-center gap-6">
+            <div>
+              <div className="text-[10px] font-bold uppercase tracking-widest text-amber-700">📍 Today (90-Day)</div>
+            </div>
+            <div className="flex gap-5 flex-1">
+              {[
+                { l: "ARPU", v: "$2,225" },
+                { l: "Margin", v: "78%" },
+                { l: "LTV:CAC", v: "4.8×" },
+                { l: "Payback", v: "~12 mo" },
+              ].map((m) => (
+                <div key={m.l} className="text-center">
+                  <div className="text-[15px] font-black text-amber-700">{m.v}</div>
+                  <div className="text-[8px] text-amber-600/70">{m.l}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-xl border-2 border-primary/30 bg-primary/5 px-5 py-2.5 flex items-center gap-6">
+            <div>
+              <div className="text-[10px] font-bold uppercase tracking-widest text-primary">🎯 FY30 Target</div>
+            </div>
+            <div className="flex gap-5 flex-1">
+              {[
+                { l: "ARPU", v: "$124K" },
+                { l: "Margin", v: "84%" },
+                { l: "LTV:CAC", v: "5.0×" },
+                { l: "Payback", v: "~20 mo" },
+              ].map((m) => (
+                <div key={m.l} className="text-center">
+                  <div className="text-[15px] font-black text-primary">{m.v}</div>
+                  <div className="text-[8px] text-primary/60">{m.l}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Main grid */}
         <div className="grid grid-cols-3 gap-4 flex-1 min-h-0">
 
@@ -91,7 +131,7 @@ const Slide16UnitEcon = () => (
         <div className="grid grid-cols-4 gap-3 mt-3 animate-fade-in" style={{ animationDelay: "0.35s", animationFillMode: "forwards", opacity: 0 }}>
           {[
             { label: "LTV / CAC", value: "> 5×", status: "✅", color: "#16a34a", bg: "rgba(22,163,74,0.08)" },
-            { label: "Payback Period", value: "< 12 mo", status: "✅", color: "#0d9488", bg: "rgba(13,148,136,0.08)" },
+            { label: "Payback Period", value: "~20 mo", status: "✅", color: "#0d9488", bg: "rgba(13,148,136,0.08)" },
             { label: "Net Revenue Retention", value: "> 120%", status: "✅", color: "#2563eb", bg: "rgba(37,99,235,0.08)" },
             { label: "ACV Trend", value: "Rising ↑", status: "📈", color: "#7c3aed", bg: "rgba(124,58,237,0.08)" },
           ].map((k) => (
@@ -116,7 +156,7 @@ const Slide16UnitEcon = () => (
               { label: "LTV", value: "$870K" },
               { label: "CAC", value: "$174K" },
               { label: "LTV:CAC", value: "5.0×" },
-              { label: "Payback", value: "<12 mo" },
+              { label: "Payback", value: "~20 mo" },
             ].map((m, i, arr) => (
               <React.Fragment key={m.label}>
                 <div className="text-center">

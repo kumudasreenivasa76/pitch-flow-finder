@@ -44,8 +44,8 @@ const slides = [
   <Slide16UnitEcon />,
   <Slide16bSegments />,
   
-  <Slide18Projections />,
   <Slide19Pipeline />,
+  <Slide18Projections />,
   <Slide20Ask />,
 ];
 
