@@ -51,7 +51,7 @@ const Slide19Pipeline = () => {
           }}
         />
 
-        <div className="relative z-10 flex flex-col w-full flex-1 min-h-0">
+        <div className="relative z-10 w-full">
           {/* Header */}
           <div className="flex items-center justify-between mb-3 animate-fade-in">
             <div>
