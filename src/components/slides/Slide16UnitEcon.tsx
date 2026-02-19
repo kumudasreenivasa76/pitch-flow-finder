@@ -1,3 +1,4 @@
+import React from "react";
 import SlideLayout from "../SlideLayout";
 
 const Slide16UnitEcon = () => (
@@ -117,21 +118,27 @@ const Slide16UnitEcon = () => (
 
       {/* Summary bar */}
       <div className="flex justify-center mt-6 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-      <div className="bg-primary/5 rounded-2xl p-4 flex justify-between items-center w-1/2 gap-4">
-        {[
-          { label: "ARPU", value: "$124,300" },
-          { label: "Gross Margin", value: "84%" },
-          { label: "LTV", value: "~$693K" },
-          { label: "CAC", value: "~$140K" },
-          { label: "LTV:CAC", value: "5x" },
-          { label: "CAC Payback", value: "~16 mo" },
-        ].map((m) => (
-          <div key={m.label} className="text-center">
-            <div className="text-2xl font-black text-primary">{m.value}</div>
-            <div className="text-sm text-muted-foreground">{m.label}</div>
-          </div>
-        ))}
-      </div>
+        <div
+          className="flex items-center gap-8 rounded-2xl px-10 py-4"
+          style={{ background: "linear-gradient(90deg, #14532d 0%, #166534 50%, #14532d 100%)", width: "55%" }}
+        >
+          {[
+            { label: "ARPU", value: "$124,300" },
+            { label: "Gross Margin", value: "84%" },
+            { label: "LTV", value: "~$693K" },
+            { label: "CAC", value: "~$140K" },
+            { label: "LTV:CAC", value: "5x" },
+            { label: "CAC Payback", value: "~16 mo" },
+          ].map((m, i, arr) => (
+            <React.Fragment key={m.label}>
+              <div className="text-center flex-1">
+                <div className="text-xl font-black text-white">{m.value}</div>
+                <div className="text-xs text-green-200">{m.label}</div>
+              </div>
+              {i < arr.length - 1 && <div className="w-px h-8 bg-white/20 shrink-0" />}
+            </React.Fragment>
+          ))}
+        </div>
       </div>
     </div>
   </SlideLayout>
