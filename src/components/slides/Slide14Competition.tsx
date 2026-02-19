@@ -188,7 +188,7 @@ const Slide14Competition = () => (
                         return (
                           <td key={c.name} className="py-1.5 px-1 text-center">
                             {c.row[fi] === "none" ? (
-                              <span className="text-muted-foreground/30 text-[10px]">—</span>
+                              <span className="text-muted-foreground/30 text-[10px]">✗</span>
                             ) : (
                               <span className={`inline-block px-2 py-0.5 rounded-full text-[8px] font-bold ${s.bg} ${s.text}`}>
                                 {s.label}
