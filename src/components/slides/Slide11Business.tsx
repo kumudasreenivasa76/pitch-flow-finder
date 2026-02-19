@@ -86,26 +86,21 @@ const streams = [
 const Slide11Business = () => (
   <SlideLayout>
     <div
-      className="w-full h-full overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, #f0fdf4 0%, #f8fafc 40%, #eff6ff 100%)",
-        backgroundImage: `
-          linear-gradient(135deg, #f0fdf4 0%, #f8fafc 40%, #eff6ff 100%),
-          linear-gradient(to right, #e2e8f0 1px, transparent 1px),
-          linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)
-        `,
-        backgroundSize: "100% 100%, 60px 60px, 60px 60px",
-      }}
+      className="w-full h-full overflow-hidden relative"
+      style={{ background: "#ffffff" }}
     >
-      {/* Grid overlay */}
+      {/* Graph-paper grid — matches reference photo */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: "linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)",
+          backgroundImage:
+            "linear-gradient(to right, #c7d2d8 1px, transparent 1px), linear-gradient(to bottom, #c7d2d8 1px, transparent 1px)",
           backgroundSize: "60px 60px",
-          opacity: 0.45,
+          opacity: 0.35,
         }}
       />
+      {/* Subtle top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-1 pointer-events-none" style={{ background: "linear-gradient(90deg, #16a34a, #2563eb, #7c3aed)" }} />
 
       <div className="relative z-10 flex flex-col h-full px-16 pt-10 pb-6">
 
