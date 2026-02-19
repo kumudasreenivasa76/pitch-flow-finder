@@ -58,19 +58,14 @@ const Slide05Platform = () => {
           }}
         />
 
-        {/* LEFT — 3D image */}
-        <div className="relative z-10 w-[420px] shrink-0 m-8 rounded-2xl overflow-hidden shadow-2xl bg-black">
+        {/* LEFT — 3D image blended into background */}
+        <div className="relative z-10 w-[460px] shrink-0 flex items-center justify-center py-6 pl-8">
           <img
             src={flowImg}
             alt="EcoGridia Three-Layer Platform"
-            className="w-full h-full object-cover opacity-90"
+            className="w-full h-auto object-contain"
+            style={{ mixBlendMode: "multiply" }}
           />
-          {/* Layer labels overlay */}
-          <div className="absolute bottom-4 left-0 right-0 flex justify-around px-4">
-            {["L1", "L2", "L3"].map((l) => (
-              <span key={l} className="text-[13px] font-black text-white/70">{l}</span>
-            ))}
-          </div>
         </div>
 
         {/* RIGHT — Content */}
