@@ -15,6 +15,7 @@ import Slide12Pricing from "@/components/slides/Slide12Pricing";
 import Slide13GTM from "@/components/slides/Slide13GTM";
 import Slide14Competition from "@/components/slides/Slide14Competition";
 import Slide15TAM from "@/components/slides/Slide15TAM";
+import Slide15bMarketAnalysis from "@/components/slides/Slide15bMarketAnalysis";
 import Slide16UnitEcon from "@/components/slides/Slide16UnitEcon";
 import Slide16bSegments from "@/components/slides/Slide16bSegments";
 import Slide17Financials from "@/components/slides/Slide17Financials";
@@ -39,6 +40,7 @@ const slides = [
   <Slide13GTM />,
   <Slide14Competition />,
   <Slide15TAM />,
+  <Slide15bMarketAnalysis />,
   <Slide16UnitEcon />,
   <Slide16bSegments />,
   <Slide17Financials />,
