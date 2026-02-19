@@ -196,7 +196,7 @@ const Slide12Pricing = () => {
 
           {/* ═══ PRODUCT VIEW ═══ */}
           {view === "product" && (
-            <div className="flex gap-5 flex-1 min-h-0 animate-fade-in">
+            <div className="flex gap-5 w-full animate-fade-in">
               {/* Left sidebar */}
               <div className="flex flex-col gap-1.5 w-[250px] shrink-0 overflow-y-auto">
                 {streams.map((s) => {
@@ -293,7 +293,7 @@ const Slide12Pricing = () => {
 
           {/* ═══ STAKEHOLDER VIEW ═══ */}
           {view === "stakeholder" && (
-            <div className="flex gap-5 flex-1 min-h-0 animate-fade-in">
+            <div className="flex gap-5 w-full animate-fade-in">
               {/* Left sidebar */}
               <div className="flex flex-col gap-1.5 w-[250px] shrink-0">
                 {stakeholders.map((s) => {
