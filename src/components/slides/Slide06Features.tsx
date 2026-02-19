@@ -119,20 +119,20 @@ const Slide06Features = () => {
         <div className="flex flex-1 min-h-0">
 
           {/* LEFT: App icon grid */}
-          <div className="w-[560px] shrink-0 border-r overflow-y-auto px-6 py-3" style={{ borderColor: "#e5e7eb", background: "#fafafa" }}>
+          <div className="w-[560px] shrink-0 border-r px-5 py-2" style={{ borderColor: "#e5e7eb", background: "#fafafa" }}>
             {categories.map((cat, ci) => (
-              <div key={ci} className="mb-2">
+              <div key={ci} className="mb-1">
                 {/* Category header */}
-                <div className="flex items-center gap-2 mb-1.5">
-                  <span className="w-5 h-5 rounded-md flex items-center justify-center text-[9px] font-black text-white shrink-0"
+                <div className="flex items-center gap-1.5 mb-1">
+                  <span className="w-4 h-4 rounded flex items-center justify-center text-[8px] font-black text-white shrink-0"
                     style={{ background: catBadgeColors[cat.id] }}>{cat.id}</span>
-                  <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: "#374151" }}>{cat.label}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color: "#374151" }}>{cat.label}</span>
                   <div className="flex-1 h-px" style={{ background: "#e5e7eb" }} />
-                  <span className="text-[10px]" style={{ color: "#9ca3af" }}>{cat.products.length} apps</span>
+                  <span className="text-[9px]" style={{ color: "#9ca3af" }}>{cat.products.length}</span>
                 </div>
 
                 {/* Product icons row */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                   {cat.products.map((p, pi) => {
                     const PIcon = p.icon;
                     const globalIdx = allProducts.findIndex(ap => ap.name === p.name);
@@ -141,26 +141,24 @@ const Slide06Features = () => {
                       <button
                         key={pi}
                         onClick={() => setSelectedProd(globalIdx)}
-                        className="flex flex-col items-center gap-1.5 transition-all duration-200 group"
-                        style={{ width: "64px" }}
+                        className="flex flex-col items-center gap-1 transition-all duration-200 group"
+                        style={{ width: "58px" }}
                       >
-                        {/* App icon */}
                         <div
-                          className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-200"
+                          className="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200"
                           style={{
                             background: isActive
                               ? `linear-gradient(135deg, ${cat.iconBg}, ${cat.iconBg}99)`
                               : cat.iconBg,
                             boxShadow: isActive
-                              ? `0 0 0 2.5px ${cat.iconColor}, 0 6px 18px ${cat.iconColor}30`
-                              : "0 2px 8px rgba(0,0,0,0.08)",
+                              ? `0 0 0 2px ${cat.iconColor}, 0 4px 12px ${cat.iconColor}30`
+                              : "0 1px 4px rgba(0,0,0,0.08)",
                             transform: isActive ? "scale(1.1)" : "scale(1)",
                           }}
                         >
-                          <PIcon className="w-5 h-5" style={{ color: cat.iconColor }} />
+                          <PIcon className="w-4 h-4" style={{ color: cat.iconColor }} />
                         </div>
-                        {/* Name label */}
-                        <span className="text-[8.5px] font-semibold text-center leading-tight w-full"
+                        <span className="text-[7.5px] font-semibold text-center leading-tight w-full"
                           style={{ color: isActive ? cat.iconColor : "#374151" }}>
                           {p.name.replace("™", "")}
                         </span>
@@ -173,7 +171,7 @@ const Slide06Features = () => {
           </div>
 
           {/* RIGHT: Product detail */}
-          <div className="flex-1 flex flex-col px-8 py-4 overflow-y-auto" key={selectedProd}>
+          <div className="flex-1 flex flex-col px-8 py-3" key={selectedProd}>
 
             {/* Product header */}
             <div className="flex items-start gap-3 mb-3">
