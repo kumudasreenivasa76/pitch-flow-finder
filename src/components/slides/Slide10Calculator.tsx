@@ -20,68 +20,84 @@ const Slide10Calculator = () => {
 
   return (
     <SlideLayout>
-      <div className="flex flex-col h-full px-20 py-16">
-        <h2 className="text-5xl font-bold text-foreground mb-2 animate-fade-in">
-          Impact <span className="text-primary">Calculator</span>
-        </h2>
-        <p className="text-2xl text-muted-foreground mb-10">See the real impact of your clean energy investment.</p>
+      <div className="relative w-full h-full flex flex-col bg-white overflow-hidden px-14 py-8">
+        {/* Grid background */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: "linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)",
+            backgroundSize: "60px 60px", opacity: 0.5,
+          }}
+        />
 
-        <div className="grid grid-cols-2 gap-12 flex-1">
-          {/* Controls */}
-          <div className="space-y-8">
-            <div className="bg-card rounded-2xl border border-border p-8">
-              <label className="text-lg font-semibold text-foreground block mb-3">Location</label>
-              <div className="text-xl text-muted-foreground bg-secondary rounded-xl px-6 py-4">{country}</div>
-            </div>
-
-            <div className="bg-card rounded-2xl border border-border p-8">
-              <label className="text-lg font-semibold text-foreground block mb-4">Asset Type</label>
-              <div className="flex gap-3">
-                {["Solar", "Wind", "Hybrid"].map((t) => (
-                  <button
-                    key={t}
-                    onClick={() => setAssetType(t)}
-                    className={`flex-1 py-4 rounded-xl text-xl font-medium transition-all ${
-                      assetType === t ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground"
-                    }`}
-                  >
-                    {t}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-card rounded-2xl border border-border p-8">
-              <label className="text-lg font-semibold text-foreground block mb-1">Land Area</label>
-              <div className="text-3xl font-bold text-primary mb-4">{landArea[0]} acres</div>
-              <Slider value={landArea} onValueChange={setLandArea} min={1} max={100} step={1} />
-            </div>
-
-            <div className="bg-card rounded-2xl border border-border p-8">
-              <label className="text-lg font-semibold text-foreground block mb-1">Duration</label>
-              <div className="text-3xl font-bold text-primary mb-4">{duration[0]} years</div>
-              <Slider value={duration} onValueChange={setDuration} min={5} max={30} step={1} />
-            </div>
+        <div className="relative z-10 flex flex-col h-full">
+          {/* Header */}
+          <div className="text-center mb-5 animate-fade-in">
+            <span className="inline-block px-5 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-[14px] font-bold tracking-widest uppercase mb-3">
+              Interactive Tool
+            </span>
+            <h2 className="text-[44px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              Impact <span className="text-primary">Calculator</span>
+            </h2>
+            <p className="text-[16px] text-muted-foreground mt-1">See the real impact of your clean energy investment.</p>
           </div>
 
-          {/* Results */}
-          <div className="grid grid-cols-2 gap-5">
-            {[
-              { label: "Total Sq Ft", value: fmtN(sqft), sub: "Usable area" },
-              { label: "kWh / Year", value: fmtN(kwhYear), sub: "Energy output" },
-              { label: "Tons CO₂ / Year", value: fmtN(co2), sub: "Carbon offset" },
-              { label: "Revenue / Year", value: fmt(revenueYear), sub: "Estimated income" },
-            ].map((r) => (
-              <div key={r.label} className="bg-card rounded-2xl border border-border p-8 flex flex-col justify-center">
-                <div className="text-base text-muted-foreground mb-1">{r.label}</div>
-                <div className="text-4xl font-bold text-primary">{r.value}</div>
-                <div className="text-lg text-muted-foreground mt-1">{r.sub}</div>
+          <div className="grid grid-cols-2 gap-6 flex-1 min-h-0">
+            {/* Controls */}
+            <div className="space-y-4">
+              <div className="bg-white/90 rounded-xl border border-border/40 p-5 shadow-sm">
+                <label className="text-[13px] font-semibold text-foreground block mb-2">Location</label>
+                <div className="text-[15px] text-muted-foreground bg-secondary rounded-lg px-4 py-3">{country}</div>
               </div>
-            ))}
-            <div className="col-span-2 bg-primary/5 rounded-2xl border-2 border-primary p-8 flex flex-col justify-center items-center">
-              <div className="text-xl text-muted-foreground mb-2">Total Project Value</div>
-              <div className="text-6xl font-bold text-primary">{fmt(totalValue)}</div>
-              <div className="text-xl text-muted-foreground mt-2">Over {duration[0]} years</div>
+
+              <div className="bg-white/90 rounded-xl border border-border/40 p-5 shadow-sm">
+                <label className="text-[13px] font-semibold text-foreground block mb-3">Asset Type</label>
+                <div className="flex gap-2">
+                  {["Solar", "Wind", "Hybrid"].map((t) => (
+                    <button
+                      key={t}
+                      onClick={() => setAssetType(t)}
+                      className={`flex-1 py-3 rounded-xl text-[14px] font-semibold transition-all ${
+                        assetType === t ? "bg-primary text-primary-foreground shadow-md" : "bg-secondary text-secondary-foreground hover:bg-muted"
+                      }`}
+                    >
+                      {t}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-white/90 rounded-xl border border-border/40 p-5 shadow-sm">
+                <label className="text-[13px] font-semibold text-foreground block mb-1">Land Area</label>
+                <div className="text-[22px] font-black text-primary mb-3">{landArea[0]} acres</div>
+                <Slider value={landArea} onValueChange={setLandArea} min={1} max={100} step={1} />
+              </div>
+
+              <div className="bg-white/90 rounded-xl border border-border/40 p-5 shadow-sm">
+                <label className="text-[13px] font-semibold text-foreground block mb-1">Duration</label>
+                <div className="text-[22px] font-black text-primary mb-3">{duration[0]} years</div>
+                <Slider value={duration} onValueChange={setDuration} min={5} max={30} step={1} />
+              </div>
+            </div>
+
+            {/* Results */}
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { label: "Total Sq Ft", value: fmtN(sqft), sub: "Usable area" },
+                { label: "kWh / Year", value: fmtN(kwhYear), sub: "Energy output" },
+                { label: "Tons CO₂ / Year", value: fmtN(co2), sub: "Carbon offset" },
+                { label: "Revenue / Year", value: fmt(revenueYear), sub: "Estimated income" },
+              ].map((r) => (
+                <div key={r.label} className="bg-white/90 rounded-xl border border-border/40 p-5 flex flex-col justify-center shadow-sm">
+                  <div className="text-[12px] text-muted-foreground mb-1">{r.label}</div>
+                  <div className="text-[28px] font-black text-primary">{r.value}</div>
+                  <div className="text-[12px] text-muted-foreground mt-0.5">{r.sub}</div>
+                </div>
+              ))}
+              <div className="col-span-2 bg-primary/5 rounded-xl border-2 border-primary p-5 flex flex-col justify-center items-center shadow-sm">
+                <div className="text-[14px] text-muted-foreground mb-1">Total Project Value</div>
+                <div className="text-[40px] font-black text-primary">{fmt(totalValue)}</div>
+                <div className="text-[14px] text-muted-foreground mt-1">Over {duration[0]} years</div>
+              </div>
             </div>
           </div>
         </div>
