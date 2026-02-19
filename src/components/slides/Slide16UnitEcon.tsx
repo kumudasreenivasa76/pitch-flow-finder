@@ -3,13 +3,13 @@ import SlideLayout from "../SlideLayout";
 
 const Slide16UnitEcon = () => (
   <SlideLayout>
-    <div className="flex flex-col h-full px-20 py-12 bg-white">
+    <div className="flex flex-col h-full px-20 py-8 bg-white">
       <h2 className="text-5xl font-bold text-foreground mb-1 animate-fade-in">
         Core Assumptions — <span className="text-primary">Year 5 Baseline</span>
       </h2>
       <p className="text-xl text-muted-foreground mb-8">Validated unit economics across all customer segments.</p>
 
-      <div className="grid grid-cols-3 gap-6 flex-1">
+      <div className="grid grid-cols-3 gap-6 mb-6">
 
         {/* Col 1: Customer Revenue + LTV */}
         <div className="flex flex-col gap-6">
@@ -50,7 +50,7 @@ const Slide16UnitEcon = () => (
         </div>
 
         {/* Col 2: LTV + CAC + Summary */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 justify-start">
           {/* LTV */}
           <div className="bg-card rounded-xl border-2 border-primary p-4 animate-fade-in" style={{ animationDelay: "0.15s" }}>
             <h3 className="text-sm font-bold text-primary mb-2 uppercase tracking-wide">Lifetime Value (LTV)</h3>
