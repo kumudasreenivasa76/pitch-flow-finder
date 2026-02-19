@@ -79,7 +79,7 @@ const Slide10Calculator = () => {
 
   return (
     <SlideLayout>
-      <div className="relative w-full h-full flex flex-col bg-white overflow-hidden">
+      <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden">
         {/* Grid background */}
         <div className="absolute inset-0 pointer-events-none"
           style={{
