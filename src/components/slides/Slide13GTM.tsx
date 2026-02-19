@@ -61,38 +61,36 @@ const statusColor: Record<string, string> = {
 
 const Slide13GTM = () => (
   <SlideLayout>
-    <div className="w-full h-full overflow-hidden relative" style={{ background: "#ffffff" }}>
-      {/* Graph-paper grid */}
+    <div className="relative w-full h-full flex flex-col bg-white overflow-hidden px-20 py-10">
+      {/* Subtle grid background — matches Slide 2 */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            "linear-gradient(to right, #c7d2d8 1px, transparent 1px), linear-gradient(to bottom, #c7d2d8 1px, transparent 1px)",
+            "linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)",
           backgroundSize: "60px 60px",
-          opacity: 0.35,
+          opacity: 0.5,
         }}
       />
-      {/* Top accent */}
-      <div className="absolute top-0 left-0 right-0 h-1 pointer-events-none"
-        style={{ background: "linear-gradient(90deg, #15803d, #0369a1, #b45309, #7c3aed)" }} />
 
-      <div className="relative z-10 flex flex-col h-full px-14 pt-10 pb-5 justify-between">
-        {/* Header */}
-        <div className="mb-5">
-          <span className="text-[16px] font-bold tracking-widest uppercase" style={{ color: "#15803d" }}>
-            GO-TO-MARKET STRATEGY
+      <div className="relative z-10 flex flex-col h-full">
+        {/* Header — matches Slide 2 style */}
+        <div className="text-center mb-6 animate-fade-in">
+          <span className="inline-block px-5 py-1.5 rounded-full border border-amber-300 bg-amber-50 text-amber-700 text-[16px] font-bold tracking-widest uppercase mb-4">
+            Go-To-Market Strategy
           </span>
-          <h2 className="text-[42px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Portfolio Delivery Roadmap
+          <h2 className="text-[52px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            Portfolio Delivery <span className="text-primary">Roadmap</span>
           </h2>
+          <p className="text-[20px] text-muted-foreground mt-2">Four phases to market dominance — 24 months to scale</p>
         </div>
 
         {/* Gantt chart area */}
-        <div className="bg-white/80 rounded-2xl border border-gray-200 p-5 mb-4">
+        <div className="bg-white rounded-2xl border-2 border-border/40 shadow-sm p-5 mb-4 animate-fade-in" style={{ animationDelay: "0.1s" }}>
           {/* Quarter headers */}
           <div className="flex mb-3 pl-[220px] gap-0">
             {quarters.map((q, i) => (
-              <div key={i} className="flex-1 text-center text-[13px] font-bold text-gray-500 uppercase tracking-wide border-l border-dashed border-gray-300 first:border-l-0 pl-2">
+              <div key={i} className="flex-1 text-center text-[13px] font-bold text-muted-foreground uppercase tracking-wide border-l border-dashed border-border first:border-l-0 pl-2">
                 {q}
               </div>
             ))}
@@ -101,29 +99,21 @@ const Slide13GTM = () => (
           {/* Phase rows */}
           <div className="flex flex-col gap-3">
             {phases.map((p, i) => (
-              <div key={i} className="flex items-center gap-0 h-[48px]">
-                {/* Label */}
-                <div className="w-[220px] shrink-0 text-[14px] font-bold text-foreground pr-4 text-right">{p.label}</div>
-                {/* Grid + arrow bar */}
+              <div key={i} className="flex items-center gap-0 h-[44px]">
+                <div className="w-[220px] shrink-0 text-[13px] font-bold text-foreground pr-4 text-right">{p.label}</div>
                 <div className="flex-1 relative h-full flex">
-                  {/* Grid columns background */}
                   {quarters.map((_, qi) => (
-                    <div key={qi} className="flex-1 h-full border-l border-dashed border-gray-200 first:border-l-0" />
+                    <div key={qi} className="flex-1 h-full border-l border-dashed border-border/50 first:border-l-0" />
                   ))}
-                  {/* Arrow bar */}
                   <div
                     className="absolute top-1/2 -translate-y-1/2 flex items-center"
-                    style={{
-                      left: `${(p.start / quarters.length) * 100}%`,
-                      width: `${(p.span / quarters.length) * 100}%`,
-                    }}
+                    style={{ left: `${(p.start / quarters.length) * 100}%`, width: `${(p.span / quarters.length) * 100}%` }}
                   >
-                    {/* Arrow shape via clip-path */}
                     <div
-                      className="w-full h-[38px] flex items-center pl-4 text-white text-[13px] font-extrabold shadow-md"
+                      className="w-full h-[36px] flex items-center pl-4 text-white text-[12px] font-extrabold shadow-md"
                       style={{
                         background: p.color,
-                        clipPath: "polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%)",
+                        clipPath: "polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%)",
                         borderRadius: "4px 0 0 4px",
                       }}
                     >
@@ -136,20 +126,18 @@ const Slide13GTM = () => (
           </div>
         </div>
 
-        {/* Status Grid */}
-        <div className="grid grid-cols-4 gap-3 flex-1">
+        {/* Status Grid — white cards with colored borders matching Slide 2 card style */}
+        <div className="grid grid-cols-4 gap-4 flex-1 animate-fade-in" style={{ animationDelay: "0.2s" }}>
           {statusGrid.map((sg, i) => (
-            <div key={i} className="flex flex-col rounded-xl overflow-hidden border-2" style={{ borderColor: sg.color }}>
-              {/* Title bar */}
-              <div className="px-4 py-2 text-white text-[13px] font-extrabold text-center" style={{ background: sg.color }}>
+            <div key={i} className="flex flex-col rounded-2xl overflow-hidden border-2 bg-white shadow-sm" style={{ borderColor: `${sg.color}60` }}>
+              <div className="px-4 py-2.5 text-white text-[13px] font-extrabold text-center" style={{ background: sg.color }}>
                 {sg.title}
               </div>
-              {/* Cells grid */}
               <div className="grid grid-cols-2 flex-1">
                 {sg.cells.map((cell, j) => (
                   <div
                     key={j}
-                    className="flex items-center justify-center text-white text-[13px] font-bold text-center p-3 border border-white/20"
+                    className="flex items-center justify-center text-white text-[13px] font-bold text-center p-3 border border-white/30"
                     style={{ background: statusColor[cell.status] }}
                   >
                     {cell.label}
@@ -160,24 +148,18 @@ const Slide13GTM = () => (
           ))}
         </div>
 
-        {/* Bottom bar */}
-        <div
-          className="mt-3 rounded-2xl flex items-center justify-around py-3 px-10"
-          style={{ background: "linear-gradient(90deg, #14532d 0%, #166534 50%, #14532d 100%)" }}
-        >
+        {/* Stats bar — matches Slide 2 pill style */}
+        <div className="flex items-center justify-center gap-5 mt-5 animate-fade-in" style={{ animationDelay: "0.35s" }}>
           {[
             { label: "Market Entry", value: "Q1 Y1" },
-            { label: "First ARR", value: "$500K" },
+            { label: "First ARR Milestone", value: "$500K" },
             { label: "Scale Target", value: "$5M+" },
             { label: "Phases", value: "4 Phases" },
             { label: "Timeline", value: "24 Months" },
-          ].map((m, i, arr) => (
-            <div key={i} className="flex items-center gap-8">
-              <div className="text-center">
-                <div className="text-[22px] font-extrabold text-white">{m.value}</div>
-                <div className="text-[12px] text-green-200">{m.label}</div>
-              </div>
-              {i < arr.length - 1 && <div className="w-px h-8 bg-white/20" />}
+          ].map((m, i) => (
+            <div key={i} className="flex items-center gap-3 px-6 py-3 rounded-full border-2 border-border/40 bg-white shadow-sm">
+              <span className="text-[24px] font-black text-primary" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{m.value}</span>
+              <span className="text-[14px] text-muted-foreground">{m.label}</span>
             </div>
           ))}
         </div>
