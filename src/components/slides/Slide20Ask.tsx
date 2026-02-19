@@ -161,8 +161,31 @@ const Slide20Ask = () => {
               </div>
             </div>
 
+            {/* Customer Acquisition Targets */}
+            <div className="mb-6 opacity-0 animate-slide-up" style={{ animationDelay: "0.55s", animationFillMode: "forwards" }}>
+              <p className="font-mono-brand text-[11px] text-muted-foreground uppercase tracking-widest mb-2">Customer Acquisition</p>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                {[
+                  { segment: "Schools / Universities", value: "Lower costs & carbon-neutral" },
+                  { segment: "Data Centers", value: "PUE optimization & 24/7 matching" },
+                  { segment: "Communities / Housing", value: "Shared solar & reduced bills" },
+                  { segment: "Government / Public", value: "Net-zero tracking & monitoring" },
+                  { segment: "Landowners", value: "Long-term lease monetization" },
+                  { segment: "Vendors (EPC/O&M)", value: "Verified pipeline & ranking" },
+                  { segment: "Investors / Climate", value: "Structured returns & visibility" },
+                ].map((c) => (
+                  <div key={c.segment} className="flex items-start gap-2 py-1 border-b border-border/30 last:border-0">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                    <div>
+                      <div className="text-[11px] font-semibold text-foreground leading-tight">{c.segment}</div>
+                      <div className="text-[9px] text-muted-foreground leading-tight">{c.value}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
             {/* Contact row */}
-            <div className="flex items-center gap-5 opacity-0 animate-fade-in" style={{ animationDelay: "0.65s", animationFillMode: "forwards" }}>
+            <div className="flex items-center gap-5 opacity-0 animate-fade-in" style={{ animationDelay: "0.7s", animationFillMode: "forwards" }}>
               <button className="group flex items-center gap-2.5 px-8 py-4 bg-primary text-primary-foreground rounded-xl font-display text-[15px] font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 hover:scale-[1.03] active:scale-[0.98]">
                 Let's Talk
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
