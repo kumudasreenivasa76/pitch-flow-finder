@@ -256,7 +256,8 @@ const Slide01Title = () => {
                 <img
                   src={hero3d}
                   alt="3D isometric clean energy infrastructure"
-                  className="w-full max-w-[580px] h-auto rounded-2xl shadow-2xl shadow-primary/10"
+                  className="w-full max-w-[580px] h-auto"
+                  style={{ mixBlendMode: "multiply" }}
                 />
               </div>
               <div
