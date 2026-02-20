@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import SlideLayout from "../SlideLayout";
 import { Zap, Globe, Leaf, ArrowRight, BarChart3, Shield, Users, TrendingUp } from "lucide-react";
-import hero3d from "@/assets/hero-3d.jpg";
+import hero3d from "@/assets/hero-3d-v2.jpg";
 
 /* ── Interactive particle background ── */
 const ParticleBackground = () => {
