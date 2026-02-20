@@ -273,7 +273,7 @@ const Slide16bSegments = () => {
           {/* RIGHT: summary table */}
           <div className="w-[400px] flex-shrink-0 flex flex-col">
             <div className="text-sm font-bold text-foreground mb-2">All Segments — Comparison</div>
-            <div className="flex-1 bg-card rounded-2xl border border-border overflow-hidden">
+            <div className="bg-card rounded-2xl border border-border overflow-hidden">
               <table className="w-full text-xs">
                 <thead>
                   <tr className="bg-muted/60 border-b border-border">
