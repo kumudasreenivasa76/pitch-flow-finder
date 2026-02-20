@@ -69,13 +69,13 @@ const Slide16UnitEcon = () => (
 
           {/* Col 1 */}
           <div className="flex flex-col gap-3">
-            <CompactTable className="flex-1" title="Key Metrics" color="#16a34a" delay="0.05s" rows={[
+            <CompactTable title="Key Metrics" color="#16a34a" delay="0.05s" rows={[
               { label: "Total Revenue", value: "$169.7M" },
               { label: "Total Customers", value: "1,365" },
               { label: "Gross Margin", value: "84%" },
               { label: "Annual Churn", value: "12%" },
             ]} />
-            <CompactTable className="flex-1" title="Customer Revenue" color="#0d9488" delay="0.1s" rows={[
+            <CompactTable title="Customer Revenue" color="#0d9488" delay="0.1s" rows={[
               { label: "Blended ARPU", value: "$124,300" },
               { label: "Gross Profit / Customer", value: "$104,412" },
               { label: "Avg Customer Lifetime", value: "8.3 years" },
@@ -84,13 +84,13 @@ const Slide16UnitEcon = () => (
 
           {/* Col 2: LTV + CAC */}
           <div className="flex flex-col gap-3">
-            <ValueCard className="flex-1" label="Lifetime Value (LTV)" value="$870K" sub="Per enterprise customer" color="#16a34a" borderColor="#16a34a" delay="0.15s"
+            <ValueCard label="Lifetime Value (LTV)" value="$870K" sub="Per enterprise customer" color="#16a34a" borderColor="#16a34a" delay="0.15s"
               details={[
                 { l: "Formula", r: "GP ÷ Churn Rate" },
                 { l: "$104,412 ÷ 0.12", r: "= $870,100" },
               ]}
             />
-            <ValueCard className="flex-1" label="Customer Acquisition Cost" value="$174K" sub="Target LTV:CAC = 5x" color="#059669" borderColor="#059669" delay="0.2s"
+            <ValueCard label="Customer Acquisition Cost" value="$174K" sub="Target LTV:CAC = 5x" color="#059669" borderColor="#059669" delay="0.2s"
               details={[
                 { l: "LTV:CAC Target", r: "5x" },
                 { l: "$870K ÷ 5", r: "= $174,000" },
@@ -107,7 +107,7 @@ const Slide16UnitEcon = () => (
 
           {/* Col 3 */}
           <div className="flex flex-col gap-3">
-            <CompactTable className="flex-1" title="Data Center Segment (FY30)" color="#0d9488" delay="0.25s" rows={[
+            <CompactTable title="Data Center Segment (FY30)" color="#0d9488" delay="0.25s" rows={[
               { label: "Revenue", value: "$56.9M" },
               { label: "Customers", value: "675" },
               { label: "ARPU", value: "$84,300" },
@@ -115,7 +115,7 @@ const Slide16UnitEcon = () => (
               { label: "Implied LTV", value: "$590K" },
               { label: "Est. DC CAC (5x)", value: "$118K" },
             ]} />
-            <CompactTable className="flex-1" title="Company Efficiency" color="#16a34a" delay="0.3s" rows={[
+            <CompactTable title="Company Efficiency" color="#16a34a" delay="0.3s" rows={[
               { label: "Revenue / FTE", value: "$707K" },
               { label: "EBITDA Margin", value: "69.1%" },
               { label: "Net Margin", value: "51.7%" },
