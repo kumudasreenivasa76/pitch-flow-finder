@@ -35,19 +35,19 @@ const Slide11Business = () => (
           className="w-full rounded-2xl border-2 border-blue-500/30 bg-gradient-to-r from-blue-50/80 to-indigo-50/60 p-5 mb-4 animate-fade-in relative overflow-hidden"
           style={{ animationDelay: "0.1s", animationFillMode: "forwards", opacity: 0 }}
         >
-          <div className="absolute top-3 right-4 flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest">
-            <Star className="w-3 h-3" /> Primary Revenue Engine
-          </div>
           <div className="flex items-start gap-5">
             <div className="w-14 h-14 rounded-2xl bg-blue-600/10 border-2 border-blue-600/25 flex items-center justify-center shrink-0">
               <Brain className="w-7 h-7 text-blue-600" />
             </div>
             <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-3 mb-1">
+              <div className="flex items-center gap-3 mb-1 flex-wrap">
                 <h3 className="text-[24px] font-black text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                   VoltIQ™ — Energy Intelligence OS
                 </h3>
                 <span className="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-700 text-[11px] font-bold">SaaS + Savings Share</span>
+                <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest">
+                  <Star className="w-3 h-3" /> Primary Revenue Engine
+                </span>
               </div>
               <p className="text-[13px] text-muted-foreground mb-3">Primary recurring revenue layer — the core SaaS platform driving valuation</p>
               <div className="grid grid-cols-4 gap-3">
