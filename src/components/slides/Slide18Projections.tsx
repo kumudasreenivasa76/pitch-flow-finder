@@ -73,7 +73,7 @@ const Slide18Projections = () => {
 
   return (
     <SlideLayout>
-      <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden px-14 py-3">
+      <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden px-14 pt-8 pb-5">
         {/* Grid background */}
         <div className="absolute inset-0 pointer-events-none"
           style={{
@@ -84,18 +84,18 @@ const Slide18Projections = () => {
 
         <div className="relative z-10 w-full">
           {/* Header */}
-          <div className="text-center mb-1 animate-fade-in">
-            <span className="inline-block px-3 py-0.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-[11px] font-bold tracking-widest uppercase mb-0.5">
+          <div className="text-center mb-3 animate-fade-in">
+            <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
               Growth Projections
             </span>
-            <h2 className="text-[32px] font-extrabold text-foreground leading-none" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               EcoGridia — <span className="text-primary">Operating Dashboard</span>
             </h2>
-            <p className="text-[11px] text-muted-foreground mt-0">10-Year Growth Model · FY26–FY35 · <span className="text-primary font-semibold">Click any year for details</span></p>
+            <p className="text-[15px] text-muted-foreground mt-1">10-Year Growth Model · FY26–FY35 · <span className="text-primary font-semibold">Click any year for details</span></p>
           </div>
 
           {/* KPI strip */}
-          <div className="flex justify-center gap-1.5 mb-1 animate-fade-in" style={{ animationDelay: "0.02s" }}>
+          <div className="flex justify-center gap-2 mb-3 animate-fade-in" style={{ animationDelay: "0.02s" }}>
             {[
               { l: "FY35 Revenue", v: "$1.46B" },
               { l: "FY35 Customers", v: "6,915" },
@@ -103,19 +103,19 @@ const Slide18Projections = () => {
               { l: "10Y CAGR", v: "~95%" },
               { l: "Net Margin FY35", v: "60%" },
             ].map((k) => (
-              <div key={k.l} className="bg-card border border-border rounded px-2 py-0.5 text-center">
-                <div className="text-[12px] font-bold text-primary leading-tight">{k.v}</div>
-                <div className="text-[7px] text-muted-foreground font-medium">{k.l}</div>
+              <div key={k.l} className="bg-card border border-border rounded px-3 py-1 text-center">
+                <div className="text-[14px] font-bold text-primary leading-tight">{k.v}</div>
+                <div className="text-[9px] text-muted-foreground font-medium">{k.l}</div>
               </div>
             ))}
           </div>
 
           {/* Main grid: Charts left, Tables right */}
-          <div className="grid grid-cols-12 gap-1.5">
+          <div className="grid grid-cols-12 gap-2">
 
             {/* LEFT: Charts */}
-            <div className="col-span-5 flex flex-col gap-1.5">
-              <div className="bg-card border border-border rounded-lg p-1.5 animate-fade-in" style={{ animationDelay: "0.05s" }}>
+            <div className="col-span-5 flex flex-col gap-2">
+              <div className="bg-card border border-border rounded-lg p-2 animate-fade-in" style={{ animationDelay: "0.05s" }}>
                 <MiniLabel>💰 Revenue & Profit ($M)</MiniLabel>
                 <div className="h-[155px]">
                   <ResponsiveContainer width="100%" height="100%">
@@ -137,7 +137,7 @@ const Slide18Projections = () => {
                   </ResponsiveContainer>
                 </div>
               </div>
-              <div className="bg-card border border-border rounded-lg p-1.5 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <div className="bg-card border border-border rounded-lg p-2 animate-fade-in" style={{ animationDelay: "0.1s" }}>
                 <MiniLabel>🟢 Gross Margin Trajectory</MiniLabel>
                 <div className="h-[110px]">
                   <ResponsiveContainer width="100%" height="100%">
@@ -160,10 +160,10 @@ const Slide18Projections = () => {
             </div>
 
             {/* RIGHT: Tables */}
-            <div className="col-span-7 flex flex-col gap-1.5">
+            <div className="col-span-7 flex flex-col gap-2">
 
               {/* Customer Acquisition & Financials table */}
-              <div className="bg-card border border-border rounded-lg p-1.5 animate-fade-in" style={{ animationDelay: "0.15s" }}>
+              <div className="bg-card border border-border rounded-lg p-2 animate-fade-in" style={{ animationDelay: "0.15s" }}>
                 <MiniLabel>📊 Customer Acquisition & Financials</MiniLabel>
                 <table className="w-full text-[10px]">
                   <thead>
@@ -251,9 +251,9 @@ const Slide18Projections = () => {
                   </div>
                 </div>
               ) : (
-                <div className="grid grid-cols-2 gap-1.5">
+                <div className="grid grid-cols-2 gap-2">
                   {/* Key Assumptions */}
-                  <div className="bg-amber-50/50 border-2 border-amber-400/30 rounded-lg p-1.5 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+                  <div className="bg-amber-50/50 border-2 border-amber-400/30 rounded-lg p-2 animate-fade-in" style={{ animationDelay: "0.2s" }}>
                     <MiniLabel>📋 Key Assumptions</MiniLabel>
                     <div className="space-y-1">
                       {[
@@ -275,7 +275,7 @@ const Slide18Projections = () => {
                     </div>
                   </div>
                   {/* Near-Term Focus */}
-                  <div className="bg-card border border-border rounded-lg p-1.5 animate-fade-in" style={{ animationDelay: "0.25s" }}>
+                  <div className="bg-card border border-border rounded-lg p-2 animate-fade-in" style={{ animationDelay: "0.25s" }}>
                     <MiniLabel>🎯 Near-Term Focus: FY26–FY28</MiniLabel>
                     <div className="space-y-1">
                       {[
@@ -298,8 +298,8 @@ const Slide18Projections = () => {
           </div>
 
           {/* Bottom summary strip */}
-          <div className="flex justify-center mt-1 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <div className="inline-flex items-center gap-4 rounded-xl px-5 py-1"
+          <div className="flex justify-center mt-3 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="inline-flex items-center gap-4 rounded-xl px-6 py-2"
               style={{ background: "linear-gradient(90deg, #14532d 0%, #166534 50%, #14532d 100%)" }}>
               {[
                 { l: "FY26→FY35", v: "$3.3M → $1.46B" },
