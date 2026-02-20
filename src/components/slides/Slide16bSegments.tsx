@@ -230,9 +230,9 @@ const Slide16bSegments = () => {
             </div>
 
             {/* Metrics in small rectangular cards - pairs */}
-            <div className="grid grid-cols-2 gap-2 flex-1">
+            <div className="grid grid-cols-2 gap-1.5">
               {seg.metrics.map((m) => (
-                <div key={m.label} className={`rounded-xl border ${seg.borderColor}/30 bg-white px-4 py-3 flex items-center justify-between`}>
+                <div key={m.label} className={`rounded-lg border ${seg.borderColor}/30 bg-white px-3 py-1.5 flex items-center justify-between`}>
                   <span className="text-[11px] text-muted-foreground font-medium">{m.label}</span>
                   <span className={`text-[15px] font-black ${seg.color}`}>{m.value}</span>
                 </div>
