@@ -175,14 +175,14 @@ const CompactTable = ({ title, color, delay, rows, className = "" }: {
   title: string; color: string; delay: string;
   rows: { label: string; value: string }[]; className?: string;
 }) => (
-  <div className={`bg-white/90 rounded-xl border border-border/60 shadow-sm animate-fade-in flex flex-col ${className}`}
+  <div className={`bg-white/90 rounded-xl border border-border/60 shadow-sm animate-fade-in ${className}`}
     style={{ animationDelay: delay, animationFillMode: "forwards", opacity: 0 }}>
-    <div className="px-4 py-2 border-b border-border/40">
+    <div className="px-4 py-1.5 border-b border-border/40">
       <h3 className="text-[12px] font-bold uppercase tracking-widest" style={{ color }}>{title}</h3>
     </div>
-    <div className="px-4 py-2 flex-1 flex flex-col justify-evenly">
+    <div className="px-4 py-1.5">
       {rows.map((r) => (
-        <div key={r.label} className="flex justify-between items-center py-1.5 border-b border-border/30 last:border-0">
+        <div key={r.label} className="flex justify-between items-center py-1 border-b border-border/30 last:border-0">
           <span className="text-[13px] text-muted-foreground">{r.label}</span>
           <span className="text-[13px] font-bold text-foreground">{r.value}</span>
         </div>
@@ -196,9 +196,9 @@ const ValueCard = ({ label, value, sub, color, borderColor, delay, details, clas
   label: string; value: string; sub: string; color: string; borderColor: string; delay: string;
   details: { l: string; r: string }[]; className?: string;
 }) => (
-  <div className={`bg-white/90 rounded-xl border-2 shadow-sm animate-fade-in flex flex-col ${className}`}
+  <div className={`bg-white/90 rounded-xl border-2 shadow-sm animate-fade-in ${className}`}
     style={{ borderColor, animationDelay: delay, animationFillMode: "forwards", opacity: 0 }}>
-    <div className="px-4 py-3 flex-1 flex flex-col justify-center">
+    <div className="px-4 py-2">
       <div className="text-[11px] font-bold uppercase tracking-widest mb-1" style={{ color }}>{label}</div>
       <div className="text-[28px] font-black leading-none" style={{ color }}>{value}</div>
       <div className="text-[11px] text-muted-foreground mt-0.5">{sub}</div>
