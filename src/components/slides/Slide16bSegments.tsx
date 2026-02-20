@@ -159,7 +159,7 @@ const Slide16bSegments = () => {
 
   return (
     <SlideLayout>
-      <div className="relative flex flex-col items-center justify-center h-full px-14 pt-8 pb-5 bg-white">
+      <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden px-14 pt-8 pb-5">
         {/* Grid background */}
         <div className="absolute inset-0 pointer-events-none"
           style={{
@@ -168,17 +168,16 @@ const Slide16bSegments = () => {
           }}
         />
 
+        <div className="relative z-10 w-full">
         {/* Header */}
-        <div className="flex items-center justify-between mb-4">
-          <div>
-            <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">Segment Economics</span>
-            <h2 className="text-[40px] font-extrabold text-foreground leading-tight tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              Unit Economics by <span className="text-primary">Stakeholder Segment</span>
-            </h2>
-            <p className="text-[15px] text-muted-foreground mt-0.5">FY30 Baseline — 5x LTV:CAC Target Across All Segments</p>
-          </div>
+        <div className="text-center mb-4 animate-fade-in">
+          <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">Segment Economics</span>
+          <h2 className="text-[40px] font-extrabold text-foreground leading-tight tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            Unit Economics by <span className="text-primary">Stakeholder Segment</span>
+          </h2>
+          <p className="text-[15px] text-muted-foreground mt-1">FY30 Baseline — 5x LTV:CAC Target Across All Segments</p>
           {/* KPI chips */}
-          <div className="flex gap-3">
+          <div className="flex justify-center gap-3 mt-3">
             {[
               { label: "Blended LTV:CAC", value: "5x" },
               { label: "Top LTV", value: "$371K" },
@@ -193,7 +192,7 @@ const Slide16bSegments = () => {
         </div>
 
         {/* Body: 3-column dashboard */}
-        <div className="flex gap-5 flex-1 min-h-0">
+        <div className="flex gap-5">
 
           {/* LEFT: segment tabs (vertical) */}
           <div className="flex flex-col gap-2 w-[180px] flex-shrink-0">
@@ -334,6 +333,7 @@ const Slide16bSegments = () => {
             </div>
           </div>
 
+        </div>
         </div>
       </div>
     </SlideLayout>
