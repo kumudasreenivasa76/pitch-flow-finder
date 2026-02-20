@@ -73,7 +73,7 @@ const Slide18Projections = () => {
 
   return (
     <SlideLayout>
-      <div className="relative w-full h-full flex flex-col bg-white overflow-hidden px-14 pt-4 pb-3">
+      <div className="relative w-full h-full flex flex-col items-center justify-center bg-white overflow-hidden px-14 py-3">
         {/* Grid background */}
         <div className="absolute inset-0 pointer-events-none"
           style={{
@@ -82,7 +82,7 @@ const Slide18Projections = () => {
           }}
         />
 
-        <div className="relative z-10 w-full flex-1 flex flex-col">
+        <div className="relative z-10 w-full">
           {/* Header */}
           <div className="text-center mb-1 animate-fade-in">
             <span className="inline-block px-3 py-0.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-[11px] font-bold tracking-widest uppercase mb-0.5">
@@ -95,7 +95,7 @@ const Slide18Projections = () => {
           </div>
 
           {/* KPI strip */}
-          <div className="flex justify-center gap-1.5 mb-1.5 animate-fade-in" style={{ animationDelay: "0.02s" }}>
+          <div className="flex justify-center gap-1.5 mb-1 animate-fade-in" style={{ animationDelay: "0.02s" }}>
             {[
               { l: "FY35 Revenue", v: "$1.46B" },
               { l: "FY35 Customers", v: "6,915" },
@@ -104,20 +104,20 @@ const Slide18Projections = () => {
               { l: "Net Margin FY35", v: "60%" },
             ].map((k) => (
               <div key={k.l} className="bg-card border border-border rounded px-2 py-0.5 text-center">
-                <div className="text-[13px] font-bold text-primary leading-tight">{k.v}</div>
+                <div className="text-[12px] font-bold text-primary leading-tight">{k.v}</div>
                 <div className="text-[7px] text-muted-foreground font-medium">{k.l}</div>
               </div>
             ))}
           </div>
 
           {/* Main grid: Charts left, Tables right */}
-          <div className="grid grid-cols-12 gap-1.5 flex-1">
+          <div className="grid grid-cols-12 gap-1.5">
 
             {/* LEFT: Charts */}
             <div className="col-span-5 flex flex-col gap-1.5">
-              <div className="bg-card border border-border rounded-lg p-2 animate-fade-in" style={{ animationDelay: "0.05s" }}>
+              <div className="bg-card border border-border rounded-lg p-1.5 animate-fade-in" style={{ animationDelay: "0.05s" }}>
                 <MiniLabel>💰 Revenue & Profit ($M)</MiniLabel>
-                <div className="h-[180px]">
+                <div className="h-[155px]">
                   <ResponsiveContainer width="100%" height="100%">
                     <ComposedChart data={revenueData}>
                       <defs>
@@ -137,9 +137,9 @@ const Slide18Projections = () => {
                   </ResponsiveContainer>
                 </div>
               </div>
-              <div className="bg-card border border-border rounded-lg p-2 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <div className="bg-card border border-border rounded-lg p-1.5 animate-fade-in" style={{ animationDelay: "0.1s" }}>
                 <MiniLabel>🟢 Gross Margin Trajectory</MiniLabel>
-                <div className="h-[140px]">
+                <div className="h-[110px]">
                   <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={marginData}>
                       <defs>
@@ -163,7 +163,7 @@ const Slide18Projections = () => {
             <div className="col-span-7 flex flex-col gap-1.5">
 
               {/* Customer Acquisition & Financials table */}
-              <div className="bg-card border border-border rounded-lg p-2 animate-fade-in" style={{ animationDelay: "0.15s" }}>
+              <div className="bg-card border border-border rounded-lg p-1.5 animate-fade-in" style={{ animationDelay: "0.15s" }}>
                 <MiniLabel>📊 Customer Acquisition & Financials</MiniLabel>
                 <table className="w-full text-[10px]">
                   <thead>
@@ -253,7 +253,7 @@ const Slide18Projections = () => {
               ) : (
                 <div className="grid grid-cols-2 gap-1.5">
                   {/* Key Assumptions */}
-                  <div className="bg-amber-50/50 border-2 border-amber-400/30 rounded-lg p-2 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+                  <div className="bg-amber-50/50 border-2 border-amber-400/30 rounded-lg p-1.5 animate-fade-in" style={{ animationDelay: "0.2s" }}>
                     <MiniLabel>📋 Key Assumptions</MiniLabel>
                     <div className="space-y-1">
                       {[
@@ -275,7 +275,7 @@ const Slide18Projections = () => {
                     </div>
                   </div>
                   {/* Near-Term Focus */}
-                  <div className="bg-card border border-border rounded-lg p-2 animate-fade-in" style={{ animationDelay: "0.25s" }}>
+                  <div className="bg-card border border-border rounded-lg p-1.5 animate-fade-in" style={{ animationDelay: "0.25s" }}>
                     <MiniLabel>🎯 Near-Term Focus: FY26–FY28</MiniLabel>
                     <div className="space-y-1">
                       {[
@@ -298,8 +298,8 @@ const Slide18Projections = () => {
           </div>
 
           {/* Bottom summary strip */}
-          <div className="flex justify-center mt-1.5 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <div className="inline-flex items-center gap-4 rounded-xl px-6 py-1.5"
+          <div className="flex justify-center mt-1 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="inline-flex items-center gap-4 rounded-xl px-5 py-1"
               style={{ background: "linear-gradient(90deg, #14532d 0%, #166534 50%, #14532d 100%)" }}>
               {[
                 { l: "FY26→FY35", v: "$3.3M → $1.46B" },
