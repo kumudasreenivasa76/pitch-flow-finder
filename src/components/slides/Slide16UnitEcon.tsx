@@ -26,7 +26,7 @@ const Slide16UnitEcon = () => (
 
         {/* Today vs FY30 comparison strip */}
         <div className="grid grid-cols-2 gap-3 mb-3 animate-fade-in" style={{ animationDelay: "0.02s", animationFillMode: "forwards", opacity: 0 }}>
-          <div className="rounded-xl border-2 border-amber-400/40 bg-amber-50/50 px-5 py-2.5 flex items-center gap-6">
+          <div className="rounded-xl border-2 border-amber-400/40 bg-amber-50/50 px-4 py-2 flex items-center gap-5">
             <div>
               <div className="text-[10px] font-bold uppercase tracking-widest text-amber-700">📍 Today (90-Day)</div>
             </div>
@@ -44,7 +44,7 @@ const Slide16UnitEcon = () => (
               ))}
             </div>
           </div>
-          <div className="rounded-xl border-2 border-primary/30 bg-primary/5 px-5 py-2.5 flex items-center gap-6">
+          <div className="rounded-xl border-2 border-primary/30 bg-primary/5 px-4 py-2 flex items-center gap-5">
             <div>
               <div className="text-[10px] font-bold uppercase tracking-widest text-primary">🎯 FY30 Target</div>
             </div>
@@ -96,7 +96,7 @@ const Slide16UnitEcon = () => (
                 { l: "$870K ÷ 5", r: "= $174,000" },
               ]}
             />
-            <div className="rounded-xl border border-primary/20 bg-primary/5 px-4 py-2.5 text-center animate-fade-in flex items-center justify-center"
+            <div className="rounded-xl border border-primary/20 bg-primary/5 px-4 py-2 text-center animate-fade-in"
               style={{ animationDelay: "0.25s", animationFillMode: "forwards", opacity: 0 }}>
               <div>
                 <div className="text-[11px] text-muted-foreground font-semibold uppercase tracking-widest">CAC Payback</div>
@@ -132,12 +132,12 @@ const Slide16UnitEcon = () => (
             { label: "Net Revenue Retention", value: "> 120%", status: "✅", color: "#2563eb", bg: "rgba(37,99,235,0.08)" },
             { label: "ACV Trend", value: "Rising ↑", status: "📈", color: "#7c3aed", bg: "rgba(124,58,237,0.08)" },
           ].map((k) => (
-            <div key={k.label} className="rounded-xl border-2 px-4 py-2.5 flex items-center gap-3"
+            <div key={k.label} className="rounded-xl border-2 px-3 py-1.5 flex items-center gap-2"
               style={{ borderColor: k.color, background: k.bg }}>
-              <span className="text-xl">{k.status}</span>
-              <div className="flex-1 min-w-0">
-                <div className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground">{k.label}</div>
-                <div className="text-[20px] font-black leading-tight" style={{ color: k.color }}>{k.value}</div>
+              <span className="text-lg">{k.status}</span>
+              <div className="min-w-0">
+                <div className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">{k.label}</div>
+                <div className="text-[17px] font-black leading-tight" style={{ color: k.color }}>{k.value}</div>
               </div>
             </div>
           ))}
