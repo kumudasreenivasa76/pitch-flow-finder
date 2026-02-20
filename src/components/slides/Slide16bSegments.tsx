@@ -159,7 +159,7 @@ const Slide16bSegments = () => {
 
   return (
     <SlideLayout>
-      <div className="relative flex flex-col h-full px-14 pt-8 pb-5 bg-white">
+      <div className="relative flex flex-col items-center justify-center h-full px-14 pt-8 pb-5 bg-white">
         {/* Grid background */}
         <div className="absolute inset-0 pointer-events-none"
           style={{
