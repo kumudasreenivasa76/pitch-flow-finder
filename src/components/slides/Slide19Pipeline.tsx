@@ -52,34 +52,32 @@ const Slide19Pipeline = () => {
         />
 
         <div className="relative z-10 w-full">
-          {/* Header */}
-          <div className="flex items-center justify-between mb-3 animate-fade-in">
-            <div>
-              <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">Early Traction</span>
-              <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                EcoGridia — <span className="text-primary">First 90 Days Traction</span>
-              </h2>
-              <p className="text-[12px] text-muted-foreground">Post-launch run-rate · Proving product-market signal</p>
-            </div>
-            <div className="flex gap-2">
+          {/* Header - centered like Slide 3 */}
+          <div className="text-center mb-4 animate-fade-in">
+            <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">Early Traction</span>
+            <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              EcoGridia — <span className="text-primary">First 90 Days Traction</span>
+            </h2>
+            <p className="text-[15px] text-muted-foreground mt-1">Post-launch run-rate · Proving product-market signal</p>
+            <div className="flex justify-center gap-3 mt-3">
               {[
                 { l: "Customers", v: "54" },
                 { l: "ARR Run-Rate", v: "$120.2K" },
                 { l: "Cash Collected", v: "~$30K" },
               ].map((k) => (
-                <div key={k.l} className="bg-card border border-border rounded-lg px-3 py-1.5 text-center">
+                <div key={k.l} className="bg-card border border-border rounded-lg px-4 py-1.5 text-center">
                   <div className="text-[18px] font-bold text-primary leading-tight">{k.v}</div>
-                  <div className="text-[8px] text-muted-foreground font-medium">{k.l}</div>
+                  <div className="text-[9px] text-muted-foreground font-medium">{k.l}</div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Main grid */}
-          <div className="grid grid-cols-12 gap-3 flex-1 min-h-0">
+          <div className="grid grid-cols-12 gap-3">
 
             {/* LEFT: Customer table + Pie */}
-            <div className="col-span-7 flex flex-col gap-3 min-h-0">
+            <div className="col-span-7 flex flex-col gap-3">
               {/* Customer Acquisition Table */}
               <div className="bg-card border border-border rounded-xl p-3 animate-fade-in" style={{ animationDelay: "0.05s" }}>
                 <MiniLabel>🎯 Customer Acquisition — First 90 Days</MiniLabel>
@@ -115,12 +113,12 @@ const Slide19Pipeline = () => {
               </div>
 
               {/* ARR Pie Chart */}
-              <div className="bg-card border border-border rounded-xl p-3 flex-1 min-h-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <div className="bg-card border border-border rounded-xl p-3 animate-fade-in" style={{ animationDelay: "0.1s" }}>
                 <MiniLabel>📊 ARR Contribution by Segment</MiniLabel>
-                <div className="h-[180px]">
+                <div className="h-[160px]">
                   <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
-                      <Pie data={pieData} cx="50%" cy="50%" outerRadius={80} innerRadius={40} dataKey="value" paddingAngle={2}
+                      <Pie data={pieData} cx="50%" cy="50%" outerRadius={70} innerRadius={35} dataKey="value" paddingAngle={2}
                         label={({ name, value }) => `${name.split(" ")[0]} $${(value/1000).toFixed(1)}K`}
                         labelLine={true}
                       >
@@ -136,7 +134,7 @@ const Slide19Pipeline = () => {
             </div>
 
             {/* RIGHT: Unit Econ + Cash/Burn */}
-            <div className="col-span-5 flex flex-col gap-3 min-h-0">
+            <div className="col-span-5 flex flex-col gap-3">
 
               {/* Unit Economics */}
               <div className="bg-card border border-border rounded-xl p-3 animate-fade-in" style={{ animationDelay: "0.15s" }}>
@@ -184,7 +182,7 @@ const Slide19Pipeline = () => {
 
               {/* Burn Snapshot (clickable) */}
               <div
-                className={`rounded-xl p-3 cursor-pointer transition-all animate-fade-in flex-1 ${showDetail === "burn" ? "bg-primary/10 border-2 border-primary/40" : "bg-card border border-border hover:border-primary/30"}`}
+                className={`rounded-xl p-3 cursor-pointer transition-all animate-fade-in ${showDetail === "burn" ? "bg-primary/10 border-2 border-primary/40" : "bg-card border border-border hover:border-primary/30"}`}
                 style={{ animationDelay: "0.25s" }}
                 onClick={() => setShowDetail(showDetail === "burn" ? null : "burn")}
               >
@@ -224,23 +222,23 @@ const Slide19Pipeline = () => {
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Bottom bar */}
-        <div className="h-[40px] bg-[#14532d] flex items-center justify-center gap-8 px-10 shrink-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-          {[
-            { l: "90-Day Customers", v: "54" },
-            { l: "ARR Run-Rate", v: "$120.2K" },
-            { l: "Cash Collected", v: "~$30K" },
-            { l: "Monthly Burn", v: "$58K" },
-            { l: "Net Burn", v: "~$48K" },
-            { l: "Gross Margin", v: "~78%" },
-          ].map((m) => (
-            <div key={m.l} className="flex items-center gap-1.5">
-              <span className="text-emerald-300/70 text-[10px] font-medium">{m.l}</span>
-              <span className="text-white text-[12px] font-bold">{m.v}</span>
-            </div>
-          ))}
+          {/* Bottom metrics row - styled like Slide 3 transformation pills */}
+          <div className="flex items-center justify-center gap-3 mt-4 flex-wrap animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            {[
+              { l: "90-Day Customers", v: "54" },
+              { l: "ARR Run-Rate", v: "$120.2K" },
+              { l: "Cash Collected", v: "~$30K" },
+              { l: "Monthly Burn", v: "$58K" },
+              { l: "Net Burn", v: "~$48K" },
+              { l: "Gross Margin", v: "~78%" },
+            ].map((m) => (
+              <div key={m.l} className="flex items-center gap-2 px-4 py-2 rounded-full border border-border/40 bg-white shadow-sm">
+                <span className="text-[14px] font-black text-primary" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{m.v}</span>
+                <span className="text-[10px] text-muted-foreground font-medium">{m.l}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </SlideLayout>
