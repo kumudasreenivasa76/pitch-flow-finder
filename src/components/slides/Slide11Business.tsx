@@ -23,10 +23,10 @@ const Slide11Business = () => (
             Revenue Streams
           </span>
           <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            High-Margin, Recurring, <span className="text-primary">Global</span>
+            High-Margin, Recurring, <span className="text-primary">UAE & Saudi</span>
           </h2>
           <p className="text-[15px] text-muted-foreground mt-1">
-            SaaS-first platform monetizing clean energy across intelligence, markets & capital — zero hardware.
+            SaaS-first platform monetizing clean energy across GCC intelligence, markets & carbon — zero hardware.
           </p>
         </div>
 
@@ -53,17 +53,17 @@ const Slide11Business = () => (
               <div className="grid grid-cols-4 gap-3">
                 <div className="rounded-xl bg-white border border-blue-200/60 p-3 text-center">
                   <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">Starter</div>
-                  <div className="text-[18px] font-black text-blue-600">$11K–$17K</div>
+                  <div className="text-[18px] font-black text-blue-600">$8K–$14K</div>
                   <div className="text-[10px] text-muted-foreground">ARR per customer</div>
                 </div>
                 <div className="rounded-xl bg-white border border-blue-200/60 p-3 text-center">
                   <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">Professional</div>
-                  <div className="text-[18px] font-black text-blue-600">$35K–$58K</div>
+                  <div className="text-[18px] font-black text-blue-600">$28K–$48K</div>
                   <div className="text-[10px] text-muted-foreground">ARR per customer</div>
                 </div>
                 <div className="rounded-xl bg-white border border-blue-200/60 p-3 text-center">
                   <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">Enterprise</div>
-                  <div className="text-[18px] font-black text-blue-600">$85K+</div>
+                  <div className="text-[18px] font-black text-blue-600">$72K+</div>
                   <div className="text-[10px] text-muted-foreground">ARR per customer</div>
                 </div>
                 <div className="rounded-xl bg-white border border-blue-200/60 p-3 text-center">
@@ -102,7 +102,7 @@ const Slide11Business = () => (
               </div>
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-violet-500 shrink-0" /><span className="text-[12px] text-foreground/80">PPA commission: 8% • VPPA: 6%</span></div>
-                <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-violet-500 shrink-0" /><span className="text-[12px] font-bold text-violet-700">Commission on $500K–$1.7M PPAs</span></div>
+                <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-violet-500 shrink-0" /><span className="text-[12px] font-bold text-violet-700">Commission on AED 1.8M–6.2M PPAs</span></div>
               </div>
             </div>
 
