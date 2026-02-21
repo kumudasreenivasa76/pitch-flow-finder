@@ -222,7 +222,7 @@ const Slide14Competition = () => (
             { icon: "🤖", label: "AI-Native", desc: "Forecasting + digital twins" },
             { icon: "🔄", label: "Marketplace", desc: "REC + PPA + community layer" },
             { icon: "📊", label: "Multi-Segment", desc: "DC, schools, solar, enterprise" },
-            { icon: "🛡️", label: "Compliance Built-In", desc: "ESG / SEC / CSRD ready" },
+            { icon: "🛡️", label: "Compliance Built-In", desc: "UAE MRV / CSRD / IFRS ready" },
           ].map((d) => (
             <div key={d.label} className="flex items-center gap-2 px-4 py-2 rounded-full border border-border/40 bg-white shadow-sm">
               <span className="text-[16px]">{d.icon}</span>

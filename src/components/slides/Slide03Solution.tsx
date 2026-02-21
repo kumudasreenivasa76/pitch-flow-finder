@@ -9,27 +9,27 @@ const solutions = [
     title: "End-to-End Renewable Infrastructure Execution",
     problem: {
       heading: "Fragmented Project Delivery",
-      text: "Solar EPCs, consultants, and carbon brokers operate separately. 70%+ of projects require 3–5 vendors, causing 6–9 month delays and cost overruns.",
+      text: "Solar EPCs, consultants, and carbon brokers operate separately across GCC. 75%+ of projects require 4–6 vendors, causing 8–14 month delays and cost overruns.",
     },
     solution: {
       heading: "EcoGridia Solution",
       bullets: [
         "Single orchestration layer for feasibility, vendor selection, permitting & installation",
-        "IRA + state incentive identification automated at project start",
-        "Post-installation performance tracking built-in",
+        "UAE & Saudi government incentive identification automated at project start",
+        "Post-installation performance tracking built-in for desert conditions",
       ],
     },
     impact: {
       heading: "Impact",
-      text: "Reduced delays, lower implementation risk, and predictable project delivery at scale.",
+      text: "Reduced delays, lower implementation risk, and predictable project delivery at scale across MENA.",
     },
     transforms: [
-      { from: "6–9mo delays", to: "Predictable delivery" },
-      { from: "3–5 vendors", to: "One platform" },
+      { from: "8–14mo delays", to: "Predictable delivery" },
+      { from: "4–6 vendors", to: "One platform" },
       { from: "Manual permitting", to: "Automated workflow" },
       { from: "Siloed teams", to: "Unified execution" },
     ],
-    tagline: "One global system for energy, carbon, and money",
+    tagline: "One regional system for energy, carbon, and money",
   },
   {
     icon: BarChart3,
@@ -37,19 +37,19 @@ const solutions = [
     title: "Unified ESG & Carbon Operating System",
     problem: {
       heading: "No Automated Carbon Tracking",
-      text: "60% of mid-market firms lack automated carbon tracking. 10,000+ US companies face climate disclosure expectations with no unified tooling.",
+      text: "70% of MENA firms lack automated carbon tracking. 5,000+ companies face new UAE Climate Law & Vision 2030 ESG mandates with no unified tooling.",
     },
     solution: {
       heading: "EcoGridia Solution",
       bullets: [
         "Scope 1, 2 & 3 emissions tracked in real time across all sites",
-        "Automated compliance reporting — SEC-ready, CSRD-aligned",
+        "Automated compliance reporting — UAE MRV-ready, CSRD & IFRS S2 aligned",
         "Audit-ready documentation trail with portfolio-level dashboards",
       ],
     },
     impact: {
       heading: "Impact",
-      text: "Continuous visibility into emissions and dramatically simplified compliance management.",
+      text: "Continuous visibility into emissions and dramatically simplified compliance management across GCC.",
     },
     transforms: [
       { from: "Manual ESG reporting", to: "Automated pipelines" },
@@ -65,50 +65,50 @@ const solutions = [
     title: "Data Center Renewable Procurement & Strategy",
     problem: {
       heading: "Complex Renewable Procurement",
-      text: "Hyperscalers committed to RE100 face highly complex REC and PPA procurement. DC electricity demand set to double with no structured planning tools.",
+      text: "Hyperscalers expanding into UAE & Saudi face highly complex I-REC and PPA procurement. MENA DC capacity set to triple with no structured planning tools.",
     },
     solution: {
       heading: "EcoGridia Solution",
       bullets: [
         "Renewable gap analysis vs. actual energy consumption",
-        "REC portfolio management with registry integration",
+        "I-REC portfolio management with registry integration",
         "Long-term carbon-free sourcing roadmap (24/7 CFE path)",
       ],
     },
     impact: {
       heading: "Impact",
-      text: "Structured pathway toward 100% renewable operations with measurable, reportable impact.",
+      text: "Structured pathway toward 100% renewable operations with measurable, reportable impact in GCC markets.",
     },
     transforms: [
       { from: "Reactive procurement", to: "Strategic planning" },
       { from: "Renewable gap", to: "100% CFE roadmap" },
-      { from: "Manual REC tracking", to: "Automated registry" },
+      { from: "Manual I-REC tracking", to: "Automated registry" },
       { from: "ESG scrutiny", to: "Verified compliance" },
     ],
     tagline: "From renewable gap to verifiable 100% clean energy",
   },
   {
     icon: ArrowLeftRight,
-    tabLabel: "Unused RECs → Revenue",
-    title: "Integrated REC & Carbon Marketplace",
+    tabLabel: "Unused I-RECs → Revenue",
+    title: "Integrated I-REC & Carbon Marketplace",
     problem: {
       heading: "Unmonetized Renewable Assets",
-      text: "US REC market is $1–2B annually. Thousands of small installations don't actively trade RECs — leaving 10–20% renewable revenue on the table.",
+      text: "MENA I-REC market is $500M+ annually. Thousands of GCC installations don't actively trade I-RECs — leaving 15–25% renewable revenue on the table.",
     },
     solution: {
       heading: "EcoGridia Solution",
       bullets: [
-        "Automated REC eligibility tracking and buyer-seller matching",
+        "Automated I-REC eligibility tracking and buyer-seller matching",
         "Certificate lifecycle management with retirement verification",
         "Transparent pricing with transaction documentation",
       ],
     },
     impact: {
       heading: "Impact",
-      text: "Full monetization of renewable energy assets and simplified carbon procurement for buyers.",
+      text: "Full monetization of renewable energy assets and simplified carbon procurement for buyers across MENA.",
     },
     transforms: [
-      { from: "Unused RECs", to: "Productive revenue" },
+      { from: "Unused I-RECs", to: "Productive revenue" },
       { from: "Manual matching", to: "Automated marketplace" },
       { from: "Opaque pricing", to: "Transparent trading" },
       { from: "Missed funding", to: "Maximized ROI" },
@@ -121,22 +121,22 @@ const solutions = [
     title: "Real-Time Monitoring & Optimization Layer",
     problem: {
       heading: "No Real-Time Energy Visibility",
-      text: "20–30% of installed solar underperforms without monitoring. 50% of mid-market firms lack real-time analytics — failures go unnoticed for months.",
+      text: "25–40% of installed solar in MENA underperforms due to extreme heat & dust without monitoring. 60% of GCC firms lack real-time analytics — failures go unnoticed for months.",
     },
     solution: {
       heading: "EcoGridia Solution",
       bullets: [
         "Live generation and consumption tracking across all sites",
-        "Underperformance alerts and predictive maintenance signals",
+        "Underperformance alerts and predictive maintenance for desert conditions",
         "Portfolio benchmarking and efficiency optimization recommendations",
       ],
     },
     impact: {
       heading: "Impact",
-      text: "Improved system efficiency, reduced downtime, and maximized energy yield across the portfolio.",
+      text: "Improved system efficiency, reduced downtime, and maximized energy yield across the MENA portfolio.",
     },
     transforms: [
-      { from: "20–30% underperformance", to: "Optimized output" },
+      { from: "25–40% underperformance", to: "Optimized output" },
       { from: "Unnoticed failures", to: "Instant alerts" },
       { from: "Poor ROI measurement", to: "Live benchmarking" },
       { from: "Reactive maintenance", to: "Predictive signals" },
@@ -149,19 +149,19 @@ const solutions = [
     title: "Structured Capital & Incentive Navigation",
     problem: {
       heading: "Inaccessible Funding Landscape",
-      text: "IRA credits, state incentives, and structured financing exist but remain inaccessible. Most mid-market firms miss out due to complexity and lack of tooling.",
+      text: "UAE Green Bonds, Saudi REPDO projects, and GCC sustainability funds exist but remain inaccessible. Most mid-market firms miss out due to complexity and lack of tooling.",
     },
     solution: {
       heading: "EcoGridia Solution",
       bullets: [
-        "Federal IRA credit mapping and state-level incentive identification",
+        "UAE & Saudi green incentive mapping and fund identification",
         "Structured financing pathways with documentation automation",
         "Grant and credit alignment tracking throughout project lifecycle",
       ],
     },
     impact: {
       heading: "Impact",
-      text: "Improved project viability, faster renewable adoption, and access to funding previously out of reach.",
+      text: "Improved project viability, faster renewable adoption, and access to GCC green funding previously out of reach.",
     },
     transforms: [
       { from: "Inaccessible incentives", to: "Automated mapping" },
@@ -169,7 +169,7 @@ const solutions = [
       { from: "Missed credits", to: "Maximized funding" },
       { from: "Manual documentation", to: "Automated records" },
     ],
-    tagline: "Every available dollar captured — from IRA to state grants",
+    tagline: "Every available dirham captured — from Green Bonds to REPDO grants",
   },
 ];
 

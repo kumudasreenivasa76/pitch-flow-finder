@@ -23,7 +23,7 @@ const Slide13GTM = () => (
           <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Two-Track <span className="text-primary">Sales Engine</span>
           </h2>
-          <p className="text-[15px] text-muted-foreground mt-1">PLG for volume · Direct sales for enterprise · Land & expand across both</p>
+          <p className="text-[15px] text-muted-foreground mt-1">PLG for volume · Direct sales for enterprise · Land & expand across UAE & KSA</p>
         </div>
 
         {/* Main: PLG vs Enterprise */}
@@ -38,7 +38,7 @@ const Slide13GTM = () => (
               <div className="px-4 py-3">
                 <div className="space-y-2">
                   <MotionStep step="1" text="Free energy audit via platform → lead capture" />
-                  <MotionStep step="2" text="Self-serve SaaS onboarding ($99–$499/mo)" />
+                  <MotionStep step="2" text="Self-serve SaaS onboarding (AED 365–AED 1,835/mo)" />
                   <MotionStep step="3" text="Usage-based expansion into monitoring & credits" />
                   <MotionStep step="4" text="Community marketplace seeding → viral loop" />
                 </div>
@@ -60,7 +60,7 @@ const Slide13GTM = () => (
               </div>
               <div className="px-4 py-3">
                 <div className="space-y-2">
-                  <MotionStep step="1" text="Outbound to data center ops & facility managers" />
+                  <MotionStep step="1" text="Outbound to data center ops & facility managers in UAE/KSA" />
                   <MotionStep step="2" text="Custom pilot (60-day free POC with ROI report)" />
                   <MotionStep step="3" text="Multi-year PPA execution + compliance module" />
                   <MotionStep step="4" text="Account expansion: additional sites + micro-grid" />
@@ -81,11 +81,11 @@ const Slide13GTM = () => (
           <div className="text-[12px] font-bold uppercase tracking-widest text-amber-700 mb-2">🎯 First 10 Customers Playbook</div>
           <div className="grid grid-cols-5 gap-3">
             {[
-              { n: "1–3", who: "Pilot Schools", how: "Direct outreach to sustainability-focused K-12 districts", status: "✅ In Progress" },
-              { n: "4–5", who: "SME Data Centers", how: "LinkedIn + warm intros via cloud infra networks", status: "✅ Pipeline" },
-              { n: "6–7", who: "Community Solar", how: "Partner with existing solar installers for co-sell", status: "🟡 Outreach" },
-              { n: "8–9", who: "Enterprise DC", how: "60-day POC with ROI guarantee to tier-2 operators", status: "🟡 Qualifying" },
-              { n: "10", who: "Gov / Municipal", how: "RFP response for municipal renewable energy project", status: "📋 Tracking" },
+              { n: "1–3", who: "UAE Schools", how: "Direct outreach to sustainability-focused schools & universities in UAE", status: "✅ In Progress" },
+              { n: "4–5", who: "SME Data Centers", how: "LinkedIn + warm intros via Dubai/Riyadh cloud infra networks", status: "✅ Pipeline" },
+              { n: "6–7", who: "Community Solar", how: "Partner with GCC solar installers for co-sell", status: "🟡 Outreach" },
+              { n: "8–9", who: "Enterprise DC", how: "60-day POC with ROI guarantee to tier-2 operators in KSA", status: "🟡 Qualifying" },
+              { n: "10", who: "Gov / Municipal", how: "RFP response for UAE municipal renewable energy project", status: "📋 Tracking" },
             ].map((c) => (
               <div key={c.n} className="text-center">
                 <div className="text-[18px] font-black text-amber-700">#{c.n}</div>
