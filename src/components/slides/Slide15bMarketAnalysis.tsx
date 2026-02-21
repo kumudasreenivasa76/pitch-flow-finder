@@ -7,12 +7,12 @@ const drivers = [
     color: "border-amber-200 bg-amber-50/70",
     headerColor: "bg-amber-500",
     stats: [
-      { label: "University energy spend", value: "$6M–$25M/yr" },
-      { label: "Data center OpEx on power", value: "40–60%" },
-      { label: "AI electricity demand growth", value: "20–30% CAGR" },
-      { label: "Typical optimization savings", value: "10–25%" },
+      { label: "University energy spend (UAE)", value: "AED 5M–25M/yr" },
+      { label: "Data center OpEx on power", value: "45–65%" },
+      { label: "MENA DC electricity demand growth", value: "25–35% CAGR" },
+      { label: "Typical optimization savings", value: "12–30%" },
     ],
-    implication: "Clear, ROI-driven buyer urgency.",
+    implication: "Clear, ROI-driven buyer urgency across GCC.",
   },
   {
     icon: "🌱",
@@ -20,12 +20,12 @@ const drivers = [
     color: "border-emerald-200 bg-emerald-50/70",
     headerColor: "bg-emerald-600",
     stats: [
-      { label: "Carbon accounting CAGR", value: "20–25%" },
-      { label: "Global REC market", value: "$10B+ /yr" },
-      { label: "Scope 2 & 3 mandates", value: "Expanding" },
-      { label: "Net-zero commitments", value: "Rising fast" },
+      { label: "Carbon accounting CAGR (MENA)", value: "30–40%" },
+      { label: "MENA I-REC market", value: "$500M+ /yr" },
+      { label: "UAE Climate Law & Vision 2030", value: "Mandatory" },
+      { label: "Net-zero commitments (UAE 2050)", value: "Accelerating" },
     ],
-    implication: "Carbon spend becoming non-optional & recurring.",
+    implication: "Carbon spend becoming non-optional & recurring in GCC.",
   },
   {
     icon: "🏫",
@@ -33,12 +33,12 @@ const drivers = [
     color: "border-blue-200 bg-blue-50/70",
     headerColor: "bg-blue-600",
     stats: [
-      { label: "Priority education sites (US+EU)", value: "30,000+" },
+      { label: "Priority education sites (UAE+KSA)", value: "12,000+" },
       { label: "Campus energy budgets", value: "Centralized" },
-      { label: "Sustainability grant funding", value: "Accelerating" },
+      { label: "Sustainability mandates", value: "Government-driven" },
       { label: "vs enterprise procurement cycle", value: "Faster" },
     ],
-    implication: "Fast, credible entry wedge for platform adoption.",
+    implication: "Fast, credible entry wedge for platform adoption in MENA.",
   },
   {
     icon: "🖥️",
@@ -46,10 +46,10 @@ const drivers = [
     color: "border-violet-200 bg-violet-50/70",
     headerColor: "bg-violet-600",
     stats: [
-      { label: "Data centers globally", value: "~11,000" },
-      { label: "Hyperscale growth CAGR", value: "15–20%" },
-      { label: "Grid constraint hubs (VA/TX/EU)", value: "Emerging" },
-      { label: "Renewable procurement complexity", value: "High" },
+      { label: "Data centers in MENA", value: "~1,500" },
+      { label: "Hyperscale growth CAGR (MENA)", value: "25–30%" },
+      { label: "Grid constraint hubs (Dubai/Riyadh)", value: "Emerging" },
+      { label: "Renewable procurement complexity", value: "Very High" },
     ],
     implication: "High-ACV expansion once platform credibility is set.",
   },
@@ -58,7 +58,7 @@ const drivers = [
 const gaps = [
   "Energy monitoring tools",
   "Carbon accounting software",
-  "REC brokers",
+  "I-REC brokers",
   "PPA consultants",
   "Manual ESG reporting",
 ];
@@ -88,9 +88,9 @@ const Slide15bMarketAnalysis = () => (
               Market Analysis
             </span>
             <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              Energy, Carbon & Compliance <span className="text-primary">Converging</span>
+              Energy, Carbon & Compliance <span className="text-primary">Converging in MENA</span>
             </h2>
-            <p className="text-[15px] text-muted-foreground mt-1">Organizations with large energy footprints face rising costs, stricter disclosure, and fragmented tooling.</p>
+            <p className="text-[15px] text-muted-foreground mt-1">Organizations across UAE & Saudi Arabia face rising costs, stricter disclosure, and fragmented tooling.</p>
           </div>
 
           {/* Market gap pill */}
@@ -105,7 +105,7 @@ const Slide15bMarketAnalysis = () => (
               ))}
             </div>
             <div className="mt-3 pt-2 border-t border-rose-200 text-[11px] font-bold text-rose-600 uppercase tracking-wide">
-              Very few unified platforms exist
+              No unified platforms exist in GCC
             </div>
           </div>
         </div>
@@ -146,13 +146,13 @@ const Slide15bMarketAnalysis = () => (
         <div className="w-full flex items-center justify-between px-16 py-4">
           <div className="text-[13px] text-emerald-200 font-bold uppercase tracking-widest">Market Thesis</div>
           <div className="text-[15px] text-white font-semibold text-center flex-1 mx-8">
-            EcoGridia unifies <span className="text-emerald-300 font-extrabold">energy intelligence</span>, <span className="text-blue-300 font-extrabold">renewable procurement</span>, and <span className="text-violet-300 font-extrabold">carbon compliance</span> into a single operating platform for high-energy organizations.
+            EcoGridia unifies <span className="text-emerald-300 font-extrabold">energy intelligence</span>, <span className="text-blue-300 font-extrabold">renewable procurement</span>, and <span className="text-violet-300 font-extrabold">carbon compliance</span> into a single operating platform for high-energy organizations across UAE & Saudi Arabia.
           </div>
           <div className="flex gap-4 flex-shrink-0">
             {[
-              { label: "Carbon CAGR", value: "~25%" },
-              { label: "REC Market", value: "$10B+" },
-              { label: "Target Sites", value: "30K+" },
+              { label: "Carbon CAGR", value: "~35%" },
+              { label: "I-REC Market", value: "$500M+" },
+              { label: "Target Sites", value: "12K+" },
             ].map((m) => (
               <div key={m.label} className="text-center">
                 <div className="text-[18px] font-black text-emerald-300">{m.value}</div>

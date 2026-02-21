@@ -7,42 +7,43 @@ const problems = [
     num: "01",
     icon: DollarSign,
     title: "Rising & Volatile Energy Costs",
-    stat: "15–25%",
-    statLabel: "US price increase (3yr)",
-    preview: "US commercial electricity prices increased ~15–25% in the past 3 years",
+    stat: "20–35%",
+    statLabel: "GCC price increase (3yr)",
+    preview: "UAE & Saudi commercial electricity costs rising 20–35% as subsidy reform accelerates",
     bullets: [
-      "US commercial electricity prices increased ~15–25% in the past 3 years",
-      "Industrial facilities spend $500K–$5M annually on electricity",
-      "Data centers consume 4–5% of total US electricity (projected 8–10% by 2030)",
-      "AI workloads increase power demand by 2–3x",
+      "UAE & Saudi commercial electricity prices rising 20–35% as energy subsidy reforms accelerate",
+      "Industrial facilities in GCC spend AED 2M–20M ($550K–$5.5M) annually on electricity",
+      "Data centers in MENA consume 6–8% of regional electricity (projected 12–15% by 2030)",
+      "AI workloads & hyperscale expansion increasing Gulf power demand by 3–4x",
     ],
     impact: ["Margin compression", "Grid strain", "CFO pressure to reduce OpEx"],
   },
   {
     num: "02",
     icon: FileCheck,
-    title: "ESG & SEC Compliance Pressure",
-    stat: "10K+",
-    statLabel: "US companies impacted",
-    preview: "10,000+ US companies impacted by climate disclosure expectations",
+    title: "ESG & Regulatory Compliance Pressure",
+    stat: "5,000+",
+    statLabel: "MENA companies impacted",
+    preview: "5,000+ MENA companies impacted by new climate disclosure & net-zero mandates",
     bullets: [
-      "10,000+ US companies impacted by climate disclosure expectations",
-      "3,000+ public companies preparing for SEC reporting",
-      "60% of mid-market firms lack automated carbon tracking",
+      "UAE Climate Change Law (2024) mandates MRV reporting for all major emitters",
+      "Saudi Vision 2030 requires ESG compliance across all government-linked entities",
+      "CSRD & IFRS S2 creating cross-border reporting pressure on GCC exporters",
+      "70% of MENA firms lack automated carbon tracking or ESG reporting tools",
     ],
-    impact: ["Legal exposure", "Investor scrutiny", "Supply chain pressure"],
+    impact: ["Legal exposure", "Investor scrutiny", "Trade barrier risk"],
   },
   {
     num: "03",
     icon: Blocks,
     title: "Fragmented Renewable Ecosystem",
-    stat: "6–9 mo",
+    stat: "8–14 mo",
     statLabel: "avg project delay",
-    preview: "Solar EPCs, consultants, carbon brokers operate in silos across 3–5 vendors",
+    preview: "Solar EPCs, consultants, carbon brokers operate in silos across 4–6 vendors in GCC",
     bullets: [
-      "Solar EPCs, consultants, carbon brokers operate separately",
-      "70% of projects require coordination across 3–5 vendors",
-      "Average project delay: 6–9 months",
+      "Solar EPCs, consultants, carbon brokers operate separately across GCC",
+      "75% of renewable projects require coordination across 4–6 vendors",
+      "Average project delay in MENA: 8–14 months due to permitting & coordination",
     ],
     impact: ["Cost overruns", "Underperformance", "Project abandonment"],
   },
@@ -50,27 +51,27 @@ const problems = [
     num: "04",
     icon: Server,
     title: "DC Renewable Procurement",
-    stat: "2x",
-    statLabel: "DC demand doubling",
-    preview: "Hyperscalers committed to 100% renewable energy (RE100), demand set to double",
+    stat: "3x",
+    statLabel: "MENA DC demand tripling",
+    preview: "Hyperscalers expanding rapidly in UAE & Saudi, committed to RE100 with limited local solutions",
     bullets: [
-      "Hyperscalers committed to 100% renewable energy (RE100)",
-      "Data center electricity demand expected to double regionally",
-      "Renewable PPAs and REC procurement highly complex",
+      "Hyperscalers (AWS, Microsoft, Oracle) expanding into UAE & Saudi — committed to RE100",
+      "MENA data center capacity expected to triple by 2030",
+      "Renewable PPA and I-REC procurement in GCC highly complex & fragmented",
     ],
     impact: ["Renewable gap", "Reputation risk", "ESG scrutiny"],
   },
   {
     num: "05",
     icon: Coins,
-    title: "Unmonetized RECs (Leakage)",
-    stat: "$1–2B",
-    statLabel: "US REC market/yr",
-    preview: "Thousands of small installations don't actively trade RECs — 10–20% revenue unused",
+    title: "Unmonetized I-RECs & Carbon Credits",
+    stat: "$500M+",
+    statLabel: "MENA I-REC market/yr",
+    preview: "Thousands of MENA installations don't actively trade I-RECs — 15–25% revenue left on table",
     bullets: [
-      "US REC market size: $1–2B annually",
-      "Thousands of small installations don't actively trade RECs",
-      "10–20% potential renewable revenue often unused",
+      "MENA I-REC market size: $500M+ annually and growing rapidly",
+      "Thousands of solar installations in GCC don't actively trade I-RECs",
+      "15–25% potential renewable revenue often unused in the region",
     ],
     impact: ["Reduced ROI", "Poor visibility", "Missed funding"],
   },
@@ -78,22 +79,22 @@ const problems = [
     num: "06",
     icon: Activity,
     title: "No Real-Time Energy Intelligence",
-    stat: "20–30%",
+    stat: "25–40%",
     statLabel: "solar underperformance",
-    preview: "20–30% of installed solar underperforms without monitoring or analytics",
+    preview: "25–40% of installed solar in MENA underperforms due to dust, heat & lack of monitoring",
     bullets: [
-      "20–30% of installed solar underperforms without monitoring",
-      "50% of mid-market firms lack real-time energy analytics",
-      "Data center uptime & optimization critical to SLAs",
+      "25–40% of installed solar in MENA underperforms due to extreme heat, dust & lack of monitoring",
+      "60% of mid-market firms in GCC lack real-time energy analytics",
+      "Data center uptime & cooling optimization critical in desert climates",
     ],
     impact: ["Lost savings", "Unnoticed failures", "Poor ROI measurement"],
   },
 ];
 
 const stats = [
-  { value: "$500K–$5M", label: "annual electricity spend per facility" },
-  { value: "10K+", label: "US companies facing ESG disclosure" },
-  { value: "6–9mo", label: "average renewable project delay" },
+  { value: "AED 2M–20M", label: "annual electricity spend per facility" },
+  { value: "5K+", label: "MENA companies facing ESG disclosure" },
+  { value: "8–14mo", label: "average renewable project delay" },
 ];
 
 const Slide02Problem = () => {
@@ -119,10 +120,10 @@ const Slide02Problem = () => {
             The Problem
           </span>
           <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            The US Energy Market Is <span className="text-destructive">Broken</span>
+            The UAE & Saudi Energy Market Is <span className="text-destructive">Broken</span>
           </h2>
           <p className="text-[15px] text-muted-foreground mt-1">
-            Fragmented systems, rising costs, and no unified infrastructure
+            Fragmented systems, subsidy reform pressure, and no unified infrastructure
           </p>
         </div>
 
