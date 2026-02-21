@@ -33,10 +33,10 @@ const Slide10Calculator = () => {
   const fallbackKwhBase = assetType === "Solar" ? 15 : assetType === "Wind" ? 12 : 8;
   const kwhYear = aiData ? Math.round(sqft * aiData.kwhPerSqftPerYear) : sqft * fallbackKwhBase;
   const co2 = aiData ? Math.round(aiData.co2OffsetTonsPerYear) : Math.round(kwhYear * 0.0004);
-  const revenueYear = aiData ? Math.round(kwhYear * aiData.revenuePerKwhUsd * 3.75) : Math.round(kwhYear * 0.3);
+  const revenueYear = aiData ? Math.round(kwhYear * aiData.revenuePerKwhUsd) : Math.round(kwhYear * 0.08);
   const totalValue = revenueYear * duration[0];
 
-  const fmt = (n: number) => n >= 1e9 ? `SAR ${(n / 1e9).toFixed(1)}B` : n >= 1e6 ? `SAR ${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `SAR ${(n / 1e3).toFixed(0)}K` : `SAR ${n}`;
+  const fmt = (n: number) => n >= 1e9 ? `$${(n / 1e9).toFixed(1)}B` : n >= 1e6 ? `$${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `$${(n / 1e3).toFixed(0)}K` : `$${n}`;
   const fmtN = (n: number) => n >= 1e9 ? `${(n / 1e9).toFixed(1)}B` : n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${(n / 1e3).toFixed(0)}K` : `${n}`;
 
   const fetchEstimate = useCallback(async () => {
@@ -64,7 +64,7 @@ const Slide10Calculator = () => {
     { icon: BatteryCharging, label: "Peak Capacity", value: aiData ? `${fmtN(aiData.peakCapacityKw)} kW` : `${fmtN(sqft * 0.004)} kW`, sub: aiData ? `${aiData.capacityFactorPercent}% capacity` : "Estimated", color: "from-emerald-500 to-teal-500" },
     { icon: Zap, label: "Energy Output", value: `${fmtN(kwhYear)} kWh`, sub: aiData ? `${aiData.avgSunHoursOrWindSpeed} ${assetType === "Wind" ? "m/s wind" : "sun hrs/day"}` : "Per year", color: "from-amber-500 to-orange-500" },
     { icon: TreePine, label: "CO₂ Offset", value: `${fmtN(co2)} tons`, sub: "Per year", color: "from-green-500 to-emerald-600" },
-    { icon: DollarSign, label: "Revenue", value: fmt(revenueYear), sub: aiData ? `SAR ${(aiData.localElectricityPriceUsd * 3.75).toFixed(2)}/kWh` : "Per year", color: "from-blue-500 to-indigo-500" },
+    { icon: DollarSign, label: "Revenue", value: fmt(revenueYear), sub: aiData ? `$${aiData.localElectricityPriceUsd.toFixed(3)}/kWh` : "Per year", color: "from-blue-500 to-indigo-500" },
   ];
 
   return (

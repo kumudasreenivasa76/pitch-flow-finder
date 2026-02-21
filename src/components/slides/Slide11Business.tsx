@@ -23,10 +23,10 @@ const Slide11Business = () => (
             Revenue Streams
           </span>
           <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            High-Margin, Recurring, <span className="text-primary">UAE & Saudi</span>
+            High-Margin, Recurring, <span className="text-primary">UAE-Focused</span>
           </h2>
           <p className="text-[15px] text-muted-foreground mt-1">
-            SaaS-first platform monetizing clean energy across GCC intelligence, markets & carbon — zero hardware.
+            SaaS-first platform monetizing clean energy across UAE intelligence, markets & carbon — zero hardware.
           </p>
         </div>
 
@@ -53,17 +53,17 @@ const Slide11Business = () => (
               <div className="grid grid-cols-4 gap-3">
                 <div className="rounded-xl bg-white border border-blue-200/60 p-3 text-center">
                   <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">Starter</div>
-                  <div className="text-[18px] font-black text-blue-600">SAR 30K–53K</div>
+                  <div className="text-[18px] font-black text-blue-600">$8K–$14K</div>
                   <div className="text-[10px] text-muted-foreground">ARR per customer</div>
                 </div>
                 <div className="rounded-xl bg-white border border-blue-200/60 p-3 text-center">
                   <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">Professional</div>
-                  <div className="text-[18px] font-black text-blue-600">SAR 105K–180K</div>
+                  <div className="text-[18px] font-black text-blue-600">$28K–$48K</div>
                   <div className="text-[10px] text-muted-foreground">ARR per customer</div>
                 </div>
                 <div className="rounded-xl bg-white border border-blue-200/60 p-3 text-center">
                   <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">Enterprise</div>
-                  <div className="text-[18px] font-black text-blue-600">SAR 270K+</div>
+                  <div className="text-[18px] font-black text-blue-600">$72K+</div>
                   <div className="text-[10px] text-muted-foreground">ARR per customer</div>
                 </div>
                 <div className="rounded-xl bg-white border border-blue-200/60 p-3 text-center">
@@ -88,7 +88,6 @@ const Slide11Business = () => (
             <div className="h-px flex-1 bg-border/40" />
           </div>
           <div className="grid grid-cols-3 gap-3 animate-fade-in" style={{ animationDelay: "0.25s", animationFillMode: "forwards", opacity: 0 }}>
-            {/* GridLink */}
             <div className="rounded-xl bg-white border-t-[3px] border-violet-500 p-4 shadow-sm">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-8 h-8 rounded-lg bg-violet-500/10 border border-violet-500/25 flex items-center justify-center">
@@ -102,11 +101,10 @@ const Slide11Business = () => (
               </div>
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-violet-500 shrink-0" /><span className="text-[12px] text-foreground/80">PPA commission: 8% • VPPA: 6%</span></div>
-                <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-violet-500 shrink-0" /><span className="text-[12px] font-bold text-violet-700">Commission on SAR 1.8M–6.2M PPAs</span></div>
+                <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-violet-500 shrink-0" /><span className="text-[12px] font-bold text-violet-700">Commission on $480K–$1.65M PPAs</span></div>
               </div>
             </div>
 
-            {/* RECMatrix */}
             <div className="rounded-xl bg-white border-t-[3px] border-orange-500 p-4 shadow-sm">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-8 h-8 rounded-lg bg-orange-500/10 border border-orange-500/25 flex items-center justify-center">
@@ -124,7 +122,6 @@ const Slide11Business = () => (
               </div>
             </div>
 
-            {/* CarbonOS */}
             <div className="rounded-xl bg-white border-t-[3px] border-yellow-500 p-4 shadow-sm">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-8 h-8 rounded-lg bg-yellow-500/10 border border-yellow-500/25 flex items-center justify-center">
@@ -147,7 +144,6 @@ const Slide11Business = () => (
         {/* SERVICES ROW */}
         <div className="w-full mb-4">
           <div className="grid grid-cols-2 gap-3 animate-fade-in" style={{ animationDelay: "0.35s", animationFillMode: "forwards", opacity: 0 }}>
-            {/* GridForge */}
             <div className="rounded-xl bg-white border border-border/40 p-3.5 shadow-sm flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center shrink-0">
                 <Zap className="w-4 h-4 text-emerald-600" />
@@ -162,7 +158,6 @@ const Slide11Business = () => (
               </div>
             </div>
 
-            {/* CapitalFlow */}
             <div className="rounded-xl bg-white border border-border/40 p-3.5 shadow-sm flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center shrink-0">
                 <DollarSign className="w-4 h-4 text-emerald-600" />

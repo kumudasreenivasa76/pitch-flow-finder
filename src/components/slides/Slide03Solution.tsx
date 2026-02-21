@@ -9,19 +9,19 @@ const solutions = [
     title: "End-to-End Renewable Infrastructure Execution",
     problem: {
       heading: "Fragmented Project Delivery",
-      text: "Solar EPCs, consultants, and carbon brokers operate separately across GCC. 75%+ of projects require 4–6 vendors, causing 8–14 month delays and cost overruns.",
+      text: "Solar EPCs, consultants, and carbon brokers operate separately across UAE. 75%+ of projects require 4–6 vendors, causing 8–14 month delays and cost overruns.",
     },
     solution: {
       heading: "EcoGridia Solution",
       bullets: [
         "Single orchestration layer for feasibility, vendor selection, permitting & installation",
-        "UAE & Saudi government incentive identification automated at project start",
+        "UAE government incentive identification automated at project start",
         "Post-installation performance tracking built-in for desert conditions",
       ],
     },
     impact: {
       heading: "Impact",
-      text: "Reduced delays, lower implementation risk, and predictable project delivery at scale across MENA.",
+      text: "Reduced delays, lower implementation risk, and predictable project delivery at scale across UAE.",
     },
     transforms: [
       { from: "8–14mo delays", to: "Predictable delivery" },
@@ -37,7 +37,7 @@ const solutions = [
     title: "Unified ESG & Carbon Operating System",
     problem: {
       heading: "No Automated Carbon Tracking",
-      text: "70% of MENA firms lack automated carbon tracking. 5,000+ companies face new UAE Climate Law & Vision 2030 ESG mandates with no unified tooling.",
+      text: "70% of UAE firms lack automated carbon tracking. 5,000+ companies face new UAE Climate Law & net-zero mandates with no unified tooling.",
     },
     solution: {
       heading: "EcoGridia Solution",
@@ -49,7 +49,7 @@ const solutions = [
     },
     impact: {
       heading: "Impact",
-      text: "Continuous visibility into emissions and dramatically simplified compliance management across GCC.",
+      text: "Continuous visibility into emissions and dramatically simplified compliance management across UAE.",
     },
     transforms: [
       { from: "Manual ESG reporting", to: "Automated pipelines" },
@@ -65,7 +65,7 @@ const solutions = [
     title: "Data Center Renewable Procurement & Strategy",
     problem: {
       heading: "Complex Renewable Procurement",
-      text: "Hyperscalers expanding into UAE & Saudi face highly complex I-REC and PPA procurement. MENA DC capacity set to triple with no structured planning tools.",
+      text: "Hyperscalers expanding into UAE face highly complex I-REC and PPA procurement. UAE DC capacity set to triple with no structured planning tools.",
     },
     solution: {
       heading: "EcoGridia Solution",
@@ -77,7 +77,7 @@ const solutions = [
     },
     impact: {
       heading: "Impact",
-      text: "Structured pathway toward 100% renewable operations with measurable, reportable impact in GCC markets.",
+      text: "Structured pathway toward 100% renewable operations with measurable, reportable impact in UAE markets.",
     },
     transforms: [
       { from: "Reactive procurement", to: "Strategic planning" },
@@ -93,7 +93,7 @@ const solutions = [
     title: "Integrated I-REC & Carbon Marketplace",
     problem: {
       heading: "Unmonetized Renewable Assets",
-      text: "MENA I-REC market is SAR 1.9B+ annually. Thousands of GCC installations don't actively trade I-RECs — leaving 15–25% renewable revenue on the table.",
+      text: "UAE I-REC market is $500M+ annually. Thousands of UAE installations don't actively trade I-RECs — leaving 15–25% renewable revenue on the table.",
     },
     solution: {
       heading: "EcoGridia Solution",
@@ -105,7 +105,7 @@ const solutions = [
     },
     impact: {
       heading: "Impact",
-      text: "Full monetization of renewable energy assets and simplified carbon procurement for buyers across MENA.",
+      text: "Full monetization of renewable energy assets and simplified carbon procurement for buyers across UAE.",
     },
     transforms: [
       { from: "Unused I-RECs", to: "Productive revenue" },
@@ -121,7 +121,7 @@ const solutions = [
     title: "Real-Time Monitoring & Optimization Layer",
     problem: {
       heading: "No Real-Time Energy Visibility",
-      text: "25–40% of installed solar in MENA underperforms due to extreme heat & dust without monitoring. 60% of GCC firms lack real-time analytics — failures go unnoticed for months.",
+      text: "25–40% of installed solar in UAE underperforms due to extreme heat & dust without monitoring. 60% of UAE firms lack real-time analytics — failures go unnoticed for months.",
     },
     solution: {
       heading: "EcoGridia Solution",
@@ -133,7 +133,7 @@ const solutions = [
     },
     impact: {
       heading: "Impact",
-      text: "Improved system efficiency, reduced downtime, and maximized energy yield across the MENA portfolio.",
+      text: "Improved system efficiency, reduced downtime, and maximized energy yield across the UAE portfolio.",
     },
     transforms: [
       { from: "25–40% underperformance", to: "Optimized output" },
@@ -149,19 +149,19 @@ const solutions = [
     title: "Structured Capital & Incentive Navigation",
     problem: {
       heading: "Inaccessible Funding Landscape",
-      text: "UAE Green Bonds, Saudi REPDO projects, and GCC sustainability funds exist but remain inaccessible. Most mid-market firms miss out due to complexity and lack of tooling.",
+      text: "UAE Green Bonds and sustainability funds exist but remain inaccessible. Most mid-market firms miss out due to complexity and lack of tooling.",
     },
     solution: {
       heading: "EcoGridia Solution",
       bullets: [
-        "UAE & Saudi green incentive mapping and fund identification",
+        "UAE green incentive mapping and fund identification",
         "Structured financing pathways with documentation automation",
         "Grant and credit alignment tracking throughout project lifecycle",
       ],
     },
     impact: {
       heading: "Impact",
-      text: "Improved project viability, faster renewable adoption, and access to GCC green funding previously out of reach.",
+      text: "Improved project viability, faster renewable adoption, and access to UAE green funding previously out of reach.",
     },
     transforms: [
       { from: "Inaccessible incentives", to: "Automated mapping" },
@@ -169,7 +169,7 @@ const solutions = [
       { from: "Missed credits", to: "Maximized funding" },
       { from: "Manual documentation", to: "Automated records" },
     ],
-    tagline: "Every available riyal captured — from Green Bonds to REPDO grants",
+    tagline: "Every available dollar captured — from Green Bonds to sustainability grants",
   },
 ];
 
