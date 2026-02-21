@@ -53,17 +53,17 @@ const Slide11Business = () => (
               <div className="grid grid-cols-4 gap-3">
                 <div className="rounded-xl bg-white border border-blue-200/60 p-3 text-center">
                   <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">Starter</div>
-                  <div className="text-[18px] font-black text-blue-600">$8K–$14K</div>
+                  <div className="text-[18px] font-black text-blue-600">SAR 30K–53K</div>
                   <div className="text-[10px] text-muted-foreground">ARR per customer</div>
                 </div>
                 <div className="rounded-xl bg-white border border-blue-200/60 p-3 text-center">
                   <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">Professional</div>
-                  <div className="text-[18px] font-black text-blue-600">$28K–$48K</div>
+                  <div className="text-[18px] font-black text-blue-600">SAR 105K–180K</div>
                   <div className="text-[10px] text-muted-foreground">ARR per customer</div>
                 </div>
                 <div className="rounded-xl bg-white border border-blue-200/60 p-3 text-center">
                   <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">Enterprise</div>
-                  <div className="text-[18px] font-black text-blue-600">$72K+</div>
+                  <div className="text-[18px] font-black text-blue-600">SAR 270K+</div>
                   <div className="text-[10px] text-muted-foreground">ARR per customer</div>
                 </div>
                 <div className="rounded-xl bg-white border border-blue-200/60 p-3 text-center">
@@ -102,7 +102,7 @@ const Slide11Business = () => (
               </div>
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-violet-500 shrink-0" /><span className="text-[12px] text-foreground/80">PPA commission: 8% • VPPA: 6%</span></div>
-                <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-violet-500 shrink-0" /><span className="text-[12px] font-bold text-violet-700">Commission on AED 1.8M–6.2M PPAs</span></div>
+                <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-violet-500 shrink-0" /><span className="text-[12px] font-bold text-violet-700">Commission on SAR 1.8M–6.2M PPAs</span></div>
               </div>
             </div>
 

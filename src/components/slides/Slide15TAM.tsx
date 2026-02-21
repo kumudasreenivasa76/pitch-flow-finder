@@ -41,9 +41,9 @@ const Slide15TAM = () => {
                   <span className="text-[13px] font-semibold text-emerald-700">Total Addressable Market</span>
                 </div>
                 <div className="text-[56px] font-black text-foreground leading-none tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                  $8.5B<span className="text-[32px] text-emerald-600">+</span>
+                  SAR 32B<span className="text-[32px] text-emerald-600">+</span>
                 </div>
-                <div className="text-[12px] text-muted-foreground mt-1">~185,000 MENA target sites × $46k blended platform value</div>
+                <div className="text-[12px] text-muted-foreground mt-1">~185,000 MENA target sites × SAR 173K blended platform value</div>
                 <div className="grid grid-cols-4 gap-2 mt-3">
                   {[
                     { label: "Universities", val: "3.5K" },
@@ -71,7 +71,7 @@ const Slide15TAM = () => {
                   <span className="text-[13px] font-semibold text-blue-700">Serviceable Available Market</span>
                 </div>
                 <div className="text-[56px] font-black text-foreground leading-none tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                  $2.4B
+                  SAR 9B
                 </div>
                 <div className="text-[12px] text-muted-foreground mt-1">UAE & Saudi Arabia priority · ~52,000 targetable sites</div>
                 <div className="grid grid-cols-4 gap-2 mt-3">
@@ -101,7 +101,7 @@ const Slide15TAM = () => {
                   <span className="text-[13px] font-semibold text-violet-700">Serviceable Obtainable Market</span>
                 </div>
                 <div className="text-[56px] font-black text-foreground leading-none tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                  $180M<span className="text-[32px] text-violet-600">+</span>
+                  SAR 675M<span className="text-[32px] text-violet-600">+</span>
                 </div>
                 <div className="text-[12px] text-muted-foreground mt-1">~3% SAM · 10-year trajectory</div>
                 <div className="grid grid-cols-3 gap-2 mt-3">
@@ -133,10 +133,10 @@ const Slide15TAM = () => {
               {/* KPI row */}
               <div className="grid grid-cols-2 gap-3 animate-fade-in" style={{ animationDelay: "0.15s", animationFillMode: "forwards", opacity: 0 }}>
                 {[
-                  { label: "TAM", value: "$8.5B+", color: "#059669", bg: "rgba(5,150,105,0.06)", border: "rgba(5,150,105,0.2)" },
-                  { label: "SAM", value: "$2.4B", color: "#2563eb", bg: "rgba(37,99,235,0.06)", border: "rgba(37,99,235,0.2)" },
-                  { label: "SOM (10-yr)", value: "$180M+", color: "#7c3aed", bg: "rgba(124,58,237,0.06)", border: "rgba(124,58,237,0.2)" },
-                  { label: "Blended ARPU", value: "$46K /yr", color: "#ca8a04", bg: "rgba(202,138,4,0.06)", border: "rgba(202,138,4,0.2)" },
+                  { label: "TAM", value: "SAR 32B+", color: "#059669", bg: "rgba(5,150,105,0.06)", border: "rgba(5,150,105,0.2)" },
+                  { label: "SAM", value: "SAR 9B", color: "#2563eb", bg: "rgba(37,99,235,0.06)", border: "rgba(37,99,235,0.2)" },
+                  { label: "SOM (10-yr)", value: "SAR 675M+", color: "#7c3aed", bg: "rgba(124,58,237,0.06)", border: "rgba(124,58,237,0.2)" },
+                  { label: "Blended ARPU", value: "SAR 173K /yr", color: "#ca8a04", bg: "rgba(202,138,4,0.06)", border: "rgba(202,138,4,0.2)" },
                 ].map((m) => (
                   <div key={m.label} className="rounded-xl px-4 py-2.5" style={{ background: m.bg, border: `2px solid ${m.border}` }}>
                     <div className="text-[10px] font-bold uppercase tracking-widest" style={{ color: m.color, opacity: 0.7 }}>{m.label}</div>
@@ -192,9 +192,9 @@ const Slide15TAM = () => {
           <div className="mt-3 rounded-2xl flex items-center justify-around py-2.5 px-10 animate-fade-in"
             style={{ background: "linear-gradient(90deg, #14532d 0%, #166534 50%, #14532d 100%)", animationDelay: "0.35s", animationFillMode: "forwards", opacity: 0 }}>
             {[
-              { value: "$8.5B+", label: "Total Market" },
+              { value: "SAR 32B+", label: "Total Market" },
               { value: "185K", label: "Target Sites" },
-              { value: "$46K", label: "Blended ARPU" },
+              { value: "SAR 173K", label: "Blended ARPU" },
               { value: "5 Layers", label: "Monetization" },
             ].map((m, i, arr) => (
               <div key={m.label} className="flex items-center gap-6">

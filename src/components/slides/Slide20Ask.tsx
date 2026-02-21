@@ -78,7 +78,7 @@ const milestones = [
   { icon: Code, label: "Launch enterprise product in UAE (v2.0)" },
   { icon: Users, label: "10 active GCC enterprise customers" },
   { icon: Target, label: "50+ UAE/KSA sites under management" },
-  { icon: DollarSign, label: "$2M ARR milestone" },
+  { icon: DollarSign, label: "SAR 7.5M ARR milestone" },
   { icon: Rocket, label: "Series A readiness" },
   { icon: Globe, label: "UAE + Saudi + Bahrain expansion" },
   { icon: Landmark, label: "UAE/KSA government pilot contract" },
@@ -124,7 +124,7 @@ const Slide20Ask = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
               </span>
-              <span className="font-mono-brand text-[13px] font-medium text-primary tracking-wide">Pre-Seed · $2M Raise · UAE & KSA</span>
+              <span className="font-mono-brand text-[13px] font-medium text-primary tracking-wide">Pre-Seed · SAR 7.5M Raise · UAE & KSA</span>
             </div>
 
             {/* Headline */}
@@ -132,7 +132,7 @@ const Slide20Ask = () => {
               style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}>
               The Ask:{" "}
               <span className="text-primary relative inline-block">
-                $2M Pre-Seed
+                SAR 7.5M Pre-Seed
                 <svg className="absolute -bottom-1.5 left-0 w-full h-3" viewBox="0 0 200 10" fill="none">
                   <path d="M2 8C50 2 150 2 198 8" stroke="hsl(160 84% 39%)" strokeWidth="2" strokeLinecap="round" opacity="0.4" />
                 </svg>

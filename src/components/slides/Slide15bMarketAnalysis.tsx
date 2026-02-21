@@ -21,7 +21,7 @@ const drivers = [
     headerColor: "bg-emerald-600",
     stats: [
       { label: "Carbon accounting CAGR (MENA)", value: "30–40%" },
-      { label: "MENA I-REC market", value: "$500M+ /yr" },
+      { label: "MENA I-REC market", value: "SAR 1.9B+ /yr" },
       { label: "UAE Climate Law & Vision 2030", value: "Mandatory" },
       { label: "Net-zero commitments (UAE 2050)", value: "Accelerating" },
     ],
@@ -151,7 +151,7 @@ const Slide15bMarketAnalysis = () => (
           <div className="flex gap-4 flex-shrink-0">
             {[
               { label: "Carbon CAGR", value: "~35%" },
-              { label: "I-REC Market", value: "$500M+" },
+              { label: "I-REC Market", value: "SAR 1.9B+" },
               { label: "Target Sites", value: "12K+" },
             ].map((m) => (
               <div key={m.label} className="text-center">

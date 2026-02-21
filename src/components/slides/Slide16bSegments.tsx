@@ -11,23 +11,23 @@ const segments = [
     bgColor: "bg-primary/5",
     activeBg: "bg-primary",
     pillBg: "bg-primary/10 text-primary",
-    revenue: "$32.4M",
+    revenue: "SAR 121.5M",
     customers: "420",
     tag: "Core Revenue Engine — UAE & KSA",
     metrics: [
-      { label: "ARPU", value: "$77,100" },
+      { label: "ARPU", value: "SAR 289K" },
       { label: "Gross Margin", value: "82%" },
-      { label: "Gross Profit/yr", value: "$63,200" },
+      { label: "Gross Profit/yr", value: "SAR 237K" },
       { label: "Churn", value: "14%" },
       { label: "Lifetime", value: "7.1 yrs" },
-      { label: "LTV", value: "$451,000" },
-      { label: "CAC (5x)", value: "$90,000" },
+      { label: "LTV", value: "SAR 1.69M" },
+      { label: "CAC (5x)", value: "SAR 338K" },
       { label: "Payback", value: "~14 mo" },
     ],
     bullets: ["High-value recurring", "Predictable retention", "5x LTV:CAC", "Enterprise-grade"],
     highlight: "Drives valuation.",
-    ltv: 451000,
-    cac: 90000,
+    ltv: 1691000,
+    cac: 338000,
     risk: "Low",
     riskColor: "bg-primary/10 text-primary",
   },
@@ -40,23 +40,23 @@ const segments = [
     bgColor: "bg-eco-teal/5",
     activeBg: "bg-eco-teal",
     pillBg: "bg-eco-teal/10 text-eco-teal",
-    revenue: "~$12M",
+    revenue: "~SAR 45M",
     customers: "240",
     tag: "Schools / Universities — UAE & KSA",
     metrics: [
-      { label: "ARPU", value: "~$42,000" },
+      { label: "ARPU", value: "~SAR 158K" },
       { label: "Gross Margin", value: "80%" },
-      { label: "Gross Profit/yr", value: "~$33,600" },
+      { label: "Gross Profit/yr", value: "~SAR 126K" },
       { label: "Churn", value: "18%" },
       { label: "Lifetime", value: "5.5 yrs" },
-      { label: "LTV", value: "~$186,000" },
-      { label: "CAC (5x)", value: "~$37,000" },
+      { label: "LTV", value: "~SAR 698K" },
+      { label: "CAC (5x)", value: "~SAR 139K" },
       { label: "Payback", value: "~1 yr" },
     ],
     bullets: ["Moderate ticket", "Strong recurring", "Higher churn", "Good stickiness"],
     highlight: "Site mgmt · Carbon · Consulting.",
-    ltv: 186000,
-    cac: 37000,
+    ltv: 698000,
+    cac: 139000,
     risk: "Medium",
     riskColor: "bg-eco-teal/10 text-eco-teal",
   },
@@ -69,23 +69,23 @@ const segments = [
     bgColor: "bg-eco-emerald/5",
     activeBg: "bg-eco-emerald",
     pillBg: "bg-eco-emerald/10 text-eco-emerald",
-    revenue: "$1.1M",
+    revenue: "SAR 4.1M",
     customers: "210",
     tag: "Corporate SaaS — GCC",
     metrics: [
-      { label: "ARPU", value: "~$4,200" },
+      { label: "ARPU", value: "~SAR 15.8K" },
       { label: "Gross Margin", value: "82%" },
-      { label: "Gross Profit/yr", value: "~$3,440" },
+      { label: "Gross Profit/yr", value: "~SAR 12.9K" },
       { label: "Churn", value: "22%" },
       { label: "Lifetime", value: "4.5 yrs" },
-      { label: "LTV", value: "~$15,500" },
-      { label: "CAC (5x)", value: "~$3,100" },
+      { label: "LTV", value: "~SAR 58.1K" },
+      { label: "CAC (5x)", value: "~SAR 11.6K" },
       { label: "Payback", value: "< 1 yr" },
     ],
     bullets: ["Lower revenue/seat", "Easy acquisition", "Higher churn", "Volume scaling"],
     highlight: "Supports ecosystem flywheel.",
-    ltv: 15500,
-    cac: 3100,
+    ltv: 58100,
+    cac: 11600,
     risk: "Med-High",
     riskColor: "bg-amber-100 text-amber-700",
   },
@@ -98,21 +98,21 @@ const segments = [
     bgColor: "bg-amber-50",
     activeBg: "bg-amber-500",
     pillBg: "bg-amber-100 text-amber-700",
-    revenue: "$100K–$200K",
+    revenue: "SAR 375K–750K",
     customers: "per project",
     tag: "Project Stakeholders — GCC",
     metrics: [
-      { label: "Rev / Project", value: "$100K–$200K" },
+      { label: "Rev / Project", value: "SAR 375K–750K" },
       { label: "Blended Margin", value: "58–72%" },
       { label: "Recurrence", value: "Low–Moderate" },
-      { label: "CAC", value: "$65K–$120K" },
+      { label: "CAC", value: "SAR 244K–450K" },
       { label: "LTV", value: "Project + follow-on" },
       { label: "LTV:CAC", value: "3x–5x" },
     ],
     bullets: ["High-ticket lumpy", "ARPU lift driver", "Not pure SaaS", "Flywheel support"],
     highlight: "PPA · VPPA · On-site · REC.",
-    ltv: 150000,
-    cac: 85000,
+    ltv: 562500,
+    cac: 318750,
     risk: "Higher",
     riskColor: "bg-red-100 text-red-600",
   },
@@ -129,28 +129,28 @@ const segments = [
     customers: "Platform flywheel",
     tag: "Marketplace Vendors — GCC",
     metrics: [
-      { label: "ARPU", value: "~$7,500" },
+      { label: "ARPU", value: "~SAR 28.1K" },
       { label: "Gross Margin", value: "83%" },
       { label: "Churn", value: "20–24%" },
-      { label: "LTV", value: "~$28,000" },
-      { label: "CAC", value: "~$5,600" },
+      { label: "LTV", value: "~SAR 105K" },
+      { label: "CAC", value: "~SAR 21K" },
       { label: "LTV:CAC", value: "~5x" },
     ],
     bullets: ["Flywheel effect", "Capital efficiency", "Valuation lift", "Take rate"],
     highlight: "Marketplace take rate drives network value.",
-    ltv: 28000,
-    cac: 5600,
+    ltv: 105000,
+    cac: 21000,
     risk: "Medium",
     riskColor: "bg-violet-100 text-violet-700",
   },
 ];
 
 const summaryRows = [
-  { segment: "Data Centers", arpu: "$77K", ltv: "$451K", cac: "$90K", ratio: "5x", risk: "Low", riskColor: "bg-primary/10 text-primary" },
-  { segment: "Education", arpu: "$42K", ltv: "$186K", cac: "$37K", ratio: "5x", risk: "Medium", riskColor: "bg-eco-teal/10 text-eco-teal" },
-  { segment: "SME SaaS", arpu: "$4.2K", ltv: "$15.5K", cac: "$3.1K", ratio: "5x", risk: "Med-High", riskColor: "bg-amber-100 text-amber-700" },
-  { segment: "Procurement", arpu: "$120K+", ltv: "Variable", cac: "$85K", ratio: "3–5x", risk: "Higher", riskColor: "bg-red-100 text-red-600" },
-  { segment: "Vendors", arpu: "$7.5K", ltv: "$28K", cac: "$5.6K", ratio: "5x", risk: "Medium", riskColor: "bg-violet-100 text-violet-700" },
+  { segment: "Data Centers", arpu: "SAR 289K", ltv: "SAR 1.69M", cac: "SAR 338K", ratio: "5x", risk: "Low", riskColor: "bg-primary/10 text-primary" },
+  { segment: "Education", arpu: "SAR 158K", ltv: "SAR 698K", cac: "SAR 139K", ratio: "5x", risk: "Medium", riskColor: "bg-eco-teal/10 text-eco-teal" },
+  { segment: "SME SaaS", arpu: "SAR 15.8K", ltv: "SAR 58.1K", cac: "SAR 11.6K", ratio: "5x", risk: "Med-High", riskColor: "bg-amber-100 text-amber-700" },
+  { segment: "Procurement", arpu: "SAR 450K+", ltv: "Variable", cac: "SAR 319K", ratio: "3–5x", risk: "Higher", riskColor: "bg-red-100 text-red-600" },
+  { segment: "Vendors", arpu: "SAR 28.1K", ltv: "SAR 105K", cac: "SAR 21K", ratio: "5x", risk: "Medium", riskColor: "bg-violet-100 text-violet-700" },
 ];
 
 const Slide16bSegments = () => {
@@ -180,7 +180,7 @@ const Slide16bSegments = () => {
           <div className="flex justify-center gap-3 mt-3">
             {[
               { label: "Blended LTV:CAC", value: "5x" },
-              { label: "Top LTV", value: "$451K" },
+              { label: "Top LTV", value: "SAR 1.69M" },
               { label: "Best Payback", value: "< 1 yr" },
             ].map((k) => (
               <div key={k.label} className="bg-primary/5 border border-primary/20 rounded-xl px-4 py-2 text-center">
@@ -213,7 +213,7 @@ const Slide16bSegments = () => {
             ))}
           </div>
 
-          {/* CENTER: detail card - broken into smaller sections */}
+          {/* CENTER: detail card */}
           <div className="flex-1 flex flex-col gap-2 min-w-0">
             {/* Card header */}
             <div className={`rounded-xl border ${seg.borderColor} ${seg.bgColor} px-4 py-2 flex items-center gap-3`}>
@@ -228,7 +228,7 @@ const Slide16bSegments = () => {
               </span>
             </div>
 
-            {/* Metrics in small rectangular cards - pairs */}
+            {/* Metrics */}
             <div className="grid grid-cols-2 gap-1.5">
               {seg.metrics.map((m) => (
                 <div key={m.label} className={`rounded-lg border ${seg.borderColor}/30 bg-white px-3 py-1.5 flex items-center justify-between`}>
@@ -316,18 +316,18 @@ const Slide16bSegments = () => {
             <div className="mt-3">
               <div className="text-xs font-bold text-muted-foreground mb-2 uppercase tracking-wide">FY30 Revenue — UAE & KSA</div>
               {[
-                { label: "Data Centers", value: 32.4, pct: 100, color: "bg-primary" },
-                { label: "Education", value: 12.0, pct: 37, color: "bg-eco-teal" },
-                { label: "SME SaaS", value: 1.1, pct: 3, color: "bg-eco-emerald" },
-                { label: "Procurement", value: 2.0, pct: 6, color: "bg-amber-500" },
-                { label: "Vendors", value: 0.8, pct: 2, color: "bg-violet-500" },
+                { label: "Data Centers", value: 121.5, pct: 100, color: "bg-primary" },
+                { label: "Education", value: 45.0, pct: 37, color: "bg-eco-teal" },
+                { label: "SME SaaS", value: 4.1, pct: 3, color: "bg-eco-emerald" },
+                { label: "Procurement", value: 7.5, pct: 6, color: "bg-amber-500" },
+                { label: "Vendors", value: 3.0, pct: 2, color: "bg-violet-500" },
               ].map((r) => (
                 <div key={r.label} className="flex items-center gap-2 mb-1.5">
                   <span className="text-[10px] text-muted-foreground w-24 text-right flex-shrink-0">{r.label}</span>
                   <div className="flex-1 h-3 bg-muted rounded-full overflow-hidden">
                     <div className={`h-full rounded-full ${r.color}`} style={{ width: `${r.pct}%` }} />
                   </div>
-                  <span className="text-[10px] font-bold text-foreground w-10 flex-shrink-0">${r.value}M</span>
+                  <span className="text-[10px] font-bold text-foreground w-14 flex-shrink-0">SAR {r.value}M</span>
                 </div>
               ))}
             </div>

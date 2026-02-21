@@ -38,13 +38,13 @@ const Slide13GTM = () => (
               <div className="px-4 py-3">
                 <div className="space-y-2">
                   <MotionStep step="1" text="Free energy audit via platform → lead capture" />
-                  <MotionStep step="2" text="Self-serve SaaS onboarding (AED 365–AED 1,835/mo)" />
+                  <MotionStep step="2" text="Self-serve SaaS onboarding (SAR 365–SAR 1,835/mo)" />
                   <MotionStep step="3" text="Usage-based expansion into monitoring & credits" />
                   <MotionStep step="4" text="Community marketplace seeding → viral loop" />
                 </div>
                 <div className="mt-3 pt-3 border-t border-border/40 grid grid-cols-2 gap-2">
-                  <MiniMetric label="Target CAC" value="$2,500" />
-                  <MiniMetric label="Avg ACV" value="$6K" />
+                  <MiniMetric label="Target CAC" value="SAR 9.4K" />
+                  <MiniMetric label="Avg ACV" value="SAR 22.5K" />
                   <MiniMetric label="Conversion" value="5–8%" />
                   <MiniMetric label="Time to Close" value="< 14 days" />
                 </div>
@@ -66,8 +66,8 @@ const Slide13GTM = () => (
                   <MotionStep step="4" text="Account expansion: additional sites + micro-grid" />
                 </div>
                 <div className="mt-3 pt-3 border-t border-border/40 grid grid-cols-2 gap-2">
-                  <MiniMetric label="Target CAC" value="$85K" />
-                  <MiniMetric label="Avg ACV" value="$124K" />
+                  <MiniMetric label="Target CAC" value="SAR 319K" />
+                  <MiniMetric label="Avg ACV" value="SAR 465K" />
                   <MiniMetric label="Win Rate" value="25–35%" />
                   <MiniMetric label="Sales Cycle" value="90–120 days" />
                 </div>
@@ -100,11 +100,11 @@ const Slide13GTM = () => (
         {/* Channel Economics bar */}
         <div className="flex items-center justify-center gap-5 mt-3 animate-fade-in" style={{ animationDelay: "0.25s" }}>
           {[
-            { label: "Blended CAC", value: "$45K" },
+            { label: "Blended CAC", value: "SAR 169K" },
             { label: "PLG % of Pipeline", value: "60%" },
-            { label: "Enterprise ACV", value: "$124K" },
+            { label: "Enterprise ACV", value: "SAR 465K" },
             { label: "First Revenue", value: "Q1 Y1" },
-            { label: "ARR Target Y1", value: "$500K" },
+            { label: "ARR Target Y1", value: "SAR 1.88M" },
           ].map((m) => (
             <div key={m.label} className="flex items-center gap-3 px-5 py-2.5 rounded-full border-2 border-border/40 bg-white shadow-sm">
               <span className="text-[22px] font-black text-primary" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{m.value}</span>

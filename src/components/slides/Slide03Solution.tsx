@@ -93,7 +93,7 @@ const solutions = [
     title: "Integrated I-REC & Carbon Marketplace",
     problem: {
       heading: "Unmonetized Renewable Assets",
-      text: "MENA I-REC market is $500M+ annually. Thousands of GCC installations don't actively trade I-RECs — leaving 15–25% renewable revenue on the table.",
+      text: "MENA I-REC market is SAR 1.9B+ annually. Thousands of GCC installations don't actively trade I-RECs — leaving 15–25% renewable revenue on the table.",
     },
     solution: {
       heading: "EcoGridia Solution",
@@ -169,7 +169,7 @@ const solutions = [
       { from: "Missed credits", to: "Maximized funding" },
       { from: "Manual documentation", to: "Automated records" },
     ],
-    tagline: "Every available dirham captured — from Green Bonds to REPDO grants",
+    tagline: "Every available riyal captured — from Green Bonds to REPDO grants",
   },
 ];
 
