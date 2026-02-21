@@ -32,7 +32,7 @@ const Slide16UnitEcon = () => (
             </div>
             <div className="flex gap-5 flex-1">
               {[
-                { l: "ARPU", v: "$1,850" },
+                { l: "ARPU", v: "SAR 6,940" },
                 { l: "Margin", v: "76%" },
                 { l: "LTV:CAC", v: "4.5×" },
                 { l: "Payback", v: "~14 mo" },
@@ -50,7 +50,7 @@ const Slide16UnitEcon = () => (
             </div>
             <div className="flex gap-5 flex-1">
               {[
-                { l: "ARPU", v: "$98K" },
+                { l: "ARPU", v: "SAR 367K" },
                 { l: "Margin", v: "82%" },
                 { l: "LTV:CAC", v: "5.0×" },
                 { l: "Payback", v: "~18 mo" },
@@ -70,30 +70,30 @@ const Slide16UnitEcon = () => (
           {/* Col 1 */}
           <div className="flex flex-col gap-3">
             <CompactTable title="Key Metrics (UAE & KSA)" color="#16a34a" delay="0.05s" rows={[
-              { label: "Total Revenue", value: "$85.2M" },
+              { label: "Total Revenue", value: "SAR 320M" },
               { label: "Total Customers", value: "870" },
               { label: "Gross Margin", value: "82%" },
               { label: "Annual Churn", value: "14%" },
             ]} />
             <CompactTable title="Customer Revenue" color="#0d9488" delay="0.1s" rows={[
-              { label: "Blended ARPU", value: "$97,900" },
-              { label: "Gross Profit / Customer", value: "$80,278" },
+              { label: "Blended ARPU", value: "SAR 367K" },
+              { label: "Gross Profit / Customer", value: "SAR 301K" },
               { label: "Avg Customer Lifetime", value: "7.1 years" },
             ]} />
           </div>
 
           {/* Col 2: LTV + CAC */}
           <div className="flex flex-col gap-3">
-            <ValueCard label="Lifetime Value (LTV)" value="$570K" sub="Per enterprise customer (UAE/KSA)" color="#16a34a" borderColor="#16a34a" delay="0.15s"
+            <ValueCard label="Lifetime Value (LTV)" value="SAR 2.14M" sub="Per enterprise customer (UAE/KSA)" color="#16a34a" borderColor="#16a34a" delay="0.15s"
               details={[
                 { l: "Formula", r: "GP ÷ Churn Rate" },
-                { l: "$80,278 ÷ 0.14", r: "= $573,414" },
+                { l: "SAR 301K ÷ 0.14", r: "= SAR 2,150K" },
               ]}
             />
-            <ValueCard label="Customer Acquisition Cost" value="$114K" sub="Target LTV:CAC = 5x" color="#059669" borderColor="#059669" delay="0.2s"
+            <ValueCard label="Customer Acquisition Cost" value="SAR 428K" sub="Target LTV:CAC = 5x" color="#059669" borderColor="#059669" delay="0.2s"
               details={[
                 { l: "LTV:CAC Target", r: "5x" },
-                { l: "$570K ÷ 5", r: "= $114,000" },
+                { l: "SAR 2.14M ÷ 5", r: "= SAR 428K" },
               ]}
             />
             <div className="rounded-xl border border-primary/20 bg-primary/5 px-4 py-2 text-center animate-fade-in"
@@ -108,15 +108,15 @@ const Slide16UnitEcon = () => (
           {/* Col 3 */}
           <div className="flex flex-col gap-3">
             <CompactTable title="Data Center Segment — UAE & KSA (FY30)" color="#0d9488" delay="0.25s" rows={[
-              { label: "Revenue", value: "$32.4M" },
+              { label: "Revenue", value: "SAR 121.5M" },
               { label: "Customers", value: "420" },
-              { label: "ARPU", value: "$77,100" },
-              { label: "Gross Profit / DC", value: "$63,200" },
-              { label: "Implied LTV", value: "$451K" },
-              { label: "Est. DC CAC (5x)", value: "$90K" },
+              { label: "ARPU", value: "SAR 289K" },
+              { label: "Gross Profit / DC", value: "SAR 237K" },
+              { label: "Implied LTV", value: "SAR 1.69M" },
+              { label: "Est. DC CAC (5x)", value: "SAR 338K" },
             ]} />
             <CompactTable title="Company Efficiency" color="#16a34a" delay="0.3s" rows={[
-              { label: "Revenue / FTE", value: "$532K" },
+              { label: "Revenue / FTE", value: "SAR 2.0M" },
               { label: "EBITDA Margin", value: "64.5%" },
               { label: "Net Margin", value: "48.2%" },
               { label: "Gross Margin Trend", value: "74% → 86%" },
@@ -148,10 +148,10 @@ const Slide16UnitEcon = () => (
           <div className="inline-flex items-center gap-5 rounded-2xl px-8 py-2"
             style={{ background: "linear-gradient(90deg, #14532d 0%, #166534 50%, #14532d 100%)" }}>
             {[
-              { label: "ARPU", value: "$98K" },
+              { label: "ARPU", value: "SAR 367K" },
               { label: "Margin", value: "82%" },
-              { label: "LTV", value: "$570K" },
-              { label: "CAC", value: "$114K" },
+              { label: "LTV", value: "SAR 2.14M" },
+              { label: "CAC", value: "SAR 428K" },
               { label: "LTV:CAC", value: "5.0×" },
               { label: "Payback", value: "~18 mo" },
             ].map((m, i, arr) => (

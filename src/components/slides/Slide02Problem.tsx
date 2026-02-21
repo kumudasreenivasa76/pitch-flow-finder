@@ -12,7 +12,7 @@ const problems = [
     preview: "UAE & Saudi commercial electricity costs rising 20–35% as subsidy reform accelerates",
     bullets: [
       "UAE & Saudi commercial electricity prices rising 20–35% as energy subsidy reforms accelerate",
-      "Industrial facilities in GCC spend AED 2M–20M ($550K–$5.5M) annually on electricity",
+      "Industrial facilities in GCC spend SAR 2M–20M annually on electricity",
       "Data centers in MENA consume 6–8% of regional electricity (projected 12–15% by 2030)",
       "AI workloads & hyperscale expansion increasing Gulf power demand by 3–4x",
     ],
@@ -65,11 +65,11 @@ const problems = [
     num: "05",
     icon: Coins,
     title: "Unmonetized I-RECs & Carbon Credits",
-    stat: "$500M+",
+    stat: "SAR 1.9B+",
     statLabel: "MENA I-REC market/yr",
     preview: "Thousands of MENA installations don't actively trade I-RECs — 15–25% revenue left on table",
     bullets: [
-      "MENA I-REC market size: $500M+ annually and growing rapidly",
+      "MENA I-REC market size: SAR 1.9B+ annually and growing rapidly",
       "Thousands of solar installations in GCC don't actively trade I-RECs",
       "15–25% potential renewable revenue often unused in the region",
     ],
@@ -92,7 +92,7 @@ const problems = [
 ];
 
 const stats = [
-  { value: "AED 2M–20M", label: "annual electricity spend per facility" },
+  { value: "SAR 2M–20M", label: "annual electricity spend per facility" },
   { value: "5K+", label: "MENA companies facing ESG disclosure" },
   { value: "8–14mo", label: "average renewable project delay" },
 ];
