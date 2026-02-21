@@ -5,6 +5,7 @@ import Slide03Solution from "@/components/slides/Slide03Solution";
 import Slide04Ecosystem from "@/components/slides/Slide04Ecosystem";
 import Slide05Platform from "@/components/slides/Slide05Platform";
 import Slide06Features from "@/components/slides/Slide06Features";
+import SlideGreenCampus from "@/components/slides/SlideGreenCampus";
 import Slide07Layer1 from "@/components/slides/Slide07Layer1";
 
 import SlideDataCenter from "@/components/slides/SlideDataCenter";
@@ -30,6 +31,7 @@ const slides = [
   <Slide04Ecosystem />,
   <Slide05Platform />,
   <Slide06Features />,
+  <SlideGreenCampus />,
   <Slide07Layer1 />,
   
   <SlideDataCenter />,
