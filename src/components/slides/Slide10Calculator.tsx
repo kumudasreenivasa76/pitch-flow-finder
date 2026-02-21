@@ -4,16 +4,7 @@ import { Slider } from "@/components/ui/slider";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2, Sparkles, Sun, Wind, Zap, MapPin, TreePine, DollarSign, BatteryCharging, TrendingUp } from "lucide-react";
 
-const COUNTRIES_CITIES: Record<string, string[]> = {
-  "United States": ["Phoenix, AZ", "Los Angeles, CA", "Houston, TX", "Denver, CO", "Miami, FL", "Chicago, IL"],
-  "India": ["Rajasthan", "Gujarat", "Tamil Nadu", "Karnataka", "Maharashtra", "Andhra Pradesh"],
-  "Germany": ["Berlin", "Munich", "Hamburg", "Frankfurt", "Stuttgart", "Cologne"],
-  "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Darwin"],
-  "Brazil": ["São Paulo", "Rio de Janeiro", "Bahia", "Minas Gerais", "Ceará", "Pernambuco"],
-  "United Kingdom": ["London", "Edinburgh", "Manchester", "Cardiff", "Bristol", "Leeds"],
-  "UAE": ["Dubai", "Abu Dhabi", "Sharjah", "Ras Al Khaimah", "Fujairah", "Ajman"],
-  "South Africa": ["Cape Town", "Johannesburg", "Durban", "Pretoria", "Port Elizabeth", "Bloemfontein"],
-};
+const UAE_CITIES = ["Dubai", "Abu Dhabi", "Sharjah", "Ras Al Khaimah", "Fujairah", "Ajman", "Al Ain"];
 
 const ASSET_ICONS = { Solar: Sun, Wind: Wind, Hybrid: Zap };
 
@@ -29,7 +20,7 @@ interface AIEstimate {
 }
 
 const Slide10Calculator = () => {
-  const [country, setCountry] = useState("UAE");
+  const country = "UAE";
   const [city, setCity] = useState("Dubai");
   const [assetType, setAssetType] = useState<"Solar" | "Wind" | "Hybrid">("Solar");
   const [landArea, setLandArea] = useState([5]);
@@ -53,7 +44,7 @@ const Slide10Calculator = () => {
     setError("");
     try {
       const { data, error: fnError } = await supabase.functions.invoke("energy-estimate", {
-        body: { country, city, assetType, landAcres: landArea[0], durationYears: duration[0] },
+        body: { country: "UAE", city, assetType, landAcres: landArea[0], durationYears: duration[0] },
       });
       if (fnError) throw fnError;
       if (data?.error) throw new Error(data.error);
@@ -65,7 +56,7 @@ const Slide10Calculator = () => {
     } finally {
       setLoading(false);
     }
-  }, [country, city, assetType, landArea, duration]);
+  }, [city, assetType, landArea, duration]);
 
   const AssetIcon = ASSET_ICONS[assetType];
 
@@ -110,22 +101,13 @@ const Slide10Calculator = () => {
                   <MapPin className="w-4 h-4 text-primary" />
                   <label className="text-[11px] font-bold text-foreground uppercase tracking-wider">Location</label>
                 </div>
-                <div className="grid grid-cols-2 gap-2">
-                  <select
-                    value={country}
-                    onChange={(e) => { setCountry(e.target.value); setCity(COUNTRIES_CITIES[e.target.value][0]); setAiData(null); }}
-                    className="w-full text-[13px] bg-white rounded-lg px-2.5 py-2 border border-border/30 outline-none text-foreground font-medium"
-                  >
-                    {Object.keys(COUNTRIES_CITIES).map((c) => <option key={c}>{c}</option>)}
-                  </select>
-                  <select
-                    value={city}
-                    onChange={(e) => { setCity(e.target.value); setAiData(null); }}
-                    className="w-full text-[13px] bg-white rounded-lg px-2.5 py-2 border border-border/30 outline-none text-foreground font-medium"
-                  >
-                    {(COUNTRIES_CITIES[country] || []).map((c) => <option key={c}>{c}</option>)}
-                  </select>
-                </div>
+                <select
+                  value={city}
+                  onChange={(e) => { setCity(e.target.value); setAiData(null); }}
+                  className="w-full text-[13px] bg-white rounded-lg px-2.5 py-2 border border-border/30 outline-none text-foreground font-medium"
+                >
+                  {UAE_CITIES.map((c) => <option key={c}>{c}</option>)}
+                </select>
               </div>
 
               {/* Asset Type */}
