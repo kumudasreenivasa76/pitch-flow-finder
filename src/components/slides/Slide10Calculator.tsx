@@ -29,8 +29,8 @@ interface AIEstimate {
 }
 
 const Slide10Calculator = () => {
-  const [country, setCountry] = useState("United States");
-  const [city, setCity] = useState("Phoenix, AZ");
+  const [country, setCountry] = useState("UAE");
+  const [city, setCity] = useState("Dubai");
   const [assetType, setAssetType] = useState<"Solar" | "Wind" | "Hybrid">("Solar");
   const [landArea, setLandArea] = useState([5]);
   const [duration, setDuration] = useState([20]);
