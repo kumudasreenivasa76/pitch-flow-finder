@@ -3,19 +3,19 @@ import SlideLayout from "../SlideLayout";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 
 const customerData = [
-  { segment: "Schools / Universities", customers: 10, arpu: "$2,400", arr: "$24,000", color: "hsl(160, 84%, 39%)" },
-  { segment: "SME SaaS", customers: 18, arpu: "$900", arr: "$16,200", color: "hsl(174, 72%, 40%)" },
-  { segment: "Pilot Enterprises", customers: 1, arpu: "$60,000", arr: "$60,000", color: "hsl(152, 76%, 36%)" },
-  { segment: "Marketplace Vendors", customers: 25, arpu: "$800", arr: "$20,000", color: "hsl(160, 60%, 70%)" },
+  { segment: "UAE Universities", customers: 8, arpu: "$2,000", arr: "$16,000", color: "hsl(160, 84%, 39%)" },
+  { segment: "GCC SME SaaS", customers: 14, arpu: "$750", arr: "$10,500", color: "hsl(174, 72%, 40%)" },
+  { segment: "Dubai/Riyadh Data Centers", customers: 2, arpu: "$48,000", arr: "$96,000", color: "hsl(152, 76%, 36%)" },
+  { segment: "Marketplace Vendors", customers: 18, arpu: "$650", arr: "$11,700", color: "hsl(160, 60%, 70%)" },
 ];
 
 const pieData = customerData.map((c) => ({ name: c.segment, value: parseFloat(c.arr.replace(/[$,]/g, "")), color: c.color }));
 
 const cashData = [
-  { source: "Schools", cash: "$6,000" },
-  { source: "SMEs", cash: "$4,050" },
-  { source: "Enterprise", cash: "$15,000" },
-  { source: "Vendors", cash: "$5,000" },
+  { source: "UAE Universities", cash: "$4,000" },
+  { source: "GCC SMEs", cash: "$2,625" },
+  { source: "Data Centers", cash: "$24,000" },
+  { source: "Vendors", cash: "$2,925" },
 ];
 
 const burnData = [
@@ -26,11 +26,11 @@ const burnData = [
 ];
 
 const unitEcon = [
-  { label: "Gross Margin", value: "~76–80%" },
-  { label: "Blended ARPU", value: "~$2,225" },
-  { label: "CAC (early)", value: "~$2,500" },
-  { label: "LTV/CAC", value: "~4.8×" },
-  { label: "Payback", value: "~12 months" },
+  { label: "Gross Margin", value: "~74–78%" },
+  { label: "Blended ARPU", value: "~$3,200" },
+  { label: "CAC (early)", value: "~$2,800" },
+  { label: "LTV/CAC", value: "~4.5×" },
+  { label: "Payback", value: "~14 months" },
 ];
 
 const MiniLabel = ({ children }: { children: React.ReactNode }) => (
@@ -56,14 +56,14 @@ const Slide19Pipeline = () => {
           <div className="text-center mb-4 animate-fade-in">
             <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">Early Traction</span>
             <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              EcoGridia — <span className="text-primary">First 90 Days Traction</span>
+              EcoGridia — <span className="text-primary">First 90 Days in UAE & KSA</span>
             </h2>
-            <p className="text-[15px] text-muted-foreground mt-1">Post-launch run-rate · Proving product-market signal</p>
+            <p className="text-[15px] text-muted-foreground mt-1">Post-launch run-rate · GCC product-market signal</p>
             <div className="flex justify-center gap-3 mt-3">
               {[
-                { l: "Customers", v: "54" },
-                { l: "ARR Run-Rate", v: "$120.2K" },
-                { l: "Cash Collected", v: "~$30K" },
+                { l: "Customers", v: "42" },
+                { l: "ARR Run-Rate", v: "$134.2K" },
+                { l: "Cash Collected", v: "~$33.5K" },
               ].map((k) => (
                 <div key={k.l} className="bg-card border border-border rounded-lg px-4 py-1.5 text-center">
                   <div className="text-[18px] font-bold text-primary leading-tight">{k.v}</div>
@@ -104,9 +104,9 @@ const Slide19Pipeline = () => {
                     ))}
                     <tr className="border-t-2 border-primary/30">
                       <td className="py-1.5 font-bold text-foreground">Total</td>
-                      <td className="text-center py-1.5 font-black text-primary">54</td>
+                      <td className="text-center py-1.5 font-black text-primary">42</td>
                       <td className="text-right py-1.5 font-semibold text-muted-foreground">—</td>
-                      <td className="text-right py-1.5 font-black text-primary">$120,200</td>
+                      <td className="text-right py-1.5 font-black text-primary">$134,200</td>
                     </tr>
                   </tbody>
                 </table>
@@ -159,7 +159,7 @@ const Slide19Pipeline = () => {
               >
                 <MiniLabel>💵 Cash Collected (90 Days) — click to expand</MiniLabel>
                 <div className="flex items-center justify-between">
-                  <span className="text-[22px] font-black text-primary">~$30K</span>
+                  <span className="text-[22px] font-black text-primary">~$33.5K</span>
                   <span className="text-[9px] text-muted-foreground">Realistic early-stage</span>
                 </div>
                 {showDetail === "cash" && (
@@ -173,7 +173,7 @@ const Slide19Pipeline = () => {
                       ))}
                       <tr className="border-t border-primary/30">
                         <td className="py-1 font-bold text-foreground">Total</td>
-                        <td className="text-right py-1 font-black text-primary">$30,050</td>
+                        <td className="text-right py-1 font-black text-primary">$33,550</td>
                       </tr>
                     </tbody>
                   </table>
@@ -226,12 +226,12 @@ const Slide19Pipeline = () => {
           {/* Bottom metrics row - styled like Slide 3 transformation pills */}
           <div className="flex items-center justify-center gap-3 mt-4 flex-wrap animate-fade-in" style={{ animationDelay: "0.3s" }}>
             {[
-              { l: "90-Day Customers", v: "54" },
-              { l: "ARR Run-Rate", v: "$120.2K" },
-              { l: "Cash Collected", v: "~$30K" },
-              { l: "Monthly Burn", v: "$58K" },
-              { l: "Net Burn", v: "~$48K" },
-              { l: "Gross Margin", v: "~78%" },
+              { l: "90-Day Customers", v: "42" },
+              { l: "ARR Run-Rate", v: "$134.2K" },
+              { l: "Cash Collected", v: "~$33.5K" },
+              { l: "Monthly Burn", v: "$52K" },
+              { l: "Net Burn", v: "~$41K" },
+              { l: "Gross Margin", v: "~76%" },
             ].map((m) => (
               <div key={m.l} className="flex items-center gap-2 px-4 py-2 rounded-full border border-border/40 bg-white shadow-sm">
                 <span className="text-[14px] font-black text-primary" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{m.v}</span>

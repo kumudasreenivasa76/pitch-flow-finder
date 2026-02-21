@@ -75,14 +75,14 @@ const AnimatedValue = ({ value, delay }: { value: string; delay: number }) => {
 
 /* ── Data ── */
 const milestones = [
-  { icon: Code, label: "Launch enterprise product (v2.0)" },
-  { icon: Users, label: "10 active enterprise customers" },
-  { icon: Target, label: "50+ sites under management" },
+  { icon: Code, label: "Launch enterprise product in UAE (v2.0)" },
+  { icon: Users, label: "10 active GCC enterprise customers" },
+  { icon: Target, label: "50+ UAE/KSA sites under management" },
   { icon: DollarSign, label: "$2M ARR milestone" },
   { icon: Rocket, label: "Series A readiness" },
-  { icon: Globe, label: "3 country expansion" },
-  { icon: Landmark, label: "Government pilot contract" },
-  { icon: ShoppingCart, label: "Community platform launch" },
+  { icon: Globe, label: "UAE + Saudi + Bahrain expansion" },
+  { icon: Landmark, label: "UAE/KSA government pilot contract" },
+  { icon: ShoppingCart, label: "GCC community platform launch" },
 ];
 
 const funds = [
@@ -124,7 +124,7 @@ const Slide20Ask = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
               </span>
-              <span className="font-mono-brand text-[13px] font-medium text-primary tracking-wide">Pre-Seed · $2M Raise</span>
+              <span className="font-mono-brand text-[13px] font-medium text-primary tracking-wide">Pre-Seed · $2M Raise · UAE & KSA</span>
             </div>
 
             {/* Headline */}
@@ -142,7 +142,7 @@ const Slide20Ask = () => {
             {/* Subtitle */}
             <p className="text-[18px] text-muted-foreground max-w-[520px] leading-[1.65] mb-8 opacity-0 animate-fade-in"
               style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
-              18-month runway to Series A readiness. Building the SaaS platform for how humanity owns, verifies, and pays for clean energy.
+              18-month runway to Series A readiness. Building the SaaS platform for how UAE & Saudi Arabia own, verify, and pay for clean energy.
             </p>
 
             {/* Use of Funds — compact bars */}

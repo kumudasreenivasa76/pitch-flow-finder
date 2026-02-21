@@ -19,9 +19,9 @@ const Slide16UnitEcon = () => (
             Unit Economics
           </span>
           <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Unit Economics — <span className="text-primary">FY30 Baseline</span>
+            Unit Economics — <span className="text-primary">UAE & KSA FY30</span>
           </h2>
-          <p className="text-[15px] text-muted-foreground mt-1">Validated unit economics across all customer segments.</p>
+          <p className="text-[15px] text-muted-foreground mt-1">Validated unit economics across UAE & Saudi Arabia customer segments.</p>
         </div>
 
         {/* Today vs FY30 comparison strip */}
@@ -32,10 +32,10 @@ const Slide16UnitEcon = () => (
             </div>
             <div className="flex gap-5 flex-1">
               {[
-                { l: "ARPU", v: "$2,225" },
-                { l: "Margin", v: "78%" },
-                { l: "LTV:CAC", v: "4.8×" },
-                { l: "Payback", v: "~12 mo" },
+                { l: "ARPU", v: "$1,850" },
+                { l: "Margin", v: "76%" },
+                { l: "LTV:CAC", v: "4.5×" },
+                { l: "Payback", v: "~14 mo" },
               ].map((m) => (
                 <div key={m.l} className="text-center">
                   <div className="text-[15px] font-black text-amber-700">{m.v}</div>
@@ -50,10 +50,10 @@ const Slide16UnitEcon = () => (
             </div>
             <div className="flex gap-5 flex-1">
               {[
-                { l: "ARPU", v: "$124K" },
-                { l: "Margin", v: "84%" },
+                { l: "ARPU", v: "$98K" },
+                { l: "Margin", v: "82%" },
                 { l: "LTV:CAC", v: "5.0×" },
-                { l: "Payback", v: "~20 mo" },
+                { l: "Payback", v: "~18 mo" },
               ].map((m) => (
                 <div key={m.l} className="text-center">
                   <div className="text-[15px] font-black text-primary">{m.v}</div>
@@ -69,57 +69,57 @@ const Slide16UnitEcon = () => (
 
           {/* Col 1 */}
           <div className="flex flex-col gap-3">
-            <CompactTable title="Key Metrics" color="#16a34a" delay="0.05s" rows={[
-              { label: "Total Revenue", value: "$169.7M" },
-              { label: "Total Customers", value: "1,365" },
-              { label: "Gross Margin", value: "84%" },
-              { label: "Annual Churn", value: "12%" },
+            <CompactTable title="Key Metrics (UAE & KSA)" color="#16a34a" delay="0.05s" rows={[
+              { label: "Total Revenue", value: "$85.2M" },
+              { label: "Total Customers", value: "870" },
+              { label: "Gross Margin", value: "82%" },
+              { label: "Annual Churn", value: "14%" },
             ]} />
             <CompactTable title="Customer Revenue" color="#0d9488" delay="0.1s" rows={[
-              { label: "Blended ARPU", value: "$124,300" },
-              { label: "Gross Profit / Customer", value: "$104,412" },
-              { label: "Avg Customer Lifetime", value: "8.3 years" },
+              { label: "Blended ARPU", value: "$97,900" },
+              { label: "Gross Profit / Customer", value: "$80,278" },
+              { label: "Avg Customer Lifetime", value: "7.1 years" },
             ]} />
           </div>
 
           {/* Col 2: LTV + CAC */}
           <div className="flex flex-col gap-3">
-            <ValueCard label="Lifetime Value (LTV)" value="$870K" sub="Per enterprise customer" color="#16a34a" borderColor="#16a34a" delay="0.15s"
+            <ValueCard label="Lifetime Value (LTV)" value="$570K" sub="Per enterprise customer (UAE/KSA)" color="#16a34a" borderColor="#16a34a" delay="0.15s"
               details={[
                 { l: "Formula", r: "GP ÷ Churn Rate" },
-                { l: "$104,412 ÷ 0.12", r: "= $870,100" },
+                { l: "$80,278 ÷ 0.14", r: "= $573,414" },
               ]}
             />
-            <ValueCard label="Customer Acquisition Cost" value="$174K" sub="Target LTV:CAC = 5x" color="#059669" borderColor="#059669" delay="0.2s"
+            <ValueCard label="Customer Acquisition Cost" value="$114K" sub="Target LTV:CAC = 5x" color="#059669" borderColor="#059669" delay="0.2s"
               details={[
                 { l: "LTV:CAC Target", r: "5x" },
-                { l: "$870K ÷ 5", r: "= $174,000" },
+                { l: "$570K ÷ 5", r: "= $114,000" },
               ]}
             />
             <div className="rounded-xl border border-primary/20 bg-primary/5 px-4 py-2 text-center animate-fade-in"
               style={{ animationDelay: "0.25s", animationFillMode: "forwards", opacity: 0 }}>
               <div>
                 <div className="text-[11px] text-muted-foreground font-semibold uppercase tracking-widest">CAC Payback</div>
-                <div className="text-[22px] font-black text-primary">~20 months</div>
+                <div className="text-[22px] font-black text-primary">~18 months</div>
               </div>
             </div>
           </div>
 
           {/* Col 3 */}
           <div className="flex flex-col gap-3">
-            <CompactTable title="Data Center Segment (FY30)" color="#0d9488" delay="0.25s" rows={[
-              { label: "Revenue", value: "$56.9M" },
-              { label: "Customers", value: "675" },
-              { label: "ARPU", value: "$84,300" },
-              { label: "Gross Profit / DC", value: "$70,800" },
-              { label: "Implied LTV", value: "$590K" },
-              { label: "Est. DC CAC (5x)", value: "$118K" },
+            <CompactTable title="Data Center Segment — UAE & KSA (FY30)" color="#0d9488" delay="0.25s" rows={[
+              { label: "Revenue", value: "$32.4M" },
+              { label: "Customers", value: "420" },
+              { label: "ARPU", value: "$77,100" },
+              { label: "Gross Profit / DC", value: "$63,200" },
+              { label: "Implied LTV", value: "$451K" },
+              { label: "Est. DC CAC (5x)", value: "$90K" },
             ]} />
             <CompactTable title="Company Efficiency" color="#16a34a" delay="0.3s" rows={[
-              { label: "Revenue / FTE", value: "$707K" },
-              { label: "EBITDA Margin", value: "69.1%" },
-              { label: "Net Margin", value: "51.7%" },
-              { label: "Gross Margin Trend", value: "76% → 89%" },
+              { label: "Revenue / FTE", value: "$532K" },
+              { label: "EBITDA Margin", value: "64.5%" },
+              { label: "Net Margin", value: "48.2%" },
+              { label: "Gross Margin Trend", value: "74% → 86%" },
             ]} />
           </div>
         </div>
@@ -128,9 +128,9 @@ const Slide16UnitEcon = () => (
         <div className="grid grid-cols-4 gap-3 mt-3 animate-fade-in" style={{ animationDelay: "0.35s", animationFillMode: "forwards", opacity: 0 }}>
           {[
             { label: "LTV / CAC", value: "> 5×", status: "✅", color: "#16a34a", bg: "rgba(22,163,74,0.08)" },
-            { label: "Payback Period", value: "~20 mo", status: "✅", color: "#0d9488", bg: "rgba(13,148,136,0.08)" },
-            { label: "Net Revenue Retention", value: "> 120%", status: "✅", color: "#2563eb", bg: "rgba(37,99,235,0.08)" },
-            { label: "ACV Trend", value: "Rising ↑", status: "📈", color: "#7c3aed", bg: "rgba(124,58,237,0.08)" },
+            { label: "Payback Period", value: "~18 mo", status: "✅", color: "#0d9488", bg: "rgba(13,148,136,0.08)" },
+            { label: "Net Revenue Retention", value: "> 115%", status: "✅", color: "#2563eb", bg: "rgba(37,99,235,0.08)" },
+            { label: "ACV Trend (GCC)", value: "Rising ↑", status: "📈", color: "#7c3aed", bg: "rgba(124,58,237,0.08)" },
           ].map((k) => (
             <div key={k.label} className="rounded-xl border-2 px-3 py-1.5 flex items-center gap-2"
               style={{ borderColor: k.color, background: k.bg }}>
@@ -148,12 +148,12 @@ const Slide16UnitEcon = () => (
           <div className="inline-flex items-center gap-5 rounded-2xl px-8 py-2"
             style={{ background: "linear-gradient(90deg, #14532d 0%, #166534 50%, #14532d 100%)" }}>
             {[
-              { label: "ARPU", value: "$124K" },
-              { label: "Margin", value: "84%" },
-              { label: "LTV", value: "$870K" },
-              { label: "CAC", value: "$174K" },
+              { label: "ARPU", value: "$98K" },
+              { label: "Margin", value: "82%" },
+              { label: "LTV", value: "$570K" },
+              { label: "CAC", value: "$114K" },
               { label: "LTV:CAC", value: "5.0×" },
-              { label: "Payback", value: "~20 mo" },
+              { label: "Payback", value: "~18 mo" },
             ].map((m, i, arr) => (
               <React.Fragment key={m.label}>
                 <div className="text-center">

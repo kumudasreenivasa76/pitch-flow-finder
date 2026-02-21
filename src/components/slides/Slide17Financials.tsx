@@ -21,7 +21,7 @@ const Slide17Financials = () => (
           <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Business Model & <span className="text-primary">Financials</span>
           </h2>
-          <p className="text-[15px] text-muted-foreground mt-1">Two synergistic business lines driving $60M combined revenue.</p>
+          <p className="text-[15px] text-muted-foreground mt-1">Two synergistic business lines driving AED 110M+ combined revenue across UAE & KSA.</p>
         </div>
 
         <div className="grid grid-cols-2 gap-6 flex-1 min-h-0">
@@ -33,16 +33,16 @@ const Slide17Financials = () => (
               </div>
               <div>
                 <h3 className="text-[22px] font-extrabold text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>EcoGridia Sites</h3>
-                <div className="text-[28px] font-black text-primary leading-none">$40M</div>
+                <div className="text-[28px] font-black text-primary leading-none">AED 73M</div>
               </div>
             </div>
             <div className="space-y-2">
               {[
-                { stream: "Project Execution Fees", value: "$16M" },
-                { stream: "Vendor Commissions", value: "$8M" },
-                { stream: "Monitoring & Maintenance", value: "$6M" },
-                { stream: "Asset Management", value: "$5M" },
-                { stream: "Insurance & Compliance", value: "$5M" },
+                { stream: "Project Execution Fees", value: "AED 29M" },
+                { stream: "Vendor Commissions", value: "AED 15M" },
+                { stream: "Monitoring & Maintenance", value: "AED 11M" },
+                { stream: "Asset Management", value: "AED 10M" },
+                { stream: "Insurance & Compliance", value: "AED 8M" },
               ].map((r) => (
                 <div key={r.stream} className="flex justify-between py-2.5 border-b border-border/40 last:border-0">
                   <span className="text-[14px] text-foreground">{r.stream}</span>
@@ -60,16 +60,16 @@ const Slide17Financials = () => (
               </div>
               <div>
                 <h3 className="text-[22px] font-extrabold text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Subscriptions</h3>
-                <div className="text-[28px] font-black text-eco-teal leading-none">$20M</div>
+                <div className="text-[28px] font-black text-eco-teal leading-none">AED 37M</div>
               </div>
             </div>
             <div className="space-y-2">
               {[
-                { stream: "Enterprise SaaS", value: "$8M" },
-                { stream: "VoltIQ Premium", value: "$4M" },
-                { stream: "Marketplace Fees", value: "$3M" },
-                { stream: "Compliance Module", value: "$3M" },
-                { stream: "Data & Analytics", value: "$2M" },
+                { stream: "Enterprise SaaS", value: "AED 15M" },
+                { stream: "VoltIQ Premium", value: "AED 7M" },
+                { stream: "Marketplace Fees", value: "AED 6M" },
+                { stream: "Compliance Module", value: "AED 5M" },
+                { stream: "Data & Analytics", value: "AED 4M" },
               ].map((r) => (
                 <div key={r.stream} className="flex justify-between py-2.5 border-b border-border/40 last:border-0">
                   <span className="text-[14px] text-foreground">{r.stream}</span>

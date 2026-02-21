@@ -8,9 +8,9 @@ const streams = [
     id: "voltiq", icon: Brain, color: "#2563eb",
     name: "VoltIQ™", sub: "Infrastructure Intelligence SaaS", badge: "Recurring",
     rows: [
-      { label: "VoltIQ Starter — Small facilities / schools", value: "$11,340 /yr" },
-      { label: "VoltIQ Professional — Mid-size enterprises", value: "$35,280 /yr" },
-      { label: "VoltIQ Enterprise — Data centers / hyperscale", value: "$81,900 /yr" },
+      { label: "VoltIQ Starter — Small facilities / schools", value: "$8,400 /yr" },
+      { label: "VoltIQ Professional — Mid-size enterprises", value: "$28,800 /yr" },
+      { label: "VoltIQ Enterprise — Data centers / hyperscale", value: "$72,000 /yr" },
     ],
     note: "75–85% margin • Sticky platform • Primary recurring engine",
   },
@@ -18,7 +18,7 @@ const streams = [
     id: "baseline", icon: FileCheck, color: "#16a34a",
     name: "BaselinePro™", sub: "Audit (One-Time)", badge: "Land & Expand",
     rows: [
-      { label: "BaselinePro Audit", value: "$27,720 → $50,400" },
+      { label: "BaselinePro Audit", value: "$22,000 → $42,000" },
       { label: "Use case: Energy baseline + ESG readiness", value: "" },
       { label: "Drives SaaS conversion funnel", value: "💡" },
     ],
@@ -29,8 +29,8 @@ const streams = [
     name: "WattWise™ AI", sub: "Optimization (Performance Share)", badge: "Outcome-based",
     rows: [
       { label: "Pricing Model", value: "20% of verified savings" },
-      { label: "Avg Client Savings", value: "$69k → $126k" },
-      { label: "EcoGridia Take per Client", value: "$13.8k → $25.2k" },
+      { label: "Avg Client Savings", value: "$55k → $105k" },
+      { label: "EcoGridia Take per Client", value: "$11k → $21k" },
     ],
     note: "No hardware risk • Outcome-based • Very VC-attractive",
   },
@@ -39,9 +39,9 @@ const streams = [
     name: "GridLink™", sub: "Renewable Procurement", badge: "Transaction",
     rows: [
       { label: "PPA Structuring Commission", value: "8%" },
-      { label: "Avg PPA Contract", value: "$630k → $1.2M" },
+      { label: "Avg PPA Contract (GCC)", value: "$500k → $1.0M" },
       { label: "VPPA Advisory Commission", value: "6%" },
-      { label: "Avg VPPA Contract", value: "$1.0M → $2.14M" },
+      { label: "Avg VPPA Contract (GCC)", value: "$800k → $1.8M" },
     ],
     note: "Scales with volume — zero asset ownership",
   },
@@ -50,8 +50,8 @@ const streams = [
     name: "RECMatrix™", sub: "Carbon Marketplace", badge: "Platform",
     rows: [
       { label: "REC Markup", value: "8%" },
-      { label: "Avg REC Spend / Client", value: "$32,760 → $88,200" },
-      { label: "Revenue per Client", value: "$2.6k → $7k" },
+      { label: "Avg I-REC Spend / Client", value: "$26,000 → $72,000" },
+      { label: "Revenue per Client", value: "$2.1k → $5.8k" },
     ],
     note: "Recurring compliance need • Marketplace moat • Scales with regulation",
   },
@@ -60,8 +60,8 @@ const streams = [
     name: "SolarForge™", sub: "On-Site Projects", badge: "Asset-Light",
     rows: [
       { label: "Dev Fee", value: "12%" },
-      { label: "Avg Project", value: "$441k → $1.0M" },
-      { label: "Revenue per Project", value: "$53k → $120k" },
+      { label: "Avg Project (UAE/KSA)", value: "$380k → $850k" },
+      { label: "Revenue per Project", value: "$46k → $102k" },
     ],
     note: "Partner-funded • No capex burden • High ticket size",
   },
@@ -69,10 +69,10 @@ const streams = [
     id: "education", icon: GraduationCap, color: "#ca8a04",
     name: "Education & SME", sub: "Platform (Wedge)", badge: "Beachhead",
     rows: [
-      { label: "SME SaaS", value: "$819 → $1,159 /yr" },
-      { label: "Site Management", value: "$2,772 → $5,040 /yr" },
-      { label: "ESG Audit", value: "$756 → $1,323" },
-      { label: "Consulting", value: "$32,760 → $55,440" },
+      { label: "SME SaaS", value: "$650 → $950 /yr" },
+      { label: "Site Management", value: "$2,200 → $4,200 /yr" },
+      { label: "ESG Audit", value: "$600 → $1,100" },
+      { label: "Consulting", value: "$26,000 → $45,000" },
     ],
     note: "Beachhead market • Faster sales cycles • Pipeline builder",
   },
@@ -83,23 +83,23 @@ const stakeholders = [
   {
     id: "schools", icon: GraduationCap, color: "#16a34a",
     name: "Schools & Universities", sub: "Beachhead Market",
-    acv: "$3k–$6k", margin: "~75%", strategy: "Fast sales cycles • High volume • Pipeline builder into enterprise",
+    acv: "$2.5k–$5k", margin: "~75%", strategy: "Fast sales cycles • UAE/KSA university mandates • Pipeline builder into enterprise",
     rows: [
-      { product: "VoltIQ Starter", pricing: "$819–$1,159 /yr", type: "Recurring" },
-      { product: "Site Management", pricing: "$2,772–$5,040 /yr", type: "Recurring" },
-      { product: "ESG Audit", pricing: "$756–$1,323", type: "One-time" },
-      { product: "Carbon Credits", pricing: "Market pass-through + margin", type: "Transaction" },
-      { product: "Consulting", pricing: "$32.8k–$55.4k", type: "Services" },
+      { product: "VoltIQ Starter", pricing: "$650–$950 /yr", type: "Recurring" },
+      { product: "Site Management", pricing: "$2,200–$4,200 /yr", type: "Recurring" },
+      { product: "ESG Audit", pricing: "$600–$1,100", type: "One-time" },
+      { product: "Carbon Credits (I-REC)", pricing: "Market pass-through + margin", type: "Transaction" },
+      { product: "Consulting", pricing: "$26k–$45k", type: "Services" },
     ],
   },
   {
     id: "enterprise", icon: Building2, color: "#2563eb",
     name: "Enterprises & Data Centers", sub: "Core Revenue Engine",
-    acv: "$25k–$100k+", margin: "75–85%", strategy: "Land with audit • Expand to SaaS • Monetize procurement • Capture carbon layer",
+    acv: "$20k–$85k+", margin: "75–85%", strategy: "Land with audit • Expand to SaaS • Monetize GCC procurement • Capture I-REC layer",
     rows: [
-      { product: "BaselinePro Audit", pricing: "$27.7k–$50.4k", type: "One-time" },
-      { product: "VoltIQ Professional", pricing: "$35.3k /yr", type: "Recurring" },
-      { product: "VoltIQ Enterprise", pricing: "$81.9k /yr", type: "Recurring" },
+      { product: "BaselinePro Audit", pricing: "$22k–$42k", type: "One-time" },
+      { product: "VoltIQ Professional", pricing: "$28.8k /yr", type: "Recurring" },
+      { product: "VoltIQ Enterprise", pricing: "$72k /yr", type: "Recurring" },
       { product: "WattWise AI", pricing: "20% of savings", type: "Performance" },
       { product: "GridLink PPA", pricing: "8% commission", type: "Transaction" },
       { product: "VPPA Advisory", pricing: "6% commission", type: "Transaction" },
@@ -113,24 +113,24 @@ const stakeholders = [
     rows: [
       { product: "Vendor Platform Fee", pricing: "~10% SaaS take", type: "Recurring" },
       { product: "Marketplace Fee", pricing: "2% per transaction", type: "Transaction" },
-      { product: "Avg Vendor Transaction", pricing: "$10k → $32k", type: "GMV driver" },
+      { product: "Avg Vendor Transaction", pricing: "$8k → $26k", type: "GMV driver" },
     ],
   },
   {
     id: "landowners", icon: TreePine, color: "#ea580c",
     name: "Landowners / Project Hosts", sub: "Project Origination Layer",
-    acv: "$53k–$120k /project", margin: "70%+", strategy: "No asset ownership • Partner-funded builds • High-margin facilitation",
+    acv: "$46k–$102k /project", margin: "70%+", strategy: "No asset ownership • Partner-funded builds in UAE/KSA • High-margin facilitation",
     rows: [
       { product: "SolarForge Dev Fee", pricing: "12% of project value", type: "Transaction" },
-      { product: "Avg Project Value", pricing: "$441k → $1.0M", type: "High-ticket" },
+      { product: "Avg Project Value (GCC)", pricing: "$380k → $850k", type: "High-ticket" },
     ],
   },
   {
     id: "consumers", icon: Users2, color: "#ca8a04",
     name: "Climate Subscribers", sub: "Future Expansion Layer",
-    acv: "~$96 /yr", margin: "—", strategy: "Brand layer • Data flywheel • Not core revenue",
+    acv: "~$80 /yr", margin: "—", strategy: "Brand layer • GCC data flywheel • Not core revenue",
     rows: [
-      { product: "Consumer Subscription", pricing: "~$8 /month (~$96/yr)", type: "Recurring" },
+      { product: "Consumer Subscription", pricing: "~$6.5 /month (~$80/yr)", type: "Recurring" },
     ],
   },
 ];
@@ -378,10 +378,10 @@ const Slide12Pricing = () => {
                 <div className="bg-white/90 rounded-2xl border border-border/40 p-4">
                   <h4 className="text-[13px] font-extrabold text-foreground mb-3 uppercase tracking-wide">Blended ACV</h4>
                   {[
-                    { seg: "Education / SME", acv: "$4k–$6k", color: "#16a34a" },
-                    { seg: "Vendors", acv: "$3k–$5k", color: "#7c3aed" },
-                    { seg: "Enterprise", acv: "$20k–$40k+", color: "#2563eb" },
-                    { seg: "Data Centers", acv: "$40k–$100k+", color: "#0891b2" },
+                    { seg: "Education / SME", acv: "$3k–$5k", color: "#16a34a" },
+                    { seg: "Vendors", acv: "$2.5k–$4k", color: "#7c3aed" },
+                    { seg: "Enterprise", acv: "$18k–$35k+", color: "#2563eb" },
+                    { seg: "Data Centers", acv: "$35k–$85k+", color: "#0891b2" },
                   ].map((s, i) => (
                     <div key={i} className="flex items-center justify-between py-2 border-b border-border/20 last:border-0">
                       <span className="text-[12px] text-foreground/80">{s.seg}</span>
