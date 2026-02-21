@@ -14,7 +14,7 @@ import {
 
 /* ── Competitor data (user-specified positions & sizes) ── */
 const competitors = [
-  { name: "EcoGridia", x: 92, y: 90, z: 600, funding: "SAR 7.5M (raising)", color: "hsl(142, 71%, 45%)", status: "Pre-Seed", moat: "Full-Stack Energy OS", sublabel: "Full-Stack Energy OS" },
+  { name: "EcoGridia", x: 92, y: 90, z: 600, funding: "$2M (raising)", color: "hsl(142, 71%, 45%)", status: "Pre-Seed", moat: "Full-Stack Energy OS", sublabel: "Full-Stack Energy OS" },
   { name: "Arcadia", x: 42, y: 68, z: 400, funding: "$400M+", color: "hsl(220, 70%, 55%)", status: "Series D", moat: "Strong data + community, not full stack", sublabel: "" },
   { name: "Watershed", x: 30, y: 62, z: 400, funding: "$350M+", color: "hsl(270, 60%, 55%)", status: "Series C", moat: "ESG heavy, weak execution + monetization", sublabel: "" },
   { name: "Stem", x: 55, y: 55, z: 400, funding: "$92M", color: "hsl(30, 80%, 55%)", status: "Series B", moat: "Hardware + storage focused", sublabel: "" },

@@ -8,12 +8,12 @@ const problems = [
     icon: DollarSign,
     title: "Rising & Volatile Energy Costs",
     stat: "20–35%",
-    statLabel: "GCC price increase (3yr)",
-    preview: "UAE & Saudi commercial electricity costs rising 20–35% as subsidy reform accelerates",
+    statLabel: "UAE price increase (3yr)",
+    preview: "UAE commercial electricity costs rising 20–35% as subsidy reform accelerates",
     bullets: [
-      "UAE & Saudi commercial electricity prices rising 20–35% as energy subsidy reforms accelerate",
-      "Industrial facilities in GCC spend SAR 2M–20M annually on electricity",
-      "Data centers in MENA consume 6–8% of regional electricity (projected 12–15% by 2030)",
+      "UAE commercial electricity prices rising 20–35% as energy subsidy reforms accelerate",
+      "Industrial facilities in UAE spend $533K–$5.3M annually on electricity",
+      "Data centers in UAE consume 6–8% of regional electricity (projected 12–15% by 2030)",
       "AI workloads & hyperscale expansion increasing Gulf power demand by 3–4x",
     ],
     impact: ["Margin compression", "Grid strain", "CFO pressure to reduce OpEx"],
@@ -23,13 +23,13 @@ const problems = [
     icon: FileCheck,
     title: "ESG & Regulatory Compliance Pressure",
     stat: "5,000+",
-    statLabel: "MENA companies impacted",
-    preview: "5,000+ MENA companies impacted by new climate disclosure & net-zero mandates",
+    statLabel: "UAE companies impacted",
+    preview: "5,000+ UAE companies impacted by new climate disclosure & net-zero mandates",
     bullets: [
       "UAE Climate Change Law (2024) mandates MRV reporting for all major emitters",
-      "Saudi Vision 2030 requires ESG compliance across all government-linked entities",
-      "CSRD & IFRS S2 creating cross-border reporting pressure on GCC exporters",
-      "70% of MENA firms lack automated carbon tracking or ESG reporting tools",
+      "UAE Net Zero 2050 strategy requires ESG compliance across all sectors",
+      "CSRD & IFRS S2 creating cross-border reporting pressure on UAE exporters",
+      "70% of UAE firms lack automated carbon tracking or ESG reporting tools",
     ],
     impact: ["Legal exposure", "Investor scrutiny", "Trade barrier risk"],
   },
@@ -39,11 +39,11 @@ const problems = [
     title: "Fragmented Renewable Ecosystem",
     stat: "8–14 mo",
     statLabel: "avg project delay",
-    preview: "Solar EPCs, consultants, carbon brokers operate in silos across 4–6 vendors in GCC",
+    preview: "Solar EPCs, consultants, carbon brokers operate in silos across 4–6 vendors in UAE",
     bullets: [
-      "Solar EPCs, consultants, carbon brokers operate separately across GCC",
+      "Solar EPCs, consultants, carbon brokers operate separately across UAE",
       "75% of renewable projects require coordination across 4–6 vendors",
-      "Average project delay in MENA: 8–14 months due to permitting & coordination",
+      "Average project delay in UAE: 8–14 months due to permitting & coordination",
     ],
     impact: ["Cost overruns", "Underperformance", "Project abandonment"],
   },
@@ -52,12 +52,12 @@ const problems = [
     icon: Server,
     title: "DC Renewable Procurement",
     stat: "3x",
-    statLabel: "MENA DC demand tripling",
-    preview: "Hyperscalers expanding rapidly in UAE & Saudi, committed to RE100 with limited local solutions",
+    statLabel: "UAE DC demand tripling",
+    preview: "Hyperscalers expanding rapidly in UAE, committed to RE100 with limited local solutions",
     bullets: [
-      "Hyperscalers (AWS, Microsoft, Oracle) expanding into UAE & Saudi — committed to RE100",
-      "MENA data center capacity expected to triple by 2030",
-      "Renewable PPA and I-REC procurement in GCC highly complex & fragmented",
+      "Hyperscalers (AWS, Microsoft, Oracle) expanding into UAE — committed to RE100",
+      "UAE data center capacity expected to triple by 2030",
+      "Renewable PPA and I-REC procurement in UAE highly complex & fragmented",
     ],
     impact: ["Renewable gap", "Reputation risk", "ESG scrutiny"],
   },
@@ -65,12 +65,12 @@ const problems = [
     num: "05",
     icon: Coins,
     title: "Unmonetized I-RECs & Carbon Credits",
-    stat: "SAR 1.9B+",
-    statLabel: "MENA I-REC market/yr",
-    preview: "Thousands of MENA installations don't actively trade I-RECs — 15–25% revenue left on table",
+    stat: "$500M+",
+    statLabel: "UAE I-REC market/yr",
+    preview: "Thousands of UAE installations don't actively trade I-RECs — 15–25% revenue left on table",
     bullets: [
-      "MENA I-REC market size: SAR 1.9B+ annually and growing rapidly",
-      "Thousands of solar installations in GCC don't actively trade I-RECs",
+      "UAE I-REC market size: $500M+ annually and growing rapidly",
+      "Thousands of solar installations in UAE don't actively trade I-RECs",
       "15–25% potential renewable revenue often unused in the region",
     ],
     impact: ["Reduced ROI", "Poor visibility", "Missed funding"],
@@ -81,10 +81,10 @@ const problems = [
     title: "No Real-Time Energy Intelligence",
     stat: "25–40%",
     statLabel: "solar underperformance",
-    preview: "25–40% of installed solar in MENA underperforms due to dust, heat & lack of monitoring",
+    preview: "25–40% of installed solar in UAE underperforms due to dust, heat & lack of monitoring",
     bullets: [
-      "25–40% of installed solar in MENA underperforms due to extreme heat, dust & lack of monitoring",
-      "60% of mid-market firms in GCC lack real-time energy analytics",
+      "25–40% of installed solar in UAE underperforms due to extreme heat, dust & lack of monitoring",
+      "60% of mid-market firms in UAE lack real-time energy analytics",
       "Data center uptime & cooling optimization critical in desert climates",
     ],
     impact: ["Lost savings", "Unnoticed failures", "Poor ROI measurement"],
@@ -92,8 +92,8 @@ const problems = [
 ];
 
 const stats = [
-  { value: "SAR 2M–20M", label: "annual electricity spend per facility" },
-  { value: "5K+", label: "MENA companies facing ESG disclosure" },
+  { value: "$533K–$5.3M", label: "annual electricity spend per facility" },
+  { value: "5K+", label: "UAE companies facing ESG disclosure" },
   { value: "8–14mo", label: "average renewable project delay" },
 ];
 
@@ -120,7 +120,7 @@ const Slide02Problem = () => {
             The Problem
           </span>
           <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            The UAE & Saudi Energy Market Is <span className="text-destructive">Broken</span>
+            The UAE Energy Market Is <span className="text-destructive">Broken</span>
           </h2>
           <p className="text-[15px] text-muted-foreground mt-1">
             Fragmented systems, subsidy reform pressure, and no unified infrastructure
@@ -138,12 +138,9 @@ const Slide02Problem = () => {
                 className="flex items-start gap-4 p-6 rounded-2xl bg-white border-2 border-border/40 hover:border-primary/40 hover:shadow-xl shadow-sm text-left transition-all duration-300 group animate-fade-in"
                 style={{ animationDelay: `${0.05 + i * 0.06}s`, animationFillMode: "forwards", opacity: 0 }}
               >
-                {/* Icon */}
                 <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center shrink-0 group-hover:bg-primary/10 group-hover:border-primary/30 transition-colors">
                   <Icon className="w-5 h-5 text-amber-600 group-hover:text-primary transition-colors" />
                 </div>
-
-                {/* Text */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between mb-1">
                     <h3 className="text-[20px] font-bold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -188,7 +185,6 @@ const Slide02Problem = () => {
                 <X className="w-5 h-5 text-muted-foreground" />
               </button>
 
-              {/* Modal header */}
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
                   {(() => { const Icon = active.icon; return <Icon className="w-7 h-7 text-primary" />; })()}
@@ -205,7 +201,6 @@ const Slide02Problem = () => {
                 </div>
               </div>
 
-              {/* Bullets */}
               <div className="space-y-3 mb-6">
                 {active.bullets.map((b, bi) => (
                   <div key={bi} className="flex items-start gap-3 p-3.5 rounded-xl bg-muted/40 border border-border/20">
@@ -215,7 +210,6 @@ const Slide02Problem = () => {
                 ))}
               </div>
 
-              {/* Impact */}
               <div className="p-4 rounded-2xl bg-destructive/5 border border-destructive/15">
                 <span className="text-[13px] font-bold text-destructive uppercase tracking-wider">⚠ Business Impact</span>
                 <div className="flex gap-2.5 mt-2.5 flex-wrap">
@@ -225,7 +219,6 @@ const Slide02Problem = () => {
                 </div>
               </div>
 
-              {/* Nav dots */}
               <div className="flex items-center justify-center gap-2 mt-6">
                 {problems.map((_, i) => (
                   <button

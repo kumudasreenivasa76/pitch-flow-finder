@@ -30,7 +30,7 @@ const segmentCards = [
   {
     icon: GraduationCap,
     title: "School / University",
-    items: ["15% energy savings", "SAR 190K–560K annual savings", "100–300 tons CO₂ reduced", "New sustainability revenue"],
+    items: ["15% energy savings", "$51K–$149K annual savings", "100–300 tons CO₂ reduced", "New sustainability revenue"],
   },
   {
     icon: HeartPulse,
