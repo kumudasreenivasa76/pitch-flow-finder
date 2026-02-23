@@ -85,9 +85,12 @@ const SlideGreenCampus = () => {
             <h2 className="text-[34px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               Intelligent <span className="text-primary">Green Campuses</span>
             </h2>
-            <p className="text-[13px] text-muted-foreground leading-relaxed mt-1">
+            <p className="text-[13px] text-muted-foreground leading-relaxed mt-1 mb-3">
               AI-driven energy optimization, renewable procurement & carbon monetization — delivered as SaaS.
             </p>
+            <div className="w-[280px] h-[180px] rounded-2xl overflow-hidden border border-border/30 bg-white shadow-sm mx-auto">
+              <img src={ecosystemImg} alt="Green Campus" className="w-full h-full object-contain" style={{ mixBlendMode: "multiply" }} />
+            </div>
           </div>
 
           {/* Main content grid */}
