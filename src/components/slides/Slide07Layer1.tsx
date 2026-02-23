@@ -59,7 +59,7 @@ const Slide07Layer1 = () => {
         {/* Header — Slide 3 style */}
         <div className="relative z-20 text-center pt-5 pb-1 px-7 animate-fade-in shrink-0">
           <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[12px] font-bold tracking-widest uppercase mb-1">
-            EcoGridia Flow
+            Institutional SaaS
           </span>
           <h2 className="text-[32px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Complete End-to-End <span className="text-primary">Project Flow</span>
