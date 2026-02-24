@@ -99,8 +99,8 @@ const Slide06Features = () => {
           <span className="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-[13px] font-bold tracking-widest uppercase mb-2">
             The EcoGridia Suite
           </span>
-          <h2 className="text-[40px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            20 Products Across <span className="text-primary">6 Modules</span>
+          <h2 className="text-[36px] font-extrabold text-foreground leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            EcoGridia: <span className="text-primary">End-to-End AI Energy & ESG Infrastructure Suite</span>
           </h2>
           <p className="text-[15px] text-muted-foreground mt-1">
             Full-stack renewable infrastructure — from baseline to compliance
